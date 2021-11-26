@@ -15,6 +15,7 @@ jobs:
 <<<<<<< 9624472a220c96d0061c2d2da42c9968fcbc2430
 <<<<<<< 9624472a220c96d0061c2d2da42c9968fcbc2430
 <<<<<<< 9624472a220c96d0061c2d2da42c9968fcbc2430
+<<<<<<< 9624472a220c96d0061c2d2da42c9968fcbc2430
     runs-on: windows-latest
 =======
     runs-on: self-hosted
@@ -25,6 +26,9 @@ jobs:
 =======
     runs-on: windows-latest, ubuntu-latest
 >>>>>>> update node.js.yml
+=======
+    runs-on: windows-latest
+>>>>>>> Update node.js.yml
 
     strategy:
       matrix:
