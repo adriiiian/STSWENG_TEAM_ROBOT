@@ -3,6 +3,7 @@
 <html>
     <head>
         <link rel="stylesheet" href="./css/index_css.css">
+        <link rel="stylesheet" href="./css/services_css.css">
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -14,7 +15,7 @@
             <i class="fa fa-arrow-up" style="color:#fff; font-size:28px;"></i>
         </a>
         <img src="images/hotel_bg.jpg" id="bg" alt="">
-        <div class="container py-0 nav_main">
+        <div class="container nav_main">
             <nav class="navbar navbar-expand-lg nav_options">
                 <div class="navbar-brand hotel_name_nav">hotel name</div>
                 <a class="nav-item nav-link btn_bookonline" href="#">Book online</a>
@@ -25,24 +26,17 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-start" id="navbarNavAltMarkup">
                   <div class="navbar-nav ml-auto text-right float-right">
-                    <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-item nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
                     <a class="nav-item nav-link" href="#">Rooms</a>
-                    <a class="nav-item nav-link" href="services.html">Services</a>
+                    <a class="nav-item nav-link active" href="#">Services</a>
                     <a class="nav-item nav-link" href="#">About</a>
                     <a class="nav-item nav-link" href="#contactus_section">Contact Us</a>
                   </div>
                 </div>
               </nav>
         </div>
-        <div class="hotel_header">
-            <div class="hotel_line">
-                The Best Place To Stay
-            </div>
-            <div class="hotel_type">
-                hotel & resort
-            </div>
-        </div>
-        <div class="container-fluid px-0 content_con">
+        
+        <div class="container-fluid px-0 content_con" style="margin-top: 100px;">
             <div class="container">
                 <div class="book_con">
                     <div class="container">
@@ -66,69 +60,53 @@
                         </form>
                     </div>
                 </div>
-                
             </div>
-            <div class="container-fluid py-5 about_con">
+            <div class="container-fluid py-5">
                 <div class="container">
-                    <div class="about_con_header">
-                        Header
+                    <div class="serviceslist_header">
+                        Services
                     </div>
-                </div>
-            </div>
-            <div class="container-fluid py-5 rooms_con">
-                <div class="container">
-                    <div class="rooms_con_header">
-                        Rooms
+                    <div class="serviceslist_description">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
                     </div>
-                </div>
-            </div>
-            <div class="container-fluid py-5 services_con" id="services_section">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-6 px-5">
-                            <img src="./images/hotel_bg.jpg" class="services_con_img" alt="Paris">    
-                        </div>
-                        <div class="col-sm-6 p-5">
-                            <div class="services_con_header2">
-                                Swimming Pool
-                            </div>
-                            <div class="services_con_description">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
-                            </div>
-
-                            <a class="services_con_description_link" href="view_services.html">
-                                Learn more
+                    <div class="serviceslist_grid">
+                        <div class="row d-flex justify-content-between">
+                            <a class="col-sm-4 py-5 px-4 d-flex justify-content-center" href="view_services.html" style="max-width:  max-content;;">
+                                <div class="card">
+                                    <img src="./images/hotel_bg.jpg" class="card-img-top" alt="test">
+                                    <div class="card-body">
+                                        <h5 class="card-title my-auto">Swimming Pool </h5>
+                                    </div>
+                                </div>
+                            </a>
+                            <a class="col-sm-4 py-5 px-4 d-flex justify-content-center" href="view_services.html" style="max-width:  max-content;;">
+                                <div class="card">
+                                    <img src="./images/hotel_bg.jpg" class="card-img-top" alt="test">
+                                    <div class="card-body">
+                                        <h5 class="card-title my-auto">Swimming Pool </h5>
+                                    </div>
+                                </div>
+                            </a>
+                            <a class="col-sm-4 py-5 px-4 d-flex justify-content-center" href="view_services.html" style="max-width:  max-content;;">
+                                <div class="card">
+                                    <img src="./images/hotel_bg.jpg" class="card-img-top" alt="test">
+                                    <div class="card-body">
+                                        <h5 class="card-title my-auto">Swimming Pool </h5>
+                                    </div>
+                                </div>
+                            </a>
+                            <a class="col-sm-4 py-5 px-4 d-flex justify-content-center" href="view_services.html" style="max-width:  max-content;;">
+                                <div class="card">
+                                    <img src="./images/hotel_bg.jpg" class="card-img-top" alt="test">
+                                    <div class="card-body">
+                                        <h5 class="card-title my-auto">Swimming Pool </h5>
+                                    </div>
+                                </div>
                             </a>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-sm-6 px-5">
-                            <div class="services_con_header2">
-                               Dining
-                            </div>
-                            <div class="services_con_description">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
-                            </div>
-
-                            <a class="services_con_description_link" href="view_services.html">
-                                Learn more
-                            </a>
-                        </div>
-                        <div class="col-sm-6 p-5">
-                            <img src="./images/hotel_bg.jpg" class="services_con_img" alt="Paris">    
-                        </div>
-                    </div>
-                    
-                    <div class="row content_con_btn">
-                        <a class="px-5 services_con_btn mx-auto" href="services.html">
-                            See all
-                        </a>
-                    </div>
-                    
                 </div>
             </div>
-            
-            
             
         </div>
         <div class="container footer" id="contactus_section">
