@@ -30,4 +30,4 @@ jobs:
     - run: npm ci
     - run: yarn install
     - run: npm run build --if-present
-    - run: yarn test:ci
+    - run: yarn test
