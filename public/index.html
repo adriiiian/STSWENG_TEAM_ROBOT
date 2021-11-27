@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet" href="./css/index_css.css">
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+        <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <div class="container_whole" id="blur">
+        <a class="top_btn" href="#top">
+            <i class="fa fa-arrow-up" style="color:#fff; font-size:28px;"></i>
+        </a>
+        <img src="images/hotel_bg.jpg" id="bg" alt="">
+        <div class="container py-0 nav_main">
+            <nav class="navbar navbar-expand-lg nav_options">
+                <div class="navbar-brand hotel_name_nav">hotel name</div>
+                <a class="nav-item nav-link btn_bookonline" href="#" onclick="toggle()">Book online</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+                    <i class="fa fa-bars" style="color:#fff; font-size:28px;"></i>
+                  </span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-start" id="navbarNavAltMarkup">
+                  <div class="navbar-nav ml-auto text-right float-right">
+                    <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-item nav-link" href="#">Rooms</a>
+                    <a class="nav-item nav-link" href="services.html">Services</a>
+                    <a class="nav-item nav-link" href="#">About</a>
+                    <a class="nav-item nav-link" href="#contactus_section">Contact Us</a>
+                  </div>
+                </div>
+              </nav>
+        </div>
+        <div class="hotel_header">
+            <div class="hotel_line">
+                The Best Place To Stay
+            </div>
+            <div class="hotel_type">
+                hotel & resort
+            </div>
+        </div>
+        <div class="container-fluid px-0 content_con">
+            <div class="container">
+                <div class="book_con">
+                    <div class="container">
+                        <form class="row mx-auto book_form" action="">
+                            <div class="col-sm-3 mx-auto book_form_label">
+                                CHECK IN
+                                <input id="checkin"/>
+                            </div>
+                            <div class="col-sm-3 mx-auto book_form_label">
+                                CHECK OUT
+                                <input id="checkout"/>
+                            </div>
+                            <div class="col-sm-3 mx-auto book_form_label">
+                                GUESTS
+                                <input type="number" id="numpeople" name="firstname">
+                            </div>
+                            <div class="col-sm-2.5 mx-auto">
+                                <a class="mx-auto btn_booknow" type="submit" value="Submit" href="#" onclick="toggle()">Book now</a>
+                            </div>
+                            
+                        </form>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="container-fluid py-5 about_con">
+                <div class="container">
+                    <div class="about_con_header">
+                        Header
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid py-5 rooms_con">
+                <div class="container">
+                    <div class="rooms_con_header">
+                        Rooms
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid py-5 services_con" id="services_section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6 px-5">
+                            <img src="./images/hotel_bg.jpg" class="services_con_img" alt="Paris">    
+                        </div>
+                        <div class="col-sm-6 p-5">
+                            <div class="services_con_header2">
+                                Swimming Pool
+                            </div>
+                            <div class="services_con_description">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+                            </div>
+
+                            <a class="services_con_description_link" href="view_services.html">
+                                Learn more
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 px-5">
+                            <div class="services_con_header2">
+                               Dining
+                            </div>
+                            <div class="services_con_description">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+                            </div>
+
+                            <a class="services_con_description_link" href="view_services.html">
+                                Learn more
+                            </a>
+                        </div>
+                        <div class="col-sm-6 p-5">
+                            <img src="./images/hotel_bg.jpg" class="services_con_img" alt="Paris">    
+                        </div>
+                    </div>
+                    
+                    <div class="row content_con_btn">
+                        <a class="px-5 services_con_btn mx-auto" href="services.html">
+                            See all
+                        </a>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            
+            
+        </div>
+        <div class="container footer" id="contactus_section">
+            <div class="row">
+                <div class="col">
+                    <div class="contactus_heading">
+                        Contact us
+                    </div>
+                    <div class="my-3">
+                        <span>
+                            <i class="fa fa-envelope mr-3" style="color:#fff; font-size:28px;"></i>
+                        </span>
+                        <span class="email">
+                            hotel@email.com
+                        </span>
+                    </div>
+                    <div class="my-3">
+                        <span>
+                            <i class="fa fa-phone mr-3" style="color:#fff; font-size:28px;"></i>
+                        </span>
+                        <span class="email">
+                            +631233455678
+                        </span>
+                    </div>
+                </div>
+                <div class="col d-flex justify-content-end location" style="color: white;">
+                    Location/address
+                </div>
+            </div>
+        </div>
+    </div>
+        <div id="popup">
+            <form id="form_login" action="">
+                <div class="form-group">
+                    <input type="email" class="form-control" id="InputEmail_login" placeholder="EMAIL">
+                  </div>
+                  <div class="form-group">
+                    <input type="password" class="form-control" id="InputPassword_login" placeholder="PASSWORD">
+                  </div>
+                <button type="submit" class="btn btn_login">LOG IN</button>
+                <a href="#" small id="create_acc" class="form-text text-muted" onclick="create_acc()">CREATE AN ACCOUNT</a><br>
+                <a href="#" id="close_popup" class="close_popup" onclick="toggle()">Close</a>
+            </form>
+            <form id="form_createaccount" action="" >
+                <div class="form-group">
+                    <input type="text" class="form-control" id="InputUsername" placeholder="USERNAME">
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control" id="InputEmail_createacc" placeholder="EMAIL">
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" id="InputPassword_createacc" placeholder="PASSWORD">
+                </div>
+                <button type="submit" class="btn btn_register">REGISTER</button>
+                <a href="#" small id="back_login" class="form-text back_login" onclick="login()">BACK TO LOG IN</a><br>
+                <a href="#" id="close_popup" class="close_popup" onclick="toggle()">Close</a>
+            </form>
+        </div>
+        <script>
+            $('#checkin').datepicker({
+                uiLibrary: 'bootstrap4'
+            });
+            $('#checkout').datepicker({
+                uiLibrary: 'bootstrap4'
+            });
+        </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script type="text/javascript">
+            function toggle(){
+                var blur = document.getElementById('blur');
+                blur.classList.toggle('active');
+                var popup = document.getElementById('popup');
+                popup.classList.toggle('active');
+
+                $("#form_login").show();
+                $("#form_createaccount").hide();
+            }
+            function create_acc() {
+                $("#form_login").hide();
+                $("#form_createaccount").show();
+            }
+            function login() {
+                $("#form_login").show();
+                $("#form_createaccount").hide();
+            }
+        </script>
+    </body>
+</html>

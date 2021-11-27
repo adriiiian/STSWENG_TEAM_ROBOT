@@ -46,7 +46,7 @@ body{
     transition: 0.2s;
 }
 
-.btn_booknow:hover, .btn_bookonline:hover{
+.btn_booknow:hover, .btn_bookonline:hover, .btn_login:hover{
     color: white;
     transition: 0.2s;
     transform: scale(1.05);
@@ -307,14 +307,84 @@ body{
     z-index: 100;
 }
 
+.form-group {
+    color: #f0ecec;
+}
 
+#back_login {
+    margin-left: 40px;
+}
 
+.btn_login{
+    text-align: center;
+    height: max-content;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #DCA73A;
+    color: white;
+    text-transform: uppercase;
+    margin-left: 62px;
+    border-radius: 20px;
+    max-width: 150px;
+    min-width: 50px;
+}
 
+.btn_register{
+    text-align: center;
+    height: max-content;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #DCA73A;
+    color: white;
+    text-transform: uppercase;
+    margin-left: 54px;
+    border-radius: 20px;
+    max-width: 150px;
+    min-width: 50px;
+}
 
+.container_whole#blur.active {
+    filter: blur(20px);
+    pointer-events: none;
+    user-select: none;
+}
 
+#popup {
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    padding: 30px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, .30);
+    background: #fff;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+}
 
+#popup.active {
+    top: 50%;
+    visibility: visible;
+    opacity: 1;
+    transition: 0.5s;
+    height: auto;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+}
 
+.text-muted {
+    margin-left: 25px;
+}
 
+.close_popup {
+    color: #4e4e4e;
+    margin-left: 158px;
+}
 
-
- 
+.back_login {
+    color: #4e4e4e;
+}
