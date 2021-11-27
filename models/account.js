@@ -2,8 +2,6 @@ const mongoose = require('mongoose')
 mongoose.pluralize(null)
 
 const accountSchema = new mongoose.Schema({
-    FirstName: String,
-    LastName: String,
     Username: String,
     Email: String,
     Password: String
