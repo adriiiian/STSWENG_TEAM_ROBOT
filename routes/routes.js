@@ -20,4 +20,7 @@ router.get('/services', (req, res) => {
 router.get('/view_services', (req, res) => {
     res.render('view_services')
 })
+
+router.get('/check-login-info', loginController.Login)
+
 module.exports = router
