@@ -4,9 +4,7 @@ const loginController = {
 
     Login: async (req, res) => {
         var LoginInfo = req.query.LoginInfo
-
-        //console.log('Login controller here')
-        //console.log('email = ' + LoginInfo.Email + ' ;;; password: ' + LoginInfo.Password)
+        
         await db.Account.findOne({Email: LoginInfo.Email})
             .then((User) => {
                 
@@ -19,7 +17,7 @@ const loginController = {
                     }
                 }
                 else {
-                    res.send('invalid-username')
+                    res.send('invalid-email')
                 }
 
             })

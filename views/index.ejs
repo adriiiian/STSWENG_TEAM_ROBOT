@@ -164,14 +164,15 @@
         </div>
     </div>
         <div id="popup">
-            <form id="form_login" action="">
+            <form id="form_login" onsubmit="return false;">
                 <div class="form-group">
                     <input type="email" class="form-control" id="InputEmail_login" placeholder="EMAIL">
                   </div>
                   <div class="form-group">
                     <input type="password" class="form-control" id="InputPassword_login" placeholder="PASSWORD">
                   </div>
-                <button type="submit" class="btn btn_login">LOG IN</button>
+                  <p id="login_error" class="text-danger h6 text-center"></p>
+                <button type="submit" class="btn btn_login" id="login_btn">LOG IN</button>
                 <a href="#" small id="create_acc" class="form-text text-muted" onclick="create_acc()">CREATE AN ACCOUNT</a><br>
                 <a href="#" id="close_popup" class="close_popup" onclick="toggle()">Close</a>
             </form>
