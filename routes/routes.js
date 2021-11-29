@@ -26,4 +26,11 @@ router.get('/check-reg-info', registerController.IsValid)
 
 router.post('/register', registerController.Register)
 
+router.get('/rooms', (req, res) => {
+    res.render('rooms')
+})
+
+router.get('/view_rooms', (req, res) => {
+    res.render('view_rooms')
+})
 module.exports = router

@@ -11,7 +11,6 @@
         <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
-        <div class="container_whole" id="blur">
         <a class="top_btn" href="#top">
             <i class="fa fa-arrow-up" style="color:#fff; font-size:28px;"></i>
         </a>
@@ -19,6 +18,7 @@
         <div class="container nav_main">
             <nav class="navbar navbar-expand-lg nav_options">
                 <div class="navbar-brand hotel_name_nav">hotel name</div>
+                <a class="nav-item nav-link btn_nav_login" href="#">Book online</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon">
                     <i class="fa fa-bars" style="color:#fff; font-size:28px;"></i>
@@ -26,24 +26,11 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-start" id="navbarNavAltMarkup">
                   <div class="navbar-nav ml-auto text-right float-right">
-                    <a class="nav-item nav-link" href="index">Home <span class="sr-only">(current)</span></a>
-                    <a class="nav-item nav-link" href="rooms">Rooms</a>
+                    <a class="nav-item nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-item nav-link" href="#">Rooms</a>
                     <a class="nav-item nav-link active" href="#">Services</a>
                     <a class="nav-item nav-link" href="#">About</a>
                     <a class="nav-item nav-link" href="#contactus_section">Contact Us</a>
-                    <!--IF LOGGED OUT-->
-                    <!--<a class="nav-item nav-link btn_nav_login" href="#" onclick="toggle()">LOG IN</a>-->
-                  
-                    <!--IF LOGGED IN-->
-                    <div class="dropdown account_dropdown">
-                        <button class="btn ml-4 btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          ACCOUNT
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                          <a class="dropdown-item" href="#">TRANSACTIONS</a>
-                          <a class="dropdown-item" href="#" style="font-weight: 500;">LOG OUT</a>
-                        </div>
-                    </div>
                   </div>
                 </div>
               </nav>
@@ -67,7 +54,7 @@
                                 <input type="number" id="numpeople" name="firstname">
                             </div>
                             <div class="col-sm-2.5 mx-auto">
-                                <a class="mx-auto btn_booknow" type="submit" value="Submit" href="#" onclick="toggle()">Book now</a>
+                                <a class="mx-auto btn_booknow" type="submit" value="Submit" href="#">Book now</a>
                             </div>
                             
                         </form>
@@ -84,31 +71,31 @@
                     </div>
                     <div class="serviceslist_grid">
                         <div class="row d-flex justify-content-around">
-                            <a class="col-sm-4 py-5 px-4 d-flex justify-content-center" href="view_services" style="max-width:  max-content;;">
-                                <div class="card mb-4 border-0">
+                            <a class="col-sm-4 py-5 px-4 d-flex justify-content-center" href="view_services.html" style="max-width:  max-content;;">
+                                <div class="card">
                                     <img src="./images/hotel_bg.jpg" class="card-img-top" alt="test">
                                     <div class="card-body">
                                         <h5 class="card-title my-auto">Swimming Pool </h5>
                                     </div>
                                 </div>
                             </a>
-                            <a class="col-sm-4 py-5 px-4 d-flex justify-content-center" href="view_services" style="max-width:  max-content;;">
-                                <div class="card mb-4 border-0">
+                            <a class="col-sm-4 py-5 px-4 d-flex justify-content-center" href="view_services.html" style="max-width:  max-content;;">
+                                <div class="card">
                                     <img src="./images/hotel_bg.jpg" class="card-img-top" alt="test">
                                     <div class="card-body">
                                         <h5 class="card-title my-auto">Swimming Pool </h5>
                                     </div>
                                 </div>
                             </a>
-                            <a class="col-sm-4 py-5 px-4 d-flex justify-content-center" href="view_services" style="max-width:  max-content;;">
-                                <div class="card mb-4 border-0">
+                            <a class="col-sm-4 py-5 px-4 d-flex justify-content-center" href="view_services.html" style="max-width:  max-content;;">
+                                <div class="card">
                                     <img src="./images/hotel_bg.jpg" class="card-img-top" alt="test">
                                     <div class="card-body">
                                         <h5 class="card-title my-auto">Swimming Pool </h5>
                                     </div>
                                 </div>
                             </a>
-                            <a class="col-sm-4 py-5 px-4 d-flex justify-content-center" href="view_services" style="max-width:  max-content;;">
+                            <a class="col-sm-4 py-5 px-4 d-flex justify-content-center" href="view_services.html" style="max-width:  max-content;;">
                                 <div class="card">
                                     <img src="./images/hotel_bg.jpg" class="card-img-top" alt="test">
                                     <div class="card-body">
@@ -151,34 +138,6 @@
                 </div>
             </div>
         </div>
-    </div>
-        <div id="popup">
-            <form id="form_login" action="">
-                <div class="form-group">
-                    <input type="email" class="form-control" id="InputEmail_login" placeholder="EMAIL">
-                  </div>
-                  <div class="form-group">
-                    <input type="password" class="form-control" id="InputPassword_login" placeholder="PASSWORD">
-                  </div>
-                <button type="submit" class="btn btn_login">LOG IN</button>
-                <a href="#" small id="create_acc" class="form-text text-muted" onclick="create_acc()">CREATE AN ACCOUNT</a><br>
-                <a href="#" id="close_popup" class="close_popup" onclick="toggle()">Close</a>
-            </form>
-            <form id="form_createaccount" action="" >
-                <div class="form-group">
-                    <input type="text" class="form-control" id="InputUsername" placeholder="USERNAME">
-                </div>
-                <div class="form-group">
-                    <input type="email" class="form-control" id="InputEmail_createacc" placeholder="EMAIL">
-                </div>
-                <div class="form-group">
-                    <input type="password" class="form-control" id="InputPassword_createacc" placeholder="PASSWORD">
-                </div>
-                <button type="submit" class="btn btn_register">REGISTER</button>
-                <a href="#" small id="back_login" class="form-text back_login" onclick="login()">BACK TO LOG IN</a><br>
-                <a href="#" id="close_popup" class="close_popup" onclick="toggle()">Close</a>
-            </form>
-        </div>
         <script>
             $('#checkin').datepicker({
                 uiLibrary: 'bootstrap4'
@@ -191,24 +150,5 @@
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-        <script type="text/javascript">
-            function toggle(){
-                var blur = document.getElementById('blur');
-                blur.classList.toggle('active');
-                var popup = document.getElementById('popup');
-                popup.classList.toggle('active');
-
-                $("#form_login").show();
-                $("#form_createaccount").hide();
-            }
-            function create_acc() {
-                $("#form_login").hide();
-                $("#form_createaccount").show();
-            }
-            function login() {
-                $("#form_login").show();
-                $("#form_createaccount").hide();
-            }
-        </script>
     </body>
 </html>

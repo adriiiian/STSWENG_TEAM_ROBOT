@@ -1,25 +1,69 @@
-.viewservices_header{
-    font-size: 80px;
-    color: white;
+.roomslist_con{
+    height: max-content;
+}
+
+.roomslist_header{
+    font-size: 50px;
+    color: #4e4e4e;
     font-family: 'Alata', sans-serif;
     text-align: center;
 }
 
-.viewservices_description{
+.roomslist_description{
     font-size: 14px;
     color: #4e4e4e;
+    text-align: center;
+    margin-top: 20px;
     margin-bottom: 20px;
 }
 
-.viewservices_details{
-    font-size: 14px;
-    color: #4e4e4e;
-    margin-bottom: 20px;
+.card-img-top{
+    height: 300px;
 }
 
-.carousel{
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+.card-title{
+    font-size: 20px;
+    font-weight: 500;
+    font-family: 'Alata', sans-serif;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #4e4e4e;
+    
 }
+
+.card-text{
+    size: 14px;
+}
+
+.card{
+    border-radius: 0px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    max-height: 300px;
+    width: 300px;
+}
+
+.card:hover{
+    transition: 0.2s;
+    transform: scale(1.05);
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top , .card, .card-header, .card-body, .card-footer{
+    border-radius:0 !important;
+} 
+
+.roomslist_grid a:hover{
+    color: #4e4e4e;
+}
+
+.room_filter .btn{
+    background-color: white;
+    color: #4e4e4e;
+    border-radius: 20px;
+
+}
+
 
 .form-group {
     color: #f0ecec;

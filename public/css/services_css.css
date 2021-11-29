@@ -49,6 +49,10 @@
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
 }
 
+.card-img-top , .card, .card-header, .card-body, .card-footer{
+    border-radius:0 !important;
+} 
+
 .serviceslist_grid a:hover{
     color: #4e4e4e;
 }
