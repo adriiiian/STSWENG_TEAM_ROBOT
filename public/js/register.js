@@ -26,7 +26,7 @@ $(document).ready(function(){
 
                 console.log('hello ' + RegInfo.Username)
                 $.post('register', {Username: RegInfo.Username, Email: RegInfo.Email, Password: RegInfo.Password}, function(result){
-
+                    alert('Registered Successfully')
                 })
 
             }
