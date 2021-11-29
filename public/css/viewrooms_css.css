@@ -1,60 +1,24 @@
-.serviceslist_con{
-    height: max-content;
-}
-
-.serviceslist_header{
-    font-size: 50px;
-    color: #4e4e4e;
+.viewrooms_header{
+    font-size: 80px;
+    color: white;
     font-family: 'Alata', sans-serif;
     text-align: center;
 }
 
-.serviceslist_description{
+.viewrooms_description{
     font-size: 14px;
     color: #4e4e4e;
-    text-align: center;
-    margin-top: 20px;
     margin-bottom: 20px;
 }
 
-.card-img-top{
-    height: 300px;
-}
-
-.card-title{
-    font-size: 20px;
-    font-weight: 500;
-    font-family: 'Alata', sans-serif;
-    overflow: hidden !important;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+.viewrooms_details{
+    font-size: 14px;
     color: #4e4e4e;
-    
+    margin-bottom: 20px;
 }
 
-.card-text{
-    size: 14px;
-}
-
-.card{
-    border-radius: 0px;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-    max-height: 300px;
-    width: 300px;
-}
-
-.card:hover{
-    transition: 0.2s;
-    transform: scale(1.05);
-    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
-}
-
-.card-img-top , .card, .card-header, .card-body, .card-footer{
-    border-radius:0 !important;
-} 
-
-.serviceslist_grid a:hover{
-    color: #4e4e4e;
+.carousel{
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
 }
 
 .form-group {
@@ -137,14 +101,4 @@
 
 .back_login {
     color: #4e4e4e;
-}
-
-#remember_me {
-    margin-left: 5px;
-}
-
-.form-check-label {
-    margin-left: 20px;
-    font-family: 'Open Sans', sans-serif;
-    font-size: small;
 }

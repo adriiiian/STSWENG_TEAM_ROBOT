@@ -1,15 +1,15 @@
-.serviceslist_con{
+.roomslist_con{
     height: max-content;
 }
 
-.serviceslist_header{
+.roomslist_header{
     font-size: 50px;
     color: #4e4e4e;
     font-family: 'Alata', sans-serif;
     text-align: center;
 }
 
-.serviceslist_description{
+.roomslist_description{
     font-size: 14px;
     color: #4e4e4e;
     text-align: center;
@@ -53,9 +53,17 @@
     border-radius:0 !important;
 } 
 
-.serviceslist_grid a:hover{
+.roomslist_grid a:hover{
     color: #4e4e4e;
 }
+
+.room_filter .btn{
+    background-color: white;
+    color: #4e4e4e;
+    border-radius: 20px;
+
+}
+
 
 .form-group {
     color: #f0ecec;
@@ -137,14 +145,4 @@
 
 .back_login {
     color: #4e4e4e;
-}
-
-#remember_me {
-    margin-left: 5px;
-}
-
-.form-check-label {
-    margin-left: 20px;
-    font-family: 'Open Sans', sans-serif;
-    font-size: small;
 }
