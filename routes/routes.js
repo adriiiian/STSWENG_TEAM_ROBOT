@@ -20,4 +20,12 @@ router.get('/services', (req, res) => {
 router.get('/view_services', (req, res) => {
     res.render('view_services')
 })
+
+router.get('/rooms', (req, res) => {
+    res.render('rooms')
+})
+
+router.get('/view_rooms', (req, res) => {
+    res.render('view_rooms')
+})
 module.exports = router

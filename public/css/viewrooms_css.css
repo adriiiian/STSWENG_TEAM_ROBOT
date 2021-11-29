@@ -1,17 +1,17 @@
-.viewservices_header{
+.viewrooms_header{
     font-size: 80px;
     color: white;
     font-family: 'Alata', sans-serif;
     text-align: center;
 }
 
-.viewservices_description{
+.viewrooms_description{
     font-size: 14px;
     color: #4e4e4e;
     margin-bottom: 20px;
 }
 
-.viewservices_details{
+.viewrooms_details{
     font-size: 14px;
     color: #4e4e4e;
     margin-bottom: 20px;
