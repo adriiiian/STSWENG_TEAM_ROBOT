@@ -240,7 +240,7 @@
                 <button type="submit" class="btn btn_login" id="login_btn">LOG IN</button>
                 <a href="#" small id="create_acc" class="form-text text-muted" onclick="create_acc()">CREATE AN ACCOUNT</a><br>
                 <input type="checkbox" class="form-check-input" id="remember_me">
-                <label class="form-check-label" for="remember_me">Remember me</label><br>
+                <label class="form-check-label" for="remember_me">Remember me</label><br><br>
                 <a href="#" id="close_popup" class="close_popup" onclick="toggle()">Close</a>
             </form>
             <form id="form_createaccount" action="" >
@@ -285,10 +285,12 @@
             function create_acc() {
                 $("#form_login").hide();
                 $("#form_createaccount").show();
+                $("#register_error").hide();
             }
             function login() {
                 $("#form_login").show();
                 $("#form_createaccount").hide();
+                $("#login_error").hide();
             }
         </script>
     </body>
