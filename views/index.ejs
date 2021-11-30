@@ -2,7 +2,6 @@
 
 <html>
     <head>
-        
         <link rel="stylesheet" href="./css/index_css.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -33,16 +32,15 @@
                     <a class="nav-item nav-link" href="#">About</a>
                     <a class="nav-item nav-link" href="#contactus_section">Contact Us</a>
                     <!--IF LOGGED OUT-->
-                    <!--<a class="nav-item nav-link btn_nav_login" href="#" onclick="toggle()">LOG IN</a>-->
-                  
+                    <a id="logged-out-nav" class="nav-item nav-link btn_nav_login" href="#" onclick="toggle()">LOG IN</a>
                     <!--IF LOGGED IN-->
-                    <div class="dropdown account_dropdown">
+                    <div id="logged-in-nav" style="display: none;" class="dropdown account_dropdown">
                         <button class="btn ml-4 btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           ACCOUNT
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                           <a class="dropdown-item" href="#">TRANSACTIONS</a>
-                          <a class="dropdown-item" href="#" style="font-weight: 500;">LOG OUT</a>
+                          <a class="dropdown-item" href="logout" style="font-weight: 500;">LOG OUT</a>
                         </div>
                     </div>
                   </div>

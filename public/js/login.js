@@ -1,22 +1,31 @@
 $(document).ready(function () 
 {
+    
+    $.get('check-session', function(result) {
+        if(result == true) {
+            $('#logged-in-nav').show()
+            $('#logged-out-nav').hide()
+        }
+        else {
+            $('#logged-in-nav').hide()
+            $('#logged-out-nav').show()
+        }
+    })
     $('#form_login').submit(async function () {
         var LoginInfo = {
             Email: $('#InputEmail_login').val(),
             Password: $('#InputPassword_login').val()
         };
-        //console.log('email = ' + LoginInfo.Email + ' ;;; password = ' + LoginInfo.Password)
+
         $.get('check-login-info', {LoginInfo}, function(result) {
 
             if(result == 'invalid-email') {
-                $('#login_error').text('Email is not registered')
+                $('#login_error').show()
             }
             else if (result == 'invalid-pw') {
-                $('#login_error').text('Password is incorrect')
+                $('#login_error').show()
             }
             else if(result == 'success') {
-                //console.log('Logged in successfuly as ' + LoginInfo.Email)
-
                 // hide popup form
                 $('#login_error').text('')
                 var blur = document.getElementById('blur')
@@ -25,13 +34,16 @@ $(document).ready(function ()
                 popup.classList.toggle('active')
                 $("#form_login").hide()
                 $("#form_createaccount").hide()
+
+                $('#logged-in-nav').show()
+                $('#logged-out-nav').hide()
             }
         })
     })
      $('#close_popup').on("click", function() {
         $('#InputEmail_login').val('')
         $('#InputPassword_login').val('')
-        $('#login_error').text('')
+        $('#login_error').hide()
      })
    
 })
