@@ -26,4 +26,11 @@ router.get('/rooms', loginController.viewRooms)
 
 router.get('/view_rooms', loginController.viewViewRooms)
 
+router.get('/transactions', (req, res) => {
+    res.render('transactions')
+})
+
+router.get('/view_transactions', (req, res) => {
+    res.render('view_transactions')
+})
 module.exports = router

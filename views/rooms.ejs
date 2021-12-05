@@ -42,8 +42,8 @@
                         ACCOUNT
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">TRANSACTIONS</a>
-                        <a class="dropdown-item" href="logout" style="font-weight: 500;">LOG OUT</a>
+                          <a class="dropdown-item" href="transactions">TRANSACTIONS</a>
+                          <a class="dropdown-item" href="logout" style="font-weight: 500;">LOG OUT</a>
                         </div>
                     </div>
                     <% }%>
@@ -84,17 +84,23 @@
                     <div class="roomslist_description">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
                     </div>
-                    <div class="dropdown room_filter">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          Room filter
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                          <a class="dropdown-item" href="#">Type 1</a>
-                          <a class="dropdown-item" href="#">Type 2</a>
-                          <a class="dropdown-item" href="#">Type 3</a>
-                        </div>
-                      </div>
+                    
+                   
                     <div class="homeroomlist_grid">
+                        <div class="align-self-start pt-3">
+                            <span class="dropdown room_filter">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  Room filter
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                  <a class="dropdown-item" href="#">Type 1</a>
+                                  <a class="dropdown-item" href="#">Type 2</a>
+                                  <a class="dropdown-item" href="#">Type 3</a>
+                                </div>
+                            </span>
+                            <a style="color: #4e4e4e;"class="pl-3" href="#">Apply</a>
+                            <a style="color: #4e4e4e;" class="pl-3" href="#">Clear</a>
+                        </div>
                         <div class="row d-flex justify-content-around">
                             <a class="col-sm-4 py-5 px-4 d-flex justify-content-center" href="view_rooms" style="max-width:  max-content;;">
                                 <div class="card mb-4 border-0">
