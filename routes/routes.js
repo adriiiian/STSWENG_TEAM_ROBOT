@@ -28,4 +28,12 @@ router.get('/rooms', (req, res) => {
 router.get('/view_rooms', (req, res) => {
     res.render('view_rooms')
 })
+
+router.get('/transactions', (req, res) => {
+    res.render('transactions')
+})
+
+router.get('/view_transactions', (req, res) => {
+    res.render('view_transactions')
+})
 module.exports = router

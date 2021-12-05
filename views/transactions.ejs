@@ -3,7 +3,7 @@
 <html>
     <head>
         <link rel="stylesheet" href="./css/index_css.css">
-        <link rel="stylesheet" href="./css/rooms_css.css">
+        <link rel="stylesheet" href="./css/transactions_css.css">
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -27,7 +27,7 @@
                 <div class="collapse navbar-collapse justify-content-start" id="navbarNavAltMarkup">
                   <div class="navbar-nav ml-auto text-right float-right">
                     <a class="nav-item nav-link" href="index">Home <span class="sr-only">(current)</span></a>
-                    <a class="nav-item nav-link active" href="#">Rooms</a>
+                    <a class="nav-item nav-link" href="rooms">Rooms</a>
                     <a class="nav-item nav-link" href="services">Services</a>
                     <a class="nav-item nav-link" href="#">About</a>
                     <a class="nav-item nav-link" href="#contactus_section">Contact Us</a>
@@ -40,54 +40,29 @@
                           ACCOUNT
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                          <a class="dropdown-item" href="transactions">TRANSACTIONS</a>
+                          <a class="dropdown-item" href="#">TRANSACTIONS</a>
                           <a class="dropdown-item" href="#" style="font-weight: 500;">LOG OUT</a>
                         </div>
                     </div>
-                </div>
+                  </div>
                 </div>
               </nav>
         </div>
-        
-        <div class="container-fluid px-0 content_con" style="margin-top: 100px;">
-            <div class="container">
-                <div class="book_con">
-                    <div class="container">
-                        <form class="row mx-auto book_form" action="">
-                            <div class="col-sm-3 mx-auto book_form_label">
-                                CHECK IN
-                                <input id="checkin"/>
-                            </div>
-                            <div class="col-sm-3 mx-auto book_form_label">
-                                CHECK OUT
-                                <input id="checkout"/>
-                            </div>
-                            <div class="col-sm-3 mx-auto book_form_label">
-                                GUESTS
-                                <input type="number" id="numpeople" name="firstname">
-                            </div>
-                            <div class="col-sm-2.5 mx-auto">
-                                <a class="mx-auto btn_booknow" type="submit" value="Submit" href="#" onclick="toggle()">Book now</a>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
+        <div class="container-fluid px-0 content_con" style="margin-top: 50px;">
+            
             <div class="container-fluid py-5">
-                <div class="container d-flex justify-content-center flex-column align-items-center">
-                    <div class="roomslist_header">
-                        Rooms
+                <div class="container">
+                    <div class="transactionslist_header">
+                        Transactions
                     </div>
-                    <div class="roomslist_description">
+                    <div class="transactionslist_description">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
                     </div>
-                    
-                   
-                    <div class="homeroomlist_grid">
-                        <div class="align-self-start pt-3">
-                            <span class="dropdown room_filter">
+                    <div class="transactionslist_grid mx-5 d-flex justify-content-center flex-column">
+                        <div class="mt-3 align-self-start">
+                            <span class="dropdown transactions_filter">
                                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  Room filter
+                                  Filter
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                   <a class="dropdown-item" href="#">Type 1</a>
@@ -95,37 +70,93 @@
                                   <a class="dropdown-item" href="#">Type 3</a>
                                 </div>
                             </span>
-                            <a style="color: #4e4e4e;"class="pl-3" href="#">Apply</a>
-                            <a style="color: #4e4e4e;" class="pl-3" href="#">Clear</a>
+                            <span class="dropdown transactions_sort">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  Sort
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                  <a class="dropdown-item" href="#">Type 1</a>
+                                  <a class="dropdown-item" href="#">Type 2</a>
+                                  <a class="dropdown-item" href="#">Type 3</a>
+                                </div>
+                            </span>
+                            <a class="pl-3" href="#">Apply</a>
+                            <a class="pl-3" href="#">Clear</a>
                         </div>
+                        
                         <div class="row d-flex justify-content-around">
-                            <a class="col-sm-4 py-5 px-4 d-flex justify-content-center" href="view_rooms" style="max-width:  max-content;;">
-                                <div class="card mb-4 border-0">
-                                    <img src="./images/hotel_bg.jpg" class="card-img-top" alt="test">
-                                    <div class="card-body">
-                                        <h5 class="card-title my-auto">Single Room </h5>
+                            <div class="col-sm-12 py-5 d-flex justify-content-center flex-column" href="view_transactions">
+                                <div class="card mb-5 border-0">
+                                    <div class="card-body d-flex flex-row justify-content-between">
+                                        <h5 class="card-title my-auto ">
+                                            <a href="view_transactions">
+                                                Room type
+                                            </a>
+                                        </h5>
+                                        <span class="">
+                                            <span class="date1">
+                                                11/08/21
+                                            </span>
+                                            <span style="color: rgb(185, 185, 185);">to</span>
+                                            <span class="date2">
+                                                11/10/21
+                                            </span>
+                                            <span >
+                                                <a href="#" class="btn_cancel_transaction" data-toggle="modal" data-target="#data_modal_cancel">Cancel</a>
+                                            </span>
+                                        </span>
                                     </div>
-                                    <div class="card-footer">P 15000.00 PER NIGHT</div>
+                                    <div class="border_bottom_active"></div>
                                 </div>
-                            </a>
-                            <a class="col-sm-4 py-5 px-4 d-flex justify-content-center" href="view_rooms" style="max-width:  max-content;;">
-                                <div class="card mb-4 border-0">
-                                    <img src="./images/hotel_bg.jpg" class="card-img-top" alt="test">
-                                    <div class="card-body">
-                                        <h5 class="card-title my-auto">Single Room </h5>
+                                <div class="card mb-5 border-0">
+                                    <div class="card-body d-flex flex-row justify-content-between">
+                                        <h5 class="card-title my-auto ">
+                                            <a href="view_transactions">
+                                                Room type
+                                            </a>
+                                        </h5>
+                                        <span class="">
+                                            <span class="date1">
+                                                11/08/21
+                                            </span>
+                                            <span style="color: rgb(185, 185, 185);">to</span>
+                                            <span class="date2">
+                                                11/10/21
+                                            </span>
+                                            <span>
+                                                <a href="#" type="button" class="btn_review_transaction" data-toggle="modal" data-target="#data_modal_review">
+                                                    Review
+                                                </a>
+                                            </span>
+                                        </span>
                                     </div>
-                                    <div class="card-footer">P 15000.00 PER NIGHT</div>
+                                    <div class="border_bottom_done"></div>
                                 </div>
-                            </a>
-                            <a class="col-sm-4 py-5 px-4 d-flex justify-content-center" href="view_rooms" style="max-width:  max-content;;">
-                                <div class="card mb-4 border-0">
-                                    <img src="./images/hotel_bg.jpg" class="card-img-top" alt="test">
-                                    <div class="card-body">
-                                        <h5 class="card-title my-auto">Single Room </h5>
+                                <div class="card mb-5 border-0">
+                                    <div class="card-body d-flex flex-row justify-content-between">
+                                        <h5 class="card-title my-auto ">
+                                            <a href="view_transactions">
+                                                Room type
+                                            </a>
+                                        </h5>
+                                        <span class="">
+                                            <span class="date1">
+                                                11/08/21
+                                            </span>
+                                            <span style="color: rgb(185, 185, 185);">to</span>
+                                            <span class="date2">
+                                                11/10/21
+                                            </span>
+                                            <span >
+                                                <a href="#" class="btn_cancel_transaction" data-toggle="modal" data-target="#data_modal_cancel">Cancel</a>
+                                            </span>
+                                        </span>
                                     </div>
-                                    <div class="card-footer">P 15000.00 PER NIGHT</div>
+                                    <div class="border_bottom_active"></div>
                                 </div>
-                            </a>
+                               
+                            </div>
+                            
                         </div>
                     </div>
                 </div>
@@ -187,6 +218,56 @@
                 <a href="#" small id="back_login" class="form-text back_login" onclick="login()">BACK TO LOG IN</a><br>
                 <a href="#" id="close_popup" class="close_popup" onclick="toggle()">Close</a>
             </form>
+        </div>
+        
+        <!-- Modal Review-->
+        <div class="modal fade modal_review" id="data_modal_review" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content px-3 pb-2" >
+                    <div class="modal-header">
+                    <h5 class="modal-title my-auto mr-5" id="data_modal_review">Review</h5>
+                    <div class="rating"> 
+                        <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label> 
+                        <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label> 
+                        <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label> 
+                        <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label> 
+                        <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
+                    </div>
+                    </div>
+                    <div class="modal-body">
+                        <form id="form_review" action="">
+                            <input type="message" class="form-control" id="" placeholder="">
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                    <span class="btn_close_review px-2" >
+                        <a href="#" data-dismiss="modal">Close</a>
+                    </span>
+                    <span class="btn_save_review">
+                        <a href="#">Save changes</a>
+                    </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Cancel-->
+        <div class="modal fade modal_cancel" id="data_modal_cancel" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" style="width: 300px;"role="document">
+                <div class="modal-content px-3 pb-2" >
+                    <div class="modal-header">
+                    <h5 class="modal-title my-auto mr-5" id="data_modal_cancel">Cancel reservation?</h5>
+                    </div>
+                    <div class="modal-footer">
+                    <span class="btn_close_review px-2" >
+                        <a href="#" data-dismiss="modal">No</a>
+                    </span>
+                    <span class="btn_save_review">
+                        <a href="#">Yes</a>
+                    </span>
+                    </div>
+                </div>
+            </div>
         </div>
         <script>
             $('#checkin').datepicker({
