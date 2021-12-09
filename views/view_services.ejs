@@ -170,8 +170,11 @@
                   <div class="form-group">
                     <input type="password" class="form-control" id="InputPassword_login" placeholder="PASSWORD">
                   </div>
+                  <p id="login_error" class="text-danger h6 text-center">Incorrect email/password</p>
                 <button type="submit" class="btn btn_login">LOG IN</button>
                 <a href="#" small id="create_acc" class="form-text text-muted" onclick="create_acc()">CREATE AN ACCOUNT</a><br>
+                <input type="checkbox" class="form-check-input" id="remember_me">
+                <label class="form-check-label" for="remember_me">Remember me</label><br><br>
                 <a href="#" id="close_popup" class="close_popup" onclick="toggle()">Close</a>
             </form>
             <form id="form_createaccount" action="" >
@@ -184,6 +187,7 @@
                 <div class="form-group">
                     <input type="password" class="form-control" id="InputPassword_createacc" placeholder="PASSWORD">
                 </div>
+                <p id="register_error" class="text-danger h6 text-center">Invalid input</p>
                 <button type="submit" class="btn btn_register">REGISTER</button>
                 <a href="#" small id="back_login" class="form-text back_login" onclick="login()">BACK TO LOG IN</a><br>
                 <a href="#" id="close_popup" class="close_popup" onclick="toggle()">Close</a>
@@ -209,14 +213,18 @@
 
                 $("#form_login").show();
                 $("#form_createaccount").hide();
+                $("#login_error").hide();
+                $("#register_error").hide();
             }
             function create_acc() {
                 $("#form_login").hide();
                 $("#form_createaccount").show();
+                $("#register_error").hide();
             }
             function login() {
                 $("#form_login").show();
                 $("#form_createaccount").hide();
+                $("#login_error").hide();
             }
         </script>
     </body>
