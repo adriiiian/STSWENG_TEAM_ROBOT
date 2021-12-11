@@ -4,49 +4,26 @@ const loginController = require('../controllers/login-controller');
 
 const router = express.Router()
 
-router.get('/', (req, res) => {
-    var sessionActive = false
 
-    if(req.session.email) {
-        sessionActive = true
-    }
 
-    res.render('index', {sessionActive: sessionActive})
-})
+router.get('/', loginController.viewIndex)
 
-router.get('/check-session', (req, res) => {
-    if(req.session.email) {
-        res.send(true)
-    }
-    else {
-        res.send(false)
-    }
-})
+router.get('/index', loginController.viewIndex)
 
-router.get('/index', (req, res) => {
-    res.redirect('/')
-})
+router.get('/save-current-user', loginController.Save)
 
-router.get('/services', (req, res) => {
-    res.render('services')
-})
-
-router.get('/view_services', (req, res) => {
-    res.render('view_services')
-})
+router.get('/check-current-user', loginController.Check)
 
 router.get('/check-login-info', loginController.Login)
 
-router.get('/logout', (req, res) => {
-    req.session.destroy
-    res.redirect('/')
-})
+router.get('/logout', loginController.Logout)
 
-router.get('/rooms', (req, res) => {
-    res.render('rooms')
-})
+router.get('/services', loginController.viewServices)
 
-router.get('/view_rooms', (req, res) => {
-    res.render('view_rooms')
-})
+router.get('/view_services', loginController.viewViewServices)
+
+router.get('/rooms', loginController.viewRooms)
+
+router.get('/view_rooms', loginController.viewViewRooms)
+
 module.exports = router

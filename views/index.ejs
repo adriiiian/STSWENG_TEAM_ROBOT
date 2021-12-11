@@ -31,18 +31,22 @@
                     <a class="nav-item nav-link" href="services">Services</a>
                     <a class="nav-item nav-link" href="#">About</a>
                     <a class="nav-item nav-link" href="#contactus_section">Contact Us</a>
+                    <% if (!_email) {%>
                     <!--IF LOGGED OUT-->
                     <a id="logged-out-nav" class="nav-item nav-link btn_nav_login" href="#" onclick="toggle()">LOG IN</a>
+                    <% } else {%>
                     <!--IF LOGGED IN-->
-                    <div id="logged-in-nav" style="display: none;" class="dropdown account_dropdown">
+                    <div id="logged-in-nav" class="dropdown account_dropdown">
                         <button class="btn ml-4 btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          ACCOUNT
+                        ACCOUNT
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                          <a class="dropdown-item" href="#">TRANSACTIONS</a>
-                          <a class="dropdown-item" href="logout" style="font-weight: 500;">LOG OUT</a>
+                        <a class="dropdown-item" href="#">TRANSACTIONS</a>
+                        <a class="dropdown-item" href="logout" style="font-weight: 500;">LOG OUT</a>
                         </div>
                     </div>
+                    <% }%>
+                    
                   </div>
                 </div>
               </nav>

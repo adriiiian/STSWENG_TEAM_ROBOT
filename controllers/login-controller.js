@@ -1,7 +1,14 @@
-const db = require('../models/database.js');
+const db = require('../models/database.js')
 
-const loginController = {
+var _email = ''
 
+const loginController = { 
+    viewIndex: (req, res) => {
+        if(req.session.email) {
+            _email = req.session.email
+        }
+        res.render('index', {_email})
+    },
 
     Login: async (req, res) => {
         var LoginInfo = req.query.LoginInfo
@@ -11,12 +18,12 @@ const loginController = {
                 
                 if(User) {
                     if(User.Password == LoginInfo.Password) {
-                        if(LoginInfo.RememberMe == true) {
+
+                        if(LoginInfo.RememberMe == 'true'){
                             req.session.email = User.Email
                             req.session.username = User.Username
-                            console.log('remember me is checked')
                         }
-                        
+                            
                         res.send('success')
                     }
                     else {
@@ -28,8 +35,58 @@ const loginController = {
                 }
 
             })
-    }
+    },
     
+    Save: (req, res) => {
+        _email = req.query.Email
+        res.send('success')
+    },
+
+    Check: (req, res) => {
+        if(req.session.email) {
+            res.send(req.session.email)
+        }
+        else if(_email){
+            res.send(_email)
+        }
+        else {
+            res.send()
+        }
+    },
+
+    Logout: (req, res) => {
+        _email = ''
+        req.session.destroy()
+        res.redirect('/')
+    },
+
+    viewRooms: (req, res) => {
+        if(req.session.email) {
+            _email = req.session.email
+        }
+        res.render('rooms', {_email})
+    },
+
+    viewViewRooms: (req, res) => {
+        if(req.session.email) {
+            _email = req.session.email
+        }
+        res.render('view_rooms', {_email})
+    },
+
+    viewServices: (req, res) => {
+        if(req.session.email) {
+            _email = req.session.email
+        }
+        res.render('services', {_email})
+    },
+
+    viewViewServices: (req, res) => {
+        if(req.session.email) {
+            _email = req.session.email
+        }
+        res.render('view_services', {_email})
+    }
 }
 
-module.exports = loginController;
+module.exports = loginController

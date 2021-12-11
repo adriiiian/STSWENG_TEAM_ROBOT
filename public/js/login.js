@@ -1,22 +1,20 @@
 $(document).ready(function () 
 {
-    
-    $.get('check-session', function(result) {
-        if(result == true) {
-            $('#logged-in-nav').show()
-            $('#logged-out-nav').hide()
-        }
-        else {
-            $('#logged-in-nav').hide()
-            $('#logged-out-nav').show()
+    var _email = ''
+
+    $.get('check-current-user', function(result) {
+        if(result) {
+            _email = result
         }
     })
+
     $('#form_login').submit(async function () {
         var LoginInfo = {
             Email: $('#InputEmail_login').val(),
-            Password: $('#InputPassword_login').val()
+            Password: $('#InputPassword_login').val(),
+            RememberMe: $('#remember_me').is(':checked').toString()
         };
-
+        
         $.get('check-login-info', {LoginInfo}, function(result) {
 
             if(result == 'invalid-email') {
@@ -26,17 +24,12 @@ $(document).ready(function ()
                 $('#login_error').show()
             }
             else if(result == 'success') {
-                // hide popup form
-                $('#login_error').text('')
-                var blur = document.getElementById('blur')
-                blur.classList.toggle('active')
-                var popup = document.getElementById('popup')
-                popup.classList.toggle('active')
-                $("#form_login").hide()
-                $("#form_createaccount").hide()
-
-                $('#logged-in-nav').show()
-                $('#logged-out-nav').hide()
+                $.get('save-current-user', {Email: LoginInfo.Email}, function(result) {
+                    if(result == 'success') {
+                        window.location.href = '/'
+                    }
+                })
+                
             }
         })
     })
