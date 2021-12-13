@@ -28,6 +28,6 @@ router.get('/view_rooms', loginController.viewViewRooms)
 
 router.get('/transactions', loginController.viewTransactions)
 
-router.get('/view_transactions', loginController.viewTransactions)
+router.get('/view_transactions', loginController.viewViewTransactions)
 
 module.exports = router
