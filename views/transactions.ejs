@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
         <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+        <script src="./js/login.js"></script>
     </head>
     <body>
         <div class="container_whole" id="blur">
@@ -31,19 +32,21 @@
                     <a class="nav-item nav-link" href="services">Services</a>
                     <a class="nav-item nav-link" href="#">About</a>
                     <a class="nav-item nav-link" href="#contactus_section">Contact Us</a>
+                    <% if (!_email) {%>
                     <!--IF LOGGED OUT-->
-                    <!--<a class="nav-item nav-link btn_nav_login" href="#" onclick="toggle()">LOG IN</a>-->
-                  
+                    <a id="logged-out-nav" class="nav-item nav-link btn_nav_login" href="#" onclick="toggle()">LOG IN</a>
+                    <% } else {%>
                     <!--IF LOGGED IN-->
-                    <div class="dropdown account_dropdown">
+                    <div id="logged-in-nav" class="dropdown account_dropdown">
                         <button class="btn ml-4 btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          ACCOUNT
+                        ACCOUNT
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                          <a class="dropdown-item" href="#">TRANSACTIONS</a>
-                          <a class="dropdown-item" href="#" style="font-weight: 500;">LOG OUT</a>
+                          <a class="dropdown-item" href="transactions">TRANSACTIONS</a>
+                          <a class="dropdown-item" href="logout" style="font-weight: 500;">LOG OUT</a>
                         </div>
                     </div>
+                    <% }%>
                   </div>
                 </div>
               </nav>

@@ -86,6 +86,20 @@ const loginController = {
             _email = req.session.email
         }
         res.render('view_services', {_email})
+    },
+
+    viewTransactions: (req, res) => {
+        if(req.session.email) {
+            _email = req.session.email
+        }
+        res.render('transactions', {_email})
+    },
+
+    viewViewTransactions: (req, res) => {
+        if(req.session.email) {
+            _email = req.session.email
+        }
+        res.render('view_transactions', {_email})
     }
 }
 
