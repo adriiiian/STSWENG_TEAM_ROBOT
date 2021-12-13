@@ -456,7 +456,7 @@ body{
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: auto;
+    width: 300px;
     padding: 30px;
     box-shadow: 0 5px 30px rgba(0, 0, 0, .30);
     background: #fff;
