@@ -12,23 +12,7 @@ on:
 jobs:
   build:
 
-<<<<<<< 9624472a220c96d0061c2d2da42c9968fcbc2430
-<<<<<<< 9624472a220c96d0061c2d2da42c9968fcbc2430
-<<<<<<< 9624472a220c96d0061c2d2da42c9968fcbc2430
-<<<<<<< 9624472a220c96d0061c2d2da42c9968fcbc2430
     runs-on: windows-latest
-=======
-    runs-on: self-hosted
->>>>>>> node.js.yml
-=======
-    runs-on: self-hosted
->>>>>>> node.js.yml
-=======
-    runs-on: windows-latest, ubuntu-latest
->>>>>>> update node.js.yml
-=======
-    runs-on: windows-latest
->>>>>>> Update node.js.yml
 
     strategy:
       matrix:
@@ -44,40 +28,6 @@ jobs:
         cache: 'npm'
     - run: npm i
     - run: npm ci
-<<<<<<< 9624472a220c96d0061c2d2da42c9968fcbc2430
-<<<<<<< 9624472a220c96d0061c2d2da42c9968fcbc2430
-<<<<<<< 9624472a220c96d0061c2d2da42c9968fcbc2430
-<<<<<<< 9624472a220c96d0061c2d2da42c9968fcbc2430
-<<<<<<< 9624472a220c96d0061c2d2da42c9968fcbc2430
-<<<<<<< 9624472a220c96d0061c2d2da42c9968fcbc2430
     - run: npm install --save-dev jest
     - run: npm run build --if-present
     - run: npm test
-=======
-    - run: npm run build --if-present
-    - run: npm test
->>>>>>> node.js.yml
-=======
-=======
-    - run: yarn
->>>>>>> Update node.js.yml
-    - run: npm run build --if-present
-    - run: npm test
->>>>>>> node.js.yml
-=======
-    - run: yarn install
-    - run: npm run build --if-present
-<<<<<<< 9624472a220c96d0061c2d2da42c9968fcbc2430
-    - run: yarn test:ci
->>>>>>> Update node.js.yml
-=======
-    - run: yarn test
->>>>>>> Update node.js.yml
-=======
-    - run: npm install jest
-=======
-    - run: npm install --save-dev jest
->>>>>>> Update node.js.yml
-    - run: npm run build --if-present
-    - run: npm test
->>>>>>> Update node.js.yml
