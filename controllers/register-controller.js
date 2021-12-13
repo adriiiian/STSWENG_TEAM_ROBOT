@@ -32,15 +32,18 @@ const registerController = {
             Username: req.body.Username,
             Password: req.body.Password
         }
+        var result
 
         initSchema(RegInfo).then((schema) => {
             let newUser = new User(schema);
             newUser.save((err, newUser) => {                                // Registers the user into the database
                 if(err){
                     res.redirect('index');
+                    result = "Registration failed"
                 }
                 else if(newUser){
                     console.log("Successfully registered.");
+                    result = "Successfully registered"
                     res.redirect('index');
                 }
                 else{
@@ -48,6 +51,8 @@ const registerController = {
                 }
             })
         })
+
+        return result;
     }
     
 }

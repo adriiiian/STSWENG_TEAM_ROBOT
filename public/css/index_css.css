@@ -229,6 +229,7 @@ body{
     max-height: 300px;
     width: 300px;
     border: none;
+    
 }
 
 .card:hover{
@@ -415,10 +416,6 @@ body{
     color: #f0ecec;
 }
 
-#back_login {
-    margin-left: 40px;
-}
-
 .btn_login{
     text-align: center;
     height: max-content;
@@ -428,7 +425,6 @@ body{
     background-color: #DCA73A;
     color: white;
     text-transform: uppercase;
-    margin-left: 62px;
     border-radius: 20px;
     max-width: 150px;
     min-width: 50px;
@@ -443,7 +439,6 @@ body{
     background-color: #DCA73A;
     color: white;
     text-transform: uppercase;
-    margin-left: 54px;
     border-radius: 20px;
     max-width: 150px;
     min-width: 50px;
@@ -456,6 +451,7 @@ body{
 }
 
 #popup {
+    text-align: center;
     position: fixed;
     top: 40%;
     left: 50%;
@@ -480,15 +476,15 @@ body{
     align-items: center;
 }
 
-.text-muted {
-    margin-left: 25px;
-}
-
 .close_popup {
     color: #4e4e4e;
-    margin-left: 158px;
 }
 
 .back_login {
     color: #4e4e4e;
+}
+
+.form-check-label {
+    font-family: 'Open Sans', sans-serif;
+    font-size: small;
 }

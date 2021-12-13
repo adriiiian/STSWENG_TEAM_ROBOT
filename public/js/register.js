@@ -6,31 +6,58 @@ $(document).ready(function(){
             Password: $('#InputPassword_createacc').val()
         };
 
-        $.get('check-reg-info', {RegInfo}, function(result){
-            if(result == 'email is already registered'){
-                $('#register_error').text('Email is already registered')
-                $('#register_error').show()
-            }
-            else if(result == 'password is too short'){
-                $('#register_error').text('Password must be atleast 5 characters')
-                $('#register_error').show()
-            }
-            else if(result == 'success'){
+        if($('#InputUsername').val() == "" || $('#InputEmail_createacc').val() == "" || $('#InputPassword_createacc').val() == ""){
+            if($('#InputUsername').val() == ""){
                 $('#register_error').text('');
-                var blur = document.getElementById('blur')
-                blur.classList.toggle('active')
-                var popup = document.getElementById('popup')
-                popup.classList.toggle('active')
-                $("#form_login").hide()
-                $("#form_createaccount").hide()
-
-                console.log('hello ' + RegInfo.Username)
-                $.post('register', {Username: RegInfo.Username, Email: RegInfo.Email, Password: RegInfo.Password}, function(result){
-                    alert('Registered Successfully')
-                })
-
+                $('#register_error').text('Please enter a valid Username')
+                $('#register_error').show()
             }
-        })
+            else if($('#InputEmail_createacc').val() == ""){
+                $('#register_error').text('');
+                $('#register_error').text('Please enter a valid Email')
+                $('#register_error').show()
+            }
+            else if($('#InputPassword_createacc').val() == ""){
+                $('#register_error').text('');
+                $('#register_error').text('Please enter a valid password')
+                $('#register_error').show()
+            }
+            
+        }
+        else{
+            $('#register_error').hide()
+            $.get('check-reg-info', {RegInfo}, function(result){
+                if(result == 'email is already registered'){
+                    $('#register_error').text('Email is already registered')
+                    $('#register_error').show()
+                }
+                else if(result == 'password is too short'){
+                    $('#register_error').text('Password must be atleast 5 characters')
+                    $('#register_error').show()
+                }
+                else if(result == 'success'){
+                    $('#register_error').text('');
+                    var blur = document.getElementById('blur')
+                    blur.classList.toggle('active')
+                    var popup = document.getElementById('popup')
+                    popup.classList.toggle('active')
+                    $('#form_login').hide()
+                    $('#form_createaccount').hide()
+                    $('#register_error').hide()
+                    $('#InputUsername').val("")
+                    $('#InputEmail_createacc').val("")
+                    $('#InputPassword_createacc').val("")
+    
+                    console.log('hello ' + RegInfo.Username)
+                    $.post('register', {Username: RegInfo.Username, Email: RegInfo.Email, Password: RegInfo.Password}, function(result){
+                        alert('Registered Successfully')
+                    })
+    
+                }
+            })
+        }
+
+        
     })
 
     $('#close_popup').on("click", function() {
