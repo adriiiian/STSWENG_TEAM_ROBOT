@@ -1,23 +1,40 @@
 const db = require('../models/database.js');
+const helper = require('../helpers/register-check.js')
 const User = require('../models/account');
 
 const registerController = {
 
     CheckFields: async (req, res) => {
         var RegInfo = req.query.RegInfo
-
-        if(RegInfo.Username == ""){
-            res.send('invalid username')
+        var result = await helper.CheckRegisterError(RegInfo.Username, RegInfo.Email, RegInfo.Password)
+        if(result == 'register information is valid'){
+            res.send('register information is valid')
         }
-        else if(RegInfo.Email == ""){
+        else if(result == 'email should be valid'){
             res.send('invalid email')
         }
-        else if(RegInfo.Password == ""){
+        else if(result == 'password is too short'){
             res.send('invalid password')
         }
-        else{
-            res.send('valid')
+        else if(result == 'username should be valid'){
+            res.send('invalid username')
         }
+        else{
+            res.send('register information is not valid')
+        }
+
+        // if(RegInfo.Username == ""){
+        //     res.send('invalid username')
+        // }
+        // else if(RegInfo.Email == ""){
+        //     res.send('invalid email')
+        // }
+        // else if(RegInfo.Password == ""){
+        //     res.send('invalid password')
+        // }
+        // else{
+        //     res.send('valid')
+        // }
     },
 
     IsValid: async (req, res) => {

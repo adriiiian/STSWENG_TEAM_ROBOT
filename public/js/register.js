@@ -22,7 +22,12 @@ $(document).ready(function(){
                 $('#register_error').text('Please enter a valid password')
                 $('#register_error').show()
             }
-            else if(result == 'valid'){
+            else if(result == 'register information is not valid'){
+                $('#register_error').text('');
+                $('#register_error').text('Please input correctly')
+                $('#register_error').show()
+            }
+            else if(result == 'register information is valid'){
                 $('#register_error').hide()
                 $.get('check-reg-info', {RegInfo}, function(result){
                     if(result == 'email is already registered'){
