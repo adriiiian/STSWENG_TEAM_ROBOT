@@ -4,36 +4,30 @@ const loginController = require('../controllers/login-controller');
 
 const router = express.Router()
 
-router.get('/', (req, res) => {
-    res.render('index')
-})
-
-router.get('/index', (req, res) => {
-    res.redirect('/')
-})
 
 
-router.get('/services', (req, res) => {
-    res.render('services')
-})
+router.get('/', loginController.viewIndex)
 
-router.get('/view_services', (req, res) => {
-    res.render('view_services')
-})
+router.get('/index', loginController.viewIndex)
 
-router.get('/rooms', (req, res) => {
-    res.render('rooms')
-})
+router.get('/save-current-user', loginController.Save)
 
-router.get('/view_rooms', (req, res) => {
-    res.render('view_rooms')
-})
+router.get('/check-current-user', loginController.Check)
 
-router.get('/transactions', (req, res) => {
-    res.render('transactions')
-})
+router.get('/check-login-info', loginController.Login)
 
-router.get('/view_transactions', (req, res) => {
-    res.render('view_transactions')
-})
+router.get('/logout', loginController.Logout)
+
+router.get('/services', loginController.viewServices)
+
+router.get('/view_services', loginController.viewViewServices)
+
+router.get('/rooms', loginController.viewRooms)
+
+router.get('/view_rooms', loginController.viewViewRooms)
+
+router.get('/transactions', loginController.viewTransactions)
+
+router.get('/view_transactions', loginController.viewViewTransactions)
+
 module.exports = router
