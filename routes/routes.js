@@ -36,4 +36,8 @@ router.get('/transactions', (req, res) => {
 router.get('/view_transactions', (req, res) => {
     res.render('view_transactions')
 })
+
+router.get('/booking', (req, res) => {
+    res.render('booking')
+})
 module.exports = router

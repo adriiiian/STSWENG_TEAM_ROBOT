@@ -1,0 +1,24 @@
+label{
+    font-size: 14px;
+    font-weight: 500;
+    color:#4e4e4e;
+}
+
+.btn_book a{
+    text-align: center;
+    height: max-content;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #DCA73A;
+    color: white;
+    border-radius: 20px;
+    max-width: max-content;
+    min-width: 50px;
+}
+
+.btn_book a:hover{
+    color: white;
+    transform: scale(1.2);
+    transition: 0.2s;
+}

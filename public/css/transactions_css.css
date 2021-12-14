@@ -65,11 +65,7 @@
     transition: 0.2s;
 }
 
-.btn_close_review a{
-    color:#4e4e4e;
-}
-
-.btn_close_review a:hover{
+.btn_close_review a, .btn_close_review a:hover{
     color:#4e4e4e;
 }
 
