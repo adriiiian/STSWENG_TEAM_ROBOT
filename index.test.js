@@ -18,8 +18,8 @@ describe('Username field is empty', () => {
     it('When Username field is empty', () => {
         var RegInfo = {
             Email: "Test01@gmail.com",
-            Username = "",
-            Password = "Password"
+            Username: "",
+            Password: "Password"
         }
 
         const result = CheckFields(RegInfo);
@@ -32,8 +32,8 @@ describe('Email field is empty', () => {
     it('When Email field is empty', () => {
         var RegInfo = {
             Email: "",
-            Username = "Test01",
-            Password = "Password"
+            Username: "Test01",
+            Password: "Password"
         }
 
         const result = CheckFields(RegInfo);
@@ -47,8 +47,8 @@ describe('Password field is empty', () => {
     it('When Password field is empty', () => {
         var RegInfo = {
             Email: "Test01@gmail.com",
-            Username = "Test01",
-            Password = ""
+            Username: "Test01",
+            Password: ""
         }
 
         const result = CheckFields(RegInfo);
