@@ -3,6 +3,23 @@ const User = require('../models/account');
 
 const registerController = {
 
+    CheckFields: async (req, res) => {
+        var RegInfo = req.query.RegInfo
+
+        if(RegInfo.Username == ""){
+            res.send('invalid username')
+        }
+        else if(RegInfo.Email == ""){
+            res.send('invalid email')
+        }
+        else if(RegInfo.Password == ""){
+            res.send('invalid password')
+        }
+        else{
+            res.send('valid')
+        }
+    },
+
     IsValid: async (req, res) => {
         var RegInfo = req.query.RegInfo
 

@@ -22,6 +22,8 @@ router.get('/view_services', (req, res) => {
     res.render('view_services')
 })
 
+router.get('/check-fields-reg', registerController.CheckFields)
+
 router.get('/check-reg-info', registerController.IsValid)
 
 router.post('/register', registerController.Register)
