@@ -6,6 +6,8 @@ $(document).ready(function(){
             Password: $('#InputPassword_createacc').val()
         };
 
+        // comment
+
         if($('#InputUsername').val() == "" || $('#InputEmail_createacc').val() == "" || $('#InputPassword_createacc').val() == ""){
             if($('#InputUsername').val() == ""){
                 $('#register_error').text('');
