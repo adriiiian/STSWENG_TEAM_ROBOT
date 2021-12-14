@@ -4,8 +4,8 @@ describe('All input fields is valid', () => {
     it('When All input fields is valid', () => {
         var RegInfo = {
             Email: "Test01@gmail.com",
-            Username = "Test01",
-            Password = "Password"
+            Username: "Test01",
+            Password: "Password"
         }
 
         const result = CheckFields(RegInfo);
