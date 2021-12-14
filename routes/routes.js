@@ -5,8 +5,6 @@ const registerController = require('../controllers/register-controller');
 
 const router = express.Router()
 
-
-
 router.get('/', loginController.viewIndex)
 
 router.get('/index', loginController.viewIndex)
@@ -19,9 +17,6 @@ router.get('/check-reg-info', registerController.IsValid)
 
 router.post('/register', registerController.Register)
 
-router.get('/rooms', (req, res) => {
-    res.render('rooms')
-})
 router.get('/check-current-user', loginController.Check)
 
 router.get('/check-login-info', loginController.Login)

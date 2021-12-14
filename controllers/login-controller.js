@@ -34,10 +34,19 @@ const loginController = {
                         }
                     }
                     else {
-                        res.send('invalid-email')
+                        res.send('unregistered-email')
                     }
 
                 })
+        }
+        else if(result == 'email should be valid') {
+            res.send('not-an-email')
+        }
+        else if(result == 'password is too short') {
+            res.send('password-too-short')
+        }
+        else if(result == 'login information is not valid') {
+            res.send('invalid-input')
         }
         
         

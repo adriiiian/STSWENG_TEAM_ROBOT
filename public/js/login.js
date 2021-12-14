@@ -17,10 +17,12 @@ $(document).ready(function ()
         
         $.get('check-login-info', {LoginInfo}, function(result) {
 
-            if(result == 'invalid-email') {
+            if(result == 'unregistered-email') {
+                $('#login_error').text('Incorrect email/password');
                 $('#login_error').show()
             }
             else if (result == 'invalid-pw') {
+                $('#login_error').text('Incorrect email/password');
                 $('#login_error').show()
             }
             else if(result == 'success') {
@@ -29,6 +31,24 @@ $(document).ready(function ()
                         window.location.href = '/'
                     }
                 })
+            }
+            else if(result == 'not-an-email') {
+                $('#login_error').text('Incorrect email/password');
+                $('#login_error').show()
+            }
+            else if(result == 'password-too-short') {
+                $('#login_error').text('Password must be atleast 5 characters');
+                $('#login_error').show()
+                
+            }
+            else if(result == 'not-an-email') {
+                $('#login_error').text('Input must be an email');
+                $('#login_error').show()
+                
+            }
+            else if(result == 'invalid-input') {
+                $('#login_error').text('Please input correctly');
+                $('#login_error').show()
                 
             }
         })
