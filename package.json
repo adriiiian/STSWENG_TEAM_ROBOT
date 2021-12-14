@@ -9,10 +9,10 @@
     "ejs": "^3.1.6",
     "express": "^4.17.1",
     "express-session": "^1.17.2",
+    "express-validator": "^6.13.0",
     "jest": "^27.4.4",
     "mongoose": "^6.0.13"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "jest --color"
   },
