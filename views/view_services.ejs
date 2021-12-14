@@ -5,11 +5,12 @@
         <link rel="stylesheet" href="./css/index_css.css">
         <link rel="stylesheet" href="./css/services_css.css">
         <link rel="stylesheet" href="./css/viewservices_css.css">
-        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
         <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+        <script src="./js/login.js"></script>
     </head>
     <body>
         <div class="container_whole" id="blur">
@@ -32,19 +33,21 @@
                     <a class="nav-item nav-link" href="services">Services</a>
                     <a class="nav-item nav-link" href="#">About</a>
                     <a class="nav-item nav-link" href="#contactus_section">Contact Us</a>
+                    <% if (!_email) {%>
                     <!--IF LOGGED OUT-->
-                    <!--<a class="nav-item nav-link btn_nav_login" href="#" onclick="toggle()">LOG IN</a>-->
-                  
+                    <a id="logged-out-nav" class="nav-item nav-link btn_nav_login" href="#" onclick="toggle()">LOG IN</a>
+                    <% } else {%>
                     <!--IF LOGGED IN-->
-                    <div class="dropdown account_dropdown">
+                    <div id="logged-in-nav" class="dropdown account_dropdown">
                         <button class="btn ml-4 btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          ACCOUNT
+                        ACCOUNT
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                           <a class="dropdown-item" href="transactions">TRANSACTIONS</a>
-                          <a class="dropdown-item" href="#" style="font-weight: 500;">LOG OUT</a>
+                          <a class="dropdown-item" href="logout" style="font-weight: 500;">LOG OUT</a>
                         </div>
                     </div>
+                    <% }%>
                   </div>
                 </div>
               </nav>
@@ -162,15 +165,15 @@
         </div>
     </div>
         <div id="popup">
-            <form id="form_login" action="">
+            <form id="form_login" onsubmit="return false;">
                 <div class="form-group">
                     <input type="email" class="form-control" id="InputEmail_login" placeholder="EMAIL">
-                  </div>
-                  <div class="form-group">
+                </div>
+                <div class="form-group">
                     <input type="password" class="form-control" id="InputPassword_login" placeholder="PASSWORD">
-                  </div>
-                  <p id="login_error" class="text-danger h6 text-center">Incorrect email/password</p>
-                <button type="submit" class="btn btn_login">LOG IN</button>
+                </div>
+                <p id="login_error" class="text-danger h6 text-center">Incorrect email/password</p>
+                <button type="submit" class="btn btn_login" id="login_btn">LOG IN</button>
                 <a href="#" small id="create_acc" class="form-text text-muted" onclick="create_acc()">CREATE AN ACCOUNT</a><br>
                 <input type="checkbox" class="form-check-input" id="remember_me">
                 <label class="form-check-label" for="remember_me">Remember me</label><br><br>
@@ -200,7 +203,6 @@
             });
         </script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         <script type="text/javascript">
