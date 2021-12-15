@@ -229,3 +229,13 @@
     font-family: 'Open Sans', sans-serif;
     font-size: small;
 }
+
+.modal-open .container_whole{
+    filter: blur(20px);
+    background-color: none;
+}
+
+.modal-content{
+    border-radius: 20px !important;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, .30);
+}
