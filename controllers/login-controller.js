@@ -21,11 +21,8 @@ const loginController = {
                     
                     if(User) {
                         if(User.Password == LoginInfo.Password) {
-
-                            if(LoginInfo.RememberMe == 'true'){
-                                req.session.email = User.Email
-                                req.session.username = User.Username
-                            }
+                            req.session.email = User.Email
+                            req.session.username = User.Username
                                 
                             res.send('success')
                         }
@@ -50,23 +47,6 @@ const loginController = {
         }
         
         
-    },
-
-    Save: (req, res) => {
-        _email = req.query.Email
-        res.send('success')
-    },
-
-    Check: (req, res) => {
-        if(req.session.email) {
-            res.send(req.session.email)
-        }
-        else if(_email){
-            res.send(_email)
-        }
-        else {
-            res.send()
-        }
     },
 
     Logout: (req, res) => {

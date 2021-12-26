@@ -1,18 +1,9 @@
 $(document).ready(function () 
 {
-    var _email = ''
-
-    $.get('check-current-user', function(result) {
-        if(result) {
-            _email = result
-        }
-    })
-
     $('#form_login').submit(async function () {
         var LoginInfo = {
             Email: $('#InputEmail_login').val(),
-            Password: $('#InputPassword_login').val(),
-            RememberMe: $('#remember_me').is(':checked').toString()
+            Password: $('#InputPassword_login').val()
         };
         
         $.get('check-login-info', {LoginInfo}, function(result) {
@@ -26,11 +17,7 @@ $(document).ready(function ()
                 $('#login_error').show()
             }
             else if(result == 'success') {
-                $.get('save-current-user', {Email: LoginInfo.Email}, function(result) {
-                    if(result == 'success') {
-                        window.location.href = '/'
-                    }
-                })
+                window.location.href = '/'
             }
             else if(result == 'not-an-email') {
                 $('#login_error').text('Incorrect email/password');

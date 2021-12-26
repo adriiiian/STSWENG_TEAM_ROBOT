@@ -9,15 +9,11 @@ router.get('/', loginController.viewIndex)
 
 router.get('/index', loginController.viewIndex)
 
-router.get('/save-current-user', loginController.Save)
-
 router.get('/check-fields-reg', registerController.CheckFields)
 
 router.get('/check-reg-info', registerController.IsValid)
 
 router.post('/register', registerController.Register)
-
-router.get('/check-current-user', loginController.Check)
 
 router.get('/check-login-info', loginController.Login)
 
