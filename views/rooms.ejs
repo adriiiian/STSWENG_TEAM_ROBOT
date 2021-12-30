@@ -75,19 +75,18 @@
                     
                    
                     <div class="homeroomlist_grid">
-                        <div class="align-self-start pt-3">
-                            <span class="dropdown room_filter">
-                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  Room filter
-                                </button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                  <a class="dropdown-item" href="#">Type 1</a>
-                                  <a class="dropdown-item" href="#">Type 2</a>
-                                  <a class="dropdown-item" href="#">Type 3</a>
-                                </div>
-                            </span>
-                            <a style="color: #4e4e4e;"class="pl-3" href="#">Apply</a>
-                            <a style="color: #4e4e4e;" class="pl-3" href="#">Clear</a>
+                        <div class="row pt-3">
+                            <select class="col-3 form-control" required>
+                                <option>Single</option>
+                                <option>Double</option>
+                                <option>Triple</option>
+                                <option>Quad</option>
+                                <option>King</option>
+                                <option>Queen</option>
+                            </select>
+                            <button type="button" style="background-color: transparent; border-color: transparent" class="btn col-1 pl-3" href="#">Apply</button>
+                            <button type="button" style="background-color: transparent; border-color: transparent" class="btn col-1 pl-3" href="#">Clear</button>
+                            <div class="col-7"></div>
                         </div>
                         <div class="row d-flex justify-content-around">
                             <a class="col-sm-4 py-5 px-4 d-flex justify-content-center" href="view_rooms" style="max-width:  max-content;;">
