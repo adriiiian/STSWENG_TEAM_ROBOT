@@ -21,11 +21,8 @@ const loginController = {
                     
                     if(User) {
                         if(User.Password == LoginInfo.Password) {
-
-                            if(LoginInfo.RememberMe == 'true'){
-                                req.session.email = User.Email
-                                req.session.username = User.Username
-                            }
+                            req.session.email = User.Email
+                            req.session.username = User.Username
                                 
                             res.send('success')
                         }
@@ -34,30 +31,22 @@ const loginController = {
                         }
                     }
                     else {
-                        res.send('invalid-email')
+                        res.send('unregistered-email')
                     }
 
                 })
         }
+        else if(result == 'email should be valid') {
+            res.send('not-an-email')
+        }
+        else if(result == 'password is too short') {
+            res.send('password-too-short')
+        }
+        else if(result == 'login information is not valid') {
+            res.send('invalid-input')
+        }
         
         
-    },
-
-    Save: (req, res) => {
-        _email = req.query.Email
-        res.send('success')
-    },
-
-    Check: (req, res) => {
-        if(req.session.email) {
-            res.send(req.session.email)
-        }
-        else if(_email){
-            res.send(_email)
-        }
-        else {
-            res.send()
-        }
     },
 
     Logout: (req, res) => {

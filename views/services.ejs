@@ -17,6 +17,7 @@
             <i class="fa fa-arrow-up" style="color:#fff; font-size:28px;"></i>
         </a>
         <img src="images/hotel_bg.jpg" id="bg" alt="">
+
         <div class="container nav_main">
             <nav class="navbar navbar-expand-lg nav_options">
                 <div class="navbar-brand hotel_name_nav">hotel name</div>
@@ -32,21 +33,9 @@
                     <a class="nav-item nav-link active" href="#">Services</a>
                     <a class="nav-item nav-link" href="#">About</a>
                     <a class="nav-item nav-link" href="#contactus_section">Contact Us</a>
-                    <% if (!_email) {%>
-                    <!--IF LOGGED OUT-->
-                    <a id="logged-out-nav" class="nav-item nav-link btn_nav_login" href="#" onclick="toggle()">LOG IN</a>
-                    <% } else {%>
-                    <!--IF LOGGED IN-->
-                    <div id="logged-in-nav" class="dropdown account_dropdown">
-                        <button class="btn ml-4 btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        ACCOUNT
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                          <a class="dropdown-item" href="transactions">TRANSACTIONS</a>
-                          <a class="dropdown-item" href="logout" style="font-weight: 500;">LOG OUT</a>
-                        </div>
-                    </div>
-                    <% }%>
+                    
+                    <%- include('./partials/account_button.ejs') %>
+
                   </div>
                 </div>
               </nav>
@@ -155,37 +144,9 @@
             </div>
         </div>
     </div>
-        <div id="popup">
-            <form id="form_login" onsubmit="return false;">
-                <div class="form-group">
-                    <input type="email" class="form-control" id="InputEmail_login" placeholder="EMAIL">
-                </div>
-                <div class="form-group">
-                    <input type="password" class="form-control" id="InputPassword_login" placeholder="PASSWORD">
-                </div>
-                <p id="login_error" class="text-danger h6 text-center">Incorrect email/password</p>
-                <button type="submit" class="btn btn_login" id="login_btn">LOG IN</button>
-                <a href="#" small id="create_acc" class="form-text text-muted" onclick="create_acc()">CREATE AN ACCOUNT</a><br>
-                <input type="checkbox" class="form-check-input" id="remember_me">
-                <label class="form-check-label" for="remember_me">Remember me</label><br><br>
-                <a href="#" id="close_popup" class="close_popup" onclick="toggle()">Close</a>
-            </form>
-            <form id="form_createaccount" action="" >
-                <div class="form-group">
-                    <input type="text" class="form-control" id="InputUsername" placeholder="USERNAME">
-                </div>
-                <div class="form-group">
-                    <input type="email" class="form-control" id="InputEmail_createacc" placeholder="EMAIL">
-                </div>
-                <div class="form-group">
-                    <input type="password" class="form-control" id="InputPassword_createacc" placeholder="PASSWORD">
-                </div>
-                <p id="register_error" class="text-danger h6 text-center">Invalid input</p>
-                <button type="submit" class="btn btn_register">REGISTER</button>
-                <a href="#" small id="back_login" class="form-text back_login" onclick="login()">BACK TO LOG IN</a><br>
-                <a href="#" id="close_popup" class="close_popup" onclick="toggle()">Close</a>
-            </form>
-        </div>
+
+    <%- include('./partials/account_popup.ejs') %>
+
         <script>
             $('#checkin').datepicker({
                 uiLibrary: 'bootstrap4'
