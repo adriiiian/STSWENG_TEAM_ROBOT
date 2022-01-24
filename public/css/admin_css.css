@@ -495,6 +495,13 @@ body{
     font-family: 'Alata', sans-serif;
 }
 
+.date_filter {
+    font-size: 25px;
+    color: #4e4e4e;
+    font-family: 'Alata', sans-serif;
+    text-align: center;
+}
+
 .nav-link {
     color: #4e4e4e;   
 }
@@ -528,4 +535,8 @@ body{
 
 .td_checkout {
     text-align: right;
+}
+
+.apply_filter {
+    text-align: center;
 }
