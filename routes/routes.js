@@ -2,6 +2,7 @@ const express = require('express')
 
 const loginController = require('../controllers/login-controller');
 const registerController = require('../controllers/register-controller');
+const bookingController = require('../controllers/booking-controller');
 
 const router = express.Router()
 
@@ -32,5 +33,7 @@ router.get('/transactions', loginController.viewTransactions)
 router.get('/view_transactions', loginController.viewViewTransactions)
 
 router.get('/booking', loginController.viewBooking)
+
+router.get('/check-fields-booking', bookingController.CheckFields)
 
 module.exports = router
