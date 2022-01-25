@@ -47,6 +47,18 @@ $(document).ready(function(){
             }
             else if(result == 'Booking information is valid'){
                 $('#booking_error').hide();
+                $.post('book_reservation', {Fullname: bookingInfo.Fullname, Email: bookingInfo.Email, ContactNumber: bookingInfo.ContactNumber, Address: bookingInfo.Address,
+                Checkin: bookingInfo.Checkin, Checkout: bookingInfo.Checkout, RoomType: bookingInfo.RoomType, Guests: bookingInfo.Guests}, function(result){
+                    if(result == "success"){
+                        alert('Booked Successfully')
+                        window.location.href = '/'
+                    }
+                    else if(result == "failed"){
+                        alert('Booking Failed')
+                    }
+                    
+                })
+                
             }
         })
     })

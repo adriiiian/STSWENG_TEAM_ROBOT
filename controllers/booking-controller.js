@@ -28,7 +28,57 @@ const bookingController = {
         else{
             res.send('Booking information is not valid')
         }
+    },
+
+    Book: async (req, res) => {
+        var bookingInfo = {
+            Fullname: req.body.Fullname,
+            Email: req.body.Email,
+            ContactNumber: req.body.ContactNumber,
+            Address: req.body.Address,
+            Checkin: req.body.Checkin,
+            Checkout: req.body.Checkout,
+            RoomType: req.body.RoomType,
+            Guests: req.body.Guests
+        };
+
+        var result;
+
+        initSchema(bookingInfo).then((schema) => {
+            let newBooking = new Booking(schema);
+            newBooking.save((err, newBooking) => {
+                if(err){
+                    res.send('failed');
+                    // result = "Booking failed";
+                }
+                else if(newBooking){
+                    res.send('success');
+                    // console.log("Successfully booked");
+                    // result = "Successfully booked"
+                }
+                else{
+                    res.send('failed');
+                }
+            });
+        });
+        
+        return result;
     }
+}
+
+async function initSchema(body){
+    let newBooking = {
+        Fullname: body.Fullname,
+        Email: body.Email,
+        ContactNumber: body.ContactNumber,
+        Address: body.Address,
+        Checkin: body.Checkin,
+        Checkout: body.Checkout,
+        RoomType: body.RoomType,
+        Guests: body.Guests
+    }
+
+    return newBooking;
 }
 
 module.exports = bookingController;

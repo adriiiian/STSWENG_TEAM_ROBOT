@@ -36,4 +36,6 @@ router.get('/booking', loginController.viewBooking)
 
 router.get('/check-fields-booking', bookingController.CheckFields)
 
+router.post('/book_reservation', bookingController.Book)
+
 module.exports = router

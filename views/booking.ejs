@@ -270,7 +270,16 @@
                 todayHighlight: true,
                 minDate: defaultDate,
                 maxDate: 0
-              });
+              }).on("change", function(){
+              checkoutdatepicker.datepicker('destroy');
+              checkoutdatepicker.datepicker({
+                uiLibrary: 'bootstrap4',
+                format: 'mm-dd-yyyy',
+                todayHighlight: true,
+                minDate: new Date($(this).val()),
+                maxDate: 0
+              })
+            });
 
               checkoutdatepicker.datepicker('destroy');
               checkoutdatepicker.datepicker({
