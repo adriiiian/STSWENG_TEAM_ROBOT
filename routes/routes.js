@@ -31,6 +31,10 @@ router.get('/transactions', loginController.viewTransactions)
 
 router.get('/view_transactions', loginController.viewViewTransactions)
 
+router.get('/admin', (req, res) => {
+    res.render('admin')
+})
+
 router.get('/booking', (req, res) => {
     res.render('booking')
 })
