@@ -27,7 +27,7 @@ $(document).ready(function(){
             }
             else if(result == 'Contact number is invalid'){
                 $('#booking_error').text('');
-                $('#booking_error').text('Please enter a valid Contact number');
+                $('#booking_error').text('Please enter a valid Contact number (Ex. 09123456789)');
                 $('#booking_error').show();
             }
             else if(result == 'Address is invalid'){
