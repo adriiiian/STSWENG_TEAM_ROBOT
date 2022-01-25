@@ -160,9 +160,6 @@
         <%- include('./partials/account_popup.ejs') %>
 
         <script>
-
-          
-
           // set default dates
           var start = new Date();
           var defaultDate = new Date(start.getFullYear(), start.getMonth(), start.getDate());
@@ -194,6 +191,30 @@
                 maxDate: 0
               })
             });
+
+            let roomvalue = $('#room');
+            let pricevalue = $('#pricetext')
+            roomvalue.on("change", function(){
+              if(roomvalue.val() == "Single"){
+                pricevalue.text("15,000")
+              }
+              else if(roomvalue.val() == "Double"){
+                pricevalue.text("20,000")
+              }
+              else if(roomvalue.val() == "Triple"){
+                pricevalue.text("25,000")
+              }
+              else if(roomvalue.val() == "Quad"){
+                pricevalue.text("35,000")
+              }
+              else if(roomvalue.val() == "Queen"){
+                pricevalue.text("40,000")
+              }
+              else if(roomvalue.val() == "King"){
+                pricevalue.text("45,000")
+              }
+              
+            })
 
         </script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
