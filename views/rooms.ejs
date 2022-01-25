@@ -75,47 +75,35 @@
                     
                    
                     <div class="homeroomlist_grid">
-                        <div class="row pt-3">
-                            <select class="col-3 form-control" required>
-                                <option>Single</option>
-                                <option>Double</option>
-                                <option>Triple</option>
-                                <option>Quad</option>
-                                <option>King</option>
-                                <option>Queen</option>
-                            </select>
-                            <button type="button" style="background-color: transparent; border-color: transparent" class="btn col-1 pl-3" href="#">Apply</button>
-                            <button type="button" style="background-color: transparent; border-color: transparent" class="btn col-1 pl-3" href="#">Clear</button>
-                            <div class="col-7"></div>
-                        </div>
+                        <form action="" onsubmit="return false;">
+                            <div class="row pt-3">
+                                <select class="col-3 form-control" required>
+                                    <option>Single</option>
+                                    <option>Double</option>
+                                    <option>Triple</option>
+                                    <option>Quad</option>
+                                    <option>King</option>
+                                    <option>Queen</option>
+                                </select>
+                                <button type="submit" style="background-color: transparent; border-color: transparent" class="btn col-1 pl-3" href="#">Apply</button>
+                                <button type="button" style="background-color: transparent; border-color: transparent" class="btn col-1 pl-3" href="#">Clear</button>
+                                <div class="col-7"></div>
+                            </div>
+                        </form>
+                        
+                        <!-- Display rooms -->
                         <div class="row d-flex justify-content-around">
-                            <a class="col-sm-4 py-5 px-4 d-flex justify-content-center" href="view_rooms" style="max-width:  max-content;;">
-                                <div class="card mb-4 border-0">
-                                    <img src="./images/hotel_bg.jpg" class="card-img-top" alt="test">
-                                    <div class="card-body">
-                                        <h5 class="card-title my-auto">Single Room </h5>
+                            <% for (var i = 0; i < RoomList.length; i++) {%>
+                                <a class="col-sm-4 py-5 px-4 d-flex justify-content-center rooms" href="view_rooms?id=<%-RoomList[i].Type%>" style="max-width:  max-content;">
+                                    <div class="card mb-4 border-0">
+                                        <img src="./images/hotel_bg.jpg" class="card-img-top" alt="test">
+                                        <div class="card-body">
+                                            <h5 class="card-title my-auto"><%-RoomList[i].Type%></h5>
+                                        </div>
+                                        <div class="card-footer">Php <%-RoomList[i].Price%> PER NIGHT</div>
                                     </div>
-                                    <div class="card-footer">P 15000.00 PER NIGHT</div>
-                                </div>
-                            </a>
-                            <a class="col-sm-4 py-5 px-4 d-flex justify-content-center" href="view_rooms" style="max-width:  max-content;;">
-                                <div class="card mb-4 border-0">
-                                    <img src="./images/hotel_bg.jpg" class="card-img-top" alt="test">
-                                    <div class="card-body">
-                                        <h5 class="card-title my-auto">Single Room </h5>
-                                    </div>
-                                    <div class="card-footer">P 15000.00 PER NIGHT</div>
-                                </div>
-                            </a>
-                            <a class="col-sm-4 py-5 px-4 d-flex justify-content-center" href="view_rooms" style="max-width:  max-content;;">
-                                <div class="card mb-4 border-0">
-                                    <img src="./images/hotel_bg.jpg" class="card-img-top" alt="test">
-                                    <div class="card-body">
-                                        <h5 class="card-title my-auto">Single Room </h5>
-                                    </div>
-                                    <div class="card-footer">P 15000.00 PER NIGHT</div>
-                                </div>
-                            </a>
+                                </a>
+                            <% } %>
                         </div>
                     </div>
                 </div>

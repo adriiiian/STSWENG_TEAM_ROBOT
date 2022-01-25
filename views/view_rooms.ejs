@@ -46,7 +46,7 @@
                 Rooms
             </div>
             <div class="viewrooms_header">
-                Single Room
+                <%-room.Type%> Room
             </div>
         </div>
         <div class="container-fluid px-0 content_con" style="margin-top: 100px;">
@@ -78,17 +78,16 @@
                 <div class="container pb-5">
                     <div class="row">
                         <div class="col-sm-9 p-5 viewrooms_description">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+                            <%-room.Description%>
                         </div>
                         <div class="col-sm-3 py-5 viewrooms_details">
                             <div>
                                 <div style="font-weight: 500;">DETAILS:</div>
                                 <ul>
-                                    <li>Lorem ipsum</li>
-                                    <li>Lorem ipsum</li>
-                                    <li>Lorem ipsum</li>
-                                    <li>Lorem ipsum</li>
-                                  </ul>
+                                    <%for(var i = 0; i < room.Details.length; i++) {%>
+                                        <li><%-room.Details[i]%></li>
+                                    <%}%>
+                                </ul>
                             </div>
                         </div>
                     </div>
