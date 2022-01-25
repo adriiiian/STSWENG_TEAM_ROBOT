@@ -112,8 +112,8 @@
                                     <option>Double</option>
                                     <option>Triple</option>
                                     <option>Quad</option>
-                                    <option>King</option>
-                                    <option>Queen </option>
+                                    <option>Queen</option>
+                                    <option>King </option>
                                   </select>
                                   <div class="valid-feedback">
                                     <i class="fa fa-check" style="color: darkgreen; font-size:14;"></i>
@@ -167,6 +167,7 @@
           // set end date to max one year period:
           var end = new Date(new Date().setYear(start.getFullYear()+1));
 
+          // check in/out fields
           let checkoutdatepicker = $('#checkout').datepicker({
                 uiLibrary: 'bootstrap4',
                 format: 'mm-dd-yyyy',
@@ -192,29 +193,68 @@
               })
             });
 
+            // guests field
+            let guests = $('#guests')
+            guests.keypress(function (e){
+              e.preventDefault();
+            });
+
+            // price field
             let roomvalue = $('#room');
             let pricevalue = $('#pricetext')
             roomvalue.on("change", function(){
               if(roomvalue.val() == "Single"){
-                pricevalue.text("15,000")
+                pricevalue.text("15,000");
+                guests.val(0);
+                guests.attr({
+                  min: 0,
+                  max: 1
+                });
               }
               else if(roomvalue.val() == "Double"){
-                pricevalue.text("20,000")
+                pricevalue.text("20,000");
+                guests.val(0);
+                guests.attr({
+                  min: 0,
+                  max: 2
+                });
               }
               else if(roomvalue.val() == "Triple"){
-                pricevalue.text("25,000")
+                pricevalue.text("25,000");
+                guests.val(0);
+                guests.attr({
+                  min: 0,
+                  max: 3
+                });
               }
               else if(roomvalue.val() == "Quad"){
-                pricevalue.text("35,000")
+                pricevalue.text("35,000");
+                guests.val(0);
+                guests.attr({
+                  min: 0,
+                  max: 4
+                });
               }
               else if(roomvalue.val() == "Queen"){
-                pricevalue.text("40,000")
+                pricevalue.text("40,000");
+                guests.val(0);
+                guests.attr({
+                  min: 0,
+                  max: 2
+                });
               }
               else if(roomvalue.val() == "King"){
-                pricevalue.text("45,000")
+                pricevalue.text("45,000");
+                guests.val(0);
+                guests.attr({
+                  min: 0,
+                  max: 2
+                });
               }
               
-            })
+            });
+
+            
 
         </script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
