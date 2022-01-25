@@ -49,12 +49,9 @@ const bookingController = {
             newBooking.save((err, newBooking) => {
                 if(err){
                     res.send('failed');
-                    // result = "Booking failed";
                 }
                 else if(newBooking){
                     res.send('success');
-                    // console.log("Successfully booked");
-                    // result = "Successfully booked"
                 }
                 else{
                     res.send('failed');

@@ -12,9 +12,7 @@ $(document).ready(function(){
             Guests: $('#guests').val()
         };
 
-        // console.log(bookingInfo.Fullname);
         $.get('check-fields-booking', {bookingInfo}, function(result){
-            console.log(result);
             if(result == 'Fullname is invalid'){
                 $('#booking_error').text('');
                 $('#booking_error').text('Please enter a valid Full name');
