@@ -20,7 +20,7 @@
 
         <div class="container py-0 nav_main">
             <nav class="navbar navbar-expand-lg nav_options">
-                <div class="navbar-brand hotel_name_nav">hotel name</div>
+                <div class="navbar-brand hotel_name_nav">robotel</div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon">
                     <i class="fa fa-bars" style="color:#fff; font-size:28px;"></i>
@@ -31,7 +31,6 @@
                     <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
                     <a class="nav-item nav-link" href="rooms">Rooms</a>
                     <a class="nav-item nav-link" href="services">Services</a>
-                    <a class="nav-item nav-link" href="#">About</a>
                     <a class="nav-item nav-link" href="#contactus_section">Contact Us</a>
                     
                     <%- include('./partials/account_button.ejs') %>
@@ -81,43 +80,43 @@
                                     Experience the difference
                                 </div>
                                 <div class="about_con_description">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+                                    Are you looking to surprise that special someone with a romantic getaway, or would you like to indulge in a culinary feast until the sun goes down, maybe you’d like to unwind while enjoying an amazing bike ride through the dunes? We're now here to take your mind off the day-to-day of home life with our private paradise along the beaches of Batangas.
                                 </div>
                             </div>
                             <div  class="btn_about">
-                                <a href="#">SEE MORE</a>
+                                <a href="#rooms_section">SEE MORE</a>
                             </div>
                             
                         </div>
                         <div class="col-sm-6 py-0">
                             <div class="row p-3">
                                 <div class="col-sm-12 p-2">
-                                    <img src="./images/hotel_bg.jpg" class="services_con_img" alt="Paris">
+                                    <img src="./images/hotel_bg.jpg" class="about_con_img1">
+                                </div> 
+                                <div class="col-sm-6 p-2"> 
+                                    <img src="./images/hotel1.jpg"  class="about_con_img2">
                                 </div>
                                 <div class="col-sm-6 p-2">
-                                    <img src="./images/hotel_bg.jpg" class="services_con_img" alt="Paris">
-                                </div>
-                                <div class="col-sm-6 p-2">
-                                    <img src="./images/hotel_bg.jpg" class="services_con_img" alt="Paris">
+                                    <img src="./images/hotel2.jpg" class="about_con_img2">
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="container-fluid py-5 rooms_con">
+            <div class="container-fluid py-5 rooms_con" id="rooms_section">
                 <div class="container">
                     <div class="rooms_con_header">
                         Rooms
                     </div>
                     <div class="rooms_con_description">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+                        Choose between spectacular balcony views of the nature or our resort’s private waterways, from the largest hotel rooms in Robotel.
                     </div>
                     <div class="homeroomlist_grid">
                         <div class="row d-flex justify-content-around">
                             <a class="col-sm-4 py-5 px-4 d-flex justify-content-center" href="view_rooms" style="max-width:  max-content;;">
                                 <div class="card mb-4 border-0">
-                                    <img src="./images/hotel_bg.jpg" class="card-img-top" alt="test">
+                                    <img src="./images/single.jpg" class="card-img-top" alt="test">
                                     <div class="card-body">
                                         <h5 class="card-title my-auto">Single Room </h5>
                                     </div>
@@ -126,20 +125,20 @@
                             </a>
                             <a class="col-sm-4 py-5 px-4 d-flex justify-content-center" href="view_rooms" style="max-width:  max-content;;">
                                 <div class="card mb-4 border-0">
-                                    <img src="./images/hotel_bg.jpg" class="card-img-top" alt="test">
+                                    <img src="./images/double.jpg" class="card-img-top" alt="test">
                                     <div class="card-body">
-                                        <h5 class="card-title my-auto">Single Room </h5>
+                                        <h5 class="card-title my-auto">Double Room </h5>
                                     </div>
-                                    <div class="card-footer">P 15000.00 PER NIGHT</div>
+                                    <div class="card-footer">P 20000.00 PER NIGHT</div>
                                 </div>
                             </a>
                             <a class="col-sm-4 py-5 px-4 d-flex justify-content-center" href="view_rooms" style="max-width:  max-content;;">
                                 <div class="card mb-4 border-0">
-                                    <img src="./images/hotel_bg.jpg" class="card-img-top" alt="test">
+                                    <img src="./images/triple.jpg" class="card-img-top" alt="test">
                                     <div class="card-body">
-                                        <h5 class="card-title my-auto">Single Room </h5>
+                                        <h5 class="card-title my-auto">Triple Room </h5>
                                     </div>
-                                    <div class="card-footer">P 15000.00 PER NIGHT</div>
+                                    <div class="card-footer">P 25000.00 PER NIGHT</div>
                                 </div>
                             </a>
                         </div>
@@ -153,14 +152,14 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-6 px-5">
-                            <img src="./images/hotel_bg.jpg" class="services_con_img" alt="Paris">    
+                            <img src="./images/beach1.jpg" class="services_con_img" alt="Paris">    
                         </div>
                         <div class="col-sm-6 p-5">
                             <div class="services_con_header2">
-                                Swimming Pool
+                                Up to the sea
                             </div>
                             <div class="services_con_description">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+                                We love life at the beach. Being close to the ocean with access to endless sandy beaches ensures a relaxed ‘state of mind’. It seams time stands still when the water touches our toes.
                             </div>
                             <a class="services_con_description_link" href="view_services">
                                 Learn more
@@ -173,7 +172,7 @@
                                Dining
                             </div>
                             <div class="services_con_description">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+                                Savour exceptional cuisine and rare wines in the most stylish spaces in town – a thrilling taste of the city’s diverse culinary landscape.
                             </div>
 
                             <a class="services_con_description_link" href="view_services">
@@ -181,7 +180,7 @@
                             </a>
                         </div>
                         <div class="col-sm-6 p-5">
-                            <img src="./images/hotel_bg.jpg" class="services_con_img" alt="Paris">    
+                            <img src="./images/dining1.jpg" class="services_con_img" alt="Paris">    
                         </div>
                     </div>
                     <div class="btn_services mx-auto">
