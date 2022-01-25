@@ -277,7 +277,14 @@ body{
     margin-top: 20px;
 }
 
-.services_con_img{
+.about_con_img1{
+    height:300px; 
+    object-fit: cover;
+    width: inherit;
+}
+.about_con_img2{
+    height:150px; 
+    object-fit: cover;
     width: inherit;
 }
 
