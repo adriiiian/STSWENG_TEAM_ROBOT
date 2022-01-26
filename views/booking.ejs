@@ -391,9 +391,11 @@
                 
                 numnightsText.text(dateDifference)
                 pricevalue.text(internationalNumberFormat.format(subtotalPrice))
+                pricevalue.val(subtotalPrice)
                 roomvalText3.text(internationalNumberFormat.format(totalPrice))
               }
               else{
+                pricevalue.val(0)
                 pricevalue.text(0)
                 numnightsText.text(0)
                 roomvalText3.text(0)

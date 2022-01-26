@@ -9,7 +9,8 @@ const bookingsSchema = new mongoose.Schema({
     Checkin: Date,
     Checkout: Date,
     RoomType: String,
-    Guests: Number
+    Guests: Number,
+    Subtotal: Number
 })
 
 const Bookings = mongoose.model('Bookings', bookingsSchema)
