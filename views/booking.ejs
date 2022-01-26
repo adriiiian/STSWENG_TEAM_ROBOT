@@ -123,7 +123,7 @@
                               <div class="col">
                                 <div class="form-group">
                                   <label for="guests">GUESTS</label>
-                                  <input type="number" class="form-control" id="guests" name="guests" value=0 min=0 max=1 required>
+                                  <input type="number" class="form-control" id="guests" name="guests" value=0 min=0 max=2 required>
                                   <div class="valid-feedback">
                                     <i class="fa fa-check" style="color: darkgreen; font-size:14;"></i>
                                   </div>
@@ -174,8 +174,13 @@
           let guests = $('#guests')
           let roomvalue = $('#room');
           let pricevalue = $('#pricetext')
+          let roomNumber = 0
+          let additionalGuest = 3000
+          let numAdditionalGuest
+          let totalPrice
+          const maxGuests = [1,2,3,4,2,2]
+          const roomprice = [15000, 20000, 25000, 35000, 40000, 45000]
 
-          // check in/out fields
           checkoutdatepicker = $('#checkout').datepicker({
                 uiLibrary: 'bootstrap4',
                 format: 'mm-dd-yyyy',
@@ -183,13 +188,7 @@
                 minDate: defaultDate,
                 maxDate: 0
               }).on("change", function(){
-                checkinDate = new Date(checkindatepicker.val())
-                checkoutDate = new Date($(this).val())
-                timeDifference = Math.abs(checkoutDate - checkinDate)
-                dateDifference = Math.ceil(timeDifference / (1000 * 60 * 60 * 24))
-                console.log(checkinDate)
-                console.log(checkoutDate)
-                console.log(dateDifference)
+                updateprice()
               });
 
           checkindatepicker = $('#checkin').datepicker({
@@ -207,13 +206,7 @@
                 minDate: new Date($(this).val()),
                 maxDate: 0
               }).on("change", function(){
-                checkinDate = new Date(checkindatepicker.val())
-                checkoutDate = new Date($(this).val())
-                timeDifference = Math.abs(checkoutDate - checkinDate)
-                dateDifference = Math.ceil(timeDifference / (1000 * 60 * 60 * 24))
-                console.log(checkinDate)
-                console.log(checkoutDate)
-                console.log(dateDifference)
+                updateprice()
               });
             });
 
@@ -222,10 +215,10 @@
               e.preventDefault();
             });
 
-            // price field
-            
             roomvalue.on("change", function(){
               if(roomvalue.val() == "Single"){
+                roomNumber = 0;
+                additionalGuest = 3000
                 resetdate();
                 pricevalue.text("15,000");
                 guests.val(0);
@@ -235,6 +228,8 @@
                 });
               }
               else if(roomvalue.val() == "Double"){
+                roomNumber = 1;
+                additionalGuest = 3000
                 resetdate();
                 pricevalue.text("20,000");
                 guests.val(0);
@@ -244,6 +239,8 @@
                 });
               }
               else if(roomvalue.val() == "Triple"){
+                roomNumber = 2;
+                additionalGuest = 3000
                 resetdate();
                 pricevalue.text("25,000");
                 guests.val(0);
@@ -253,6 +250,8 @@
                 });
               }
               else if(roomvalue.val() == "Quad"){
+                roomNumber = 3;
+                additionalGuest = 3000
                 resetdate();
                 pricevalue.text("35,000");
                 guests.val(0);
@@ -262,6 +261,8 @@
                 });
               }
               else if(roomvalue.val() == "Queen"){
+                roomNumber = 4;
+                additionalGuest = 5000
                 resetdate();
                 pricevalue.text("40,000");
                 guests.val(0);
@@ -271,6 +272,8 @@
                 });
               }
               else if(roomvalue.val() == "King"){
+                roomNumber = 5;
+                additionalGuest = 5000
                 resetdate();
                 pricevalue.text("45,000");
                 guests.val(0);
@@ -282,6 +285,10 @@
               
             });
 
+            guests.on("change", function(){
+              updateprice()
+            })
+
             function resetdate(){
               checkindatepicker.datepicker('destroy');
               checkindatepicker.datepicker({
@@ -291,24 +298,43 @@
                 minDate: defaultDate,
                 maxDate: 0
               }).on("change", function(){
-              checkoutdatepicker.datepicker('destroy');
-              checkoutdatepicker.datepicker({
-                uiLibrary: 'bootstrap4',
-                format: 'mm-dd-yyyy',
-                todayHighlight: true,
-                minDate: new Date($(this).val()),
-                maxDate: 0
-              })
-            });
+                checkoutdatepicker.datepicker('destroy');
+                checkoutdatepicker.datepicker({
+                  uiLibrary: 'bootstrap4',
+                  format: 'mm-dd-yyyy',
+                  todayHighlight: true,
+                  minDate: new Date($(this).val()),
+                  maxDate: 0
+                }).on("change", function(){
+                  updateprice()
+                });
+              });
 
               checkoutdatepicker.datepicker('destroy');
               checkoutdatepicker.datepicker({
-                uiLibrary: 'bootstrap4',
-                format: 'mm-dd-yyyy',
-                todayHighlight: true,
-                minDate: defaultDate,
-                maxDate: 0
-              });
+                  uiLibrary: 'bootstrap4',
+                  format: 'mm-dd-yyyy',
+                  todayHighlight: true,
+                  minDate: defaultDate,
+                  maxDate: 0
+                }).on("change", function(){
+                  updateprice()
+                });
+            }
+
+            function updateprice(){
+              checkinDate = new Date(checkindatepicker.val())
+              checkoutDate = new Date(checkoutdatepicker.val())
+              timeDifference = Math.abs(checkoutDate - checkinDate)
+              dateDifference = Math.ceil(timeDifference / (1000 * 60 * 60 * 24))
+              numAdditionalGuest = guests.val() - maxGuests[roomNumber]
+              totalPrice =  Math.imul(roomprice[roomNumber], dateDifference)
+              if(numAdditionalGuest > 0){
+                totalPrice = totalPrice + Math.imul(additionalGuest, numAdditionalGuest)
+              }
+              if(checkinDate != "Invalid Date"){
+                pricevalue.text(totalPrice)
+              }
             }
 
         </script>
