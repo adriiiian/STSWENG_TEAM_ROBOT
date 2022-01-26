@@ -10,6 +10,7 @@
         <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
         <script src="./js/register.js"></script>
         <script src="./js/login.js"></script>
+        <script src="./js/booking.js"></script>
     </head>
     <body>
         <div class="container_whole" id="blur">
@@ -262,6 +263,15 @@
                 $("#form_login").show();
                 $("#form_createaccount").hide();
                 $("#login_error").hide();
+            }
+
+            function prebook(){
+                var Checkin = $('#checkin').val()
+                var Checkout = $('#checkout').val()
+                var RoomType = $('#room').val()
+                localStorage.setItem("Checkin", Checkin)
+                localStorage.setItem("Checkout", Checkout)
+                localStorage.setItem("RoomType", RoomType)
             }
         </script>
     </body>

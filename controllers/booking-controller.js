@@ -61,7 +61,17 @@ const bookingController = {
         });
         
         return result;
-    }
+    },
+
+    // PreBook: async (req, res) => {
+    //     var PreBookInfo = {
+    //         Checkin: req.body.Checkin,
+    //         Checkout: req.body.Checkout,
+    //         RoomType: req.body.RoomType
+    //     }
+
+    //     res.render("booking", PreBookInfo)
+    // }
 }
 
 async function initSchema(body){

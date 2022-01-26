@@ -1,7 +1,7 @@
 <div class="container">
     <div class="book_con">
         <div class="container">
-            <form class="row mx-auto book_form" action="" autocomplete="off">
+            <form id="book_header" onsubmit="return false;" class="row mx-auto book_form" autocomplete="off">
                 <div class="col-sm-3 mx-auto book_form_label">
                     CHECK IN
                     <input id="checkin"/>
@@ -39,7 +39,8 @@
                     <% } else {%>
                         <!-- IF LOGGED IN -->
                         <div class="col-sm-2.5 mx-auto">
-                            <a class="mx-auto btn_booknow" type="submit" value="Submit" href="../booking">Book now</a>
+                            <!-- <a class="mx-auto btn_booknow" type="submit" value="Submit" href="../booking" onclick="document.getElementById('book_header').submit();">Book now</a> -->
+                            <button type="submit" class="btn btn_booknow" onclick="prebook()" href="/views/booking.ejs"> Book now</button>
                         </div>
                     
                     <% }%>

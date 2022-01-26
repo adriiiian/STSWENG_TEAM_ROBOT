@@ -107,12 +107,12 @@
                                 <div class="form-group">
                                   <label for="room">ROOM</label>
                                   <select class="form-control" id="room" required>
-                                    <option>Single</option>
-                                    <option>Double</option>
-                                    <option>Triple</option>
-                                    <option>Quad</option>
-                                    <option>Queen</option>
-                                    <option>King </option>
+                                    <option>Single Room</option>
+                                    <option>Double Room</option>
+                                    <option>Triple Room</option>
+                                    <option>Quad Room</option>
+                                    <option>Queen Room</option>
+                                    <option>King Room</option>
                                   </select>
                                   <div class="valid-feedback">
                                     <i class="fa fa-check" style="color: darkgreen; font-size:14;"></i>
@@ -245,6 +245,7 @@
                 minDate: defaultDate,
                 maxDate: 0
             }).on("change", function(){
+              updateprice();
               checkoutdatepicker.datepicker('destroy');
               checkoutdatepicker.datepicker({
                 uiLibrary: 'bootstrap4',
@@ -257,96 +258,15 @@
               });
             });
 
+            initialLoad()
+
             // guests field
             guests.keypress(function (e){
               e.preventDefault();
             });
 
             roomvalue.on("change", function(){
-              if(roomvalue.val() == "Single"){
-                roomNumber = 0;
-                additionalGuest = 3000
-                roomvalText1.text("15,000");
-                roomvalText2.text("15,000");
-                guestvalText1.text("3,000");
-                guestvalText2.text("3,000");
-                occupancyText1.text("1");
-                occupancyText2.text("2");
-                guests.attr({
-                  min: 1,
-                  max: 2
-                });
-              }
-              else if(roomvalue.val() == "Double"){
-                roomNumber = 1;
-                additionalGuest = 3000
-                roomvalText1.text("20,000");
-                roomvalText2.text("20,000");
-                guestvalText1.text("3,000");
-                guestvalText2.text("3,000");
-                occupancyText1.text("2");
-                occupancyText2.text("3");
-                guests.attr({
-                  min: 1,
-                  max: 3
-                });
-              }
-              else if(roomvalue.val() == "Triple"){
-                roomNumber = 2;
-                additionalGuest = 3000
-                roomvalText1.text("25,000");
-                roomvalText2.text("25,000");
-                guestvalText1.text("3,000");
-                guestvalText2.text("3,000");
-                occupancyText1.text("3");
-                occupancyText2.text("4");
-                guests.attr({
-                  min: 1,
-                  max: 4
-                });
-              }
-              else if(roomvalue.val() == "Quad"){
-                roomNumber = 3;
-                additionalGuest = 3000
-                roomvalText1.text("35,000");
-                roomvalText2.text("35,000");
-                guestvalText1.text("3,000");
-                guestvalText2.text("3,000");
-                occupancyText1.text("4");
-                occupancyText2.text("5");
-                guests.attr({
-                  min: 1,
-                  max: 5
-                });
-              }
-              else if(roomvalue.val() == "Queen"){
-                roomNumber = 4;
-                additionalGuest = 5000
-                roomvalText1.text("40,000");
-                roomvalText2.text("40,000");
-                guestvalText1.text("5,000");
-                guestvalText2.text("5,000");
-                occupancyText1.text("2");
-                occupancyText2.text("4");
-                guests.attr({
-                  min: 1,
-                  max: 4
-                });
-              }
-              else if(roomvalue.val() == "King"){
-                roomNumber = 5;
-                additionalGuest = 5000
-                roomvalText1.text("45,000");
-                roomvalText2.text("45,000");
-                guestvalText1.text("5,000");
-                guestvalText2.text("5,000");
-                occupancyText1.text("2");
-                occupancyText2.text("4");
-                guests.attr({
-                  min: 1,
-                  max: 4
-                });
-              }
+              updateRoomValue()
               guests.val(1)
               resetdate()
               updateprice()
@@ -367,6 +287,7 @@
                 minDate: defaultDate,
                 maxDate: 0
               }).on("change", function(){
+                updateprice();
                 checkoutdatepicker.datepicker('destroy');
                 checkoutdatepicker.datepicker({
                   uiLibrary: 'bootstrap4',
@@ -421,6 +342,101 @@
                 pricevalue.text(0)
                 numnightsText.text(0)
                 roomvalText3.text(0)
+              }
+            }
+
+            function initialLoad(){
+              checkindatepicker.val(localStorage.getItem("Checkin"))
+              checkoutdatepicker.val(localStorage.getItem("Checkout"))
+              roomvalue.val(localStorage.getItem("RoomType"))
+              updateRoomValue()
+              updateprice()
+            }
+
+            function updateRoomValue(){
+              if(roomvalue.val() == "Single Room"){
+                roomNumber = 0;
+                additionalGuest = 3000
+                roomvalText1.text("15,000");
+                roomvalText2.text("15,000");
+                guestvalText1.text("3,000");
+                guestvalText2.text("3,000");
+                occupancyText1.text("1");
+                occupancyText2.text("2");
+                guests.attr({
+                  min: 1,
+                  max: 2
+                });
+              }
+              else if(roomvalue.val() == "Double Room"){
+                roomNumber = 1;
+                additionalGuest = 3000
+                roomvalText1.text("20,000");
+                roomvalText2.text("20,000");
+                guestvalText1.text("3,000");
+                guestvalText2.text("3,000");
+                occupancyText1.text("2");
+                occupancyText2.text("3");
+                guests.attr({
+                  min: 1,
+                  max: 3
+                });
+              }
+              else if(roomvalue.val() == "Triple Room"){
+                roomNumber = 2;
+                additionalGuest = 3000
+                roomvalText1.text("25,000");
+                roomvalText2.text("25,000");
+                guestvalText1.text("3,000");
+                guestvalText2.text("3,000");
+                occupancyText1.text("3");
+                occupancyText2.text("4");
+                guests.attr({
+                  min: 1,
+                  max: 4
+                });
+              }
+              else if(roomvalue.val() == "Quad Room"){
+                roomNumber = 3;
+                additionalGuest = 3000
+                roomvalText1.text("35,000");
+                roomvalText2.text("35,000");
+                guestvalText1.text("3,000");
+                guestvalText2.text("3,000");
+                occupancyText1.text("4");
+                occupancyText2.text("5");
+                guests.attr({
+                  min: 1,
+                  max: 5
+                });
+              }
+              else if(roomvalue.val() == "Queen Room"){
+                roomNumber = 4;
+                additionalGuest = 5000
+                roomvalText1.text("40,000");
+                roomvalText2.text("40,000");
+                guestvalText1.text("5,000");
+                guestvalText2.text("5,000");
+                occupancyText1.text("2");
+                occupancyText2.text("4");
+                guests.attr({
+                  min: 1,
+                  max: 4
+                });
+              }
+              else if(roomvalue.val() == "King Room"){
+                roomNumber = 5;
+                additionalGuest = 5000
+                roomvalText1.text("45,000");
+                roomvalText2.text("45,000");
+                guestvalText1.text("5,000");
+                guestvalText2.text("5,000");
+                occupancyText1.text("2");
+                occupancyText2.text("4");
+                guests.attr({
+                  min: 1,
+                  max: 4
+                });
               }
             }
 
