@@ -78,7 +78,7 @@
                             <% for (var i = 0; i < RoomList.length; i++) {%>
                                 <a class="col-sm-4 py-5 px-4 d-flex justify-content-center rooms" href="view_rooms?id=<%-RoomList[i].Type%>" style="max-width:  max-content;">
                                     <div class="card mb-4 border-0">
-                                        <img src="./images/hotel_bg.jpg" class="card-img-top" alt="test">
+                                        <img src="./images/<%-RoomList[i].Type.toLowerCase()%>.jpg" class="card-img-top" alt="test">
                                         <div class="card-body">
                                             <h5 class="card-title my-auto"><%-RoomList[i].Type%></h5>
                                         </div>
