@@ -13,11 +13,13 @@ label{
     background-color: #DCA73A;
     color: white;
     border-radius: 20px;
-    max-width: max-content;
+    width: 165px;
     min-width: 50px;
+    font-size: 18px;
+    margin-left: 60px;
 }
 
-.btn_book a:hover{
+.btn_book a:hover {
     color: white;
     transform: scale(1.2);
     transition: 0.2s;
@@ -27,4 +29,12 @@ input[name=num]::-webkit-outer-spin-button,
 input[name=num]::-webkit-inner-spin-button{
     -webkit-appearance: none;
     margin: 0;
+}
+.book_price {
+    margin-left: 80px;
+    margin-bottom: 50px;
+}
+
+.d-flex {
+    color:#4e4e4e;
 }
