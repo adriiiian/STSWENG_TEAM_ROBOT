@@ -123,7 +123,7 @@
                               <div class="col">
                                 <div class="form-group">
                                   <label for="guests">GUESTS</label>
-                                  <input type="number" class="form-control" id="guests" name="guests" value=0 min=0 max=2 required>
+                                  <input type="number" class="form-control" id="guests" name="guests" value=1 min=1 max=2 required>
                                   <div class="valid-feedback">
                                     <i class="fa fa-check" style="color: darkgreen; font-size:14;"></i>
                                   </div>
@@ -135,43 +135,44 @@
                           <div class="book_price">
                               <div class="col d-flex align-items-center">
                                 <div style="font-size: 17px; font-weight: 500;">₱ </div>
-                                <div style="font-size: 17px;">15,000</div>
+                                <div id="room_value_text_1" style="font-size: 17px;">15,000</div>
                                 <div style="font-size: 17px; margin-left: 5px">/ night</div>
                               </div>
                               <div class="col d-flex align-items-center">
                                 <div style="font-size: 17px; font-weight: 500;">₱ </div>
-                                <div style="font-size: 17px;">300</div>
+                                <div id="val_guests_text_1" style="font-size: 17px;">3,000</div>
                                 <div style="font-size: 17px; margin-left: 5px">/ additional guest</div>
                               </div>
                               <p>_________________________________________________________</p>
                               <div class="col d-flex align-items-center">
                                 <div style="font-size: 17px; font-weight: 500;">₱ </div>
-                                <div style="font-size: 17px;">15,000</div>
+                                <div id="room_value_text_2" style="font-size: 17px;">15,000</div>
                                 <div style="font-size: 17px; margin-left: 5px; margin-right: 5px;">x</div>
-                                <div style="font-size: 17px; margin-right: 5px;">7</div>
-                                <div style="font-size: 17px;">nights</div>
+                                <div id="num_nights_text" style="font-size: 17px; margin-right: 5px;">0</div>
+                                <div style="font-size: 17px;">night/s</div>
                                 <div style="font-size: 17px; margin-left: 5px; margin-right: 5px;">=</div>
                                 <div style="font-size: 17px; font-weight: 500;">₱</div>
-                                <div style="font-size: 17px;">105,000</div>
+                                <div id="room_value_text_3" style="font-size: 17px;">0</div>
                               </div>
                               <div class="col d-flex align-items-center">
                                 <div style="font-size: 17px; font-weight: 500;">₱ </div>
-                                <div style="font-size: 17px;">300</div>
+                                <div id="val_guests_text_2" style="font-size: 17px;">3,000</div>
                                 <div style="font-size: 17px; margin-left: 5px; margin-right: 5px;">x</div>
-                                <div style="font-size: 17px; margin-right: 5px;">3</div>
+                                <div id="num_guest_text_1" style="font-size: 17px; margin-right: 5px;">0</div>
                                 <div style="font-size: 17px;">additional guest(s)</div>
                                 <div style="font-size: 17px; margin-left: 5px; margin-right: 5px;">=</div>
                                 <div style="font-size: 17px; font-weight: 500;">₱</div>
-                                <div style="font-size: 17px;">900</div>
+                                <div id="val_add_guest_text" style="font-size: 17px;">0</div>
                               </div>
                               <div class="col d-flex align-items-center" style="margin-top: 15px;">
                                 <div style="font-size: 18px; font-weight: 500; margin-right: 10px;">Total: </div>
                                 <div style="font-size: 18px; font-weight: 500;">₱ </div>
-                                <div style="font-size: 18px; font-weight: 500;">105,900</div>
+                                <div id="pricetext" style="font-size: 18px; font-weight: 500;">0</div>
                                 <div class="col btn_book">
-                                  <a href="#" type="submit">BOOK</a>
+                                  <button type="submit" class="btn btn_register">BOOK</button>
                                 </div>
                               </div>
+                              <p id="booking_error" class="text-danger h6 text-center">Invalid input</p>
                           </div>
                         </div>
                     </div>
@@ -198,16 +199,24 @@
           var end = new Date(new Date().setYear(start.getFullYear()+1));
 
           let checkoutdatepicker, checkindatepicker;
-
           let guests = $('#guests')
           let roomvalue = $('#room');
           let pricevalue = $('#pricetext')
           let roomNumber = 0
           let additionalGuest = 3000
           let numAdditionalGuest
-          let totalPrice
+          let totalPrice, subtotalPrice
           const maxGuests = [1,2,3,4,2,2]
           const roomprice = [15000, 20000, 25000, 35000, 40000, 45000]
+
+          let roomvalText1 = $('#room_value_text_1')
+          let roomvalText2 = $('#room_value_text_2')
+          let roomvalText3 = $('#room_value_text_3')
+          let guestvalText1 = $('#val_guests_text_1')
+          let guestvalText2 = $('#val_guests_text_2')
+          let numnightsText = $('#num_nights_text')
+          let numguesttext = $('#num_guest_text_1')
+          let valaddguest = $('#val_add_guest_text')
 
           checkoutdatepicker = $('#checkout').datepicker({
                 uiLibrary: 'bootstrap4',
@@ -247,70 +256,80 @@
               if(roomvalue.val() == "Single"){
                 roomNumber = 0;
                 additionalGuest = 3000
-                resetdate();
-                pricevalue.text("15,000");
-                guests.val(0);
+                roomvalText1.text("15,000");
+                roomvalText2.text("15,000");
+                guestvalText1.text("3,000");
+                guestvalText2.text("3,000");
                 guests.attr({
-                  min: 0,
+                  min: 1,
                   max: 2
                 });
               }
               else if(roomvalue.val() == "Double"){
                 roomNumber = 1;
                 additionalGuest = 3000
-                resetdate();
-                pricevalue.text("20,000");
-                guests.val(0);
+                roomvalText1.text("20,000");
+                roomvalText2.text("20,000");
+                guestvalText1.text("3,000");
+                guestvalText2.text("3,000");
                 guests.attr({
-                  min: 0,
+                  min: 1,
                   max: 3
                 });
               }
               else if(roomvalue.val() == "Triple"){
                 roomNumber = 2;
                 additionalGuest = 3000
-                resetdate();
-                pricevalue.text("25,000");
-                guests.val(0);
+                roomvalText1.text("25,000");
+                roomvalText2.text("25,000");
+                guestvalText1.text("3,000");
+                guestvalText2.text("3,000");
                 guests.attr({
-                  min: 0,
+                  min: 1,
                   max: 4
                 });
               }
               else if(roomvalue.val() == "Quad"){
                 roomNumber = 3;
                 additionalGuest = 3000
-                resetdate();
-                pricevalue.text("35,000");
-                guests.val(0);
+                roomvalText1.text("35,000");
+                roomvalText2.text("35,000");
+                guestvalText1.text("3,000");
+                guestvalText2.text("3,000");
                 guests.attr({
-                  min: 0,
+                  min: 1,
                   max: 5
                 });
               }
               else if(roomvalue.val() == "Queen"){
                 roomNumber = 4;
                 additionalGuest = 5000
-                resetdate();
-                pricevalue.text("40,000");
-                guests.val(0);
+                roomvalText1.text("40,000");
+                roomvalText2.text("40,000");
+                guestvalText1.text("5,000");
+                guestvalText2.text("5,000");
                 guests.attr({
-                  min: 0,
+                  min: 1,
                   max: 4
                 });
               }
               else if(roomvalue.val() == "King"){
                 roomNumber = 5;
                 additionalGuest = 5000
-                resetdate();
-                pricevalue.text("45,000");
-                guests.val(0);
+                roomvalText1.text("45,000");
+                roomvalText2.text("45,000");
+                guestvalText1.text("5,000");
+                guestvalText2.text("5,000");
                 guests.attr({
-                  min: 0,
+                  min: 1,
                   max: 4
                 });
               }
-              
+              guests.val(1)
+              resetdate()
+              updateprice()
+              numguesttext.text(0)
+              valaddguest.text(0)
             });
 
             guests.on("change", function(){
@@ -357,11 +376,27 @@
               dateDifference = Math.ceil(timeDifference / (1000 * 60 * 60 * 24))
               numAdditionalGuest = guests.val() - maxGuests[roomNumber]
               totalPrice =  Math.imul(roomprice[roomNumber], dateDifference)
+              subtotalPrice = totalPrice
+              let internationalNumberFormat = new Intl.NumberFormat('en-US')
               if(numAdditionalGuest > 0){
-                totalPrice = totalPrice + Math.imul(additionalGuest, numAdditionalGuest)
+                subtotalPrice = totalPrice + Math.imul(additionalGuest, numAdditionalGuest)
+                numguesttext.text(numAdditionalGuest)
+                valaddguest.text(internationalNumberFormat.format(Math.imul(additionalGuest, numAdditionalGuest)))
+              }
+              else{
+                numguesttext.text(0)
+                valaddguest.text(0)
               }
               if(checkinDate != "Invalid Date"){
-                pricevalue.text(totalPrice)
+                
+                numnightsText.text(dateDifference)
+                pricevalue.text(internationalNumberFormat.format(subtotalPrice))
+                roomvalText3.text(internationalNumberFormat.format(totalPrice))
+              }
+              else{
+                pricevalue.text(0)
+                numnightsText.text(0)
+                roomvalText3.text(0)
               }
             }
 
