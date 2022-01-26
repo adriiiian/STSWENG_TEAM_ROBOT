@@ -1,7 +1,7 @@
 <div class="container">
     <div class="book_con">
         <div class="container">
-            <form class="row mx-auto book_form" action="">
+            <form class="row mx-auto book_form" action="" autocomplete="off">
                 <div class="col-sm-3 mx-auto book_form_label">
                     CHECK IN
                     <input id="checkin"/>
@@ -31,7 +31,18 @@
                 </div>
                     
                 <div class="col-sm-2.5 mx-auto">
-                    <a class="mx-auto btn_booknow" type="submit" value="Submit" href="#" onclick="toggle()">Book now</a>
+                    <% if (!_email) {%>
+                        <!-- IF LOGGED OUT -->
+                        <div class="col-sm-2.5 mx-auto">
+                            <a class="mx-auto btn_booknow" type="submit" value="Submit" href="#" onclick="toggle()">Book now</a>
+                        </div>
+                    <% } else {%>
+                        <!-- IF LOGGED IN -->
+                        <div class="col-sm-2.5 mx-auto">
+                            <a class="mx-auto btn_booknow" type="submit" value="Submit" href="../booking">Book now</a>
+                        </div>
+                    
+                    <% }%>
                 </div>
             </form>
         </div>

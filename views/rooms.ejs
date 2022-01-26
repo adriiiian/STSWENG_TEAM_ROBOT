@@ -136,12 +136,67 @@
     <%- include('./partials/account_popup.ejs') %>
 
         <script>
-            $('#checkin').datepicker({
-                uiLibrary: 'bootstrap4'
-            });
-            $('#checkout').datepicker({
-                uiLibrary: 'bootstrap4'
-            });
+            // set default dates
+            var start = new Date();
+            var defaultDate = new Date(start.getFullYear(), start.getMonth(), start.getDate());
+            var newMinDate;
+            // set end date to max one year period:
+            var end = new Date(new Date().setYear(start.getFullYear()+1));
+
+            // check in/out fields
+            let checkoutdatepicker = $('#checkout').datepicker({
+                    uiLibrary: 'bootstrap4',
+                    format: 'mm-dd-yyyy',
+                    todayHighlight: true,
+                    minDate: defaultDate,
+                    maxDate: 0
+                })
+
+            let checkindatepicker = $('#checkin').datepicker({
+                    uiLibrary: 'bootstrap4',
+                    format: 'mm-dd-yyyy',
+                    todayHighlight: true,
+                    minDate: defaultDate,
+                    maxDate: 0
+                }).on("change", function(){
+                checkoutdatepicker.datepicker('destroy');
+                checkoutdatepicker.datepicker({
+                    uiLibrary: 'bootstrap4',
+                    format: 'mm-dd-yyyy',
+                    todayHighlight: true,
+                    minDate: new Date($(this).val()),
+                    maxDate: 0
+                })
+                });
+
+                function resetdate(){
+                checkindatepicker.datepicker('destroy');
+                checkindatepicker.datepicker({
+                    uiLibrary: 'bootstrap4',
+                    format: 'mm-dd-yyyy',
+                    todayHighlight: true,
+                    minDate: defaultDate,
+                    maxDate: 0
+                }).on("change", function(){
+                checkoutdatepicker.datepicker('destroy');
+                checkoutdatepicker.datepicker({
+                    uiLibrary: 'bootstrap4',
+                    format: 'mm-dd-yyyy',
+                    todayHighlight: true,
+                    minDate: new Date($(this).val()),
+                    maxDate: 0
+                })
+                });
+
+                checkoutdatepicker.datepicker('destroy');
+                checkoutdatepicker.datepicker({
+                    uiLibrary: 'bootstrap4',
+                    format: 'mm-dd-yyyy',
+                    todayHighlight: true,
+                    minDate: defaultDate,
+                    maxDate: 0
+                });
+            }
         </script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
