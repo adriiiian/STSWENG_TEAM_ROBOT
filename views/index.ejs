@@ -48,27 +48,7 @@
             </div>
         </div>
         <div class="container-fluid px-0 content_con">
-            <div class="container">
-                <div class="book_con">
-                    <div class="container">
-                        <form class="row mx-auto book_form" action="">
-                            <div class="col-sm-3 mx-auto book_form_label">
-                                CHECK IN
-                                <input id="checkin"/>
-                            </div>
-                            <div class="col-sm-3 mx-auto book_form_label">
-                                CHECK OUT
-                                <input id="checkout"/>
-                            </div>
-                            <div class="col-sm-3 mx-auto book_form_label">
-                                GUESTS
-                                <input type="number" id="numpeople" name="numpeople">
-                            </div>
-                            <%- include('./partials/account_booking.ejs') %>
-                        </form>
-                    </div>
-                </div>
-            </div>
+            <%- include('./partials/book_header.ejs') %>
             <div class="container-fluid py-5 about_con">
                 <div class="container">
                     <div class="row">

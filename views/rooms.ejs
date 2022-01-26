@@ -40,27 +40,7 @@
         </div>
         
         <div class="container-fluid px-0 content_con" style="margin-top: 100px;">
-            <div class="container">
-                <div class="book_con">
-                    <div class="container">
-                        <form class="row mx-auto book_form" action="">
-                            <div class="col-sm-3 mx-auto book_form_label">
-                                CHECK IN
-                                <input id="checkin"/>
-                            </div>
-                            <div class="col-sm-3 mx-auto book_form_label">
-                                CHECK OUT
-                                <input id="checkout"/>
-                            </div>
-                            <div class="col-sm-3 mx-auto book_form_label">
-                                GUESTS
-                                <input type="number" id="numpeople" name="firstname">
-                            </div>
-                            <%- include('./partials/account_booking.ejs') %>
-                        </form>
-                    </div>
-                </div>
-            </div>
+            <%- include('./partials/book_header.ejs') %>
             <div class="container-fluid py-5">
                 <div class="container d-flex justify-content-center flex-column align-items-center">
                     <div class="roomslist_header">
@@ -95,7 +75,7 @@
                                     <div class="card-body">
                                         <h5 class="card-title my-auto">Single Room </h5>
                                     </div>
-                                    <div class="card-footer">P 15000.00 PER NIGHT</div>
+                                    <div class="card-footer">₱15000.00 PER NIGHT</div>
                                 </div>
                             </a>
                             <a class="col-sm-4 py-5 px-4 d-flex justify-content-center" href="view_rooms" style="max-width:  max-content;;">
@@ -104,7 +84,7 @@
                                     <div class="card-body">
                                         <h5 class="card-title my-auto">Double Room </h5>
                                     </div>
-                                    <div class="card-footer">P 20000.00 PER NIGHT</div>
+                                    <div class="card-footer">₱20000.00 PER NIGHT</div>
                                 </div>
                             </a>
                             <a class="col-sm-4 py-5 px-4 d-flex justify-content-center" href="view_rooms" style="max-width:  max-content;;">
@@ -113,7 +93,7 @@
                                     <div class="card-body">
                                         <h5 class="card-title my-auto">Triple Room </h5>
                                     </div>
-                                    <div class="card-footer">P 25000.00 PER NIGHT</div>
+                                    <div class="card-footer">₱25000.00 PER NIGHT</div>
                                 </div>
                             </a>
                             <a class="col-sm-4 py-5 px-4 d-flex justify-content-center" href="view_rooms" style="max-width:  max-content;;">
@@ -122,7 +102,7 @@
                                     <div class="card-body">
                                         <h5 class="card-title my-auto">Quad Room </h5>
                                     </div>
-                                    <div class="card-footer">P 35000.00 PER NIGHT</div>
+                                    <div class="card-footer">₱35000.00 PER NIGHT</div>
                                 </div>
                             </a>
                             <a class="col-sm-4 py-5 px-4 d-flex justify-content-center" href="view_rooms" style="max-width:  max-content;;">
@@ -131,7 +111,7 @@
                                     <div class="card-body">
                                         <h5 class="card-title my-auto">Queen Room </h5>
                                     </div>
-                                    <div class="card-footer">P 40000.00 PER NIGHT</div>
+                                    <div class="card-footer">₱40000.00 PER NIGHT</div>
                                 </div>
                             </a>
                             <a class="col-sm-4 py-5 px-4 d-flex justify-content-center" href="view_rooms" style="max-width:  max-content;;">
@@ -140,7 +120,7 @@
                                     <div class="card-body">
                                         <h5 class="card-title my-auto">King Room </h5>
                                     </div>
-                                    <div class="card-footer">P 45000.00 PER NIGHT</div>
+                                    <div class="card-footer">₱45000.00 PER NIGHT</div>
                                 </div>
                             </a>
                         </div>
