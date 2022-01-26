@@ -165,20 +165,34 @@
           // set default dates
           var start = new Date();
           var defaultDate = new Date(start.getFullYear(), start.getMonth(), start.getDate());
-          var newMinDate;
+          var checkinDate, checkoutDate, dateDifference, timeDifference;
           // set end date to max one year period:
           var end = new Date(new Date().setYear(start.getFullYear()+1));
 
+          let checkoutdatepicker, checkindatepicker;
+
+          let guests = $('#guests')
+          let roomvalue = $('#room');
+          let pricevalue = $('#pricetext')
+
           // check in/out fields
-          let checkoutdatepicker = $('#checkout').datepicker({
+          checkoutdatepicker = $('#checkout').datepicker({
                 uiLibrary: 'bootstrap4',
                 format: 'mm-dd-yyyy',
                 todayHighlight: true,
                 minDate: defaultDate,
                 maxDate: 0
-              })
+              }).on("change", function(){
+                checkinDate = new Date(checkindatepicker.val())
+                checkoutDate = new Date($(this).val())
+                timeDifference = Math.abs(checkoutDate - checkinDate)
+                dateDifference = Math.ceil(timeDifference / (1000 * 60 * 60 * 24))
+                console.log(checkinDate)
+                console.log(checkoutDate)
+                console.log(dateDifference)
+              });
 
-          let checkindatepicker = $('#checkin').datepicker({
+          checkindatepicker = $('#checkin').datepicker({
                 uiLibrary: 'bootstrap4',
                 format: 'mm-dd-yyyy',
                 todayHighlight: true,
@@ -192,18 +206,24 @@
                 todayHighlight: true,
                 minDate: new Date($(this).val()),
                 maxDate: 0
-              })
+              }).on("change", function(){
+                checkinDate = new Date(checkindatepicker.val())
+                checkoutDate = new Date($(this).val())
+                timeDifference = Math.abs(checkoutDate - checkinDate)
+                dateDifference = Math.ceil(timeDifference / (1000 * 60 * 60 * 24))
+                console.log(checkinDate)
+                console.log(checkoutDate)
+                console.log(dateDifference)
+              });
             });
 
             // guests field
-            let guests = $('#guests')
             guests.keypress(function (e){
               e.preventDefault();
             });
 
             // price field
-            let roomvalue = $('#room');
-            let pricevalue = $('#pricetext')
+            
             roomvalue.on("change", function(){
               if(roomvalue.val() == "Single"){
                 resetdate();
@@ -211,7 +231,7 @@
                 guests.val(0);
                 guests.attr({
                   min: 0,
-                  max: 1
+                  max: 2
                 });
               }
               else if(roomvalue.val() == "Double"){
@@ -220,7 +240,7 @@
                 guests.val(0);
                 guests.attr({
                   min: 0,
-                  max: 2
+                  max: 3
                 });
               }
               else if(roomvalue.val() == "Triple"){
@@ -229,7 +249,7 @@
                 guests.val(0);
                 guests.attr({
                   min: 0,
-                  max: 3
+                  max: 4
                 });
               }
               else if(roomvalue.val() == "Quad"){
@@ -238,7 +258,7 @@
                 guests.val(0);
                 guests.attr({
                   min: 0,
-                  max: 4
+                  max: 5
                 });
               }
               else if(roomvalue.val() == "Queen"){
@@ -247,7 +267,7 @@
                 guests.val(0);
                 guests.attr({
                   min: 0,
-                  max: 2
+                  max: 4
                 });
               }
               else if(roomvalue.val() == "King"){
@@ -256,7 +276,7 @@
                 guests.val(0);
                 guests.attr({
                   min: 0,
-                  max: 2
+                  max: 4
                 });
               }
               
