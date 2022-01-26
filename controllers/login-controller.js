@@ -72,11 +72,9 @@ const loginController = {
         }
         var id = req.query.id
         var room
-        console.log(id)
         await db.Rooms.findOne({Type: id}).then(function(result) {
             if(result) {
                 room = result
-                console.log('result is not empty')
                 res.render('view_rooms', {_email, room})
             }
         })
