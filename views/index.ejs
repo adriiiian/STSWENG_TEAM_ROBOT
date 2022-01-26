@@ -51,7 +51,7 @@
             <div class="container">
                 <div class="book_con">
                     <div class="container">
-                        <form id="initial_booking_form" class="row mx-auto book_form" action="" autocomplete="off">
+                        <form class="row mx-auto book_form" action="">
                             <div class="col-sm-3 mx-auto book_form_label">
                                 CHECK IN
                                 <input id="checkin"/>
@@ -62,7 +62,7 @@
                             </div>
                             <div class="col-sm-3 mx-auto book_form_label">
                                 GUESTS
-                                <input type="number" id="numpeople" name="numpeople" value=0 min=0 max=1 required>
+                                <input type="number" id="numpeople" name="numpeople">
                             </div>
                             <%- include('./partials/account_booking.ejs') %>
                         </form>
@@ -157,7 +157,7 @@
                                 Up to the sea
                             </div>
                             <div class="services_con_description">
-                                We love life at the beach. Being close to the ocean with access to endless sandy beaches ensures a relaxed ‘state of mind’. It seams time stands still when the water touches our toes.
+                                We love life at the beach. Being close to the ocean with access to endless sandy beaches ensures a relaxed ‘state of mind’. It seems time stands still when the water touches our toes.
                             </div>
                             <a class="services_con_description_link" href="view_services">
                                 Learn more
@@ -196,43 +196,11 @@
     <%- include('./partials/account_popup.ejs') %>
 
         <script>
-            // set default dates
-          var start = new Date();
-          var defaultDate = new Date(start.getFullYear(), start.getMonth(), start.getDate());
-          var newMinDate;
-          // set end date to max one year period:
-          var end = new Date(new Date().setYear(start.getFullYear()+1));
-
-          // check in/out fields
-          let checkoutdatepicker = $('#checkout').datepicker({
-                uiLibrary: 'bootstrap4',
-                format: 'mm-dd-yyyy',
-                todayHighlight: true,
-                minDate: defaultDate,
-                maxDate: 0
-              })
-
-          let checkindatepicker = $('#checkin').datepicker({
-                uiLibrary: 'bootstrap4',
-                format: 'mm-dd-yyyy',
-                todayHighlight: true,
-                minDate: defaultDate,
-                maxDate: 0
-            }).on("change", function(){
-              checkoutdatepicker.datepicker('destroy');
-              checkoutdatepicker.datepicker({
-                uiLibrary: 'bootstrap4',
-                format: 'mm-dd-yyyy',
-                todayHighlight: true,
-                minDate: new Date($(this).val()),
-                maxDate: 0
-              })
+            $('#checkin').datepicker({
+                uiLibrary: 'bootstrap4'
             });
-
-            // guests field
-            let guests = $('#numpeople')
-            guests.keypress(function (e){
-              e.preventDefault();
+            $('#checkout').datepicker({
+                uiLibrary: 'bootstrap4'
             });
         </script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -259,10 +227,6 @@
                 $("#form_login").show();
                 $("#form_createaccount").hide();
                 $("#login_error").hide();
-            }
-            function submitBooking(){
-                let form = document.getElementById("initial_booking_form");
-                form.submit();
             }
         </script>
     </body>

@@ -55,15 +55,9 @@ $(document).ready(function(){
                         alert('Booking Failed')
                     }
                     
-                });
+                })
                 
             }
-        });
-    });
-
-    // $('#initial_booking_form').submit(async function(){
-    //     var initialInfos = {
-    //         Checkin: new Date($('#'))
-    //     }
-    // })
-});
+        })
+    })
+})

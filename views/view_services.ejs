@@ -49,42 +49,21 @@
             </div>
         </div>
         <div class="container-fluid px-0 content_con" style="margin-top: 100px;">
-            <div class="container">
-                <div class="book_con">
-                    <div class="container">
-                        <form class="row mx-auto book_form" action="">
-                            <div class="col-sm-3 mx-auto book_form_label">
-                                CHECK IN
-                                <input id="checkin"/>
-                            </div>
-                            <div class="col-sm-3 mx-auto book_form_label">
-                                CHECK OUT
-                                <input id="checkout"/>
-                            </div>
-                            <div class="col-sm-3 mx-auto book_form_label">
-                                GUESTS
-                                <input type="number" id="numpeople" name="firstname">
-                            </div>
-                            <div class="col-sm-2.5 mx-auto">
-                                <a class="mx-auto btn_booknow" type="submit" value="Submit" href="#" onclick="toggle()">Book now</a>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
+            <%- include('./partials/book_header.ejs') %>
             <div class="container-fluid">
                 <div class="container pb-5">
                     <div class="row">
                         <div class="col-sm-9 p-5 viewservices_description">
-                            The stylish heart of our resort, indulge in afternoon tea, and by night, let our expert mixologists personalize your cocktail.
+                            Open all day serving meals, light snacks, and exquisite afternoon tea.
                         </div>
                         <div class="col-sm-3 py-5 viewservices_details">
                             <div>
                                 <div style="font-weight: 500;">DETAILS:</div>
                                 <ul>
-                                    <li>From day to night</li>
+                                    <li>Open daily from 7:00am - 11:00pm</li>
+                                    <li>Afternoon Tea is served daily from 2:00pm - 5:00pm</li>
                                     <li>Open to all guests</li>
-                                  </ul>
+                                </ul>
                             </div>
                         </div>
                     </div>

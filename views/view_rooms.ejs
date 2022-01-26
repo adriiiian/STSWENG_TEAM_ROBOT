@@ -49,44 +49,24 @@
             </div>
         </div>
         <div class="container-fluid px-0 content_con" style="margin-top: 100px;">
-            <div class="container">
-                <div class="book_con">
-                    <div class="container">
-                        <form class="row mx-auto book_form" action="">
-                            <div class="col-sm-3 mx-auto book_form_label">
-                                CHECK IN
-                                <input id="checkin"/>
-                            </div>
-                            <div class="col-sm-3 mx-auto book_form_label">
-                                CHECK OUT
-                                <input id="checkout"/>
-                            </div>
-                            <div class="col-sm-3 mx-auto book_form_label">
-                                GUESTS
-                                <input type="number" id="numpeople" name="firstname">
-                            </div>
-                            <%- include('./partials/account_booking.ejs') %>
-                            
-                        </form>
-                    </div>
-                </div>
-            </div>
+            <%- include('./partials/book_header.ejs') %>
             <div class="container-fluid">
                 <div class="container pb-5">
                     <div class="row">
                         <div class="col-sm-9 p-5 viewrooms_description">
-                            The Classic Room is uniquely designed for comfort, featuring furniture with a vintage flair and a relaxing rain shower. A custom single size bed and hand stuffed mattress makes this a perfect romantic getaway for yourself.
+                            The Classic Room is uniquely designed for comfort, featuring furniture with a vintage flair and a relaxing rain shower. A custom single size bed makes this a perfect getaway for yourself.
                         </div>
                         <div class="col-sm-3 py-5 viewrooms_details">
                             <div>
                                 <div style="font-weight: 500;">DETAILS:</div>
                                 <ul>
-                                    <li>18 m2</li>
                                     <li>Separate toilet</li>
                                     <li>Flatscreen Tv</li>
                                     <li>Great wifi</li>
-                                    <li>Max no. of guests: 1</li>
-                                  </ul>
+                                    <li>1x Single size bed</li>
+                                    <li>No. of guests allowed: 1</li>
+                                    <li>No. of additional guests allowed: 1</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
