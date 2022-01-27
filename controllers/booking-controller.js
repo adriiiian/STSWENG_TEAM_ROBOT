@@ -56,8 +56,6 @@ const bookingController = {
             let newBooking = new Booking(schema);
             let bdate = new Date(bookingInfo.Checkin);
             let codate = new Date(bookingInfo.Checkout);
-            // let date_num = bdate.getDate();
-            // let codate_num = codate.getDate();
 
             let difference_in_time = codate.getTime() - bdate.getTime();
             let difference_in_days = difference_in_time / (1000 * 3600 * 24);
@@ -66,20 +64,8 @@ const bookingController = {
             let counter = 0;
             roomType = bookingInfo.RoomType;
 
-            // let temp = 1;
-            // let tempdate = new Date(bookingInfo.Checkin);
-            // let tempdate_num = tempdate.getDate();
-            // while(temp < 5){
-            //     tempdate_num++;
-            //     tempdate.setDate(tempdate.getDate() + 1);
-            //     console.log(tempdate_num);
-            //     console.log(tempdate + "");
-            //     temp++;
-            // }
-
             while(counter < difference_in_days){
                 datesArray.push(new Date(bdate));
-                // date_num++;
                 bdate.setDate(bdate.getDate() + 1);
                 console.log(bdate.getDate() + "")
                 counter++;
@@ -106,8 +92,6 @@ const bookingController = {
         return result;
     }
 }
-
-
 
 async function initSchema(body){
     let newBooking = {
@@ -167,7 +151,5 @@ async function findDate(){
 
     return 'success';
 }
-
-
 
 module.exports = bookingController;
