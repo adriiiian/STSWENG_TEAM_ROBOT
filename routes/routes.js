@@ -38,4 +38,6 @@ router.get('/check-fields-booking', bookingController.CheckFields)
 
 router.post('/book_reservation', bookingController.Book)
 
+// router.post('/book_reservation_dates', bookingController)
+
 module.exports = router

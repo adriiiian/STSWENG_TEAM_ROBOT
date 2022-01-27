@@ -50,6 +50,9 @@ $(document).ready(function(){
                 $.post('book_reservation', {Fullname: bookingInfo.Fullname, Email: bookingInfo.Email, ContactNumber: bookingInfo.ContactNumber, Address: bookingInfo.Address,
                 Checkin: bookingInfo.Checkin, Checkout: bookingInfo.Checkout, RoomType: bookingInfo.RoomType, Guests: bookingInfo.Guests, Subtotal: bookingInfo.Subtotal}, function(result){
                     if(result == "success"){
+                        // $.post('book_reservation_date', {Checkin: bookingInfo.Checkin, Checkout: bookingInfo.Checkout, RoomType: bookingInfo.RoomType}, function(result){
+
+                        // });
                         alert('Booked Successfully')
                         window.location.href = '/'
                     }
@@ -57,7 +60,7 @@ $(document).ready(function(){
                         alert('Booking Failed')
                     }
                     
-                })
+                });
                 
             }
         })
