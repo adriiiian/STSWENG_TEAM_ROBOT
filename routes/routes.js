@@ -34,12 +34,8 @@ router.get('/view_transactions', loginController.viewViewTransactions)
 
 router.get('/booking', loginController.viewBooking)
 
-// router.get('/booking', PreBookInfo, loginController.viewBooking)
-
 router.get('/check-fields-booking', bookingController.CheckFields)
 
 router.post('/book_reservation', bookingController.Book)
-
-// router.post('/pre_booking', bookingController.PreBook)
 
 module.exports = router

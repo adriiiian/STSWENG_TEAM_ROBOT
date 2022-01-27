@@ -64,19 +64,6 @@ $(document).ready(function(){
     })
 
     $('#book_header').submit(async function(){
-        // var PreBookInfo = {
-        //     Checkin: new Date($('#checkin').val()),
-        //     Checkout: new Date($('#checkout').val()),
-        //     RoomType: $('#room').val()
-        // }
-
-        window.location.href = '/booking'
-        // $.post('pre_booking', {Checkin: PreBookInfo.Checkin, Checkout: PreBookInfo.Checkout, RoomType: PreBookInfo.RoomType}, function(result){
-        //     if(result == "success"){
-        //         alert('pre-booked successfully')
-        //         // window.location.href = '/booking'
-        //     }
-        // })
-        // alert(PreBookInfo.RoomType)
+        window.location.href = '/booking';
     })
 })
