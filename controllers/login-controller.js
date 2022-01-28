@@ -86,8 +86,14 @@ const loginController = {
     viewTransactions: (req, res) => {
         if(req.session.email) {
             _email = req.session.email
+            
+            db.Bookings.find({Email: _email}).then((bookings) => {
+                res.render('transactions', {_email, bookings})
+            })
         }
-        res.render('transactions', {_email})
+        else {
+            res.render('transactions', {_email})
+        }
     },
 
     viewViewTransactions: (req, res) => {

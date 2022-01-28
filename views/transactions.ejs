@@ -77,74 +77,46 @@
                         
                         <div class="row d-flex justify-content-around">
                             <div class="col-sm-12 py-5 d-flex justify-content-center flex-column" href="view_transactions">
-                                <div class="card mb-5 border-0">
-                                    <div class="card-body d-flex flex-row justify-content-between">
-                                        <h5 class="card-title my-auto ">
-                                            <a href="view_transactions">
-                                                Room type
-                                            </a>
-                                        </h5>
-                                        <span class="">
-                                            <span class="date1">
-                                                11/08/21
-                                            </span>
-                                            <span style="color: rgb(185, 185, 185);">to</span>
-                                            <span class="date2">
-                                                11/10/21
-                                            </span>
-                                            <span >
-                                                <a href="#" class="btn_cancel_transaction" data-toggle="modal" data-target="#data_modal_cancel">Cancel</a>
-                                            </span>
-                                        </span>
-                                    </div>
-                                    <div class="border_bottom_active"></div>
-                                </div>
-                                <div class="card mb-5 border-0">
-                                    <div class="card-body d-flex flex-row justify-content-between">
-                                        <h5 class="card-title my-auto ">
-                                            <a href="view_transactions">
-                                                Room type
-                                            </a>
-                                        </h5>
-                                        <span class="">
-                                            <span class="date1">
-                                                11/08/21
-                                            </span>
-                                            <span style="color: rgb(185, 185, 185);">to</span>
-                                            <span class="date2">
-                                                11/10/21
-                                            </span>
-                                            <span>
-                                                <a href="#" type="button" class="btn_review_transaction" data-toggle="modal" data-target="#data_modal_review">
-                                                    Review
+
+
+                                <%for (var i = 0; i < bookings.length; i++) {%>
+
+                                    <div class="card mb-5 border-0">
+                                        <div class="card-body d-flex flex-row justify-content-between">
+                                            <h5 class="card-title my-auto ">
+                                                <a href="view_transactions">
+                                                    <%-bookings[i].RoomType%>
                                                 </a>
+                                            </h5>
+                                            <span class="">
+                                                <span class="date1">
+                                                    <%-(bookings[i].Checkin.getMonth() + 1)+ '/' + bookings[i].Checkin.getDate() + '/' + bookings[i].Checkin.getFullYear()%>
+                                                </span>
+                                                <span style="color: rgb(185, 185, 185);">to</span>
+                                                <span class="date2">
+                                                    <%-(bookings[i].Checkout.getMonth() + 1) + '/' + bookings[i].Checkout.getDate() + '/' + bookings[i].Checkout.getFullYear()%>
+                                                </span>
+                                                <span >
+                                                    <%if (bookings[i].Status == "Final") {%>
+                                        
+                                                        <a href="#" type="button" class="btn_review_transaction" data-toggle="modal" data-target="#data_modal_review">
+                                                            Review
+                                                        </a>
+                                        
+                                                    <%} else {%>
+                                                        <a href="#" class="btn_cancel_transaction" data-toggle="modal" data-target="#data_modal_cancel">Cancel</a>
+                                                    <%}%>
+                                                </span>
                                             </span>
-                                        </span>
+                                        </div>
+                                        <%if (bookings[i].Status == "Final") {%>
+                                            <div class="border_bottom_done"></div>
+                                        <%} else {%>
+                                            <div class="border_bottom_active"></div>
+                                        <%}%>
                                     </div>
-                                    <div class="border_bottom_done"></div>
-                                </div>
-                                <div class="card mb-5 border-0">
-                                    <div class="card-body d-flex flex-row justify-content-between">
-                                        <h5 class="card-title my-auto ">
-                                            <a href="view_transactions">
-                                                Room type
-                                            </a>
-                                        </h5>
-                                        <span class="">
-                                            <span class="date1">
-                                                11/08/21
-                                            </span>
-                                            <span style="color: rgb(185, 185, 185);">to</span>
-                                            <span class="date2">
-                                                11/10/21
-                                            </span>
-                                            <span >
-                                                <a href="#" class="btn_cancel_transaction" data-toggle="modal" data-target="#data_modal_cancel">Cancel</a>
-                                            </span>
-                                        </span>
-                                    </div>
-                                    <div class="border_bottom_active"></div>
-                                </div>
+
+                                <%}%>
                                
                             </div>
                             
