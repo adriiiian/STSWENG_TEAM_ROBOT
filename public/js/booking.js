@@ -10,7 +10,8 @@ $(document).ready(function(){
             Checkout: new Date($('#checkout').val()),
             RoomType: $('#room').val(),
             Guests: $('#guests').val(),
-            Subtotal: $('#pricetext').val()
+            Subtotal: $('#pricetext').val(),
+            Status: "Pending"
         };
 
         var Room = {
@@ -88,7 +89,7 @@ $(document).ready(function(){
                 else if(result == 'Booking information is valid'){
                     $('#booking_error').hide();
                     $.post('book_reservation', {Fullname: bookingInfo.Fullname, Email: bookingInfo.Email, ContactNumber: bookingInfo.ContactNumber, Address: bookingInfo.Address,
-                    Checkin: bookingInfo.Checkin, Checkout: bookingInfo.Checkout, RoomType: bookingInfo.RoomType, Guests: bookingInfo.Guests, Subtotal: bookingInfo.Subtotal}, function(result){
+                    Checkin: bookingInfo.Checkin, Checkout: bookingInfo.Checkout, RoomType: bookingInfo.RoomType, Guests: bookingInfo.Guests, Subtotal: bookingInfo.Subtotal, Status: bookingInfo.Status}, function(result){
                         if(result == "success"){
                             alert('Booked Successfully')
                             window.location.href = '/'
