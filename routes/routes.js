@@ -40,6 +40,4 @@ router.post('/book_reservation', bookingController.Book)
 
 router.get('/check_available_rooms', bookingController.CheckAvailableRooms)
 
-router.get('/booking_check_conflicts', bookingController.BookingCheckConflict)
-
 module.exports = router

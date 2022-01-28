@@ -40,13 +40,9 @@ $(document).ready(function(){
                     let bdatetemp = ((bdate.getMonth() + 1) + "-" + bdate.getDate() + "-" + bdate.getFullYear());
                     if(bdatetemp && dateresulttemp.indexOf(bdatetemp) > -1){
                         isValid = false;
-                        console.log('yes' + bdatetemp)
                         $('#booking_error').text('');
                         $('#booking_error').text('The chosen reservation date is not available');
                         $('#booking_error').show();
-                    }
-                    else{
-                        console.log('no' + bdatetemp)
                     }
                     bdate.setDate(bdate.getDate() + 1);
                     counter++;

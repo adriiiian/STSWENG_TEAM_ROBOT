@@ -281,7 +281,7 @@
               });
             });
 
-            initialLoad()
+            check_available_rooms();
 
             // guests field
             guests.keypress(function (e){
@@ -293,25 +293,30 @@
             });
 
             roomvalue.on("change", function(){
-              updateRoomValue()
-              guests.val(1)
-              updateprice()
-              numguestText.text(0)
-              valaddguestText.text(0)
+              updateRoomValue();
+              guests.val(1);
+              updateprice();
+              numguestText.text(0);
+              valaddguestText.text(0);
+              check_available_rooms();
+            });
+
+            function check_available_rooms(){
+              roomvalue.val(localStorage.getItem("RoomType"));
               var Room = {
                 Type: $('#room').val()
               }
-              $('#room').val();
               $.get('check_available_rooms', {Room}, function(result){
-                dates.slice(0, dates.length);
                 let i;
+                dates = [];
                 for(i = 0; i < result.length; i++){
                     dates[i] = new Date(result[i]);
                     dates[i] = ((dates[i].getMonth() + 1) + '-' + dates[i].getDate() + '-' + dates[i].getFullYear())
                 }
-                resetdate()
+                resetdate();
+                initialLoad();
               });
-            });
+            }
 
             function resetdate(){
               checkindatepicker.datepicker('destroy');
@@ -370,19 +375,6 @@
                 });
             }
 
-            function removeFullBooked(date){
-              console.log('hello im here')
-              console.log(dates[0]);
-              console.log(date.getFullYear())
-              let i;
-              for(i = 0; i < dates.length; i++){
-                console.log('hello');
-
-              }
-            }
-
-            
-
             function updateprice(){
               checkinDate = new Date(checkindatepicker.val())
               checkoutDate = new Date(checkoutdatepicker.val())
@@ -418,7 +410,6 @@
             function initialLoad(){
               checkindatepicker.val(localStorage.getItem("Checkin"))
               checkoutdatepicker.val(localStorage.getItem("Checkout"))
-              roomvalue.val(localStorage.getItem("RoomType"))
               updateRoomValue()
               updateprice()
             }

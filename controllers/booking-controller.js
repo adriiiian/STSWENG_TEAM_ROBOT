@@ -63,7 +63,6 @@ const bookingController = {
             while(counter < difference_in_days){
                 datesArray.push(new Date(bdate));
                 bdate.setDate(bdate.getDate() + 1);
-                console.log(bdate.getDate() + "")
                 counter++;
             }
 
@@ -91,30 +90,14 @@ const bookingController = {
     CheckAvailableRooms: async(req, res) => {
         var RoomType = req.query.Room;
         var dates = [];
+        dates.splice(0, dates.length);
 
         await db.Dates.find({"Counter": 5, "RoomType": RoomType.Type},).exec((err, results) => {
             if(err)console.error(err);
             else{
                 let i;
-                console.log(results.length);
                 for(i = 0; i < results.length; i++){
                     dates.push(results[i].BDate + "");
-                }
-                res.send(dates);
-            }
-        })
-    },
-
-    BookingCheckConflict: async(req, res) => {
-        var RoomType = req.query.Room;
-
-        await db.Dates.find({"Counter": 5, "RoomType": RoomType.Type},).exec((err, results) => {
-            if(err)console.error(err);
-            else{
-                let i;
-                console.log(results.length);
-                for(i = 0; i < results.length; i++){
-                    
                 }
                 res.send(dates);
             }
@@ -156,7 +139,6 @@ async function findDate(){
             let Counter = dateid.Counter + 1;
             Dates.updateOne({"_id": oid}, {$set: {Counter: Counter}}, (err, doc) => {
                 if(err) console.error(err);
-                else console.log(doc);
             });
         }
         else{

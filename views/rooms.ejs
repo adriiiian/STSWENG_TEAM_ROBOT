@@ -4,6 +4,7 @@
     <head>
         <link rel="stylesheet" href="./css/index_css.css">
         <link rel="stylesheet" href="./css/rooms_css.css">
+        <link rel="stylesheet" href="./css/booking_css.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -137,6 +138,7 @@
     <%- include('./partials/account_popup.ejs') %>
 
         <script>
+            var dates = [];
             // set default dates
             var start = new Date();
             var defaultDate = new Date(start.getFullYear(), start.getMonth(), start.getDate());
@@ -144,48 +146,109 @@
             // set end date to max one year period:
             var end = new Date(new Date().setYear(start.getFullYear()+1));
 
-            // check in/out fields
-            let checkoutdatepicker = $('#checkout').datepicker({
-                    uiLibrary: 'bootstrap4',
-                    format: 'mm-dd-yyyy',
-                    todayHighlight: true,
-                    minDate: defaultDate,
-                    maxDate: 0
-                })
+            let roomfield = $('#room');
 
-            let checkindatepicker = $('#checkin').datepicker({
-                    uiLibrary: 'bootstrap4',
-                    format: 'mm-dd-yyyy',
-                    todayHighlight: true,
-                    minDate: defaultDate,
-                    maxDate: 0
-                }).on("change", function(){
+            // check in/out fields
+            let checkindatepicker, checkoutdatepicker;
+            checkoutdatepicker = $('#checkout').datepicker({
+                uiLibrary: 'bootstrap4',
+                format: 'mm-dd-yyyy',
+                todayHighlight: true,
+                minDate: defaultDate,
+                disableDates: function(date){
+                  if(date && dates.indexOf(((date.getMonth() + 1) + "-" + date.getDate() + "-" + date.getFullYear())) > -1){
+                    return false;
+                  }
+                  else{
+                    return true;
+                  }
+                }
+              });
+
+            checkindatepicker = $('#checkin').datepicker({
+                uiLibrary: 'bootstrap4',
+                format: 'mm-dd-yyyy',
+                todayHighlight: true,
+                minDate: defaultDate,
+                disableDates: function(date){
+                  if(date && dates.indexOf(((date.getMonth() + 1) + "-" + date.getDate() + "-" + date.getFullYear())) > -1){
+                    return false;
+                  }
+                  else{
+                    return true;
+                  }
+                }
+            }).on("change", function(){
                 checkoutdatepicker.datepicker('destroy');
+                let tempDate = new Date($(this).val());
+                tempDate.setDate(tempDate.getDate() + 1);
                 checkoutdatepicker.datepicker({
                     uiLibrary: 'bootstrap4',
                     format: 'mm-dd-yyyy',
                     todayHighlight: true,
-                    minDate: new Date($(this).val()),
-                    maxDate: 0
-                })
+                    minDate: tempDate,
+                    disableDates: function(date){
+                    if(date && dates.indexOf(((date.getMonth() + 1) + "-" + date.getDate() + "-" + date.getFullYear())) > -1){
+                        return false;
+                    }
+                    else{
+                        return true;
+                    }
+                    }
                 });
+            });
 
-                function resetdate(){
+            roomfield.on("change", function(){
+                check_available_rooms();
+            });
+
+            function check_available_rooms(){
+                var Room = {
+                    Type: $('#room').val()
+                }
+                $.get('check_available_rooms', {Room}, function(result){
+                let i;
+                dates = [];
+                for(i = 0; i < result.length; i++){
+                    dates[i] = new Date(result[i]);
+                    dates[i] = ((dates[i].getMonth() + 1) + '-' + dates[i].getDate() + '-' + dates[i].getFullYear())
+                }
+                resetdate();
+              });
+            }
+
+            function resetdate(){
                 checkindatepicker.datepicker('destroy');
                 checkindatepicker.datepicker({
                     uiLibrary: 'bootstrap4',
                     format: 'mm-dd-yyyy',
                     todayHighlight: true,
                     minDate: defaultDate,
-                    maxDate: 0
+                    disableDates: function(date){
+                        if(date && dates.indexOf(((date.getMonth() + 1) + "-" + date.getDate() + "-" + date.getFullYear())) > -1){
+                            return false;
+                        }
+                        else{
+                            return true;
+                        }
+                    }
                 }).on("change", function(){
                 checkoutdatepicker.datepicker('destroy');
+                let tempDate = new Date($(this).val());
+                tempDate.setDate(tempDate.getDate() + 1);
                 checkoutdatepicker.datepicker({
                     uiLibrary: 'bootstrap4',
                     format: 'mm-dd-yyyy',
                     todayHighlight: true,
-                    minDate: new Date($(this).val()),
-                    maxDate: 0
+                    minDate: tempDate,
+                    disableDates: function(date){
+                        if(date && dates.indexOf(((date.getMonth() + 1) + "-" + date.getDate() + "-" + date.getFullYear())) > -1){
+                            return false;
+                        }
+                        else{
+                            return true;
+                        }
+                    }
                 })
                 });
 
@@ -195,7 +258,14 @@
                     format: 'mm-dd-yyyy',
                     todayHighlight: true,
                     minDate: defaultDate,
-                    maxDate: 0
+                    disableDates: function(date){
+                        if(date && dates.indexOf(((date.getMonth() + 1) + "-" + date.getDate() + "-" + date.getFullYear())) > -1){
+                            return false;
+                        }
+                        else{
+                            return true;
+                        }
+                    }
                 });
             }
         </script>
