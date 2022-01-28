@@ -48,25 +48,25 @@
                     <div class="row p-5" >
                         <div class="col-sm-6">
                             <div class="viewtransactions_header">
-                                Room type
+                                <%-booking.RoomType%>
                             </div>
                         </div>
                         <div class="col-sm-3">
                             <div class="my-2">
                                 <div class="viewtransactions_details_label">FULL NAME</div>
-                                <div class="viewtransactions_details">Ina Patricia Evangelista</div>
+                                <div class="viewtransactions_details"><%-booking.Fullname%></div>
                             </div>
                             <div class="my-2">
                                 <div class="viewtransactions_details_label">EMAIL</div>
-                                <div class="viewtransactions_details">ina@email.com</div>
+                                <div class="viewtransactions_details"><%-booking.Email%></div>
                             </div>
                             <div class="my-2">
                                 <div class="viewtransactions_details_label">CONTACT NUMBER</div>
-                                <div class="viewtransactions_details">0987654321</div>
+                                <div class="viewtransactions_details"><%-booking.ContactNumber%></div>
                             </div>
                             <div class="my-2">
                                 <div class="viewtransactions_details_label">ADDRESS</div>
-                                <div class="viewtransactions_details">Taft Avenue Malate, Manila</div>
+                                <div class="viewtransactions_details"><%-booking.Address%></div>
                             </div>
                         </div>
                         <div class="col-sm-3 d-flex justify-content-between flex-column">
@@ -74,22 +74,22 @@
                                 <div class="row my-2">
                                     <div class="col">
                                         <div class="viewtransactions_details_label">CHECK IN</div>
-                                        <div class="viewtransactions_details">11/08/21</div>
+                                        <div class="viewtransactions_details"><%-(booking.Checkin.getMonth() + 1)+ '/' + booking.Checkin.getDate() + '/' + booking.Checkin.getFullYear()%></div>
                                     </div>
                                     <div class="col">
                                         <div class="viewtransactions_details_label">CHECK OUT</div>
-                                        <div class="viewtransactions_details">11/10/21</div>
+                                        <div class="viewtransactions_details"><%-(booking.Checkout.getMonth() + 1) + '/' + booking.Checkout.getDate() + '/' + booking.Checkout.getFullYear()%></div>
                                     </div>
                                     
                                 </div>
                                 <div class="row my-2">
                                     <div class="col">
                                         <div class="viewtransactions_details_label">GUESTS</div>
-                                        <div class="viewtransactions_details">5</div>
+                                        <div class="viewtransactions_details"><%-booking.Guests%></div>
                                     </div>
                                     <div class="col">
                                         <div class="viewtransactions_details_label">PRICE</div>
-                                        <div class="viewtransactions_details">P <span>15,000.00</span></div>
+                                        <div class="viewtransactions_details">P <span><%-booking.Subtotal%></span></div>
                                     </div>
                                 </div>
                             </div>  

@@ -96,12 +96,20 @@ const loginController = {
         }
     },
 
-    viewViewTransactions: (req, res) => {
+    viewViewTransactions: async (req, res) => {
         if(req.session.email) {
             _email = req.session.email
+
+            var id = req.query.id
+
+            await db.Bookings.findOne({_id: id}).then(function(booking) {
+                if(booking) {
+                    res.render('view_transactions', {_email, booking})
+                }
+            })
         }
-        res.render('view_transactions', {_email})
     }
+
 }
 
 module.exports = loginController
