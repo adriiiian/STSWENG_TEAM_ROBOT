@@ -4,10 +4,7 @@ const Booking = require('../models/bookings');
 const Dates = require('../models/dates');
 
 var datesArray = [];
-var monthsArray = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-var monthsArrayL = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 let roomType = "";
-var ObjectId = require('mongodb').ObjectId;
 
 const bookingController = {
 
@@ -59,7 +56,6 @@ const bookingController = {
 
             let difference_in_time = codate.getTime() - bdate.getTime();
             let difference_in_days = difference_in_time / (1000 * 3600 * 24);
-            console.log(difference_in_days);
             
             let counter = 0;
             roomType = bookingInfo.RoomType;
@@ -90,6 +86,39 @@ const bookingController = {
         datesArray.splice(0, datesArray.length);
         
         return result;
+    },
+
+    CheckAvailableRooms: async(req, res) => {
+        var RoomType = req.query.Room;
+        var dates = [];
+
+        await db.Dates.find({"Counter": 5, "RoomType": RoomType.Type},).exec((err, results) => {
+            if(err)console.error(err);
+            else{
+                let i;
+                console.log(results.length);
+                for(i = 0; i < results.length; i++){
+                    dates.push(results[i].BDate + "");
+                }
+                res.send(dates);
+            }
+        })
+    },
+
+    BookingCheckConflict: async(req, res) => {
+        var RoomType = req.query.Room;
+
+        await db.Dates.find({"Counter": 5, "RoomType": RoomType.Type},).exec((err, results) => {
+            if(err)console.error(err);
+            else{
+                let i;
+                console.log(results.length);
+                for(i = 0; i < results.length; i++){
+                    
+                }
+                res.send(dates);
+            }
+        })
     }
 }
 
