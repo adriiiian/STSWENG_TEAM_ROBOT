@@ -1,4 +1,5 @@
-const express = require('express')
+const express = require('express');
+const bookingController = require('../controllers/booking-controller');
 
 const loginController = require('../controllers/login-controller');
 const registerController = require('../controllers/register-controller');
@@ -27,7 +28,7 @@ router.get('/rooms', loginController.viewRooms)
 
 router.get('/view_rooms', loginController.viewViewRooms)
 
-router.get('/get-bookings', loginController.getBookings)
+router.get('/cancel-reservation', bookingController.cancelReservation)
 
 router.get('/transactions', loginController.viewTransactions)
 

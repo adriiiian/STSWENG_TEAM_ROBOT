@@ -20,6 +20,13 @@ $(document).ready(function ()
         
     })
 
+    $('.cancel_button').click(function() {
+        var href = 'cancel-reservation?id=' + $(this).attr('href')
+        $('#confirm_cancel').attr('href', href)
+    })
+
+
+
 })
 
 function filterTransaction() {
