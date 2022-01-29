@@ -281,7 +281,8 @@
               });
             });
 
-            check_available_rooms();
+            roomvalue.val(localStorage.getItem("RoomType"));
+            initialLoad();
 
             // guests field
             guests.keypress(function (e){
@@ -302,7 +303,7 @@
             });
 
             function check_available_rooms(){
-              roomvalue.val(localStorage.getItem("RoomType"));
+              
               var Room = {
                 Type: $('#room').val()
               }
@@ -314,7 +315,6 @@
                     dates[i] = ((dates[i].getMonth() + 1) + '-' + dates[i].getDate() + '-' + dates[i].getFullYear())
                 }
                 resetdate();
-                initialLoad();
               });
             }
 
@@ -408,8 +408,21 @@
             }
 
             function initialLoad(){
-              checkindatepicker.val(localStorage.getItem("Checkin"))
-              checkoutdatepicker.val(localStorage.getItem("Checkout"))
+              var Room = {
+                Type: $('#room').val()
+              }
+              $.get('check_available_rooms', {Room}, function(result){
+                let i;
+                dates = [];
+                for(i = 0; i < result.length; i++){
+                    dates[i] = new Date(result[i]);
+                    dates[i] = ((dates[i].getMonth() + 1) + '-' + dates[i].getDate() + '-' + dates[i].getFullYear())
+                }
+                resetdate();
+                checkindatepicker.val(localStorage.getItem("Checkin"))
+                checkoutdatepicker.val(localStorage.getItem("Checkout"))
+              });
+              
               updateRoomValue()
               updateprice()
             }
