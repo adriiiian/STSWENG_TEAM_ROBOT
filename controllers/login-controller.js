@@ -83,13 +83,38 @@ const loginController = {
         res.render('view_services', {_email})
     },
 
-    viewTransactions: (req, res) => {
+    getBookings: async (req, res) => {
+        console.log('bookings here')
+        await db.Bookings.find({Email: _email, Status: req.query.Filter}).then((bookings) => {
+            res.send(bookings)
+        })
+
+    },
+
+    viewTransactions: async (req, res) => {
+
+        var filter = req.query.filter
+
+        if(!filter) {
+            filter = 'All'
+        }
+
         if(req.session.email) {
             _email = req.session.email
+
+            if(filter == 'All' || filter == '') {
+                await db.Bookings.find({Email: _email}).then((bookings) => {
+                    res.render('transactions', {_email, bookings, filter})
+                })
+            }
+            else {
+                await db.Bookings.find({Email: _email, Status: filter}).then((bookings) => {
+                    res.render('transactions', {_email, bookings, filter})
+                })
+            }
             
-            db.Bookings.find({Email: _email}).then((bookings) => {
-                res.render('transactions', {_email, bookings})
-            })
+            
+            
         }
         else {
             res.render('transactions', {_email})

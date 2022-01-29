@@ -81,6 +81,12 @@
     background-color: darkolivegreen;
 }
 
+.border_bottom_cancelled{
+    height: 5px;
+    width: 100%;
+    background-color: darkred;
+}
+
 .date1, .date2{
     padding-left: 5px;
     padding-right: 5px;
