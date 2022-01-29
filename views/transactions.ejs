@@ -51,24 +51,31 @@
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
                     </div>
                     <div class="transactionslist_grid mx-5 d-flex justify-content-center flex-column">
-                        <div class="mt-3 align-self-start">
-                            <select name="" id="transaction_filter" class="form-control">
-                                <option value="" hidden></option>
-                                <option value="All" <%= filter == 'All' ? 'Selected' : '' %>>All</option>
-                                <option value="Final" <%= filter == 'Final' ? 'Selected' : '' %>>Final</option>
-                                <option value="Pending" <%= filter == 'Pending' ? 'Selected' : '' %>>Pending</option>
-                                <option value="Cancelled" <%= filter == 'Cancelled' ? 'Selected' : '' %>>Cancelled</option>
-                            </select>
-                            
-                            <!-- <select name="" id="transaction_sort" class="form-control">
-                                <option value="" hidden></option>
-                                <option value="Ascending">Ascending</option>
-                                <option value="Descending">Descending</option>
-                            </select> -->
 
-                            <a class="pl-3" id="apply_button" href="transactions" onclick="return filterTransaction();">Apply</a>
-                            <button class="pl-3 btn btn-secondary" id="clear_button" href="#">Clear</button>
-                        </div>
+                        <form class="mx-0 d-flex" action="">
+                            <span class="p-0 d-flex justify-content-start form-group">
+                                <div class="row">
+                                    <span class="col filter_label">FILTER
+                                        <select class="form-control" id="filter_select" required>
+                                            <option value="All" <%= filter == 'All' ? 'Selected' : '' %>>All</option>
+                                            <option value="Final" <%= filter == 'Final' ? 'Selected' : '' %>>Final</option>
+                                            <option value="Pending" <%= filter == 'Pending' ? 'Selected' : '' %>>Pending</option>
+                                            <option value="Cancelled" <%= filter == 'Cancelled' ? 'Selected' : '' %>>Cancelled</option>
+                                        </select>
+                                    </span>
+                                    <span class="col sort_label">SORT BY
+                                        <select class="form-control" id="sort_select" required>
+                                            <option value="">Ascending</option>
+                                            <option value="">Descending</option>
+                                        </select>
+                                    </span>
+                                </div>
+                            </span>
+                            <span class="pl-4 d-flex justify-content-start align-items-center ">
+                                <a class="pl-3" id="apply_button" href="transactions" onclick="return filterTransaction();">Apply</a>
+                                <a class="pl-3" id="clear_button" href="#" onclick="return false;">Clear</a>
+                            </span>
+                        </form>
                         
                         <div class="row d-flex justify-content-around" id="transactions_container">
                             <div class="col-sm-12 py-5 d-flex justify-content-center flex-column" href="view_transactions" id="list_container">

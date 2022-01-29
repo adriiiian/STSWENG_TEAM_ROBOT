@@ -1,3 +1,12 @@
+.filter_label, .sort_label{
+    color: #4e4e4e;
+    font-weight: 500;
+}
+
+#filter_select, #sort_select{
+    width: max-content;
+}
+
 .rating {
     display: flex;
     flex-direction: row-reverse;
@@ -35,15 +44,17 @@
     opacity: 0.4
 }
 
-.btn_review_transaction{
+.btn_review_transaction, .btn_cancel_transaction{
     padding-left: 20px;
     padding-right: 20px;
     border-radius: 20px;
 }
-.btn_cancel_transaction{
+
+.ongoing_transaction{
     padding-left: 20px;
     padding-right: 20px;
     border-radius: 20px;
+    color: rgb(185, 185, 185);
 }
 
 .btn_save_review a{
@@ -245,3 +256,4 @@
     border-radius: 20px !important;
     box-shadow: 0 5px 30px rgba(0, 0, 0, .30);
 }
+
