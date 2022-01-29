@@ -57,6 +57,7 @@
                                 <div class="row">
                                     <span class="col filter_label">FILTER
                                         <select class="form-control" id="filter_select" required>
+                                            <option value="" hidden></option>
                                             <option value="All" <%= filter == 'All' ? 'Selected' : '' %>>All</option>
                                             <option value="Final" <%= filter == 'Final' ? 'Selected' : '' %>>Final</option>
                                             <option value="Pending" <%= filter == 'Pending' ? 'Selected' : '' %>>Pending</option>
@@ -65,8 +66,9 @@
                                     </span>
                                     <span class="col sort_label">SORT BY
                                         <select class="form-control" id="sort_select" required>
-                                            <option value="">Ascending</option>
-                                            <option value="">Descending</option>
+                                            <option value="" hidden></option>
+                                            <option value="Latest" <%= sort == 'Latest' ? 'Selected' : '' %>>Latest</option>
+                                            <option value="Oldest" <%= sort == 'Oldest' ? 'Selected' : '' %>>Oldest</option>
                                         </select>
                                     </span>
                                 </div>
@@ -106,7 +108,7 @@
                                                     <%} else if (bookings[i].Status == "Pending") {%>
                                                         <a href="#" class="btn_cancel_transaction" data-toggle="modal" data-target="#data_modal_cancel">Cancel</a>
                                                     <%} else {%>
-                                                        <a href="#" class="btn_cancel_transaction" onclick="return false;">Cancelled</a>
+                                                        <a href="#" class="btn_cancel_transaction cancelled">Cancelled</a>
                                                     <%}%>
                                                 </span>
                                             </span>

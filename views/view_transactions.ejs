@@ -95,7 +95,13 @@
                             </div>  
                             
                             <div class="align-self-end btn_viewtransactions">
-                                <a href="#" data-toggle="modal" data-target="#data_modal_review">Review</a> <!-- OR "CANCEL"-->
+                                <% if(booking.Status == 'Final') {%>
+                                    <a href="#" data-toggle="modal" data-target="#data_modal_review">Review</a> <!-- OR "CANCEL"-->
+                                <%} else if(booking.Status == 'Pending') {%>
+                                    <a href="#" data-toggle="modal" data-target="#data_modal_cancel">Cancel</a>
+                                <%} else {%>
+                                    <a href="#" class="cancelled" >Cancelled</a>
+                                <%}%>
                             </div>
                         </div>
                         

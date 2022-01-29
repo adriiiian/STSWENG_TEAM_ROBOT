@@ -257,3 +257,11 @@
     box-shadow: 0 5px 30px rgba(0, 0, 0, .30);
 }
 
+a.disabled {
+    pointer-events:none;
+    color: red;
+}
+
+a.cancelled {
+    pointer-events: none;
+}

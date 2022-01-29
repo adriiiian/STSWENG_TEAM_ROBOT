@@ -94,9 +94,11 @@ const loginController = {
     viewTransactions: async (req, res) => {
 
         var filter = req.query.filter
-
-        if(!filter) {
+        var sort = req.query.sort
+        var temp
+        if(!filter && !sort) {
             filter = 'All'
+            sort = 'Latest'
         }
 
         if(req.session.email) {
@@ -104,20 +106,23 @@ const loginController = {
 
             if(filter == 'All' || filter == '') {
                 await db.Bookings.find({Email: _email}).then((bookings) => {
-                    res.render('transactions', {_email, bookings, filter})
+                    if(sort == 'Latest') {
+                        bookings.sort((a, b) => a.Checkin - b.Checkin)
+                    }
+                    else {
+                        bookings.sort((a, b) => b.Checkin - a.Checkin)
+                    }
+                    res.render('transactions', {_email, bookings, filter, sort})
                 })
             }
             else {
                 await db.Bookings.find({Email: _email, Status: filter}).then((bookings) => {
-                    res.render('transactions', {_email, bookings, filter})
+                    res.render('transactions', {_email, bookings, filter, sort})
                 })
             }
             
             
             
-        }
-        else {
-            res.render('transactions', {_email})
         }
     },
 

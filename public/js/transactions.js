@@ -1,32 +1,30 @@
 $(document).ready(function () 
 {
 
-
-    $('#apply_button').click(function() {
-        if($('#filter_select').val() == '') {
-            $('#apply_button').removeClass('btn-secondary')
-            $('#apply_button').addClass('btn-danger')
+    $('#filter_select').on('change', function() {
+        if($('#filter_select :selected').val() && $('#sort_select :selected').val()) {
+            $('#apply_button').removeClass('disabled')
         }
-        else {
+    })
 
-
-
+    $('#sort_select').on('change', function() {
+        if($('#filter_select :selected').val() && $('#sort_select :selected').val()) {
+            $('#apply_button').removeClass('disabled')
         }
     })
 
     $('#clear_button').click(function() {
+        $('#apply_button').addClass('disabled')
         $('#filter_select').val('').change();
-        $('#transaction_sort').val('').change();
+        $('#sort_select').val('').change();
         
-        $('#apply_button').addClass('btn-secondary')
-        $('#apply_button').removeClass('btn-danger')
     })
 
 })
 
 function filterTransaction() {
 
-    $('#apply_button').attr('href', 'transactions?filter=' + $('#filter_select').val())
+    $('#apply_button').attr('href', 'transactions?filter=' + $('#filter_select').val() + '&sort=' + $('#sort_select').val() )
 
     return true;
 }
