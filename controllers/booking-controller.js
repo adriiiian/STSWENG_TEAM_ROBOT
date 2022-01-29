@@ -19,8 +19,8 @@ const bookingController = {
 
         var daysArray = getDaysArray(new Date(bdate),new Date(codate));
 
-        for(var i = 0; i < daysArray.length; i++) {
-            await db.Dates.findOneAndUpdate({BDate: daysArray[i], RoomType: booking.RoomType}, {$inc: {Counter: -1}}).exec()
+        for(var i = 0; i < daysArray.length - 1; i++) {
+            await db.Dates.findOneAndUpdate({BDate: daysArray[i], RoomType: booking.RoomType, Counter: {$gt: 0}}, {$inc: {Counter: -1}}).exec()
         }
 
         res.redirect('transactions')

@@ -107,10 +107,10 @@ const loginController = {
             if(filter == 'All' || filter == '') {
                 await db.Bookings.find({Email: _email}).then((bookings) => {
                     if(sort == 'Latest') {
-                        bookings.sort((a, b) => a.Checkin - b.Checkin)
+                        bookings.sort((a, b) => b.Checkin - a.Checkin)
                     }
                     else {
-                        bookings.sort((a, b) => b.Checkin - a.Checkin)
+                        bookings.sort((a, b) => a.Checkin - b.Checkin)
                     }
                     res.render('transactions', {_email, bookings, filter, sort})
                 })
