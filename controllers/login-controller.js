@@ -159,7 +159,6 @@ const loginController = {
                 }
             })
         }
-        res.render('view_transactions', {_email})
     },
 
     viewBooking: (req, res) => {
