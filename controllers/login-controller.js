@@ -159,6 +159,15 @@ const loginController = {
                 }
             })
         }
+        res.render('view_transactions', {_email})
+    },
+
+    viewBooking: (req, res) => {
+        if(req.session.email){
+            _email = req.session.email
+        }
+        res.render('booking', {_email})
+
     }
 
 }

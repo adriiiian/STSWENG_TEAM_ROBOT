@@ -1,0 +1,538 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.2 (Python 3.9.0 on win32)" generated="20220130 16:46:35.931" rpa="false" schemaversion="2">
+<suite id="s1" name="Login" source="E:\User\Documents\Github\STSWENG_TEAM_ROBOT\test\login.robot">
+<test id="s1-t1" name="Valid Account Login">
+<kw name="Open Login Page">
+<kw name="Open Browser" library="Selenium2Library">
+<arg>http://localhost:3000</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220130 16:46:36.166" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000'.</msg>
+<status status="PASS" starttime="20220130 16:46:36.165" endtime="20220130 16:46:39.035"/>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220130 16:46:39.035" endtime="20220130 16:46:39.157"/>
+</kw>
+<kw name="Set Browser Implicit Wait" library="Selenium2Library">
+<arg>5</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220130 16:46:39.157" endtime="20220130 16:46:39.160"/>
+</kw>
+<status status="PASS" starttime="20220130 16:46:36.165" endtime="20220130 16:46:39.160"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>css:.btn_booknow</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220130 16:46:39.161" level="INFO">Clicking element 'css:.btn_booknow'.</msg>
+<status status="PASS" starttime="20220130 16:46:39.161" endtime="20220130 16:46:39.260"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>id:InputEmail_login</arg>
+<arg>steven_castro@dlsu.edu.ph</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220130 16:46:39.261" level="INFO">Typing text 'steven_castro@dlsu.edu.ph' into text field 'id:InputEmail_login'.</msg>
+<status status="PASS" starttime="20220130 16:46:39.261" endtime="20220130 16:46:39.849"/>
+</kw>
+<kw name="Input Password" library="Selenium2Library">
+<arg>id:InputPassword_login</arg>
+<arg>password</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20220130 16:46:39.850" level="INFO">Typing password into text field 'id:InputPassword_login'.</msg>
+<msg timestamp="20220130 16:46:39.887" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20220130 16:46:39.932" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20220130 16:46:39.850" endtime="20220130 16:46:39.932"/>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<arg>id:login_btn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220130 16:46:39.932" level="INFO">Clicking button 'id:login_btn'.</msg>
+<status status="PASS" starttime="20220130 16:46:39.932" endtime="20220130 16:46:39.989"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Credentials Entered</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220130 16:46:39.989" level="INFO">Credentials Entered</msg>
+<status status="PASS" starttime="20220130 16:46:39.989" endtime="20220130 16:46:39.990"/>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<arg>ACCOUNT</arg>
+<arg>INFO</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20220130 16:46:40.010" level="INFO">Current page contains text 'ACCOUNT'.</msg>
+<status status="PASS" starttime="20220130 16:46:39.990" endtime="20220130 16:46:40.010"/>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<arg>Experience the difference</arg>
+<arg>INFO</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20220130 16:46:40.027" level="INFO">Current page contains text 'Experience the difference'.</msg>
+<status status="PASS" starttime="20220130 16:46:40.011" endtime="20220130 16:46:40.027"/>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<arg>Contact us</arg>
+<arg>INFO</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20220130 16:46:40.042" level="INFO">Current page contains text 'Contact us'.</msg>
+<status status="PASS" starttime="20220130 16:46:40.027" endtime="20220130 16:46:40.043"/>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<arg>The Best Place To Stay</arg>
+<arg>INFO</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20220130 16:46:40.058" level="INFO">Current page contains text 'The Best Place To Stay'.</msg>
+<status status="PASS" starttime="20220130 16:46:40.043" endtime="20220130 16:46:40.058"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Webpage Checked</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220130 16:46:40.059" level="INFO">Webpage Checked</msg>
+<status status="PASS" starttime="20220130 16:46:40.058" endtime="20220130 16:46:40.059"/>
+</kw>
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220130 16:46:40.059" endtime="20220130 16:46:42.304"/>
+</kw>
+<doc>US#2 Test Case #1</doc>
+<status status="PASS" starttime="20220130 16:46:36.164" endtime="20220130 16:46:42.305"/>
+</test>
+<test id="s1-t2" name="Invalid Account Login of a Non-registered Account">
+<kw name="Open Login Page">
+<kw name="Open Browser" library="Selenium2Library">
+<arg>http://localhost:3000</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220130 16:46:42.309" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000'.</msg>
+<status status="PASS" starttime="20220130 16:46:42.309" endtime="20220130 16:46:53.665"/>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220130 16:46:53.665" endtime="20220130 16:46:53.800"/>
+</kw>
+<kw name="Set Browser Implicit Wait" library="Selenium2Library">
+<arg>5</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220130 16:46:53.800" endtime="20220130 16:46:53.801"/>
+</kw>
+<status status="PASS" starttime="20220130 16:46:42.308" endtime="20220130 16:46:53.801"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>css:.btn_booknow</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220130 16:46:53.802" level="INFO">Clicking element 'css:.btn_booknow'.</msg>
+<status status="PASS" starttime="20220130 16:46:53.802" endtime="20220130 16:46:53.930"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>id:InputEmail_login</arg>
+<arg>notanemail@gmail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220130 16:46:53.932" level="INFO">Typing text 'notanemail@gmail.com' into text field 'id:InputEmail_login'.</msg>
+<status status="PASS" starttime="20220130 16:46:53.931" endtime="20220130 16:46:54.134"/>
+</kw>
+<kw name="Input Password" library="Selenium2Library">
+<arg>id:InputPassword_login</arg>
+<arg>123123</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20220130 16:46:54.155" level="INFO">Typing password into text field 'id:InputPassword_login'.</msg>
+<msg timestamp="20220130 16:46:54.559" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20220130 16:46:54.605" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20220130 16:46:54.155" endtime="20220130 16:46:54.605"/>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<arg>id:login_btn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220130 16:46:54.606" level="INFO">Clicking button 'id:login_btn'.</msg>
+<status status="PASS" starttime="20220130 16:46:54.606" endtime="20220130 16:46:54.666"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Credentials Entered</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220130 16:46:54.667" level="INFO">Credentials Entered</msg>
+<status status="PASS" starttime="20220130 16:46:54.667" endtime="20220130 16:46:54.667"/>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<arg>Incorrect email/password</arg>
+<arg>INFO</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20220130 16:46:54.690" level="INFO">Current page contains text 'Incorrect email/password'.</msg>
+<status status="PASS" starttime="20220130 16:46:54.668" endtime="20220130 16:46:54.690"/>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<arg>LOG IN</arg>
+<arg>INFO</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20220130 16:46:54.708" level="INFO">Current page contains text 'LOG IN'.</msg>
+<status status="PASS" starttime="20220130 16:46:54.691" endtime="20220130 16:46:54.708"/>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<arg>CREATE AN ACCOUNT</arg>
+<arg>INFO</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20220130 16:46:54.725" level="INFO">Current page contains text 'CREATE AN ACCOUNT'.</msg>
+<status status="PASS" starttime="20220130 16:46:54.708" endtime="20220130 16:46:54.725"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Webpage Checked</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220130 16:46:54.726" level="INFO">Webpage Checked</msg>
+<status status="PASS" starttime="20220130 16:46:54.726" endtime="20220130 16:46:54.726"/>
+</kw>
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220130 16:46:54.726" endtime="20220130 16:46:58.444"/>
+</kw>
+<doc>US#2 Test Case #2</doc>
+<status status="PASS" starttime="20220130 16:46:42.307" endtime="20220130 16:46:58.445"/>
+</test>
+<test id="s1-t3" name="Invalid Account Login due ot invalid password 1">
+<kw name="Open Login Page">
+<kw name="Open Browser" library="Selenium2Library">
+<arg>http://localhost:3000</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220130 16:46:58.448" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000'.</msg>
+<status status="PASS" starttime="20220130 16:46:58.448" endtime="20220130 16:47:00.656"/>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220130 16:47:00.656" endtime="20220130 16:47:00.787"/>
+</kw>
+<kw name="Set Browser Implicit Wait" library="Selenium2Library">
+<arg>5</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220130 16:47:00.787" endtime="20220130 16:47:00.789"/>
+</kw>
+<status status="PASS" starttime="20220130 16:46:58.448" endtime="20220130 16:47:00.789"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>css:.btn_booknow</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220130 16:47:00.790" level="INFO">Clicking element 'css:.btn_booknow'.</msg>
+<status status="PASS" starttime="20220130 16:47:00.789" endtime="20220130 16:47:00.902"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>id:InputEmail_login</arg>
+<arg>steven_castro@dlsu.edu.ph</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220130 16:47:00.903" level="INFO">Typing text 'steven_castro@dlsu.edu.ph' into text field 'id:InputEmail_login'.</msg>
+<status status="PASS" starttime="20220130 16:47:00.903" endtime="20220130 16:47:01.474"/>
+</kw>
+<kw name="Input Password" library="Selenium2Library">
+<arg>id:InputPassword_login</arg>
+<arg>wrongpassword</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20220130 16:47:01.475" level="INFO">Typing password into text field 'id:InputPassword_login'.</msg>
+<msg timestamp="20220130 16:47:01.512" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20220130 16:47:01.565" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20220130 16:47:01.475" endtime="20220130 16:47:01.565"/>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<arg>id:login_btn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220130 16:47:01.566" level="INFO">Clicking button 'id:login_btn'.</msg>
+<status status="PASS" starttime="20220130 16:47:01.566" endtime="20220130 16:47:01.628"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Credentials Entered</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220130 16:47:01.629" level="INFO">Credentials Entered</msg>
+<status status="PASS" starttime="20220130 16:47:01.628" endtime="20220130 16:47:01.629"/>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<arg>Incorrect email/password</arg>
+<arg>INFO</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20220130 16:47:01.646" level="INFO">Current page contains text 'Incorrect email/password'.</msg>
+<status status="PASS" starttime="20220130 16:47:01.629" endtime="20220130 16:47:01.647"/>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<arg>LOG IN</arg>
+<arg>INFO</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20220130 16:47:01.663" level="INFO">Current page contains text 'LOG IN'.</msg>
+<status status="PASS" starttime="20220130 16:47:01.647" endtime="20220130 16:47:01.663"/>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<arg>CREATE AN ACCOUNT</arg>
+<arg>INFO</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20220130 16:47:01.679" level="INFO">Current page contains text 'CREATE AN ACCOUNT'.</msg>
+<status status="PASS" starttime="20220130 16:47:01.664" endtime="20220130 16:47:01.679"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Webpage Checked</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220130 16:47:01.680" level="INFO">Webpage Checked</msg>
+<status status="PASS" starttime="20220130 16:47:01.680" endtime="20220130 16:47:01.680"/>
+</kw>
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220130 16:47:01.681" endtime="20220130 16:47:03.867"/>
+</kw>
+<doc>US#2 Test Case #3</doc>
+<status status="PASS" starttime="20220130 16:46:58.447" endtime="20220130 16:47:03.868"/>
+</test>
+<test id="s1-t4" name="Valid Account Login with Remember Me option">
+<kw name="Open Login Page">
+<kw name="Open Browser" library="Selenium2Library">
+<arg>http://localhost:3000</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220130 16:47:03.872" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000'.</msg>
+<status status="PASS" starttime="20220130 16:47:03.872" endtime="20220130 16:47:06.267"/>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220130 16:47:06.267" endtime="20220130 16:47:06.593"/>
+</kw>
+<kw name="Set Browser Implicit Wait" library="Selenium2Library">
+<arg>5</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220130 16:47:06.593" endtime="20220130 16:47:06.594"/>
+</kw>
+<status status="PASS" starttime="20220130 16:47:03.871" endtime="20220130 16:47:06.595"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>css:.btn_booknow</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220130 16:47:06.595" level="INFO">Clicking element 'css:.btn_booknow'.</msg>
+<status status="PASS" starttime="20220130 16:47:06.595" endtime="20220130 16:47:06.714"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>id:InputEmail_login</arg>
+<arg>steven_castro@dlsu.edu.ph</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220130 16:47:06.715" level="INFO">Typing text 'steven_castro@dlsu.edu.ph' into text field 'id:InputEmail_login'.</msg>
+<status status="PASS" starttime="20220130 16:47:06.715" endtime="20220130 16:47:06.945"/>
+</kw>
+<kw name="Input Password" library="Selenium2Library">
+<arg>id:InputPassword_login</arg>
+<arg>wrongpassword</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20220130 16:47:06.948" level="INFO">Typing password into text field 'id:InputPassword_login'.</msg>
+<msg timestamp="20220130 16:47:07.000" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20220130 16:47:07.063" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20220130 16:47:06.947" endtime="20220130 16:47:07.063"/>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<arg>id:login_btn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220130 16:47:07.064" level="INFO">Clicking button 'id:login_btn'.</msg>
+<status status="PASS" starttime="20220130 16:47:07.064" endtime="20220130 16:47:07.134"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Credentials Entered</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220130 16:47:07.135" level="INFO">Credentials Entered</msg>
+<status status="PASS" starttime="20220130 16:47:07.135" endtime="20220130 16:47:07.135"/>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<arg>Incorrect email/password</arg>
+<arg>INFO</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20220130 16:47:07.152" level="INFO">Current page contains text 'Incorrect email/password'.</msg>
+<status status="PASS" starttime="20220130 16:47:07.135" endtime="20220130 16:47:07.152"/>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<arg>LOG IN</arg>
+<arg>INFO</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20220130 16:47:07.170" level="INFO">Current page contains text 'LOG IN'.</msg>
+<status status="PASS" starttime="20220130 16:47:07.153" endtime="20220130 16:47:07.170"/>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<arg>CREATE AN ACCOUNT</arg>
+<arg>INFO</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20220130 16:47:07.186" level="INFO">Current page contains text 'CREATE AN ACCOUNT'.</msg>
+<status status="PASS" starttime="20220130 16:47:07.170" endtime="20220130 16:47:07.186"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Webpage Checked</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220130 16:47:07.187" level="INFO">Webpage Checked</msg>
+<status status="PASS" starttime="20220130 16:47:07.187" endtime="20220130 16:47:07.187"/>
+</kw>
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220130 16:47:07.188" endtime="20220130 16:47:09.375"/>
+</kw>
+<doc>US#2 Test Case #4</doc>
+<status status="PASS" starttime="20220130 16:47:03.870" endtime="20220130 16:47:09.376"/>
+</test>
+<test id="s1-t5" name="Invalid Account Login due ot invalid password 2">
+<kw name="Open Login Page">
+<kw name="Open Browser" library="Selenium2Library">
+<arg>http://localhost:3000</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220130 16:47:09.382" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000'.</msg>
+<status status="PASS" starttime="20220130 16:47:09.381" endtime="20220130 16:47:11.638"/>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220130 16:47:11.638" endtime="20220130 16:47:11.844"/>
+</kw>
+<kw name="Set Browser Implicit Wait" library="Selenium2Library">
+<arg>5</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220130 16:47:11.844" endtime="20220130 16:47:11.846"/>
+</kw>
+<status status="PASS" starttime="20220130 16:47:09.381" endtime="20220130 16:47:11.847"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>css:.btn_booknow</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220130 16:47:11.847" level="INFO">Clicking element 'css:.btn_booknow'.</msg>
+<status status="PASS" starttime="20220130 16:47:11.847" endtime="20220130 16:47:12.145"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>id:InputEmail_login</arg>
+<arg>steven_castro@dlsu.edu.ph</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220130 16:47:12.147" level="INFO">Typing text 'steven_castro@dlsu.edu.ph' into text field 'id:InputEmail_login'.</msg>
+<status status="PASS" starttime="20220130 16:47:12.146" endtime="20220130 16:47:12.403"/>
+</kw>
+<kw name="Input Password" library="Selenium2Library">
+<arg>id:InputPassword_login</arg>
+<arg>123</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20220130 16:47:12.404" level="INFO">Typing password into text field 'id:InputPassword_login'.</msg>
+<msg timestamp="20220130 16:47:12.455" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20220130 16:47:12.501" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20220130 16:47:12.404" endtime="20220130 16:47:12.501"/>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<arg>id:login_btn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220130 16:47:12.501" level="INFO">Clicking button 'id:login_btn'.</msg>
+<status status="PASS" starttime="20220130 16:47:12.501" endtime="20220130 16:47:12.568"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Credentials Entered</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220130 16:47:12.568" level="INFO">Credentials Entered</msg>
+<status status="PASS" starttime="20220130 16:47:12.568" endtime="20220130 16:47:12.568"/>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<arg>Password must be atleast 5 characters</arg>
+<arg>INFO</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20220130 16:47:12.587" level="INFO">Current page contains text 'Password must be atleast 5 characters'.</msg>
+<status status="PASS" starttime="20220130 16:47:12.569" endtime="20220130 16:47:12.587"/>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<arg>LOG IN</arg>
+<arg>INFO</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20220130 16:47:12.609" level="INFO">Current page contains text 'LOG IN'.</msg>
+<status status="PASS" starttime="20220130 16:47:12.587" endtime="20220130 16:47:12.609"/>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<arg>CREATE AN ACCOUNT</arg>
+<arg>INFO</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20220130 16:47:12.628" level="INFO">Current page contains text 'CREATE AN ACCOUNT'.</msg>
+<status status="PASS" starttime="20220130 16:47:12.609" endtime="20220130 16:47:12.628"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Webpage Checked</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220130 16:47:12.628" level="INFO">Webpage Checked</msg>
+<status status="PASS" starttime="20220130 16:47:12.628" endtime="20220130 16:47:12.628"/>
+</kw>
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220130 16:47:12.629" endtime="20220130 16:47:14.799"/>
+</kw>
+<doc>US#2 Test Case #5</doc>
+<status status="PASS" starttime="20220130 16:47:09.379" endtime="20220130 16:47:14.800"/>
+</test>
+<test id="s1-t6" name="Empty Credentials">
+<kw name="Open Login Page">
+<kw name="Open Browser" library="Selenium2Library">
+<arg>http://localhost:3000</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220130 16:47:14.805" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000'.</msg>
+<status status="PASS" starttime="20220130 16:47:14.805" endtime="20220130 16:47:17.055"/>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220130 16:47:17.055" endtime="20220130 16:47:17.257"/>
+</kw>
+<kw name="Set Browser Implicit Wait" library="Selenium2Library">
+<arg>5</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220130 16:47:17.258" endtime="20220130 16:47:17.259"/>
+</kw>
+<status status="PASS" starttime="20220130 16:47:14.804" endtime="20220130 16:47:17.259"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>css:.btn_booknow</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220130 16:47:17.260" level="INFO">Clicking element 'css:.btn_booknow'.</msg>
+<status status="PASS" starttime="20220130 16:47:17.260" endtime="20220130 16:47:17.607"/>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<arg>id:login_btn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220130 16:47:17.608" level="INFO">Clicking button 'id:login_btn'.</msg>
+<status status="PASS" starttime="20220130 16:47:17.608" endtime="20220130 16:47:17.665"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Credentials Entered</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220130 16:47:17.666" level="INFO">Credentials Entered</msg>
+<status status="PASS" starttime="20220130 16:47:17.666" endtime="20220130 16:47:17.666"/>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<arg>Please input correctly</arg>
+<arg>INFO</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20220130 16:47:17.685" level="INFO">Current page contains text 'Please input correctly'.</msg>
+<status status="PASS" starttime="20220130 16:47:17.667" endtime="20220130 16:47:17.685"/>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<arg>LOG IN</arg>
+<arg>INFO</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20220130 16:47:17.708" level="INFO">Current page contains text 'LOG IN'.</msg>
+<status status="PASS" starttime="20220130 16:47:17.686" endtime="20220130 16:47:17.708"/>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<arg>CREATE AN ACCOUNT</arg>
+<arg>INFO</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20220130 16:47:17.724" level="INFO">Current page contains text 'CREATE AN ACCOUNT'.</msg>
+<status status="PASS" starttime="20220130 16:47:17.709" endtime="20220130 16:47:17.724"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Webpage Checked</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220130 16:47:17.724" level="INFO">Webpage Checked</msg>
+<status status="PASS" starttime="20220130 16:47:17.724" endtime="20220130 16:47:17.724"/>
+</kw>
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220130 16:47:17.725" endtime="20220130 16:47:19.925"/>
+</kw>
+<doc>US#2 Test Case #6</doc>
+<status status="PASS" starttime="20220130 16:47:14.803" endtime="20220130 16:47:19.926"/>
+</test>
+<doc>Login Tests</doc>
+<status status="PASS" starttime="20220130 16:46:35.932" endtime="20220130 16:47:19.930"/>
+</suite>
+<statistics>
+<total>
+<stat pass="6" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="6" fail="0" skip="0" id="s1" name="Login">Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
