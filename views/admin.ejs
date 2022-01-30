@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet" href="./css/admin_css.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+        <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+        <script src="./js/register.js"></script>
+        <script src="./js/login.js"></script>
+    </head>
+    <body>
+        <div class="container_whole" id="blur">
+        <a class="top_btn" href="#top">
+            <i class="fa fa-arrow-up" style="color:#fff; font-size:28px;"></i>
+        </a>
+        <img src="images/hotel_bg.jpg" id="bg" alt="">
+
+        <div class="container py-0 nav_main">
+            <nav class="navbar navbar-expand-lg nav_options">
+                <div class="navbar-brand hotel_name_nav">hotel name</div>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+                    <i class="fa fa-bars" style="color:#fff; font-size:28px;"></i>
+                  </span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-start" id="navbarNavAltMarkup">
+                  <div class="navbar-nav ml-auto text-right float-right">
+                    <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-item nav-link" href="rooms">Rooms</a>
+                    <a class="nav-item nav-link" href="services">Services</a>
+                    <a class="nav-item nav-link" href="#">About</a>
+                    <a class="nav-item nav-link" href="#contactus_section">Contact Us</a>
+
+                        <div id="logged-in-nav" class="dropdown account_dropdown">
+                            <button class="btn ml-4 btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            ACCOUNT
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                              <a class="dropdown-item" href="transactions">TRANSACTIONS</a>
+                              <a class="dropdown-item" href="logout" style="font-weight: 500;">LOG OUT</a>
+                            </div>
+                        </div>
+
+                  </div>
+                </div>
+              </nav>
+        </div>
+        <div class="hotel_header">
+            <div class="hotel_line">
+                The Best Place To Stay
+            </div>
+            <div class="hotel_type">
+                hotel & resort
+            </div>
+        </div>
+        <div class="container-fluid px-0 content_con">
+            <p class="welcome_admin">Welcome back, Administrator!</p>
+            <nav>
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                  <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Rooms</a>
+                  <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Reservations</a>
+                </div>
+              </nav>
+              <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                    <table class="table">
+                        <thead class="thead-light">
+                          <tr>
+                            <th scope="col">Room No.</th>
+                            <th scope="col">Type</th>
+                            <th scope="col">Status</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>101</td>
+                            <td>Single</td>
+                            <td>
+                              <div class="dropdown">
+                              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Not Occupied
+                              </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                  <table class="table">
+                                      <tr>
+                                          <td class="td_checkout"><button type="button" class="btn btn-secondary btn-sm">Change to occupied</button></td>
+                                      </tr>
+                                  </table>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>102</td>
+                            <td>Double</td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                      Occupied
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                        <table class="table">
+                                            <tr>
+                                                <td>Name: Jane</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Number of people: 2</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="td_checkout"><button type="button" class="btn btn-secondary btn-sm">Checkout</button></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                  </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                </div>
+                <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                  <p class="date_filter">Date Filter</p>
+                  <div class="col-sm-3 mx-auto book_form_label">
+                    CHECK IN
+                    <input id="checkin"/>
+                </div>
+                <div class="col-sm-3 mx-auto book_form_label">
+                    CHECK OUT
+                    <input id="checkout"/>
+                </div>
+                <br>
+                <div class="apply_filter">
+                  <button type="button" class="btn btn-secondary btn-sm">Apply Filter</button>
+                </div>
+                <br>
+                    <table class="table">
+                        <thead class="thead-light">
+                          <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Date Start</th>
+                            <th scope="col">Date End</th>
+                            <th scope="col">Type</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>John</td>
+                            <td>01/02/2022</td>
+                            <td>01/05/2022</td>
+                            <td>Single</td>
+                            <td><button type="button" class="btn btn-secondary btn-sm">Confirm</button></td>
+                            <td><button type="button" class="btn btn-secondary btn-sm">Reject</button></td>
+                          </tr>
+                          <tr>
+                            <td>Jane</td>
+                            <td>02/14/2022</td>
+                            <td>02/21/2022</td>
+                            <td>Double</td>
+                            <td><button type="button" class="btn btn-secondary btn-sm">Confirm</button></td>
+                            <td><button type="button" class="btn btn-secondary btn-sm">Reject</button></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                </div>
+              </div>
+        </div>
+       
+        <%- include('./partials/footer.ejs') %>
+    </div>
+
+    <%- include('./partials/account_popup.ejs') %>
+
+        <script>
+            $('#checkin').datepicker({
+                uiLibrary: 'bootstrap4'
+            });
+            $('#checkout').datepicker({
+                uiLibrary: 'bootstrap4'
+            });
+        </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script type="text/javascript">
+            function toggle(){
+                var blur = document.getElementById('blur');
+                blur.classList.toggle('active');
+                var popup = document.getElementById('popup');
+                popup.classList.toggle('active');
+
+                $("#form_login").show();
+                $("#form_createaccount").hide();
+                $("#login_error").hide();
+                $("#register_error").hide();
+            }
+            function create_acc() {
+                $("#form_login").hide();
+                $("#form_createaccount").show();
+                $("#register_error").hide();
+            }
+            function login() {
+                $("#form_login").show();
+                $("#form_createaccount").hide();
+                $("#login_error").hide();
+            }
+        </script>
+    </body>
+</html>
