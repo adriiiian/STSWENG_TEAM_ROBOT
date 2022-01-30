@@ -45,7 +45,7 @@
                 Rooms
             </div>
             <div class="viewrooms_header">
-                <%-room.Type%> Room
+                Single Room
             </div>
         </div>
         <div class="container-fluid px-0 content_con" style="margin-top: 100px;">
@@ -76,16 +76,19 @@
             <div class="container-fluid">
                 <div class="container pb-5">
                     <div class="row">
-                        <div class="col-sm-9 p-5 viewrooms_description">
-                            <%-room.Description%>
+                        <div class="col-sm-8 p-5 viewrooms_description">
+                            The Classic Room is uniquely designed for comfort, featuring furniture with a vintage flair and a relaxing rain shower. A custom single size bed makes this a perfect getaway for yourself.
                         </div>
                         <div class="col-sm-3 py-5 viewrooms_details">
                             <div>
                                 <div style="font-weight: 500;">DETAILS:</div>
                                 <ul>
-                                    <%for(var i = 0; i < room.Details.length; i++) {%>
-                                        <li><%-room.Details[i]%></li>
-                                    <%}%>
+                                    <li>Separate toilet</li>
+                                    <li>Flatscreen Tv</li>
+                                    <li>Great wifi</li>
+                                    <li>1x Single size bed</li>
+                                    <li>No. of guests allowed: 1</li>
+                                    <li>No. of additional guests allowed: 1</li>
                                 </ul>
                             </div>
                         </div>
@@ -100,6 +103,7 @@
                             <div class="carousel-inner">
                               <div class="carousel-item active">
                                 <img class="d-block w-100" src="./images/<%-room.Type.toLowerCase()%>.jpg" alt="First slide">
+
                               </div>
                               <div class="carousel-item ">
                                 <img class="d-block w-100" src="./images/hotel_bg.jpg" alt="Second slide">
