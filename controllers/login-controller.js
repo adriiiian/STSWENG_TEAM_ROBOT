@@ -84,7 +84,6 @@ const loginController = {
     },
 
     getBookings: async (req, res) => {
-        console.log('bookings here')
         await db.Bookings.find({Email: _email, Status: req.query.Filter}).then((bookings) => {
             res.send(bookings)
         })
@@ -112,11 +111,20 @@ const loginController = {
                     else {
                         bookings.sort((a, b) => a.Checkin - b.Checkin)
                     }
+
                     res.render('transactions', {_email, bookings, filter, sort})
                 })
             }
             else {
                 await db.Bookings.find({Email: _email, Status: filter}).then((bookings) => {
+                    
+                    if(sort == 'Latest') {
+                        bookings.sort((a, b) => b.Checkin - a.Checkin)
+                    }
+                    else {
+                        bookings.sort((a, b) => a.Checkin - b.Checkin)
+                    }
+                    
                     res.render('transactions', {_email, bookings, filter, sort})
                 })
             }
