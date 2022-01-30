@@ -96,19 +96,71 @@ const loginController = {
         res.render('view_services', {_email})
     },
 
-    viewTransactions: (req, res) => {
-        if(req.session.email) {
-            _email = req.session.email
-        }
-        res.render('transactions', {_email})
+    getBookings: async (req, res) => {
+        await db.Bookings.find({Email: _email, Status: req.query.Filter}).then((bookings) => {
+            res.send(bookings)
+        })
+
     },
 
-    viewViewTransactions: (req, res) => {
+    viewTransactions: async (req, res) => {
+
+        var filter = req.query.filter
+        var sort = req.query.sort
+        var temp
+        if(!filter && !sort) {
+            filter = 'All'
+            sort = 'Latest'
+        }
+
         if(req.session.email) {
             _email = req.session.email
+
+            if(filter == 'All' || filter == '') {
+                await db.Bookings.find({Email: _email}).then((bookings) => {
+                    if(sort == 'Latest') {
+                        bookings.sort((a, b) => b.Checkin - a.Checkin)
+                    }
+                    else {
+                        bookings.sort((a, b) => a.Checkin - b.Checkin)
+                    }
+
+                    res.render('transactions', {_email, bookings, filter, sort})
+                })
+            }
+            else {
+                await db.Bookings.find({Email: _email, Status: filter}).then((bookings) => {
+                    
+                    if(sort == 'Latest') {
+                        bookings.sort((a, b) => b.Checkin - a.Checkin)
+                    }
+                    else {
+                        bookings.sort((a, b) => a.Checkin - b.Checkin)
+                    }
+                    
+                    res.render('transactions', {_email, bookings, filter, sort})
+                })
+            }
+            
+            
+            
         }
-        res.render('view_transactions', {_email})
+    },
+
+    viewViewTransactions: async (req, res) => {
+        if(req.session.email) {
+            _email = req.session.email
+
+            var id = req.query.id
+
+            await db.Bookings.findOne({_id: id}).then(function(booking) {
+                if(booking) {
+                    res.render('view_transactions', {_email, booking})
+                }
+            })
+        }
     }
+
 }
 
 module.exports = loginController

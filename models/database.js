@@ -1,6 +1,8 @@
 const mongoose = require('mongoose')
 const dotenv = require('dotenv')
 const Account = require('./account.js')
+const Bookings = require('./bookings.js')
+const Dates = require('./dates.js')
 const Rooms = require('./rooms.js')
 
 dotenv.config()
@@ -25,8 +27,11 @@ const database = {
     // mongoose account model
     Account,
 
-    Rooms
+    Bookings,
 
+    Dates,
+  
+    Rooms
 }
 
 module.exports = database
