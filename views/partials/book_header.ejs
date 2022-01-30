@@ -10,12 +10,6 @@
                     CHECK OUT
                     <input id="checkout"/>
                 </div>
-                <!--
-                    <div class="col-sm-3 mx-auto book_form_label">
-                    GUESTS
-                    <input type="number" id="numpeople" name="numpeople">
-                </div>
-                -->
                 <div class="col-sm-3 mx-auto form-group">
                     <div class="book_form_label">
                         ROOM
@@ -39,7 +33,6 @@
                     <% } else {%>
                         <!-- IF LOGGED IN -->
                         <div class="col-sm-2.5 mx-auto">
-                            <!-- <a class="mx-auto btn_booknow" type="submit" value="Submit" href="../booking" onclick="document.getElementById('book_header').submit();">Book now</a> -->
                             <button type="submit" class="btn btn_booknow" onclick="prebook()" href="/views/booking.ejs"> Book now</button>
                         </div>
                     

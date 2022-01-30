@@ -428,12 +428,15 @@
                     dates[i] = ((dates[i].getMonth() + 1) + '-' + dates[i].getDate() + '-' + dates[i].getFullYear())
                 }
                 resetdate();
+                updateRoomValue()
                 checkindatepicker.val(localStorage.getItem("Checkin"))
                 checkoutdatepicker.val(localStorage.getItem("Checkout"))
+                updateprice()
+                
+                
               });
               
-              updateRoomValue()
-              updateprice()
+              
             }
 
             function updateRoomValue(){
