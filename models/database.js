@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
 const dotenv = require('dotenv')
 const Account = require('./account.js')
+const Rooms = require('./rooms.js')
 
 dotenv.config()
 const DB_URL = process.env.DB_URL
@@ -23,6 +24,8 @@ const database = {
 
     // mongoose account model
     Account,
+
+    Rooms
 
 }
 
