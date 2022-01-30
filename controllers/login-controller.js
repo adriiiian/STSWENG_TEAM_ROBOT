@@ -1,6 +1,5 @@
 const db = require('../models/database.js')
 const helper = require('../helpers/login-check.js')
-const { selectFields } = require('express-validator/src/select-fields')
 var _email = ''
 
  
@@ -60,26 +59,14 @@ const loginController = {
         if(req.session.email) {
             _email = req.session.email
         }
-
-        db.Rooms.find().then((RoomList) => {
-            res.render('rooms', {_email, RoomList})
-        })
+        res.render('rooms', {_email})
     },
 
-    viewViewRooms: async (req, res) => {
+    viewViewRooms: (req, res) => {
         if(req.session.email) {
             _email = req.session.email
         }
-        var id = req.query.id
-        var room
-        await db.Rooms.findOne({Type: id}).then(function(result) {
-            if(result) {
-                room = result
-                res.render('view_rooms', {_email, room})
-            }
-        })
-
-        
+        res.render('view_rooms', {_email})
     },
 
     viewServices: (req, res) => {
