@@ -78,7 +78,7 @@
                               <div class="invalid-feedback">Please fill out this field.</div>
                             </div>
                         </div>
-                        <div class="col-sm-6 px-4 d-flex flex-column justify-content-between">
+                        <div class="col-sm-6 px-4 d-flex flex-column justify-content-start">
                           <div>
                             <div class="row">
                               <div class="col">
@@ -132,7 +132,8 @@
                               </div>
                             </div>
                           </div>
-                          <div class="book_price">
+                          <!--
+                            <div class="book_price row p-5">
                               <div class="col d-flex align-items-center">
                                 <div style="font-size: 17px; font-weight: 500;">₱ </div>
                                 <div id="room_value_text_1" style="font-size: 17px;">15,000</div>
@@ -171,6 +172,35 @@
                                 <div style="font-size: 17px; margin-left: 5px; margin-right: 5px;">=</div>
                                 <div style="font-size: 17px; font-weight: 500;">₱</div>
                                 <div id="val_add_guest_text" style="font-size: 17px;">0</div>
+                                <div style="font-weight: 500;">₱ </div>
+                                <div>15,000</div>
+                                <div style="margin-left: 5px">/ night</div>
+                              </div>
+                              <div class="col d-flex align-items-center">
+                                <div style="font-weight: 500;">₱ </div>
+                                <div>300</div>
+                                <div style="margin-left: 5px">/ additional guest</div>
+                              </div>
+                              <div>_________________________________________________________</div>
+                              <div class="col d-flex align-items-center">
+                                <div style="font-weight: 500;">₱ </div>
+                                <div>15,000</div>
+                                <div style="margin-left: 5px; margin-right: 5px;">x</div>
+                                <div style="margin-right: 5px;">7</div>
+                                <div>nights</div>
+                                <div style="margin-left: 5px; margin-right: 5px;">=</div>
+                                <div style="font-weight: 500;">₱</div>
+                                <div>105,000</div>
+                              </div>
+                              <div class="col d-flex align-items-center">
+                                <div style="font-weight: 500;">₱ </div>
+                                <div>300</div>
+                                <div style="margin-left: 5px; margin-right: 5px;">x</div>
+                                <div style="margin-right: 5px;">3</div>
+                                <div>additional guest(s)</div>
+                                <div style="margin-left: 5px; margin-right: 5px;">=</div>
+                                <div style="font-weight: 500;">₱</div>
+                                <div>900</div>
                               </div>
                               <div class="col d-flex align-items-center" style="margin-top: 15px;">
                                 <div style="font-size: 18px; font-weight: 500; margin-right: 10px;">Total: </div>
@@ -182,15 +212,78 @@
                               </div>
                               <p id="booking_error" class="text-danger h6 text-center">Invalid input</p>
                           </div>
+                          -->
+                          
+                          <div class="row breakdown_con px-5 py-3">
+                            <div class="col-sm-12">
+                              <div class="row description">
+                                <span id="room_type_span" class="col desc_room_type pr-5 d-flex justify-content-end">Single Room Per Night</span>
+                                <span id="room_price_span" class="col price_room_type pl-5 d-flex justify-content-start"><span>₱</span>15,000.00</span>
+                              </div>
+                            </div>
+                            <div class="col-sm-12">
+                              <div class="row description">
+                                <span class="col desc_nights pr-5 d-flex justify-content-end">Number of nights</span>
+                                <span id="num_nights_span_1" class="col num_nights pl-5 d-flex justify-content-start">7</span>
+                              </div>
+                            </div>
+                            <div class="col-sm-12">
+                              <div class="row description">
+                                <span class="col pr-5 d-flex justify-content-end"></span>
+                                <span id="total_price_room_span" class="col total_price_room pl-5 d-flex justify-content-start"><span>₱</span>105,000.00</span>
+                              </div>
+                            </div>
+                            <div class="col-sm-12 pt-3">
+                              <div class="row description">
+                                <span class="col desc_guests pr-5 d-flex justify-content-end">Additional guest</span>
+                                <span id="add_guest_price_span" class="col price_room_type pl-5 d-flex justify-content-start"><span>₱</span>3,000.00</span>
+                              </div>
+                            </div>
+                            <div class="col-sm-12">
+                              <div class="row description">
+                                <span class="col desc_num_guests pr-5 d-flex justify-content-end">Number of guests</span>
+                                <span id="num_add_guest_span" class="col num_guests pl-5 d-flex justify-content-start">2</span>
+                              </div>
+                            </div>
+                            <div class="col-sm-12">
+                              <div class="row description">
+                                <span class="col desc_nights pr-5 d-flex justify-content-end">Number of nights</span>
+                                <span id="num_nights_span_2" class="col num_nights pl-5 d-flex justify-content-start">7</span>
+                              </div>
+                            </div>
+                            <div class="col-sm-12">
+                              <div class="row description">
+                                <span class="col pr-5 d-flex justify-content-end"></span>
+                                <span id="total_price_guest_span" class="col total_price_guests pl-5 d-flex justify-content-start"><span>₱</span>42,000.00</span>
+                              </div>
+                            </div>
+                            <div class="col-sm-12 pt-3 px-0">
+                              <div class="row description">
+                                <span class="col pr-5 d-flex justify-content-end"></span>
+                                <span class="col p-0 d-flex justify-content-between align-items-center">
+                                  <span style="font-size: 17px; font-weight: 500;">₱
+                                    <span id="subtotal_span" class="total_price">147,000.00</span>
+                                  </span>
+                                  <!-- <div class="col btn_book px-0 d-flex justify-content-end align-items-center">
+                                    <a href="#" type="submit" data-toggle="modal" data-target="#data_modal_success">BOOK</a>
+                                  </div> -->
+                                  <div class="col btn_book px-0 d-flex justify-content-end align-items-center">
+                                    <button type="submit" class="btn btn_register" data-toggle="modal" data-target="#data_modal_success">BOOK</button>
+                                  </div>
+                                </span>
+                                
+                              </div>
+                            </div>
+                          </div>
+
                         </div>
                     </div>
-                    
                   </form>
                 </div>
             </div>
             
         </div>
-
+      </div>
         <%- include('./partials/footer.ejs') %>
     </div>
 
@@ -292,7 +385,6 @@
             guests.on("change", function(){
               updateprice()
             });
-
             roomvalue.on("change", function(){
               updateRoomValue();
               guests.val(1);
