@@ -18,9 +18,7 @@
 }
 
 .card-img-top{
-    min-height: 200px;
-    object-fit: cover;
-    width: inherit;
+    height: 300px;
 }
 
 .card-title{
