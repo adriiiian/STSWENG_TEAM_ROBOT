@@ -40,29 +40,7 @@
         </div>
         
         <div class="container-fluid px-0 content_con" style="margin-top: 100px;">
-            <div class="container">
-                <div class="book_con">
-                    <div class="container">
-                        <form class="row mx-auto book_form" action="">
-                            <div class="col-sm-3 mx-auto book_form_label">
-                                CHECK IN
-                                <input id="checkin"/>
-                            </div>
-                            <div class="col-sm-3 mx-auto book_form_label">
-                                CHECK OUT
-                                <input id="checkout"/>
-                            </div>
-                            <div class="col-sm-3 mx-auto book_form_label">
-                                GUESTS
-                                <input type="number" id="numpeople" name="firstname">
-                            </div>
-                            <div class="col-sm-2.5 mx-auto">
-                                <a class="mx-auto btn_booknow" type="submit" value="Submit" href="#" onclick="toggle()">Book now</a>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
+            <%- include('./partials/book_header.ejs') %>
             <div class="container-fluid py-5">
                 <div class="container d-flex justify-content-center flex-column align-items-center">
                     <div class="roomslist_header">
@@ -86,6 +64,7 @@
                                     </div>
                                 </a>
                             <% } %>
+
                         </div>
                     </div>
                 </div>

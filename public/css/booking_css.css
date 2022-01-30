@@ -13,15 +13,12 @@ label{
     background-color: #DCA73A;
     color: white;
     border-radius: 20px;
-    width: 165px;
-    min-width: 50px;
-    font-size: 18px;
-    margin-left: 60px;
+    width: max-content;
 }
 
 .btn_book a:hover {
     color: white;
-    transform: scale(1.2);
+    transform: scale(1.05);
     transition: 0.2s;
 }
 
@@ -30,6 +27,45 @@ label{
     margin-bottom: 50px;
 }
 
-.d-flex {
-    color:#4e4e4e;
+.breakdown_con{
+    background-color: white;
+    font-size: 14px;
+    color: #4e4e4e;
+}
+
+.total_price_room, .total_price_guests{
+    border-top: 2px solid lightgrey;
+}
+
+.total_price{
+    font-size: 17px;
+}
+
+.modal-open .container_whole{
+    filter: blur(20px);
+    background-color: none;
+}
+
+.modal-content{
+    border-radius: 20px !important;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, .30);
+}
+
+.btn_close_success a{
+    text-align: center;
+    height: max-content;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #DCA73A;
+    color: white;
+    border-radius: 20px;
+    max-width: max-content;
+    min-width: 50px;
+}
+
+.btn_close_success a:hover{
+    color: white;
+    transform: scale(1.2);
+    transition: 0.2s;
 }
