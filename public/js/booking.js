@@ -10,7 +10,7 @@ $(document).ready(function(){
             Checkout: new Date($('#checkout').val()),
             RoomType: $('#room').val(),
             Guests: $('#guests').val(),
-            Subtotal: $('#pricetext').val(),
+            Subtotal: $('#subtotal_span').val(),
             Status: "Pending"
         };
 
@@ -91,11 +91,16 @@ $(document).ready(function(){
                     $.post('book_reservation', {Fullname: bookingInfo.Fullname, Email: bookingInfo.Email, ContactNumber: bookingInfo.ContactNumber, Address: bookingInfo.Address,
                     Checkin: bookingInfo.Checkin, Checkout: bookingInfo.Checkout, RoomType: bookingInfo.RoomType, Guests: bookingInfo.Guests, Subtotal: bookingInfo.Subtotal, Status: bookingInfo.Status}, function(result){
                         if(result == "success"){
-                            alert('Booked Successfully')
-                            window.location.href = '/'
+                            $('#data_modal_text').text("Booked successfully!");
+                            $('#data_modal_success').modal();
+                            $('#ok_btn').click(function(){
+                                $('#data_modal_success').modal('hide');
+                                window.location.href = '/';
+                            })
                         }
                         else if(result == "failed"){
-                            alert('Booking Failed')
+                            $('#data_modal_text').text("Booking Failed!");
+                            $('#data_modal_success').modal();
                         }
                         
                     });
@@ -104,6 +109,8 @@ $(document).ready(function(){
             })
         }
     });
+
+    $('#data_modal_success').onCl
 
     $('#book_header').submit(async function(){
         window.location.href = '/booking';
