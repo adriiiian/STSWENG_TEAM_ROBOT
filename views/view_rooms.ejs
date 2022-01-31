@@ -65,9 +65,12 @@
                             <div>
                                 <div style="font-weight: 500;">DETAILS:</div>
                                 <ul>
-                                    <%for(var i = 0; i < room.Details.length; i++) {%>
-                                        <li><%-room.Details[i]%></li>
-                                    <%}%>
+                                        <li>Separate toilet</li>
+                                        <li>Flatscreen</li>
+                                        <li>Wifi</li>
+                                        <li><%-room.BedInfo%></li>
+                                        <li>No. of guests allowed: <%-room.NumberOfGuests%></li>
+                                        <li>No. of additional guests allowed: <%-room.NumberOfAdditionalGuests%></li>
                                 </ul>
                             </div>
                         </div>
