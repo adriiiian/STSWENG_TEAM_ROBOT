@@ -41,6 +41,8 @@ router.post('/book_reservation', bookingController.Book)
 
 router.get('/check_available_rooms', bookingController.CheckAvailableRooms)
 
+router.get('/admin-login', loginController.adminLogin)
+
 router.get('/admin', (req, res) => {
     res.render('admin')
 })

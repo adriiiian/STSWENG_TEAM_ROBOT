@@ -167,6 +167,41 @@ const loginController = {
         }
         res.render('booking', {_email})
 
+    },
+
+    adminLogin: async (req, res) => {
+        var AdminInfo = req.query.AdminInfo
+        var result = await helper.CheckAdminLogin(AdminInfo.Email, AdminInfo.Password)
+        if(result == 'login information is valid') {
+            await db.Admin.findOne({Email: AdminInfo.Email})
+                .then((User) => {
+                    
+                    if(User) {
+                        if(User.Password == AdminInfo.Password) {
+                            req.session.email = User.Email
+                            req.session.username = "Admin"
+                                
+                            res.send('success')
+                        }
+                        else {
+                            res.send('invalid-pw')
+                        }
+                    }
+                    else {
+                        res.send('unregistered-email')
+                    }
+
+                })
+        }
+        else if(result == 'email should be valid') {
+            res.send('incorrect-email')
+        }
+        else if(result == 'password is too short') {
+            res.send('password-too-short')
+        }
+        else if(result == 'login information is not valid') {
+            res.send('invalid-input')
+        }
     }
 
 }

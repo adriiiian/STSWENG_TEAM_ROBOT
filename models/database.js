@@ -4,6 +4,7 @@ const Account = require('./account.js')
 const Bookings = require('./bookings.js')
 const Dates = require('./dates.js')
 const Rooms = require('./rooms.js')
+const Admin = require('./admin.js')
 
 
 dotenv.config()
@@ -32,7 +33,9 @@ const database = {
 
     Dates,
 
-    Rooms
+    Rooms,
+    
+    Admin
 }
 
 module.exports = database

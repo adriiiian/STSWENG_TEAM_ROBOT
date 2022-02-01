@@ -1,0 +1,10 @@
+const mongoose = require('mongoose')
+mongoose.pluralize(null)
+
+const adminSchema = new mongoose.Schema({
+    Email: String,
+    Password: String
+})
+
+const Admin = mongoose.model('Admin', adminSchema)
+module.exports = Admin
