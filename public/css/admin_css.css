@@ -540,3 +540,7 @@ body{
 .apply_filter {
     text-align: center;
 }
+
+.form-control {
+    width: 50px;
+}
