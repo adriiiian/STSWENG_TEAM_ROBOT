@@ -66,6 +66,15 @@
               </nav>
               <div class="tab-content" id="nav-tabContent">
                 <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                  <div class="col-sm-3 mx-auto book_form_label">
+                    Date Picker
+                    <input id="roomfilter"/>
+                  </div>
+                  <br>
+                  <div class="apply_filter">
+                    <button type="button" class="btn btn-secondary btn-sm">Filter Date</button>
+                  </div>
+                  <br>
                     <table class="table">
                         <thead class="thead-light">
                           <tr>
@@ -79,42 +88,14 @@
                             <td>101</td>
                             <td>Single</td>
                             <td>
-                              <div class="dropdown">
-                              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Not Occupied
-                              </button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                  <table class="table">
-                                      <tr>
-                                          <td class="td_checkout"><button type="button" class="btn btn-secondary btn-sm">Change to occupied</button></td>
-                                      </tr>
-                                  </table>
-                                </div>
-                              </div>
+                              <input type="text" class="form-control">
                             </td>
                           </tr>
                           <tr>
                             <td>102</td>
                             <td>Double</td>
                             <td>
-                                <div class="dropdown">
-                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                      Occupied
-                                    </button>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                        <table class="table">
-                                            <tr>
-                                                <td>Name: Jane</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Number of people: 2</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="td_checkout"><button type="button" class="btn btn-secondary btn-sm">Checkout</button></td>
-                                            </tr>
-                                        </table>
-                                    </div>
-                                  </div>
+                              <input type="text" class="form-control">
                             </td>
                           </tr>
                         </tbody>
@@ -142,6 +123,7 @@
                             <th scope="col">Date Start</th>
                             <th scope="col">Date End</th>
                             <th scope="col">Type</th>
+                            <th scope="col">Room</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -150,6 +132,18 @@
                             <td>01/02/2022</td>
                             <td>01/05/2022</td>
                             <td>Single</td>
+                            <td>
+                              <div class="btn-group">
+                                <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  Room No.
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                  <a class="dropdown-item" href="#">101</a>
+                                  <a class="dropdown-item" href="#">102</a>
+                                  <a class="dropdown-item" href="#">103</a>
+                                </div>
+                              </div>
+                            </td>
                             <td><button type="button" class="btn btn-secondary btn-sm">Confirm</button></td>
                             <td><button type="button" class="btn btn-secondary btn-sm">Reject</button></td>
                           </tr>
@@ -158,6 +152,18 @@
                             <td>02/14/2022</td>
                             <td>02/21/2022</td>
                             <td>Double</td>
+                            <td>
+                              <div class="btn-group">
+                                <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  Room No.
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                  <a class="dropdown-item" href="#">101</a>
+                                  <a class="dropdown-item" href="#">102</a>
+                                  <a class="dropdown-item" href="#">103</a>
+                                </div>
+                              </div>
+                            </td>
                             <td><button type="button" class="btn btn-secondary btn-sm">Confirm</button></td>
                             <td><button type="button" class="btn btn-secondary btn-sm">Reject</button></td>
                           </tr>
@@ -179,6 +185,9 @@
             $('#checkout').datepicker({
                 uiLibrary: 'bootstrap4'
             });
+            $('#roomfilter').datepicker({
+              uiLibrary: 'bootstrap4'
+          });
         </script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
