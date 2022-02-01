@@ -11,7 +11,9 @@ const bookingsSchema = new mongoose.Schema({
     RoomType: String,
     Guests: Number,
     Subtotal: Number,
-    Status: String
+    Status: String,
+    Rating: Number,
+    Review: String
 })
 
 const Bookings = mongoose.model('Bookings', bookingsSchema)
