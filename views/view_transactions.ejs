@@ -95,7 +95,7 @@
                             </div>  
                             
                             <div class="align-self-end btn_viewtransactions">
-                                <% if(booking.Status == 'Final') {%>
+                                <% if(booking.Status == 'Confirmed') {%>
                                     <a href="#" data-toggle="modal" data-target="#data_modal_review">Review</a> <!-- OR "CANCEL"-->
                                 <%} else if(booking.Status == 'Pending') {%>
                                     <a href="#" data-toggle="modal" data-target="#data_modal_cancel">Cancel</a>

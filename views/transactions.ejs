@@ -59,7 +59,7 @@
                                         <select class="form-control" id="filter_select" required>
                                             <option value="" hidden></option>
                                             <option value="All" <%= filter == 'All' ? 'Selected' : '' %>>All</option>
-                                            <option value="Final" <%= filter == 'Final' ? 'Selected' : '' %>>Final</option>
+                                            <option value="Confirmed" <%= filter == 'Confirmed' ? 'Selected' : '' %>>Confirmed</option>
                                             <option value="Pending" <%= filter == 'Pending' ? 'Selected' : '' %>>Pending</option>
                                             <option value="Cancelled" <%= filter == 'Cancelled' ? 'Selected' : '' %>>Cancelled</option>
                                         </select>
@@ -99,7 +99,7 @@
                                                     <%-(bookings[i].Checkout.getMonth() + 1) + '/' + bookings[i].Checkout.getDate() + '/' + bookings[i].Checkout.getFullYear()%>
                                                 </span>
                                                 <span >
-                                                    <%if (bookings[i].Status == "Final") {%>
+                                                    <%if (bookings[i].Status == "Confirmed") {%>
                                         
                                                         <a href="#" type="button" class="btn_review_transaction" data-toggle="modal" data-target="#data_modal_review">
                                                             Review
@@ -113,7 +113,7 @@
                                                 </span>
                                             </span>
                                         </div>
-                                        <%if (bookings[i].Status == "Final") {%>
+                                        <%if (bookings[i].Status == "Confirmed") {%>
                                             <div class="border_bottom_done"></div>
                                         <%} else if (bookings[i].Status == "Pending") {%>
                                             <div class="border_bottom_active"></div>
