@@ -545,6 +545,10 @@ body{
     width: 50px;
 }
 
-#btn_roomType {
-    margin-left: 585px;
+.dropdown {
+    align-content: center;
+}
+
+#label_room {
+    color: #4e4e4e;
 }
