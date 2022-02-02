@@ -2,6 +2,7 @@ const express = require('express');
 const loginController = require('../controllers/login-controller');
 const registerController = require('../controllers/register-controller');
 const bookingController = require('../controllers/booking-controller');
+const adminController = require('../controllers/admin-controller');
 
 const router = express.Router()
 
@@ -43,8 +44,12 @@ router.get('/check_available_rooms', bookingController.CheckAvailableRooms)
 
 router.get('/admin-login', loginController.adminLogin)
 
-router.get('/admin', (req, res) => {
-    res.render('admin')
-})
+// router.get('/get-rooms', adminController.viewOccupiedRooms)
+
+router.get('/admin', adminController.viewOccupiedRooms)
+
+// router.get('/admin', (req, res) => {
+//     res.render('admin')
+// })
 
 module.exports = router

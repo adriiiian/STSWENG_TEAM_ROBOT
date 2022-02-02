@@ -19,7 +19,15 @@ $(document).ready(function ()
                 $('#admin_error').show()
             }
             else if(result == 'success') {
-                window.location.href = '/admin'
+                console.log('hello out')
+                // $.get('get-rooms', function(result) {
+                //     console.log('hello in')
+                //     console.log(result)
+                //     // window.location.href = 'admin'
+                // })
+
+                window.location.href = 'admin'
+                
             }
             else if(result == 'not-an-email') {
                 $('#admin_error').text('Incorrect email/password');
