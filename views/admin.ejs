@@ -69,7 +69,7 @@
                   <p class="date_filter">Date and Room Type Filter</p>
                   <div class="col-sm-3 mx-auto book_form_label">
                     Date
-                    <input id="roomfilter"/>
+                    <input id="roomfilter" class="form-control" readonly="readonly"/>
                   </div>
                   <br>
                   <div class="dropdown">
@@ -202,14 +202,10 @@
     <%- include('./partials/account_popup.ejs') %>
 
         <script>
-            $('#checkin').datepicker({
-                uiLibrary: 'bootstrap4'
-            });
-            $('#checkout').datepicker({
-                uiLibrary: 'bootstrap4'
-            });
             $('#roomfilter').datepicker({
-              uiLibrary: 'bootstrap4'
+              uiLibrary: 'bootstrap4',
+              format: 'mm-dd-yyyy',
+              todayHighlight: true,
           });
         </script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>

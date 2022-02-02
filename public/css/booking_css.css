@@ -44,17 +44,13 @@ input[type=number]::-webkit-outer-spin-button {
 .d-flex {
     color:#4e4e4e;
 }
-
-/* .datepicker-days table .disabled-date.day {
-    background-color: #663399;
-    color: #fff;
-  } */
   
-  .datepicker table tr td.disabled, 
-  .datepicker table tr td.disabled:hover {
+.datepicker table tr td.disabled, 
+.datepicker table tr td.disabled:hover {
     background: #c2c2c2;
     color: rgb(0, 0, 0);
   }
+  
 .breakdown_con{
     background-color: white;
     font-size: 14px;
