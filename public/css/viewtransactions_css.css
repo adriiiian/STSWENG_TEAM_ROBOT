@@ -115,3 +115,8 @@
     font-family: 'Open Sans', sans-serif;
     font-size: small;
 }
+
+#btn-back {
+    color: white;
+    background-color: #DCA73A;
+}
