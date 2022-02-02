@@ -66,13 +66,25 @@
               </nav>
               <div class="tab-content" id="nav-tabContent">
                 <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                  <p class="date_filter">Date and Room Type Filter</p>
                   <div class="col-sm-3 mx-auto book_form_label">
-                    Date Picker
+                    Date
                     <input id="roomfilter"/>
                   </div>
                   <br>
+                  <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="btn_roomType" data-toggle="dropdown">
+                      Room Type
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <a class="dropdown-item">101</a>
+                      <a class="dropdown-item">102</a>
+                      <a class="dropdown-item">103</a>
+                    </div>
+                  </div>
+                  <br>
                   <div class="apply_filter">
-                    <button type="button" class="btn btn-secondary btn-sm">Filter Date</button>
+                    <button type="button" class="btn btn-secondary btn-sm">Apply Filter</button>
                   </div>
                   <br>
                     <table class="table">
