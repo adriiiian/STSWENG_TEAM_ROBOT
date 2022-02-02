@@ -20,12 +20,6 @@ $(document).ready(function ()
             }
             else if(result == 'success') {
                 console.log('hello out')
-                // $.get('get-rooms', function(result) {
-                //     console.log('hello in')
-                //     console.log(result)
-                //     // window.location.href = 'admin'
-                // })
-
                 window.location.href = 'admin'
                 
             }
