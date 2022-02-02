@@ -44,12 +44,8 @@ router.get('/check_available_rooms', bookingController.CheckAvailableRooms)
 
 router.get('/admin-login', loginController.adminLogin)
 
-// router.get('/get-rooms', adminController.viewOccupiedRooms)
-
 router.get('/admin', adminController.viewOccupiedRooms)
 
-// router.get('/admin', (req, res) => {
-//     res.render('admin')
-// })
+router.get('/filter-occupied-rooms', adminController.viewViewOccupiedRooms)
 
 module.exports = router
