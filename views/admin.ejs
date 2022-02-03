@@ -28,21 +28,8 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-start" id="navbarNavAltMarkup">
                   <div class="navbar-nav ml-auto text-right float-right">
-                    <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-                    <a class="nav-item nav-link" href="rooms">Rooms</a>
-                    <a class="nav-item nav-link" href="services">Services</a>
-                    <a class="nav-item nav-link" href="#">About</a>
-                    <a class="nav-item nav-link" href="#contactus_section">Contact Us</a>
-
-                        <div id="logged-in-nav" class="dropdown account_dropdown">
-                            <button class="btn ml-4 btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            ACCOUNT
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                              <a class="dropdown-item" href="transactions">TRANSACTIONS</a>
-                              <a class="dropdown-item" href="logout" style="font-weight: 500;">LOG OUT</a>
-                            </div>
-                        </div>
+                    <a id="logged-out-nav" class="nav-item nav-link btn_nav_login" href="logout">LOG OUT</a>       
+                  </div>
 
                   </div>
                 </div>
@@ -66,13 +53,28 @@
               </nav>
               <div class="tab-content" id="nav-tabContent">
                 <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                  <p class="date_filter">Date and Room Type Filter</p>
                   <div class="col-sm-3 mx-auto book_form_label">
-                    Date Picker
+                    Date
                     <input id="roomfilter"/>
+                    <div class="form-group">
+                      <label for="room" id="label_room">Room</label>
+                      <select class="form-control" id="room" required>
+                        <option>Single Room</option>
+                        <option>Double Room</option>
+                        <option>Triple Room</option>
+                        <option>Quad Room</option>
+                        <option>Queen Room</option>
+                        <option>King Room</option>
+                      </select>
+                      <div class="valid-feedback">
+                        <i class="fa fa-check" style="color: darkgreen; font-size:14;"></i>
+                      </div>
+                      <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
                   </div>
-                  <br>
                   <div class="apply_filter">
-                    <button type="button" class="btn btn-secondary btn-sm">Filter Date</button>
+                    <button type="button" class="btn btn-secondary btn-sm">Apply Filter</button>
                   </div>
                   <br>
                     <table class="table">

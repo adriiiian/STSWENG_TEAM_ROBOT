@@ -496,7 +496,7 @@ body{
 }
 
 .date_filter {
-    font-size: 25px;
+    font-size: 22px;
     color: #4e4e4e;
     font-family: 'Alata', sans-serif;
     text-align: center;
@@ -543,4 +543,12 @@ body{
 
 .form-control {
     width: 50px;
+}
+
+.dropdown {
+    align-content: center;
+}
+
+#label_room {
+    color: #4e4e4e;
 }
