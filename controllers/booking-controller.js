@@ -45,7 +45,9 @@ const bookingController = {
             RoomType: req.body.RoomType,
             Guests: req.body.Guests,
             Subtotal: req.body.Subtotal,
-            Status: req.body.Status
+            Status: req.body.Status,
+            Rating: req.body.Rating,
+            Review: req.body.Review
         };
 
         var result;
@@ -105,7 +107,7 @@ const bookingController = {
         })
     },
   
-  cancelReservation: async (req, res) => {
+    cancelReservation: async (req, res) => {
         
         var id = req.query.id
 
@@ -127,7 +129,26 @@ const bookingController = {
         }
 
         res.redirect('transactions')
+    },
+
+    saveReview: (req, res) => {
+        var rating = req.query.rating
+        var review = req.query.review
+        var id = req.query.id
+        db.Bookings.findOneAndUpdate({_id: id}, {Rating: rating, Review: review}).exec((err) => {
+            if(err)console.error(err);
+            else{
+                res.send('success')
+            }
+        })
+    },
+    getReview: async (req, res) => {
+        var id = req.query.id
+        db.Bookings.findOne({_id: id}).then((booking) => {
+            res.send(booking)
+        })
     }
+
 }
 
 async function initSchema(body){
@@ -141,7 +162,9 @@ async function initSchema(body){
         RoomType: body.RoomType,
         Guests: body.Guests,
         Subtotal: body.Subtotal,
-        Status: body.Status
+        Status: body.Status,
+        Rating: body.Rating,
+        Review: body.Review
     }
     return newBooking;
 }
