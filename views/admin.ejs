@@ -56,7 +56,7 @@
                   <p class="date_filter">Date and Room Type Filter</p>
                   <div class="col-sm-3 mx-auto book_form_label">
                     Date
-                    <input id="roomfilter"/>
+                    <input id="roomfilter"  class="form-control" readonly="readonly" value=<%-currDate%> />
                     <div class="form-group">
                       <label for="room" id="label_room">Room</label>
                       <select class="form-control" id="room" required>
@@ -74,7 +74,7 @@
                     </div>
                   </div>
                   <div class="apply_filter">
-                    <button type="button" class="btn btn-secondary btn-sm">Apply Filter</button>
+                    <button type="button" id="btn_filter" class="btn btn-secondary btn-sm" onclick="filter()">Apply Filter</button>
                   </div>
                   <br>
                     <table class="table">
@@ -87,14 +87,29 @@
                         </thead>
                         <tbody>
                           <tr>
-                            <td>101</td>
-                            <td>Single</td>
-                            <td>Occupied</td>
+                            <td id="rn1">101</td>
+                            <td id="rt1">Single Room</td>
+                            <td id="stat1"><%-rooms.room1%></td>
                           </tr>
                           <tr>
-                            <td>102</td>
-                            <td>Double</td>
-                            <td>Available</td>
+                            <td id="rn2">102</td>
+                            <td id="rt2">Single Room</td>
+                            <td id="stat2"><%-rooms.room2%></td>
+                          </tr>
+                          <tr>
+                            <td id="rn3">103</td>
+                            <td id="rt3">Single Room</td>
+                            <td id="stat3"><%-rooms.room3%></td>
+                          </tr>
+                          <tr>
+                            <td id="rn4">104</td>
+                            <td id="rt4">Single Room</td>
+                            <td id="stat4"><%-rooms.room4%></td>
+                          </tr>
+                          <tr>
+                            <td id="rn5">105</td>
+                            <td id="rt5">Single Room</td>
+                            <td id="stat5"><%-rooms.room5%></td>
                           </tr>
                         </tbody>
                       </table>
@@ -177,15 +192,11 @@
     <%- include('./partials/account_popup.ejs') %>
 
         <script>
-            $('#checkin').datepicker({
-                uiLibrary: 'bootstrap4'
-            });
-            $('#checkout').datepicker({
-                uiLibrary: 'bootstrap4'
-            });
             $('#roomfilter').datepicker({
-              uiLibrary: 'bootstrap4'
-          });
+              uiLibrary: 'bootstrap4',
+              format: 'mm-dd-yyyy',
+              todayHighlight: true,
+            });
         </script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -211,6 +222,64 @@
                 $("#form_login").show();
                 $("#form_createaccount").hide();
                 $("#login_error").hide();
+            }
+            function filter(){
+              var selectedDate = $('#roomfilter').val();
+              var roomType = $('#room').val();
+              var multiplier;
+              if(roomType == "Single Room"){
+                updateRoomNum(100);
+                updateRoomType("Single Room");
+                multiplier = 100;
+              }
+              else if(roomType == "Double Room"){
+                updateRoomNum(200);
+                updateRoomType("Double Room");
+                multiplier = 200;
+              }
+              else if(roomType == "Triple Room"){
+                updateRoomNum(300);
+                updateRoomType("Triple Room");
+                multiplier = 300;
+              }
+              else if(roomType == "Quad Room"){
+                updateRoomNum(400);
+                updateRoomType("Quad Room");
+                multiplier = 400;
+              }
+              else if(roomType == "Queen Room"){
+                updateRoomNum(500);
+                updateRoomType("Queen Room");
+                multiplier = 500;
+              }
+              else if(roomType == "King Room"){
+                updateRoomNum(600);
+                updateRoomType("King Room");
+                multiplier = 600;
+              }
+              $.get('filter-occupied-rooms', {selectedDate, roomType, multiplier}, function(result){
+                $('#stat1').text(result.room1);
+                $('#stat2').text(result.room2);
+                $('#stat3').text(result.room3);
+                $('#stat4').text(result.room4);
+                $('#stat5').text(result.room5);
+              });
+            }
+
+            function updateRoomNum(multiplier){
+              $('#rn1').text(multiplier + 1);
+              $('#rn2').text(multiplier + 2);
+              $('#rn3').text(multiplier + 3);
+              $('#rn4').text(multiplier + 4);
+              $('#rn5').text(multiplier + 5);
+            }
+
+            function updateRoomType(roomType){
+              $('#rt1').text(roomType);
+              $('#rt2').text(roomType);
+              $('#rt3').text(roomType);
+              $('#rt4').text(roomType);
+              $('#rt5').text(roomType);
             }
         </script>
     </body>

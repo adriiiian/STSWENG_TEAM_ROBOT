@@ -46,6 +46,7 @@ const bookingController = {
             Guests: req.body.Guests,
             Subtotal: req.body.Subtotal,
             Status: req.body.Status,
+            RoomNumber: 0,
             Rating: req.body.Rating,
             Review: req.body.Review
         };
@@ -163,6 +164,7 @@ async function initSchema(body){
         Guests: body.Guests,
         Subtotal: body.Subtotal,
         Status: body.Status,
+        RoomNumber: body.RoomNumber,
         Rating: body.Rating,
         Review: body.Review
     }

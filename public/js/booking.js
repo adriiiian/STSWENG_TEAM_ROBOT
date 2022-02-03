@@ -113,8 +113,6 @@ $(document).ready(function(){
         }
     });
 
-    $('#data_modal_success').onCl
-
     $('#book_header').submit(async function(){
         window.location.href = '/booking';
     });

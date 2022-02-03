@@ -12,6 +12,7 @@ const bookingsSchema = new mongoose.Schema({
     Guests: Number,
     Subtotal: Number,
     Status: String,
+    RoomNumber: Number,
     Rating: Number,
     Review: String
 })

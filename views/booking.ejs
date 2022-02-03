@@ -84,7 +84,7 @@
                               <div class="col">
                                 <div class="form-group">
                                   <label for="checkin">CHECK IN</label>
-                                  <input id="checkin" class="form-control" required/>
+                                  <input id="checkin" class="form-control" readonly="readonly" required/>
                                   <div class="valid-feedback">
                                     <i class="fa fa-check" style="color: darkgreen; font-size:14;"></i>
                                   </div>
@@ -94,7 +94,7 @@
                               <div class="col">
                                 <div class="form-group">
                                   <label for="checkout">CHECK OUT</label>
-                                  <input id="checkout" class="form-control" required/>
+                                  <input id="checkout" class="form-control" readonly="readonly" required/>
                                   <div class="valid-feedback">
                                     <i class="fa fa-check" style="color: darkgreen; font-size:14;"></i>
                                   </div>
@@ -188,8 +188,8 @@
                                 </span>
                               </div>
                           </div>
-
                         </div>
+                        <p id="booking_error" class="text-danger h6 text-center">Invalid input</p>
                     </div>
                   </form>
                 </div>
