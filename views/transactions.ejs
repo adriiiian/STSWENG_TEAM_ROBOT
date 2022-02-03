@@ -59,7 +59,7 @@
                                         <select class="form-control" id="filter_select" required>
                                             <option value="" hidden></option>
                                             <option value="All" <%= filter == 'All' ? 'Selected' : '' %>>All</option>
-                                            <option value="Final" <%= filter == 'Final' ? 'Selected' : '' %>>Final</option>
+                                            <option value="Confirmed" <%= filter == 'Confirmed' ? 'Selected' : '' %>>Confirmed</option>
                                             <option value="Pending" <%= filter == 'Pending' ? 'Selected' : '' %>>Pending</option>
                                             <option value="Cancelled" <%= filter == 'Cancelled' ? 'Selected' : '' %>>Cancelled</option>
                                         </select>
@@ -99,12 +99,17 @@
                                                     <%-(bookings[i].Checkout.getMonth() + 1) + '/' + bookings[i].Checkout.getDate() + '/' + bookings[i].Checkout.getFullYear()%>
                                                 </span>
                                                 <span >
-                                                    <%if (bookings[i].Status == "Final") {%>
+                                                    <%if (bookings[i].Status == "Confirmed") {%>
                                         
-                                                        <a href="#" type="button" class="btn_review_transaction" data-toggle="modal" data-target="#data_modal_review">
-                                                            Review
-                                                        </a>
-                                        
+                                                        <% var currDate = new Date()%>
+                                                        <% if(currDate > bookings[i].Checkout) {%>
+                                                            <a href="<%-bookings[i]._id%>" type="button" class="review_button btn_review_transaction" data-toggle="modal" data-target="#data_modal_review">
+                                                                Review
+                                                            </a>
+                                                        <%} else {%>
+                                                            <a href="#" class="btn_review_transaction cancelled">Confirmed</a>
+                                                        <%}%>
+
                                                     <%} else if (bookings[i].Status == "Pending") {%>
                                                         <a href="<%-bookings[i]._id%>" class="cancel_button btn_cancel_transaction" data-toggle="modal" data-target="#data_modal_cancel">Cancel</a>
                                                     <%} else {%>
@@ -113,7 +118,7 @@
                                                 </span>
                                             </span>
                                         </div>
-                                        <%if (bookings[i].Status == "Final") {%>
+                                        <%if (bookings[i].Status == "Confirmed") {%>
                                             <div class="border_bottom_done"></div>
                                         <%} else if (bookings[i].Status == "Pending") {%>
                                             <div class="border_bottom_active"></div>
@@ -156,15 +161,15 @@
                     </div>
                     <div class="modal-body">
                         <form id="form_review" action="">
-                            <input type="message" class="form-control" id="" placeholder="">
+                            <input type="message" class="form-control" id="review_string" placeholder="">
                         </form>
                     </div>
                     <div class="modal-footer">
                     <span class="btn_close_review px-2" >
-                        <a href="#" data-dismiss="modal">Close</a>
+                        <a id="close_review" href="#" data-dismiss="modal">Close</a>
                     </span>
                     <span class="btn_save_review">
-                        <a href="#">Save changes</a>
+                        <a id="save_review_btn" href="#" onclick="return false;">Save changes</a>
                     </span>
                     </div>
                 </div>

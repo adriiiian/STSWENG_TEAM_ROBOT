@@ -34,6 +34,10 @@ router.get('/transactions', loginController.viewTransactions)
 
 router.get('/view_transactions', loginController.viewViewTransactions)
 
+router.get('/save-review', bookingController.saveReview)
+
+router.get('/get-review', bookingController.getReview)
+
 router.get('/booking', loginController.viewBooking)
 
 router.get('/check-fields-booking', bookingController.CheckFields)

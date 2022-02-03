@@ -11,7 +11,9 @@ $(document).ready(function(){
             RoomType: $('#room').val(),
             Guests: $('#guests').val(),
             Subtotal: $('#subtotal_span').val(),
-            Status: "Pending"
+            Status: "Pending",
+            Rating: 0,
+            Review: ""
         };
 
         var Room = {
@@ -89,7 +91,8 @@ $(document).ready(function(){
                 else if(result == 'Booking information is valid'){
                     $('#booking_error').hide();
                     $.post('book_reservation', {Fullname: bookingInfo.Fullname, Email: bookingInfo.Email, ContactNumber: bookingInfo.ContactNumber, Address: bookingInfo.Address,
-                    Checkin: bookingInfo.Checkin, Checkout: bookingInfo.Checkout, RoomType: bookingInfo.RoomType, Guests: bookingInfo.Guests, Subtotal: bookingInfo.Subtotal, Status: bookingInfo.Status}, function(result){
+                    Checkin: bookingInfo.Checkin, Checkout: bookingInfo.Checkout, RoomType: bookingInfo.RoomType, Guests: bookingInfo.Guests, Subtotal: bookingInfo.Subtotal, 
+                    Status: bookingInfo.Status, Rating: bookingInfo.Rating, Review: bookingInfo.Review}, function(result){
                         if(result == "success"){
                             $('#data_modal_text').text("Booked successfully!");
                             $('#data_modal_success').modal();
