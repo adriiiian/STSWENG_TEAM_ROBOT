@@ -10,7 +10,13 @@ const loginController = {
         if(req.session.email) {
             _email = req.session.email
         }
-        res.render('index', {_email})
+
+        if(req.session.adminEmail) {
+            res.redirect('admin')
+        }
+        else {
+            res.render('index', {_email})
+        }
     },
     
     Login: async (req, res) => {
@@ -24,6 +30,7 @@ const loginController = {
                         if(User.Password == LoginInfo.Password) {
                             req.session.email = User.Email
                             req.session.username = User.Username
+                            req.session.adminEmail = ''
                                 
                             res.send('success')
                         }
@@ -61,24 +68,33 @@ const loginController = {
             _email = req.session.email
         }
 
-        db.Rooms.find().then((RoomList) => {
-            res.render('rooms', {_email, RoomList})
-        })
+        if(req.session.adminEmail) {
+            res.redirect('admin')
+        }
+        else {
+            db.Rooms.find().then((RoomList) => {
+                res.render('rooms', {_email, RoomList})
+            })
+        }
     },
 
     viewViewRooms: async (req, res) => {
         if(req.session.email) {
             _email = req.session.email
         }
-        var id = req.query.id
-        var room
-        await db.Rooms.findOne({Type: id}).then(function(result) {
-            if(result) {
-                room = result
-                res.render('view_rooms', {_email, room})
-            }
-        })
-
+        if(req.session.adminEmail) {
+            res.redirect('admin')
+        }
+        else {
+            var id = req.query.id
+            var room
+            await db.Rooms.findOne({Type: id}).then(function(result) {
+                if(result) {
+                    room = result
+                    res.render('view_rooms', {_email, room})
+                }
+            })
+        }
         
     },
 
@@ -86,14 +102,24 @@ const loginController = {
         if(req.session.email) {
             _email = req.session.email
         }
-        res.render('services', {_email})
+        if(req.session.adminEmail) {
+            res.redirect('admin')
+        }
+        else {
+            res.render('services', {_email})
+        }
     },
 
     viewViewServices: (req, res) => {
         if(req.session.email) {
             _email = req.session.email
         }
-        res.render('view_services', {_email})
+        if(req.session.adminEmail) {
+            res.redirect('admin')
+        }
+        else {
+            res.render('view_services', {_email})
+        }
     },
 
     getBookings: async (req, res) => {
@@ -145,6 +171,9 @@ const loginController = {
             
             
         }
+        else if(req.session.adminEmail) {
+            res.redirect('admin')
+        }
     },
 
     viewViewTransactions: async (req, res) => {
@@ -159,13 +188,21 @@ const loginController = {
                 }
             })
         }
+        else if(req.session.adminEmail) {
+            res.redirect('admin')
+        }
     },
 
     viewBooking: (req, res) => {
         if(req.session.email){
             _email = req.session.email
         }
-        res.render('booking', {_email})
+        if(req.session.adminEmail) {
+            res.redirect('admin')
+        }
+        else {
+            res.render('booking', {_email})
+        }
 
     },
 
@@ -174,12 +211,13 @@ const loginController = {
         var result = await helper.CheckAdminLogin(AdminInfo.Email, AdminInfo.Password)
         if(result == 'login information is valid') {
             await db.Admin.findOne({Email: AdminInfo.Email})
-                .then((User) => {
+                .then((Admin) => {
                     
-                    if(User) {
-                        if(User.Password == AdminInfo.Password) {
-                            req.session.email = User.Email
-                            req.session.username = "Admin"
+                    if(Admin) {
+                        if(Admin.Password == AdminInfo.Password) {
+                            req.session.email = ''
+                            req.session.username = ''
+                            req.session.adminEmail = Admin.Email
                                 
                             res.send('success')
                         }
