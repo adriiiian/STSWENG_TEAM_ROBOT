@@ -541,14 +541,11 @@ body{
     text-align: center;
 }
 
-.form-control {
-    width: 50px;
-}
-
 .dropdown {
     align-content: center;
 }
 
 #label_room {
     color: #4e4e4e;
+    margin-bottom: 0px;
 }

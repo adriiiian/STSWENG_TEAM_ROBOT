@@ -55,10 +55,10 @@
                 <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                   <p class="date_filter">Date and Room Type Filter</p>
                   <div class="col-sm-3 mx-auto book_form_label">
-                    Date
+                    DATE
                     <input id="roomfilter"  class="form-control" readonly="readonly" value=<%-currDate%> />
                     <div class="form-group">
-                      <label for="room" id="label_room">Room</label>
+                      <label for="room" id="label_room">ROOM TYPE</label>
                       <select class="form-control" id="room" required>
                         <option>Single Room</option>
                         <option>Double Room</option>
@@ -83,6 +83,7 @@
                             <th scope="col">Room No.</th>
                             <th scope="col">Type</th>
                             <th scope="col">Status</th>
+                            <th scope="col">Name</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -90,26 +91,31 @@
                             <td id="rn1">101</td>
                             <td id="rt1">Single Room</td>
                             <td id="stat1"><%-rooms.room1%></td>
+                            <td>sample_name</td>
                           </tr>
                           <tr>
                             <td id="rn2">102</td>
                             <td id="rt2">Single Room</td>
                             <td id="stat2"><%-rooms.room2%></td>
+                            <td>sample_name</td>
                           </tr>
                           <tr>
                             <td id="rn3">103</td>
                             <td id="rt3">Single Room</td>
                             <td id="stat3"><%-rooms.room3%></td>
+                            <td>sample_name</td>
                           </tr>
                           <tr>
                             <td id="rn4">104</td>
                             <td id="rt4">Single Room</td>
                             <td id="stat4"><%-rooms.room4%></td>
+                            <td>sample_name</td>
                           </tr>
                           <tr>
                             <td id="rn5">105</td>
                             <td id="rt5">Single Room</td>
                             <td id="stat5"><%-rooms.room5%></td>
+                            <td>sample_name</td>
                           </tr>
                         </tbody>
                       </table>
@@ -192,6 +198,14 @@
     <%- include('./partials/account_popup.ejs') %>
 
         <script>
+            $('#checkin').datepicker({
+              uiLibrary: 'bootstrap4',
+              format: 'mm-dd-yyyy'
+            });
+            $('#checkout').datepicker({
+              uiLibrary: 'bootstrap4',
+              format: 'mm-dd-yyyy'
+            });
             $('#roomfilter').datepicker({
               uiLibrary: 'bootstrap4',
               format: 'mm-dd-yyyy',
