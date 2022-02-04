@@ -48,8 +48,8 @@ router.get('/check_available_rooms', bookingController.CheckAvailableRooms)
 
 router.get('/admin-login', loginController.adminLogin)
 
-router.get('/admin', adminController.viewOccupiedRooms)
+router.get('/admin', adminController.loadAdmin)
 
-router.get('/filter-occupied-rooms', adminController.viewViewOccupiedRooms)
+router.get('/filter-occupied-rooms', adminController.viewOccupiedRooms)
 
 module.exports = router

@@ -1,9 +1,16 @@
 const db = require('../models/database.js')
 
 const adminController = { 
-    viewOccupiedRooms: async (req, res) => {
+    loadAdmin: async (req, res) => {
         var tempDate = new Date();
         var rooms, names;
+        var pendingTransactions = [];
+        var booking = {
+            Fullname: "",
+            Checkin: "",
+            Checkout: "",
+            Roomtype: ""
+        }
         var currDate = (tempDate.getMonth() + 1) + "-" + tempDate.getDate() + "-" + tempDate.getFullYear()
 
         if(req.session.adminEmail) {
@@ -56,8 +63,44 @@ const adminController = {
                 else if(tempDate.getMonth() < 9){
                     currDate = "0" + (tempDate.getMonth() + 1) + "-" + tempDate.getDate() + "-" + tempDate.getFullYear();
                 }
-                res.render('admin', {rooms, names, currDate});
             });
+
+            var tempCI, tempCO;
+            await db.Bookings.find({Status: "Pending"}, {Fullname: 1, Checkin: 1, Checkout: 1, RoomType: 1}).then((bookings) => {
+                bookings.sort((a,b) => a.Checkin - b.Checkin);
+                
+                for(let i = 0; i < bookings.length; i++){
+                    tempCI = new Date(bookings[i].Checkin)
+                    tempCO = new Date(bookings[i].Checkout)
+                    booking.Fullname = bookings[i].Fullname
+                    booking.RoomType = bookings[i].RoomType
+                    if(tempCI.getMonth() < 9 && tempCI.getDate() < 10)
+                        booking.Checkin = ("0" + (tempCI.getMonth() + 1) + "-" + "0" + tempCI.getDate() + "-" + tempCI.getFullYear());
+                    else if(tempCI.getMonth() < 9)
+                        booking.Checkin = ("0" + (tempCI.getMonth() + 1) + "-" + tempCI.getDate() + "-" + tempCI.getFullYear());
+                    else if(tempCI.getDate() < 10)
+                        booking.Checkin = ((tempCI.getMonth() + 1) + "-" + "0" + tempCI.getDate() + "-" + tempCI.getFullYear());
+                    else
+                        booking.Checkin = ((tempCI.getMonth() + 1) + "-" + tempCI.getDate() + "-" + tempCI.getFullYear());
+
+                    if(tempCO.getMonth() < 9 && tempCO.getDate() < 10)
+                        booking.Checkout = "0" + (tempCO.getMonth() + 1) + "-" + "0" + tempCO.getDate() + "-" + tempCO.getFullYear();
+                    else if(tempCO.getMonth() < 9)
+                        booking.Checkout = "0" + (tempCO.getMonth() + 1) + "-" + tempCO.getDate() + "-" + tempCO.getFullYear();
+                    else if(tempCO.getDate() < 10)
+                        booking.Checkout = (tempCO.getMonth() + 1) + "-" + "0" + tempCO.getDate() + "-" + tempCO.getFullYear();
+                    else
+                        booking.Checkout = (tempCO.getMonth() + 1) + "-" + tempCO.getDate() + "-" + tempCO.getFullYear();
+
+                    pendingTransactions[i] = {
+                        Fullname: booking.Fullname,
+                        Checkin: booking.Checkin,
+                        Checkout: booking.Checkout,
+                        RoomType: booking.RoomType
+                    }
+                }
+            });
+            res.render('admin', {rooms, names, currDate, pendingTransactions});
         }
         else {
             res.render('404')
@@ -65,7 +108,7 @@ const adminController = {
         
     },
 
-    viewViewOccupiedRooms: async (req, res) => {
+    viewOccupiedRooms: async (req, res) => {
         var tempDate = new Date(req.query.selectedDate);
         var roomType = req.query.roomType;
         var rooms, names;
@@ -111,8 +154,8 @@ const adminController = {
                     }
                 }
             }
-            res.send({rooms: rooms, names: names})
         });
+        res.send({rooms: rooms, names: names})
     },
 }
 
