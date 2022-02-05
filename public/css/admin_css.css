@@ -549,3 +549,7 @@ body{
     color: #4e4e4e;
     margin-bottom: 0px;
 }
+
+.form-control {
+    width: 50px;
+}

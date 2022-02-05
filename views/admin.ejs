@@ -153,16 +153,11 @@
                               <td id="pt_checkout"><%-pendingTransactions[i].Checkout%></td>
                               <td id="pt_roomtype"><%-pendingTransactions[i].RoomType%></td>
                               <td>
-                                <div class="btn-group">
-                                  <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Room No.
-                                  </button>
-                                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" href="#">101</a>
-                                    <a class="dropdown-item" href="#">102</a>
-                                    <a class="dropdown-item" href="#">103</a>
-                                  </div>
-                                </div>
+                                <select class="form-control">
+                                  <option>101</option>
+                                  <option>102</option>
+                                  <option>103</option>
+                                </select>
                               </td>
                               <td><button type="button" class="btn btn-secondary btn-sm">Confirm</button></td>
                               <td><button type="button" class="btn btn-secondary btn-sm">Reject</button></td>
@@ -170,21 +165,32 @@
                           <%}%>
                           
                           <!-- <tr>
+                          <tr>
+                            <td>John</td>
+                            <td>01/02/2022</td>
+                            <td>01/05/2022</td>
+                            <td>Single</td>
+                            <td>
+                              <select class="form-control">
+                                <option>101</option>
+                                <option>102</option>
+                                <option>103</option>
+                              </select>
+                            </td>
+                            <td><button type="button" class="btn btn-secondary btn-sm">Confirm</button></td>
+                            <td><button type="button" class="btn btn-secondary btn-sm">Reject</button></td>
+                          </tr>
+                          <tr>
                             <td>Jane</td>
                             <td>02/14/2022</td>
                             <td>02/21/2022</td>
                             <td>Double</td>
                             <td>
-                              <div class="btn-group">
-                                <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  Room No.
-                                </button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                  <a class="dropdown-item" href="#">101</a>
-                                  <a class="dropdown-item" href="#">102</a>
-                                  <a class="dropdown-item" href="#">103</a>
-                                </div>
-                              </div>
+                              <select class="form-control">
+                                <option>101</option>
+                                <option>102</option>
+                                <option>103</option>
+                              </select>
                             </td>
                             <td><button type="button" class="btn btn-secondary btn-sm">Confirm</button></td>
                             <td><button type="button" class="btn btn-secondary btn-sm">Reject</button></td>
