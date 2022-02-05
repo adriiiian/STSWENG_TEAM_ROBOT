@@ -10,6 +10,7 @@
         <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
         <script src="./js/register.js"></script>
         <script src="./js/login.js"></script>
+        <script src="./js/admin.js"></script>
     </head>
     <body>
         <div class="container_whole" id="blur">
@@ -154,7 +155,7 @@
                               <td id="pt_checkout"><%-pendingTransactions[i].Checkout%></td>
                               <td id="pt_roomtype"><%-pendingTransactions[i].RoomType%></td>
                               <td>
-                                <select class="form-control">
+                                <select class="pt_roomnumber form-control">
                                   <% if (pendingTransactions[i].RoomMultiplier == "Single Room") { %>
                                     <option>101</option>
                                     <option>102</option>
@@ -194,8 +195,8 @@
                                   <%}%>
                                 </select>
                               </td>
-                              <td><button type="button" class="btn btn-secondary btn-sm">Confirm</button></td>
-                              <td><button type="button" class="btn btn-secondary btn-sm">Reject</button></td>
+                              <td><button type="button" class="confirm_btn btn btn-secondary btn-sm">Confirm</button></td>
+                              <td><button type="button" class="reject_btn btn btn-secondary btn-sm">Reject</button></td>
                             </tr>
                           <%}%>
                         </tbody>
