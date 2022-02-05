@@ -6,6 +6,7 @@ const adminController = {
         var rooms, names;
         var pendingTransactions = [];
         var booking = {
+            _id: "",
             Fullname: "",
             Checkin: "",
             Checkout: "",
@@ -73,6 +74,7 @@ const adminController = {
                 for(let i = 0; i < bookings.length; i++){
                     tempCI = new Date(bookings[i].Checkin)
                     tempCO = new Date(bookings[i].Checkout)
+                    booking._id = bookings[i]._id
                     booking.Fullname = bookings[i].Fullname
                     booking.RoomType = bookings[i].RoomType
                     if(tempCI.getMonth() < 9 && tempCI.getDate() < 10)
@@ -113,6 +115,7 @@ const adminController = {
                     }
 
                     pendingTransactions[i] = {
+                        _id: booking._id,
                         Fullname: booking.Fullname,
                         Checkin: booking.Checkin,
                         Checkout: booking.Checkout,
@@ -178,6 +181,29 @@ const adminController = {
         });
         res.send({rooms: rooms, names: names})
     },
+
+    confirmBookingRoom: (req, res) => {
+        var id = req.body.id
+        var roomNumber = req.body.roomNumber
+
+        db.Bookings.findOneAndUpdate({_id: id}, {RoomNumber: roomNumber, Status: "Confirmed"}).exec((err) => {
+            if(err)console.error(err);
+            else{
+                res.send('success')
+            }
+        })
+    },
+
+    rejectBookingRoom: (req, res) => {
+        var id = req.body.id
+
+        db.Bookings.findOneAndUpdate({_id: id}, {Status: "Cancelled"}).exec((err) => {
+            if(err)console.error(err);
+            else{
+                res.send('success')
+            }
+        })
+    }
 }
 
 module.exports = adminController

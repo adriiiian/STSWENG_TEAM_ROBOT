@@ -149,7 +149,7 @@
                         </thead>
                         <tbody>
                           <% for(var i = 0; i < pendingTransactions.length; i++){ %>
-                            <tr>
+                            <tr id="<%-pendingTransactions[i]._id%>">
                               <td id="pt_name"><%-pendingTransactions[i].Fullname%></td>
                               <td id="pt_checkin"><%-pendingTransactions[i].Checkin%></td>
                               <td id="pt_checkout"><%-pendingTransactions[i].Checkout%></td>

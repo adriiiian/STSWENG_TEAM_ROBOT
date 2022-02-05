@@ -52,4 +52,8 @@ router.get('/admin', adminController.loadAdmin)
 
 router.get('/filter-occupied-rooms', adminController.viewOccupiedRooms)
 
+router.post('/confirm-booking-room', adminController.confirmBookingRoom)
+
+router.post('/reject-booking-room', adminController.rejectBookingRoom)
+
 module.exports = router
