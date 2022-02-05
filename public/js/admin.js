@@ -11,6 +11,7 @@ $(document).ready(function ()
             if (result == 'success') {
                 console.log('update success')
                 row.remove()
+                $('#reservation_update_modal').modal('show')
             }
         })
     })
@@ -24,6 +25,7 @@ $(document).ready(function ()
             if (result == 'success') {
                 console.log('update success')
                 row.remove()
+                $('#reservation_update_modal').modal('show')
             }
         })
         

@@ -558,3 +558,8 @@ body{
     color:#4e4e4e;
     margin-bottom: 0px;
 }
+
+.modal-content{
+    border-radius: 20px !important;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, .30);
+}

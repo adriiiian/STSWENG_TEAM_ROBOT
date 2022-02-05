@@ -226,10 +226,59 @@
                 </div>
               </div>
         </div>
-       
+        
         <%- include('./partials/footer.ejs') %>
+
+        
     </div>
 
+    <!-- ROOMS APPLY FILTER-> MODAL/POPUP HERE -->
+    <div class="modal fade modal_success" id="rooms_filter_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" data-backdrop="false">
+      <div class="modal-dialog modal-dialog-centered" style="width: 300px;" role="document">
+          <div class="modal-content border-0 px-3 pb-2">
+              <div class="modal-header">
+                <h5 class="modal-title my-auto mr-5" id="data_modal_text">Filter applied!</h5>
+                </div>
+                <div class="modal-footer">
+                <span class="btn_close_success">
+                    <button id="ok_btn" class="btn btn_booknow" data-dismiss="modal">OK</button>
+                </span>
+              </div>
+          </div>
+      </div>
+    </div>
+
+    <!-- RESERVATION CONFIRM/REJECT -> MODAL/POPUP HERE -->
+    <div class="modal fade modal_success" id="reservation_update_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" data-backdrop="false">
+      <div class="modal-dialog modal-dialog-centered" style="width: 300px;" role="document">
+          <div class="modal-content border-0 px-3 pb-2">
+              <div class="modal-header">
+                <h5 class="modal-title my-auto mr-5" id="data_modal_text">Booking updated!</h5>
+                </div>
+                <div class="modal-footer">
+                <span class="btn_close_success">
+                    <button id="ok_btn" class="btn btn_booknow" data-dismiss="modal">OK</button>
+                </span>
+              </div>
+          </div>
+      </div>
+    </div>
+    
+     <!-- APPLY DISCOUNT -> MODAL/POPUP HERE -->
+     <div class="modal fade modal_success" id="discount_update_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" data-backdrop="false">
+      <div class="modal-dialog modal-dialog-centered" style="width: 300px;" role="document">
+          <div class="modal-content border-0 px-3 pb-2">
+              <div class="modal-header">
+                <h5 class="modal-title my-auto mr-5" id="data_modal_text">Price updated!</h5>
+                </div>
+                <div class="modal-footer">
+                <span class="btn_close_success">
+                    <button id="ok_btn" class="btn btn_booknow" data-dismiss="modal">OK</button>
+                </span>
+              </div>
+          </div>
+      </div>
+    </div>
     <%- include('./partials/account_popup.ejs') %>
 
         <script>
@@ -317,6 +366,7 @@
                 $('#name3').text(result.names.name3);
                 $('#name4').text(result.names.name4);
                 $('#name5').text(result.names.name5);
+                $('#rooms_filter_modal').modal('show')
               });
             }
 
