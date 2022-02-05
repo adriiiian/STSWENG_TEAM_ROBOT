@@ -10,6 +10,7 @@
         <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
         <script src="./js/register.js"></script>
         <script src="./js/login.js"></script>
+        <script src="./js/admin.js"></script>
     </head>
     <body>
         <div class="container_whole" id="blur">
@@ -180,28 +181,29 @@
                         </tbody>
                       </table>
                 </div>
-                <div class="tab-pane fade" id="nav-discounts" role="tabpanel" aria-labelledby="nav-discounts-tab">
+                <form onsubmit="return false;" class="tab-pane fade" id="nav-discounts" role="tabpanel" aria-labelledby="nav-discounts-tab">
                   <p class="date_filter">Add Discount Rates</p>
                   <div class="col-sm-3 mx-auto book_form_label">
                     <div class="form-group">
-                      <label for="room" id="label_room">ROOM TYPE</label>
-                      <select class="form-control" style="margin-bottom: 5px;" id="room" required>
-                        <option>Single Room</option>
-                        <option>Double Room</option>
-                        <option>Triple Room</option>
-                        <option>Quad Room</option>
-                        <option>Queen Room</option>
-                        <option>King Room</option>
+                      <label for="discount_room" id="label_room">ROOM TYPE</label>
+                      <select class="form-control" style="margin-bottom: 5px;" id="discount_room" required>
+                        <option value="" hidden></option>
+                        <option value="Single">Single Room</option>
+                        <option value="Double">Double Room</option>
+                        <option value="Triple">Triple Room</option>
+                        <option value="Quad">Quad Room</option>
+                        <option value="Queen">Queen Room</option>
+                        <option value="King">King Room</option>
                       </select>
                       <label for="discount" class="discount">DISCOUNT (in %)</label>
-                      <input type="number" class="form-control" id="discount" name="discount">
+                      <input type="number" class="form-control" id="discount" name="discount" min="0" max="100" disabled>
                     </div>
                   </div>
                   <div class="apply_filter">
-                    <button type="button" id="btn_discount" class="btn btn-secondary btn-sm">Apply Discount</button>
+                    <button type="submit" id="btn_discount" class="btn btn-secondary btn-sm">Apply Discount</button>
                   </div>
                   <br>
-                </div>
+                </form>
               </div>
         </div>
        

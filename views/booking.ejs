@@ -219,9 +219,8 @@
           let additionalGuest = 3000;
           let numAdditionalGuest;
           let totalPrice, subtotalPrice;
-          const maxGuests = [1,2,3,4,2,2];
-          const roomprice = [15000, 20000, 25000, 35000, 40000, 45000];
-
+          const maxGuests = [<%-rooms[0].NumberOfGuests%>, <%-rooms[1].NumberOfGuests%>, <%-rooms[2].NumberOfGuests%>, <%-rooms[3].NumberOfGuests%>, <%-rooms[4].NumberOfGuests%>, <%-rooms[5].NumberOfGuests%>];
+          const roomprice = [<%-rooms[0].Price%>, <%-rooms[1].Price%>, <%-rooms[2].Price%>, <%-rooms[3].Price%>, <%-rooms[4].Price%>, <%-rooms[5].Price%>];
           let roomTypeSpan = $('#room_type_span');;
           let roomPriceSpan = $('#room_price_span');
           let numNightsSpan1 = $('#num_nights_span_1');
