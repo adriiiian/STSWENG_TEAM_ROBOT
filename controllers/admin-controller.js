@@ -66,6 +66,7 @@ const adminController = {
             });
 
             var tempCI, tempCO;
+            var roomMultiplier;
             await db.Bookings.find({Status: "Pending"}, {Fullname: 1, Checkin: 1, Checkout: 1, RoomType: 1}).then((bookings) => {
                 bookings.sort((a,b) => a.Checkin - b.Checkin);
                 
@@ -92,11 +93,31 @@ const adminController = {
                     else
                         booking.Checkout = (tempCO.getMonth() + 1) + "-" + tempCO.getDate() + "-" + tempCO.getFullYear();
 
+                    if(bookings[i].RoomType == "Single Room"){
+                        roomMultiplier = "Single Room"
+                    }
+                    else if(bookings[i].RoomType == "Double Room"){
+                        roomMultiplier = "Double Room"
+                    }
+                    else if(bookings[i].RoomType == "Triple Room"){
+                        roomMultiplier = "Triple Room"
+                    }
+                    else if(bookings[i].RoomType == "Quad Room"){
+                        roomMultiplier = "Quad Room"
+                    }
+                    else if(bookings[i].RoomType == "Queen Room"){
+                        roomMultiplier = "Queen Room"
+                    }
+                    else if(bookings[i].RoomType == "King Room"){
+                        roomMultiplier = "King Room"
+                    }
+
                     pendingTransactions[i] = {
                         Fullname: booking.Fullname,
                         Checkin: booking.Checkin,
                         Checkout: booking.Checkout,
-                        RoomType: booking.RoomType
+                        RoomType: booking.RoomType,
+                        RoomMultiplier: roomMultiplier
                     }
                 }
             });

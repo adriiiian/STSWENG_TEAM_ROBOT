@@ -154,47 +154,49 @@
                               <td id="pt_roomtype"><%-pendingTransactions[i].RoomType%></td>
                               <td>
                                 <select class="form-control">
-                                  <option>101</option>
-                                  <option>102</option>
-                                  <option>103</option>
+                                  <% if (pendingTransactions[i].RoomMultiplier == "Single Room") { %>
+                                    <option>101</option>
+                                    <option>102</option>
+                                    <option>103</option>
+                                    <option>104</option>
+                                    <option>105</option>
+                                  <% } else if(pendingTransactions[i].RoomMultiplier == "Double Room") { %>
+                                    <option>201</option>
+                                    <option>202</option>
+                                    <option>203</option>
+                                    <option>204</option>
+                                    <option>205</option>
+                                  <% } else if(pendingTransactions[i].RoomMultiplier == "Triple Room") { %>
+                                    <option>301</option>
+                                    <option>302</option>
+                                    <option>303</option>
+                                    <option>304</option>
+                                    <option>305</option>
+                                  <% } else if(pendingTransactions[i].RoomMultiplier == "Quad Room") { %>
+                                    <option>401</option>
+                                    <option>402</option>
+                                    <option>403</option>
+                                    <option>404</option>
+                                    <option>405</option>
+                                  <% } else if(pendingTransactions[i].RoomMultiplier == "Queen Room") { %>
+                                    <option>501</option>
+                                    <option>502</option>
+                                    <option>503</option>
+                                    <option>504</option>
+                                    <option>505</option>
+                                  <% } else if(pendingTransactions[i].RoomMultiplier == "King Room") { %>
+                                    <option>601</option>
+                                    <option>602</option>
+                                    <option>603</option>
+                                    <option>604</option>
+                                    <option>605</option>
+                                  <%}%>
                                 </select>
                               </td>
                               <td><button type="button" class="btn btn-secondary btn-sm">Confirm</button></td>
                               <td><button type="button" class="btn btn-secondary btn-sm">Reject</button></td>
                             </tr>
                           <%}%>
-                          
-                          <!-- <tr>
-                          <tr>
-                            <td>John</td>
-                            <td>01/02/2022</td>
-                            <td>01/05/2022</td>
-                            <td>Single</td>
-                            <td>
-                              <select class="form-control">
-                                <option>101</option>
-                                <option>102</option>
-                                <option>103</option>
-                              </select>
-                            </td>
-                            <td><button type="button" class="btn btn-secondary btn-sm">Confirm</button></td>
-                            <td><button type="button" class="btn btn-secondary btn-sm">Reject</button></td>
-                          </tr>
-                          <tr>
-                            <td>Jane</td>
-                            <td>02/14/2022</td>
-                            <td>02/21/2022</td>
-                            <td>Double</td>
-                            <td>
-                              <select class="form-control">
-                                <option>101</option>
-                                <option>102</option>
-                                <option>103</option>
-                              </select>
-                            </td>
-                            <td><button type="button" class="btn btn-secondary btn-sm">Confirm</button></td>
-                            <td><button type="button" class="btn btn-secondary btn-sm">Reject</button></td>
-                          </tr> -->
                         </tbody>
                       </table>
                 </div>
