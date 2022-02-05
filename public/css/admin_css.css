@@ -23,6 +23,11 @@ body{
     z-index: -1;
   }
 
+  .modal-open .container_whole{
+    filter: blur(20px);
+    background-color: none;
+}
+
 .nav_main .active{
     color: #DCA73A;
 }
