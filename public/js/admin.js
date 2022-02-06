@@ -36,7 +36,7 @@ $(document).ready(function ()
                         let discountedPrice = roomprice[i] - ((input / 100) * roomprice[i])
     
                         $.post('update-room-price', {Price: discountedPrice, Type: currRoom}, function(result) {
-                            console.log('result is -> ' + result)
+                            $('#discount_update_modal').modal('show')
                         })
                     }
                 }

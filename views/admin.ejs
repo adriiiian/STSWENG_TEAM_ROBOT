@@ -31,11 +31,9 @@
                   <div class="navbar-nav ml-auto text-right float-right">
                     <a id="logged-out-nav" class="nav-item nav-link btn_nav_login" href="logout">LOG OUT</a>       
                   </div>
-
                   </div>
                 </div>
               </nav>
-        </div>
         <div class="hotel_header">
             <div class="hotel_line">
                 The Best Place To Stay
@@ -210,6 +208,22 @@
         <%- include('./partials/footer.ejs') %>
     </div>
 
+    <!-- APPLY DISCOUNT -> MODAL/POPUP HERE -->
+    <div class="modal fade modal_success" id="discount_update_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" data-backdrop="false">
+      <div class="modal-dialog modal-dialog-centered" style="width: 300px;" role="document">
+          <div class="modal-content border-0 px-3 pb-2">
+              <div class="modal-header">
+                <h5 class="modal-title my-auto mr-5" id="data_modal_text">Price updated!</h5>
+                </div>
+                <div class="modal-footer">
+                <span class="btn_close_success">
+                    <button id="ok_btn" class="btn btn_booknow" data-dismiss="modal">OK</button>
+                </span>
+              </div>
+          </div>
+      </div>
+    </div>
+    
     <%- include('./partials/account_popup.ejs') %>
 
         <script>
