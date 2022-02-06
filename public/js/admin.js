@@ -1,7 +1,7 @@
 $(document).ready(function () 
 {
     const roomprice = [15000, 20000, 25000, 35000, 40000, 45000];
-    const roomtype = ['Single', 'Double', 'Triple', 'Quad', 'King', 'Queen'];
+    const roomtype = ['Single', 'Double', 'Triple', 'Quad', 'Queen', 'King'];
 
     $("#discount_room").change(function() {
         $('#discount').prop('disabled', true)
@@ -66,7 +66,7 @@ $(document).ready(function ()
         let _id = $(this).closest('tr').attr('id')
         let row = $(this).closest('tr')
        
-        $.post('reject-booking-room', {id: _id, roomNumber: roomnumber}, function(result) {
+        $.post('reject-booking-room', {id: _id}, function(result) {
             if (result == 'success') {
                 console.log('update success')
                 row.remove()
