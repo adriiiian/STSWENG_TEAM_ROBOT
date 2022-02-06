@@ -56,6 +56,8 @@ router.get('/admin', adminController.loadAdmin)
 
 router.get('/filter-occupied-rooms', adminController.viewOccupiedRooms)
 
+router.get('/filter-reservations', adminController.filterReservations)
+
 router.post('/confirm-booking-room', adminController.confirmBookingRoom)
 
 router.post('/reject-booking-room', adminController.rejectBookingRoom)
