@@ -4,12 +4,11 @@ const database = require('./models/database.js')
 const dotenv = require('dotenv')
 const session = require('express-session')
 const MongoStore = require('connect-mongo')
-const server = http.createServer(app);
 
 dotenv.config()
 
 // const _Port = process.env.PORT
-const _Port = server.listen(process.env.PORT || 3000);
+const _Port = process.env.PORT || 3000;
 const _Host = process.env.HOSTNAME;
 const DB_URL = process.env.DB_URL;
 
@@ -56,9 +55,13 @@ app.use((req, res) => {
     res.status(404).render('404', {title: 'Page not found :('})
 })
   
-app.listen(_Port, _Host, () => {
-    console.log('Server is running at http://' + _Host + ':' + _Port)
-    console.log('Connecting to database...')
+// app.listen(_Port, _Host, () => {
+//     console.log('Server is running at http://' + _Host + ':' + _Port)
+//     console.log('Connecting to database...')
+// })
+
+app.listen(_Port, () => {
+  console.log('Server is running at port ${ _Port }')
 })
   
   
