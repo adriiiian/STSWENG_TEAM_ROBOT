@@ -114,6 +114,28 @@ const adminController = {
             res.send({rooms: rooms, names: names})
         });
     },
+
+    getRoomPrice: (req, res) => {
+        var roomType = req.query.RoomType
+
+        db.Rooms.findOne({Type: roomType}).then((result) => {
+            if(result) {
+                res.send(result)
+            }
+        })
+    },
+
+    updateRoomPrice: (req, res) => {
+        var newPrice = req.body.Price
+        var type = req.body.Type
+        
+        db.Rooms.findOneAndUpdate({Type: type}, {Price: newPrice}).exec((err) => {
+            if(err)console.error(err);
+            else{
+                res.send('success')
+            }
+        })
+    }
 }
 
 module.exports = adminController

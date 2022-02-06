@@ -42,6 +42,10 @@ router.get('/booking', loginController.viewBooking)
 
 router.get('/check-fields-booking', bookingController.CheckFields)
 
+router.get('/get-room-price-discount', adminController.getRoomPrice)
+
+router.post('/update-room-price', adminController.updateRoomPrice)
+
 router.post('/book_reservation', bookingController.Book)
 
 router.get('/check_available_rooms', bookingController.CheckAvailableRooms)

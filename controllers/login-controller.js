@@ -201,7 +201,9 @@ const loginController = {
             res.redirect('admin')
         }
         else {
-            res.render('booking', {_email})
+            db.Rooms.find().then((rooms) => {
+                res.render('booking', {_email, rooms})
+            })
         }
 
     },
