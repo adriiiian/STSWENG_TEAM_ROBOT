@@ -8,7 +8,7 @@ const MongoStore = require('connect-mongo')
 dotenv.config()
 
 // const _Port = process.env.PORT
-const _Port = server.listen(process.env._Port || 3000);
+const _Port = process.env.PORT || 3000;
 const _Host = process.env.HOSTNAME;
 const DB_URL = process.env.DB_URL;
 
