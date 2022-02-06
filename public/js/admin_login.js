@@ -5,8 +5,6 @@ $(document).ready(function ()
             Email: $('#admin_email').val(),
             Password: $('#admin_password').val()
         };
-
-        console.log('admin login');
         
         $.get('admin-login', {AdminInfo}, function(result) {
 
@@ -19,7 +17,6 @@ $(document).ready(function ()
                 $('#admin_error').show()
             }
             else if(result == 'success') {
-                console.log('hello out')
                 window.location.href = 'admin'
                 
             }
