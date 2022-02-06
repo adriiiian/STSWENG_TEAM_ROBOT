@@ -14,12 +14,12 @@
                     <div class="book_form_label">
                         ROOM
                         <select class="form-control" id="room" required>
-                            <option value="Single" <%= room.Type == 'Single' ? 'Selected' : '' %>>Single Room</option>
-                            <option value="Double" <%= room.Type == 'Double' ? 'Selected' : '' %>>Double Room</option>
-                            <option value="Triple" <%= room.Type == 'Triple' ? 'Selected' : '' %>>Triple Room</option>
-                            <option value="Quad" <%= room.Type == 'Quad' ? 'Selected' : '' %>>Quad Room</option>
-                            <option value="Queen" <%= room.Type == 'Queen' ? 'Selected' : '' %>>Queen Room</option>
-                            <option value="King" <%= room.Type == 'King' ? 'Selected' : '' %>>King Room</option>
+                            <option <%= room.Type == 'Single' ? 'Selected' : '' %>>Single Room</option>
+                            <option <%= room.Type == 'Double' ? 'Selected' : '' %>>Double Room</option>
+                            <option <%= room.Type == 'Triple' ? 'Selected' : '' %>>Triple Room</option>
+                            <option <%= room.Type == 'Quad' ? 'Selected' : '' %>>Quad Room</option>
+                            <option <%= room.Type == 'Queen' ? 'Selected' : '' %>>Queen Room</option>
+                            <option <%= room.Type == 'King' ? 'Selected' : '' %>>King Room</option>
                         </select>
                     </div>
                 </div>
