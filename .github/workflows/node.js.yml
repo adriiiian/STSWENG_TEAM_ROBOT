@@ -24,11 +24,13 @@ jobs:
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2
       with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    - uses: akhileshns/heroku-deploy@v3.12.12
+      with:
         heroku_api_key: ${{secrets.HEROKU_API_KEY}}
         heroku_app_name: "Robotel STSWENG Team Robot"
         heroku_email: "adrian.jerez1110@gmail.com"
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
     - run: npm i
     - run: npm ci
     - run: npm install --save-dev jest
