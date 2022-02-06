@@ -29,7 +29,7 @@ jobs:
     - uses: akhileshns/heroku-deploy@v3.12.12
       with:
         heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-        heroku_app_name: "Robotel STSWENG Team Robot"
+        heroku_app_name: "robotel-stsweng-teamrobot"
         heroku_email: "adrian.jerez1110@gmail.com"
     - run: npm i
     - run: npm ci
