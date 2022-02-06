@@ -436,8 +436,11 @@
 
                         let _id = $(this).closest('tr').attr('id')
                         let row = $(this).closest('tr')
+                        let roomtype = row.find("td:eq(3)").text()
+                        let checkin = row.find("td:eq(1)").text()
+                        let checkout = row.find("td:eq(2)").text()
 
-                        $.post('reject-booking-room', {id: _id}, function(result) {
+                        $.post('reject-booking-room', {id: _id, roomType: roomtype, checkin: checkin, checkout: checkout}, function(result) {
                             if (result == 'success') {
                                 console.log('update success')
                                 row.remove()

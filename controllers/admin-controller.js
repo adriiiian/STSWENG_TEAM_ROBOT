@@ -1,5 +1,8 @@
 const db = require('../models/database.js')
 
+var datesArray = [];
+let roomType = "";
+
 const adminController = { 
     loadAdmin: async (req, res) => {
         var tempDate = new Date();
@@ -281,7 +284,7 @@ const adminController = {
                     if(checkin.getTime() <= tempci.getTime() && checkin.getTime() >= tempco.getTime()){
                         checker = false
                     }
-                    else if(checkout.getTime() <= tempco.getTime() && checkout.getTime() >= tempco.getTime()){
+                    else if(checkout.getTime() <= tempci.getTime() && checkout.getTime() >= tempco.getTime()){
                         checker = false
                     }
                 }
@@ -303,7 +306,9 @@ const adminController = {
     },
 
     rejectBookingRoom: (req, res) => {
+        datesArray.splice(0, datesArray.length);
         var id = req.body.id
+        roomType = req.body.roomType
 
         db.Bookings.findOneAndUpdate({_id: id}, {Status: "Cancelled"}).exec((err) => {
             if(err)console.error(err);
@@ -311,6 +316,21 @@ const adminController = {
                 res.send('success')
             }
         })
+
+        let bdate = new Date(req.body.checkin);
+        let codate = new Date(req.body.checkout);
+
+        let difference_in_time = codate.getTime() - bdate.getTime();
+        let difference_in_days = difference_in_time / (1000 * 3600 * 24);
+        
+        let counter = 0;
+        while(counter < difference_in_days){
+            datesArray.push(new Date(bdate));
+            bdate.setDate(bdate.getDate() + 1);
+            counter++;
+        }
+        findDate();
+        
     },
     getRoomPrice: (req, res) => {
         var roomType = req.query.RoomType
@@ -333,6 +353,39 @@ const adminController = {
             }
         })
     }
+}
+
+async function findDate(){
+    for(let i = 0; i < datesArray.length; i++){
+        let dateid = await db.Dates.findOne({"BDate": datesArray[i], "RoomType": roomType},);
+        if(dateid){
+            let id = dateid._id.toString();
+            let oid = id
+            let Counter = dateid.Counter - 1;
+            db.Dates.updateOne({"_id": oid}, {$set: {Counter: Counter}}, (err, doc) => {
+                if(err) console.error(err);
+            });
+        }
+        else{
+            let newBooking = {
+                BDate: datesArray[i],
+                RoomType: roomType,
+                Counter: 1
+            }
+            initSchemaD(newBooking).then((schema) => {
+                let newDateBooking = new Dates(schema);
+                newDateBooking.save((err, newDateBooking) => {
+                    if(err) console.log(err);
+                    else if(newDateBooking){
+                        console.log('success');
+                    }
+                    else console.log('failed');
+                })
+            })
+        }
+    }
+
+    return 'success';
 }
 
 module.exports = adminController
