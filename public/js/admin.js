@@ -49,16 +49,23 @@ $(document).ready(function ()
     $('.confirm_btn').click(function() {
 
         let _id = $(this).closest('tr').attr('id')
-        let row = $(this).closest('tr')
-        let roomnumber = row.find("td:eq(4) select").val()
-       
-        $.post('confirm-booking-room', {id: _id, roomNumber: roomnumber}, function(result) {
-            if (result == 'success') {
-                console.log('update success')
-                row.remove()
-                $('#reservation_update_modal').modal('show')
-            }
-        })
+            let row = $(this).closest('tr')
+            let roomnumber = row.find("td:eq(4) select").val()
+            let roomtype = row.find("td:eq(3)").text()
+            let checkin = row.find("td:eq(1)").text()
+            let checkout = row.find("td:eq(2)").text()
+
+            $.post('confirm-booking-room', {id: _id, roomNumber: roomnumber, roomType: roomtype, checkin: checkin, checkout: checkout}, function(result) {
+                if (result == 'success') {
+                    console.log('update success')
+                    row.remove()
+                    $('#reservation_update_modal').modal('show')
+                }
+                else{
+                    console.log('update failed')
+                    $('#reservation_update_modal_fail').modal('show')
+                }
+            })
     })
 
     $('.reject_btn').click(function() {

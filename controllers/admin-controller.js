@@ -256,16 +256,50 @@ const adminController = {
         res.send(pendingTransactions)
     },
 
-    confirmBookingRoom: (req, res) => {
+    confirmBookingRoom: async (req, res) => {
         var id = req.body.id
         var roomNumber = req.body.roomNumber
+        var roomType = req.body.roomType
+        var checkin = new Date(req.body.checkin)
+        var checkout = new Date(req.body.checkout)
+        var tempci, tempco, checker = true
+        
 
-        db.Bookings.findOneAndUpdate({_id: id}, {RoomNumber: roomNumber, Status: "Confirmed"}).exec((err) => {
-            if(err)console.error(err);
+        await db.Bookings.find({RoomType: roomType, Status: "Confirmed", RoomNumber: roomNumber}).then((bookings) => {
+            if(bookings.length == 0){
+                db.Bookings.findOneAndUpdate({_id: id}, {RoomNumber: roomNumber, Status: "Confirmed"}).exec((err) => {
+                    if(err)console.error(err);
+                    else{
+                        res.send('success')
+                    }
+                })
+            }
             else{
-                res.send('success')
+                for(let i = 0; i < bookings.length; i++){
+                    tempci = new Date(bookings[i].Checkin)
+                    tempco = new Date(bookings[i].Checkout)
+                    if(checkin.getTime() <= tempci.getTime() && checkin.getTime() >= tempco.getTime()){
+                        checker = false
+                    }
+                    else if(checkout.getTime() <= tempco.getTime() && checkout.getTime() >= tempco.getTime()){
+                        checker = false
+                    }
+                }
+                if(checker){
+                    db.Bookings.findOneAndUpdate({_id: id}, {RoomNumber: roomNumber, Status: "Confirmed"}).exec((err) => {
+                        if(err)console.error(err);
+                        else{
+                            res.send('success')
+                        }
+                    })
+                }
+                else{
+                    res.send('failed')
+                }
             }
         })
+
+        
     },
 
     rejectBookingRoom: (req, res) => {
