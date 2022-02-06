@@ -124,10 +124,10 @@ const adminController = {
                     }
                 }
             });
-            res.render('admin', {rooms, names, currDate, pendingTransactions});
+            res.render('admin', {rooms, names, currDate, pendingTransactions, title: 'Admin'});
         }
         else {
-            res.render('404')
+            res.render('404', {title: 'Page not found'})
         }
         
     },
