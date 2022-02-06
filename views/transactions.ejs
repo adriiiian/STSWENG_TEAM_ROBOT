@@ -108,13 +108,13 @@
                                                                 Review
                                                             </a>
                                                         <%} else {%>
-                                                            <a href="#" class="btn_review_transaction cancelled">Confirmed</a>
+                                                            <a href="#" class="btn_review_transaction cancelled" style="color: rgb(185, 185, 185);">Confirmed</a>
                                                         <%}%>
 
                                                     <%} else if (bookings[i].Status == "Pending") {%>
                                                         <a href="<%-bookings[i]._id%>" class="cancel_button btn_cancel_transaction" data-toggle="modal" data-target="#data_modal_cancel">Cancel</a>
                                                     <%} else {%>
-                                                        <a href="#" class="btn_cancel_transaction cancelled">Cancelled</a>
+                                                        <a href="#" class="btn_cancel_transaction cancelled" style="color: rgb(185, 185, 185);">Cancelled</a>
                                                     <%}%>
                                                 </span>
                                             </span>
@@ -131,10 +131,7 @@
                                 <%}%>
                                
                             </div>
-                            
                         </div>
-
-
                     </div>
                 </div>
             </div>

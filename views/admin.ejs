@@ -44,7 +44,8 @@
             </div>
         </div>
         <div class="container-fluid px-0 content_con">
-            <p class="welcome_admin">Welcome back, Administrator!</p>
+            <div class="container pt-5 pb-4">
+              <p class="welcome_admin pb-3">Welcome back, Administrator!</p>
             <nav>
                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
                   <a class="nav-item nav-link active" id="nav-rooms-tab" data-toggle="tab" href="#nav-rooms" role="tab" aria-controls="nav-rooms" aria-selected="true">Rooms</a>
@@ -52,14 +53,14 @@
                   <a class="nav-item nav-link" id="nav-discounts-tab" data-toggle="tab" href="#nav-discounts" role="tab" aria-controls="nav-discounts" aria-selected="false">Discounts</a>
                 </div>
               </nav>
-              <div class="tab-content" id="nav-tabContent">
+              <div class="tab-content py-4" id="nav-tabContent">
                 <div class="tab-pane fade show active" id="nav-rooms" role="tabpanel" aria-labelledby="nav-rooms-tab">
                   <p class="date_filter">Date and Room Type Filter</p>
                   <div class="col-sm-3 mx-auto book_form_label">
                     DATE
-                    <input id="roomfilter"  class="form-control" style="margin-bottom: 5px;" readonly="readonly" value=<%-currDate%> />
+                    <input id="roomfilter"  class="form-control" readonly="readonly" value=<%-currDate%> />
                     <div class="form-group">
-                      <label for="room" id="label_room">ROOM TYPE</label>
+                      <label class="mt-4" for="room" id="label_room">ROOM TYPE</label>
                       <select class="form-control" id="room" required>
                         <option>Single Room</option>
                         <option>Double Room</option>
@@ -75,7 +76,7 @@
                     </div>
                   </div>
                   <div class="apply_filter">
-                    <button type="button" id="btn_filter" class="btn btn-secondary btn-sm" onclick="filterRooms()">Apply Filter</button>
+                    <button type="button" id="btn_filter" class="btn btn-secondary btn-sm mt-1 mb-3" onclick="filterRooms()">Apply Filter</button>
                   </div>
                   <br>
                     <table class="table">
@@ -125,15 +126,15 @@
                   <p class="date_filter">Date Filter</p>
                   <div class="col-sm-3 mx-auto book_form_label">
                     CHECK IN
-                    <input id="checkin" style="margin-bottom: 5px;" readonly/>
+                    <input id="checkin" readonly/>
                 </div>
-                <div class="col-sm-3 mx-auto book_form_label">
+                <div class="col-sm-3 mx-auto mt-4 book_form_label">
                     CHECK OUT
                     <input id="checkout" readonly/>
                 </div>
                 <br>
                 <div class="apply_filter">
-                  <button type="button" class="btn btn-secondary btn-sm" onclick="filterReservations();">Apply Filter</button>
+                  <button type="button" class="btn btn-secondary btn-sm mb-3" onclick="filterReservations();">Apply Filter</button>
                 </div>
                 <br>
                     <table class="table">
@@ -144,6 +145,7 @@
                             <th scope="col">Date End</th>
                             <th scope="col">Type</th>
                             <th scope="col">Room</th>
+                            <th scope="col"></th>
                           </tr>
                         </thead>
                         <tbody id="tbody">
@@ -194,15 +196,17 @@
                                   <%}%>
                                 </select>
                               </td>
-                              <td><button type="button" class="confirm_btn btn btn-secondary btn-sm">Confirm</button></td>
-                              <td><button type="button" class="reject_btn btn btn-secondary btn-sm">Reject</button></td>
+                              <td class="d-flex justify-content-center px-0">
+                                <button type="button" class="confirm_btn btn btn-secondary btn-sm mx-2">Confirm</button>
+                                <button type="button" class="reject_btn btn btn-secondary btn-sm mx-2">Reject</button>
+                              </td>
                             </tr>
                           <%}%>
                         </tbody>
                       </table>
                 </div>
                 <form onsubmit="return false;" class="tab-pane fade" id="nav-discounts" role="tabpanel" aria-labelledby="nav-discounts-tab">
-                  <p class="date_filter">Add Discount Rates</p>
+                  <p class="date_filter mb-4">Add Discount Rates</p>
                   <div class="col-sm-3 mx-auto book_form_label">
                     <div class="form-group">
                       <label for="discount_room" id="label_room">ROOM TYPE</label>
@@ -215,17 +219,18 @@
                         <option value="Queen">Queen Room</option>
                         <option value="King">King Room</option>
                       </select>
-                      <label for="discount" class="discount">DISCOUNT (in %)</label>
+                      <label for="discount" class="discount mt-3">DISCOUNT (in %)</label>
                       <input type="number" class="form-control" id="discount" name="discount" min="0" max="100" disabled>
                     </div>
                   </div>
                   <div class="apply_filter">
-                    <button type="submit" id="btn_discount" class="btn btn-secondary btn-sm">Apply Discount</button>
+                    <button type="submit" id="btn_discount" class="btn btn-secondary btn-sm mt-2">Apply Discount</button>
                   </div>
                   <br>
                 </form>
               </div>
         </div>
+            </div>
         
         <%- include('./partials/footer.ejs') %>
 
@@ -239,9 +244,9 @@
               <div class="modal-header">
                 <h5 class="modal-title my-auto mr-5" id="data_modal_text">Filter applied!</h5>
                 </div>
-                <div class="modal-footer">
-                <span class="btn_close_success">
-                    <button id="ok_btn" class="btn btn_booknow" data-dismiss="modal">OK</button>
+                <div class="modal-footer py-3">
+                <span class="btn_close_success my-0">
+                    <button id="ok_btn" class="btn btn_booknow my-0" data-dismiss="modal">OK</button>
                 </span>
               </div>
           </div>
