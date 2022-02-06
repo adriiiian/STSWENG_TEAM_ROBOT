@@ -32,4 +32,8 @@ $(document).ready(function ()
 
     })
 
+    $('#btn_discount').click(function() {
+        $('#discount_update_modal').modal('show')
+    })
+
 })
