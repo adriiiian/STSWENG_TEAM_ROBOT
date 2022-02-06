@@ -281,11 +281,19 @@ const adminController = {
                 for(let i = 0; i < bookings.length; i++){
                     tempci = new Date(bookings[i].Checkin)
                     tempco = new Date(bookings[i].Checkout)
-                    if(checkin.getTime() <= tempci.getTime() && checkin.getTime() >= tempco.getTime()){
-                        checker = false
-                    }
-                    else if(checkout.getTime() <= tempci.getTime() && checkout.getTime() >= tempco.getTime()){
-                        checker = false
+
+                    let difference_in_time = checkout.getTime() - checkin.getTime();
+                    let difference_in_days = difference_in_time / (1000 * 3600 * 24);
+
+                    let counter = 0;
+                    while(counter < difference_in_days && checker){
+                        if(checkin.getTime() < tempco.getTime() && checkin.getTime() >= tempci.getTime()){
+                            checker = false
+                        }
+                        else{
+                            checkin.setDate(checkin.getDate() + 1)
+                            counter++
+                        }
                     }
                 }
                 if(checker){
