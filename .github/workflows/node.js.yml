@@ -11,10 +11,6 @@ on:
 
 jobs:
   build:
-
-  deploy:
-    needs: build
-
     runs-on: windows-latest
 
     strategy:
@@ -29,6 +25,18 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+        
+    - run: npm i
+    - run: npm ci
+    - run: npm install --save-dev jest
+    - run: npm run build --if-present
+    - run: npm test
+
+  deploy:
+    needs: build
+    runs-on: windows-latest
+
+    steps:
     - uses: akhileshns/heroku-deploy@v3.12.12
       with:
         heroku_api_key: ${{secrets.HEROKU_API_KEY}}
@@ -36,9 +44,3 @@ jobs:
         heroku_email: "adrian.jerez1110@gmail.com"
         branch: "develop"
         procfile: "web: npm start"
-      
-    - run: npm i
-    - run: npm ci
-    - run: npm install --save-dev jest
-    - run: npm run build --if-present
-    - run: npm test
