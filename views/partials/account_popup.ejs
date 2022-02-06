@@ -5,9 +5,9 @@
             <div class="modal-header">
               <h5 class="modal-title my-auto mr-5" id="data_modal_text"></h5>
               </div>
-              <div class="modal-footer">
-              <span class="btn_close_success">
-                  <button id="ok_btn" class="btn btn_booknow" href="/index" data-dismiss="modal">OK</button>
+              <div class="modal-footer my-0 py-3">
+              <span class="btn_close_success my-0">
+                  <button id="ok_btn" class="btn btn_booknow my-0" href="/index" data-dismiss="modal">OK</button>
               </span>
             </div>
         </div>
@@ -15,7 +15,7 @@
   </div>
   
 <div id="popup">
-    <form id="form_login" onsubmit="return false;">
+    <form id="form_login" onsubmit="return false;" autocomplete="off">
         <div class="form-group">
             <input type="email" class="form-control" id="InputEmail_login" placeholder="EMAIL">
         </div>
@@ -28,7 +28,7 @@
         <a href="#" small id="admin_login" class="form-text text-muted p-0" onclick="admin_login()">ADMIN LOGIN</a><br>
         <a href="#" id="close_popup" class="close_popup" onclick="toggle()">Close</a>
     </form>
-    <form id="form_createaccount" onsubmit="return false;" >
+    <form id="form_createaccount" onsubmit="return false;" autocomplete="off">
         <div class="form-group">
            <input type="text" class="form-control" id="InputUsername" placeholder="USERNAME">
         </div>
@@ -43,7 +43,7 @@
         <a href="#" small id="back_login" class="form-text back_login" onclick="login()">BACK TO LOG IN</a><br>
         <a href="#" id="close_popup" class="close_popup" onclick="toggle()">Close</a>
     </form>
-    <form id="form_admin" onsubmit="return false;" >
+    <form id="form_admin" onsubmit="return false;" autocomplete="off">
         <div class="p-2" style="font-weight: 500; color: #4e4e4e;">ADMIN LOG IN</div>
         <div class="form-group">    
             <input type="email" class="form-control" id="admin_email" placeholder="EMAIL">

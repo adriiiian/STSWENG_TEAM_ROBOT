@@ -15,7 +15,7 @@ const loginController = {
             res.redirect('admin')
         }
         else {
-            res.render('index', {_email})
+            res.render('index', {_email, title: 'Home'})
         }
     },
     
@@ -73,7 +73,7 @@ const loginController = {
         }
         else {
             db.Rooms.find().then((RoomList) => {
-                res.render('rooms', {_email, RoomList})
+                res.render('rooms', {_email, RoomList, title: 'Rooms'})
             })
         }
     },
@@ -91,7 +91,7 @@ const loginController = {
             await db.Rooms.findOne({Type: id}).then(function(result) {
                 if(result) {
                     room = result
-                    res.render('view_rooms', {_email, room})
+                    res.render('view_rooms', {_email, room, title: room.Type + ' Room'})
                 }
             })
         }
@@ -106,7 +106,7 @@ const loginController = {
             res.redirect('admin')
         }
         else {
-            res.render('services', {_email})
+            res.render('services', {_email, title: 'Services'})
         }
     },
 
@@ -118,7 +118,8 @@ const loginController = {
             res.redirect('admin')
         }
         else {
-            res.render('view_services', {_email})
+            let service = req.query.id
+            res.render('view_services', {_email, service: service, title: 'Services'})
         }
     },
 
@@ -151,7 +152,7 @@ const loginController = {
                         bookings.sort((a, b) => a.Checkin - b.Checkin)
                     }
 
-                    res.render('transactions', {_email, bookings, filter, sort})
+                    res.render('transactions', {_email, bookings, filter, sort, title: 'Transactions'})
                 })
             }
             else {
@@ -164,7 +165,7 @@ const loginController = {
                         bookings.sort((a, b) => a.Checkin - b.Checkin)
                     }
                     
-                    res.render('transactions', {_email, bookings, filter, sort})
+                    res.render('transactions', {_email, bookings, filter, sort, title: 'Transactions'})
                 })
             }
             
@@ -184,7 +185,7 @@ const loginController = {
 
             await db.Bookings.findOne({_id: id}).then(function(booking) {
                 if(booking) {
-                    res.render('view_transactions', {_email, booking})
+                    res.render('view_transactions', {_email, booking, title: 'Transactions'})
                 }
             })
         }
@@ -202,7 +203,7 @@ const loginController = {
         }
         else {
             db.Rooms.find().then((rooms) => {
-                res.render('booking', {_email, rooms})
+                res.render('booking', {_email, rooms, title: 'Booking'})
             })
         }
 

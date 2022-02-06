@@ -14,6 +14,12 @@ const DB_URL = process.env.DB_URL;
 // express app
 const app = express()
 
+// favicon
+const favicon = require('serve-favicon');
+const path = require('path');
+// setup favicon
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+
 // register view engine
 app.set('view engine','ejs')
 

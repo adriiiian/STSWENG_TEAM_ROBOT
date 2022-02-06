@@ -568,3 +568,13 @@ body{
     border-radius: 20px !important;
     box-shadow: 0 5px 30px rgba(0, 0, 0, .30);
 }
+
+.datepicker table tr td.disabled, 
+.datepicker table tr td.disabled:hover {
+    background: #c2c2c2;
+    color: rgb(0, 0, 0);
+  }
+
+tr{
+    text-align: center;
+}
