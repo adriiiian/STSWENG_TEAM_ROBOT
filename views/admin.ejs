@@ -415,8 +415,8 @@
                 for(let i = 0; i < result.length; i++){
                   html = "<tr id=\"" + result[i]._id + "\"> <td id=\"pt_name\">" + result[i].Fullname + "</td> <td id=\"pt_checkin\">" + result[i].Checkin +
                     "</td> <td id=\"pt_checkout\">" + result[i].Checkout + "</td> <td id=\"pt_roomtype\">" + result[i].RoomType + "</td> <td> <select class=\"pt_roomnumber form-control\">"
-                      + getRoomNumber(result[i].RoomMultiplier) + "</select> </td> <td> <button type=\"button\" class=\"confirm_btn btn btn-secondary btn-sm\"> Confirm </button> </td>"
-                      + "<td> <button type=\"button\" class=\"reject_btn btn btn-secondary btn-sm\"> Reject </button> </td> </tr>"
+                      + getRoomNumber(result[i].RoomMultiplier) + "</select> </td> <td> <button type=\"button\" class=\"confirm_btn btn btn-secondary btn-sm mx-2\"> Confirm </button>"
+                      + "<button type=\"button\" class=\"reject_btn btn btn-secondary btn-sm mx-2\"> Reject </button> </td> </tr>"
                       $('#tbody').append(html);
 
                       $('.confirm_btn').click(function() {
