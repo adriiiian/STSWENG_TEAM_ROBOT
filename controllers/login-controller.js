@@ -118,7 +118,8 @@ const loginController = {
             res.redirect('admin')
         }
         else {
-            res.render('view_services', {_email, title: 'Services'})
+            let service = req.query.id
+            res.render('view_services', {_email, service: service, title: 'Services'})
         }
     },
 
