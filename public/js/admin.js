@@ -45,7 +45,6 @@ $(document).ready(function ()
         
         
     })
-
     $('.confirm_btn').click(function() {
 
         let _id = $(this).closest('tr').attr('id')

@@ -340,6 +340,10 @@ const adminController = {
         findDate();
         
     },
+<<<<<<< user-story-12-14
+=======
+
+>>>>>>> develop
     getRoomPrice: (req, res) => {
         var roomType = req.query.RoomType
 
