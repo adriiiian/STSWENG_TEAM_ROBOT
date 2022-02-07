@@ -40,6 +40,7 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: 3.8
+      echo : ::set-env name=PYTHONPATH::home/runner/work/<repo_name>
 
     - name: install selenium2library
       run: pip install --pre --upgrade robotframework-selenium2library
