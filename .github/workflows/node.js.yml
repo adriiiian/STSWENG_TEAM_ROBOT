@@ -32,10 +32,7 @@ jobs:
     - run: npm test
 
   test:
-  permissions:
-    actions: read
-    actions: write
-    runs-on: ubuntu-latest
+  permissions: read-all|write-all
     steps:
     - uses: actions/checkout@v2
     - name: Execute tests
