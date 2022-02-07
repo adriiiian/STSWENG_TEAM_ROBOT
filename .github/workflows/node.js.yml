@@ -32,7 +32,6 @@ jobs:
     - run: npm test
 
   test:
-    needs: [build]
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -48,7 +47,7 @@ jobs:
     - name: set up chrome driver
       uses: nanasess/setup-chromedriver@v1
       with:
-        chromedriver-version: '88.0.4324.96'
+        chromedriver-version: '86.0.4240.111'
     - run: |
         export DISPLAY=:99
         chromedriver --url-base=/wd/hub &

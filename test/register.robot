@@ -1,5 +1,6 @@
 *** Settings ***
 Documentation               Login Tests
+Library                     SeleniumLibrary
 
 *** Variables ***
 
