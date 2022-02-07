@@ -43,7 +43,7 @@ jobs:
     # - run: pip install robotframework
     # - run: pip list
     - name: install selenium2library
-      run: pip install --upgrade robotframework-selenium2library
+      run: pip install --user robotframework-selenium2library
     - name: Robot Framework
       uses: joonvena/robotframework-docker-action@v1.0
       env:
