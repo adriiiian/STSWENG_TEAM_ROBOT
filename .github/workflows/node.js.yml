@@ -32,7 +32,9 @@ jobs:
     - run: npm test
 
   test:
-  permissions: read-all|write-all
+    permissions:
+      actions: read
+      actions: write
     steps:
     - uses: actions/checkout@v2
     - name: Execute tests
