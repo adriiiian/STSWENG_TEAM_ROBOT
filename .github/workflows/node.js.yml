@@ -37,6 +37,8 @@ jobs:
     - uses: actions/checkout@v2
     - name: Robot Framework
       uses: joonvena/robotframework-docker-action@v1.0
+      env:
+        BROWSER: chrome
       with:
         robot_tests_dir: /test
     - name: Upload test results
