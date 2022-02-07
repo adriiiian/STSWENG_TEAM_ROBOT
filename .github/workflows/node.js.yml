@@ -31,67 +31,8 @@ jobs:
     - run: npm run build --if-present
     - run: npm test
 
-  test:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-    - name: Set up Python
-      run: sudo apt-get install python3.8 -y
-
-    - name: Set up pip
-      run: sudo apt-get install python3-pip -y
-
-    - name: install selenium2library
-      run: pip install --upgrade robotframework-seleniumlibrary
-
-    - run: pip install webdrivermanager
-    - run: webdrivermanager firefox chrome --linkpath /usr/local/bin
-
-    - name: install chrome
-      uses: browser-actions/setup-chrome@latest
-
-    # - run: chrome --version
-    # - name: set up chrome driver
-    #   uses: nanasess/setup-chromedriver@v1
-    #   with:
-    #     chromedriver-version: '86.0.4240.22'
-
-    - run: |
-        export DISPLAY=:99
-        chromedriver --url-base=/wd/hub &
-        
-    - name: Robot Framework
-      uses: joonvena/robotframework-docker-action@v1.0
-      with:
-        robot_tests_dir: /test
-      
-    - name: Upload test results
-      uses: actions/upload-artifact@v1
-      if: always()
-      with:
-        name: reports
-        path: ${{github.workspace}}/test/robot-output
-
-  generate_report:
-    if: always()
-    needs: [test] 
-    runs-on: ubuntu-latest
-    steps:
-    - name: Download reports
-      uses: actions/download-artifact@v1
-      with:
-        name: reports
-    - name: Send report to commit
-      uses: joonvena/robotframework-reporter-action@v1.0
-      env:
-        GH_ACCESS_TOKEN: ${{secrets.TOKEN}}
-        REPO_OWNER: ${{env.REPOSITORY_OWNER}}
-        COMMIT_SHA: ${{github.sha}}
-        REPOSITORY: ${{env.REPOSITORY_NAME}}
-        REPORT_PATH: test/robot-output
-
   deploy:
-    needs: [build, test]
+    needs: [build]
     runs-on: ubuntu-latest
 
     steps:
