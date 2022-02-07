@@ -40,8 +40,10 @@ jobs:
       run: sudo apt-get install python3.8 -y
     - name: Set up pip
       run: sudo apt-get install python3-pip -y
+    # - name: install selenium2library
+    #   run: pip install -U selenium
     - name: install selenium2library
-      run: pip install -U selenium
+      run: pip install --upgrade robotframework-selenium2library
     # - name: Set up Python 3.8
     #   uses: actions/setup-python@v2
     #   with:
