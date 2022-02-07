@@ -26,7 +26,7 @@ $(document).ready(function ()
         
         let input = $('#discount').val()
 
-        if(input >= 0 && input <= 100) {
+        if(input >= 0 && input <= 100 && input) {
             $.get('get-room-price-discount', {RoomType: $('#discount_room :selected').val()},function(result) {
 
                 let currRoom = result.Type
