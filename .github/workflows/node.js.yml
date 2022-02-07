@@ -50,11 +50,11 @@ jobs:
     - name: install chrome
       uses: browser-actions/setup-chrome@latest
 
-    - run: chrome --version
-    - name: set up chrome driver
-      uses: nanasess/setup-chromedriver@v1
-      with:
-        chromedriver-version: '86.0.4240.22'
+    # - run: chrome --version
+    # - name: set up chrome driver
+    #   uses: nanasess/setup-chromedriver@v1
+    #   with:
+    #     chromedriver-version: '86.0.4240.22'
 
     - run: |
         export DISPLAY=:99
