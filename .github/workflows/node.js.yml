@@ -35,12 +35,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Execute tests
-      uses: joonvena/robotframework-docker-action@v0.1
-        env:
-          BROWSER: chrome
-          ROBOT_TESTS_DIR: ${{ github.workspace }}/test
-          ROBOT_REPORTS_DIR: ${{ github.workspace }}/robot-output
+    - name: Robot Framework
+      uses: joonvena/robotframework-docker-action@v1.0
+      env:
+        BROWSER: chrome
+        ROBOT_TESTS_DIR: ${{ github.workspace }}/test
+        ROBOT_REPORTS_DIR: ${{ github.workspace }}/robot-output
     - name: Upload test results
       uses: actions/upload-artifact@v1
       if: always()
