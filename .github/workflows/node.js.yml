@@ -40,14 +40,16 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: 3.8
-    - run: pip install robotframework
-    - run: pip list
+    # - run: pip install robotframework
+    # - run: pip list
     - name: Robot Framework
+      run: pip install --upgrade robotframework-selenium2library
       uses: joonvena/robotframework-docker-action@v1.0
       env:
         BROWSER: chrome
       with:
         robot_tests_dir: /test
+      
     - name: Upload test results
       uses: actions/upload-artifact@v1
       if: always()
