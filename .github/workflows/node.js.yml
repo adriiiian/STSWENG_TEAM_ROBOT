@@ -42,7 +42,7 @@ jobs:
         python-version: 3.8
 
     - name: install selenium2library
-      run: pip install --user --upgrade robotframework-selenium2library
+      run: pip install --pre --upgrade robotframework-selenium2library
     - name: Robot Framework
       uses: joonvena/robotframework-docker-action@v1.0
       env:
