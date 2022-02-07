@@ -30,6 +30,11 @@ jobs:
     - run: npm install --save-dev jest
     - run: npm run build --if-present
     - run: npm test
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+    - run: pip -install robotframework-selenium2library 
 
   test:
     runs-on: ubuntu-latest
@@ -73,7 +78,7 @@ jobs:
         REPORT_PATH: test/robot-output
 
   deploy:
-    needs: build
+    needs: [test]
     runs-on: ubuntu-latest
 
     steps:
