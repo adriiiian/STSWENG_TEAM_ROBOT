@@ -11,7 +11,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     strategy:
       matrix:
@@ -32,7 +32,7 @@ jobs:
     - run: npm test
 
   test:
-    needs: [build]
+    runs-on: ubuntu-latest
     - uses: actions/checkout@v2
     - name: Execute tests
       uses: joonvena/robotframework-docker-action@v0.1
