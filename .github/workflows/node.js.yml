@@ -60,8 +60,6 @@ jobs:
     #   run: pip install --pre --upgrade robotframework-selenium2library
     - name: Robot Framework
       uses: joonvena/robotframework-docker-action@v1.0
-      env:
-        BROWSER: chrome
       with:
         robot_tests_dir: /test
       
@@ -70,7 +68,7 @@ jobs:
       if: always()
       with:
         name: reports
-        path: ${{ github.workspace }}/test/robot-output
+        path: ${{github.workspace}}/test/robot-output
 
   generate_report:
     if: always()
@@ -84,10 +82,10 @@ jobs:
     - name: Send report to commit
       uses: joonvena/robotframework-reporter-action@v1.0
       env:
-        GH_ACCESS_TOKEN: ${{ secrets.TOKEN }}
-        REPO_OWNER: ${{ env.REPOSITORY_OWNER }}
-        COMMIT_SHA: ${{ github.sha }}
-        REPOSITORY: ${{ env.REPOSITORY_NAME }}
+        GH_ACCESS_TOKEN: ${{secrets.TOKEN}}
+        REPO_OWNER: ${{env.REPOSITORY_OWNER}}
+        COMMIT_SHA: ${{github.sha}}
+        REPOSITORY: ${{env.REPOSITORY_NAME}}
         REPORT_PATH: test/robot-output
 
   deploy:
