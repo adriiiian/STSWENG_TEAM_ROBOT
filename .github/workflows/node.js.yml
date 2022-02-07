@@ -52,9 +52,6 @@ jobs:
         path: ${{ github.workspace }}/test/robot-output
 
   generate_report:
-  permissions:
-    actions: read
-    actions: write
     if: always()
     needs: [test] 
     runs-on: ubuntu-latest
