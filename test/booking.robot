@@ -1,6 +1,5 @@
 *** Settings ***
 Documentation               Booking Tests
-Library                     Selenium2Library
 Library                     DateTime
 
 *** Variables ***
