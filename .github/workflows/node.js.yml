@@ -44,6 +44,9 @@ jobs:
     - name: install selenium2library
       run: pip install --upgrade robotframework-seleniumlibrary
 
+    - run: pip install webdrivermanager
+    - run: webdrivermanager firefox chrome --linkpath /usr/local/bin
+
     - name: install chrome
       uses: browser-actions/setup-chrome@latest
 
