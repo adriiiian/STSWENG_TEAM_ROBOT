@@ -49,7 +49,7 @@ jobs:
     - name: set up chrome driver
       uses: nanasess/setup-chromedriver@v1.0.1
       with:
-        chromedriver-version: latest
+        chromedriver-version: '98.0.4758.80'
     - run: |
         export DISPLAY=:99
         chromedriver --url-base=/wd/hub &
