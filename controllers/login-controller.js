@@ -1,6 +1,7 @@
 const db = require('../models/database.js')
 const helper = require('../helpers/login-check.js')
 const { selectFields } = require('express-validator/src/select-fields')
+const bcrypt = require('bcrypt');
 var _email = ''
 
  
@@ -27,21 +28,23 @@ const loginController = {
                 .then((User) => {
                     
                     if(User) {
-                        if(User.Password == LoginInfo.Password) {
-                            req.session.email = User.Email
-                            req.session.username = User.Username
-                            req.session.adminEmail = ''
-                                
-                            res.send('success')
-                        }
-                        else {
-                            res.send('invalid-pw')
-                        }
+                        bcrypt.compare(LoginInfo.Password, User.Password, function(err, result) {
+                            if(result) {
+                                req.session.email = User.Email
+                                req.session.username = User.Username
+                                req.session.adminEmail = ''
+                                    
+                                res.send('success')
+                            }
+                            else {
+                                res.send('invalid-pw')
+                            }
+                        })
+                        
                     }
                     else {
                         res.send('unregistered-email')
                     }
-
                 })
         }
         else if(result == 'email should be valid') {

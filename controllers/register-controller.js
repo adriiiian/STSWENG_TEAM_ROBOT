@@ -1,6 +1,7 @@
 const db = require('../models/database.js');
 const helper = require('../helpers/register-check.js')
 const User = require('../models/account');
+const bcrypt = require('bcrypt');
 
 const registerController = {
 
@@ -57,19 +58,23 @@ const registerController = {
 
         initSchema(RegInfo).then((schema) => {
             let newUser = new User(schema);
-            newUser.save((err, newUser) => {                                // Registers the user into the database
-                if(err){
-                    res.redirect('index');
-                    result = "Registration failed"
-                }
-                else if(newUser){
-                    console.log("Successfully registered.");
-                    result = "Successfully registered"
-                    res.redirect('index');
-                }
-                else{
-                    res.redirect('index');
-                }
+
+            bcrypt.hash(newUser.Password, 10, function(err, hash) {
+                newUser.Password = hash
+                newUser.save((err, newUser) => {                                // Registers the user into the database
+                    if(err){
+                        res.redirect('index');
+                        result = "Registration failed"
+                    }
+                    else if(newUser){
+                        console.log("Successfully registered.");
+                        result = "Successfully registered"
+                        res.redirect('index');
+                    }
+                    else{
+                        res.redirect('index');
+                    }
+                })
             })
         })
 
