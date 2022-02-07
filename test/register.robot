@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation               Login Tests
+Documentation               Register Tests
 Library                     Selenium2Library
 
 *** Variables ***
@@ -14,7 +14,7 @@ Valid Account Registration but with inputs of an already existing account
     Click Element                 id:create_acc
 
     Input Text                    id:InputUsername                              Teban
-    Input Text                    id:InputEmail_createacc                       steven_castro@dlsu.edu.ph
+    Input Text                    id:InputEmail_createacc                       teban@gmail.com
     Input Password                id:InputPassword_createacc                    password
     Click Element                 css:.btn_register
     Log                           Credentials Entered
@@ -131,7 +131,7 @@ Invalid Account Registration due to incomplete form inputs 3
     Click Element                 id:create_acc
 
     Input Text                    id:InputUsername                              Teban
-    Input Text                    id:InputEmail_createacc                       steven_castro@dlsu.edu.ph
+    Input Text                    id:InputEmail_createacc                       teban@gmail.com
     Click Element                 css:.btn_register
     Log                           Credentials Entered
 

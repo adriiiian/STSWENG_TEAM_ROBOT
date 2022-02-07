@@ -11,7 +11,7 @@ Valid Account Login
     Open Login Page
     Click Element                 css:.btn_booknow
 
-    Input Text                    id:InputEmail_login                           steven_castro@dlsu.edu.ph
+    Input Text                    id:InputEmail_login                           teban@gmail.com
     Input Password                id:InputPassword_login                        password
     Click Button                  id:login_btn
     Log                           Credentials Entered
@@ -48,7 +48,7 @@ Invalid Account Login due ot invalid password 1
     Open Login Page
     Click Element                 css:.btn_booknow
 
-    Input Text                    id:InputEmail_login                           steven_castro@dlsu.edu.ph
+    Input Text                    id:InputEmail_login                           teban@gmail.com
     Input Password                id:InputPassword_login                        wrongpassword
     Click Button                  id:login_btn
     Log                           Credentials Entered
@@ -66,7 +66,7 @@ Valid Account Login with Remember Me option
     Open Login Page
     Click Element                 css:.btn_booknow
 
-    Input Text                    id:InputEmail_login                           steven_castro@dlsu.edu.ph
+    Input Text                    id:InputEmail_login                           teban@gmail.com
     Input Password                id:InputPassword_login                        wrongpassword
     Click Button                  id:login_btn
     Log                           Credentials Entered
@@ -84,7 +84,7 @@ Invalid Account Login due ot invalid password 2
     Open Login Page
     Click Element                 css:.btn_booknow
 
-    Input Text                    id:InputEmail_login                           steven_castro@dlsu.edu.ph
+    Input Text                    id:InputEmail_login                           teban@gmail.com
     Input Password                id:InputPassword_login                        123
     Click Button                  id:login_btn
     Log                           Credentials Entered
