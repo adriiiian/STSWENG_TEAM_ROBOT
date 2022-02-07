@@ -43,10 +43,6 @@ jobs:
 
     - name: install selenium2library
       run: pip install --user --upgrade robotframework-selenium2library
-    - name: Install Google Chrome 
-      run: |
-              chmod +x ./scripts/InstallChrome.sh
-                          ./scripts/InstallChrome.sh
     - name: Robot Framework
       uses: joonvena/robotframework-docker-action@v1.0
       env:
