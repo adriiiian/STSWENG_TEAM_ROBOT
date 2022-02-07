@@ -37,29 +37,26 @@ jobs:
     - uses: actions/checkout@v2
     - name: Set up Python
       run: sudo apt-get install python3.8 -y
+
     - name: Set up pip
       run: sudo apt-get install python3-pip -y
-    # - name: install selenium2library
-    #   run: pip install -U selenium
+
     - name: install selenium2library
       run: pip install --upgrade robotframework-selenium2library
+
     - name: install chrome
       uses: browser-actions/setup-chrome@latest
+
     - run: chrome --version
     - name: set up chrome driver
       uses: nanasess/setup-chromedriver@v1
       with:
-        chromedriver-version: '88.0.4324.96'
+        chromedriver-version: '86.0.4240.22'
+
     - run: |
         export DISPLAY=:99
         chromedriver --url-base=/wd/hub &
-    # - name: Set up Python 3.8
-    #   uses: actions/setup-python@v2
-    #   with:
-    #     python-version: 3.8
-
-    # - name: install selenium2library
-    #   run: pip install --pre --upgrade robotframework-selenium2library
+        
     - name: Robot Framework
       uses: joonvena/robotframework-docker-action@v1.0
       with:
