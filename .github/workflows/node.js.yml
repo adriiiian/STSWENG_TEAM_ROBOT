@@ -42,7 +42,7 @@ jobs:
       run: sudo apt-get install python3-pip -y
 
     - name: install selenium2library
-      run: pip install --upgrade robotframework-selenium2library
+      run: pip install --upgrade robotframework-seleniumlibrary
 
     - name: install chrome
       uses: browser-actions/setup-chrome@latest
