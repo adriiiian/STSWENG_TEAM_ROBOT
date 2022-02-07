@@ -28,6 +28,7 @@ body{
     background-color: none;
 }
 
+
 .nav_main .active{
     color: #DCA73A;
 }
@@ -421,6 +422,8 @@ body{
     color: #f0ecec;
 }
 
+
+
 .btn_login{
     text-align: center;
     height: max-content;
@@ -485,9 +488,6 @@ body{
     color: #4e4e4e;
 }
 
-.back_login {
-    color: #4e4e4e;
-}
 
 .form-check-label {
     font-family: 'Open Sans', sans-serif;

@@ -227,6 +227,7 @@
                 popup.classList.toggle('active');
 
                 $("#form_login").show();
+                $("#form_admin").hide();
                 $("#form_createaccount").hide();
                 $("#login_error").hide();
                 $("#register_error").hide();
@@ -234,12 +235,21 @@
             function create_acc() {
                 $("#form_login").hide();
                 $("#form_createaccount").show();
+                $("#form_admin").hide();
                 $("#register_error").hide();
             }
             function login() {
                 $("#form_login").show();
                 $("#form_createaccount").hide();
+                $("#form_admin").hide();
                 $("#login_error").hide();
+            }
+            function admin_login() {
+                $("#form_admin").show();
+                $("#form_login").hide();
+                $("#admin_error").hide();
+                $("#form_createaccount").hide();
+                
             }
 
             function prebook(){

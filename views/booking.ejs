@@ -142,6 +142,12 @@
                             </div>
                             <div class="col-sm-12">
                               <div class="row description">
+                                <span class="col-7 desc_room_type pr-5 d-flex justify-content-end text-right">Discount Per Night</span>
+                                <span id="discount_price_span" class="col-5 price_room_type d-flex justify-content-start"><span>₱</span>0.00</span>
+                              </div>
+                            </div>
+                            <div class="col-sm-12">
+                              <div class="row description">
                                 <span class="col-7 desc_nights pr-5 d-flex justify-content-end text-right">Number of nights</span>
                                 <span id="num_nights_span_1" class="col-5 num_nights d-flex justify-content-start">0</span>
                               </div>
@@ -184,7 +190,7 @@
                                     <span id="subtotal_span" class="total_price">0</span>
                                   </span>
                                   <div class="col btn_book pl-2 d-flex justify-content-end align-items-center">
-                                    <button id="submit_btn" type="submit" class="btn btn_register">BOOK</button>
+                                    <button id="submit_btn" type="submit" style="border-radius: 20px;" class="btn px-3 py2 btn_register">BOOK</button>
                                   </div>
                                 </span>
                               </div>
@@ -219,11 +225,13 @@
           let roomNumber = 0;
           let additionalGuest = 3000;
           let numAdditionalGuest;
-          let totalPrice, subtotalPrice;
+          let totalPrice, subtotalPrice, discountVal;
           const maxGuests = [<%-rooms[0].NumberOfGuests%>, <%-rooms[1].NumberOfGuests%>, <%-rooms[2].NumberOfGuests%>, <%-rooms[3].NumberOfGuests%>, <%-rooms[4].NumberOfGuests%>, <%-rooms[5].NumberOfGuests%>];
           const roomprice = [<%-rooms[0].Price%>, <%-rooms[1].Price%>, <%-rooms[2].Price%>, <%-rooms[3].Price%>, <%-rooms[4].Price%>, <%-rooms[5].Price%>];
+          const origroomprice = [15000, 20000, 25000, 35000, 40000, 45000];
           let roomTypeSpan = $('#room_type_span');;
           let roomPriceSpan = $('#room_price_span');
+          let discountPriceSpan = $('#discount_price_span');
           let numNightsSpan1 = $('#num_nights_span_1');
           let numNightsSpan2 = $('#num_nights_span_2');
           let totalPriceRoomSpan = $('#total_price_room_span');
@@ -414,6 +422,7 @@
                 subtotalSpan.text("0.00");
                 subtotalSpan.val(0);
               }
+              discountPriceSpan.text("₱ " + (discountVal.toFixed(2)).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
             }
 
             function initialLoad(){
@@ -507,6 +516,12 @@
                   max: 4
                 });
               }
+              
+              discountVal = origroomprice[roomNumber] - roomprice[roomNumber]
+              console.log(origroomprice[roomNumber]+' - ' + roomprice[roomNumber] + ' = ' + discountVal)
+              discountPriceSpan.text("₱ " + (discountVal.toFixed(2)).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
+
+
             }
 
         </script>
