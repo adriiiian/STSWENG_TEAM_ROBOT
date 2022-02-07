@@ -43,11 +43,11 @@ jobs:
     #   run: pip install -U selenium
     - name: install selenium2library
       run: pip install --upgrade robotframework-selenium2library
-
-    - uses: browser-actions/setup-chrome@latest
-    - run: chrome --version
+    - name: install chrome
+      uses: browser-actions/setup-chrome@latest
       with:
         chrome-version: '88.0.4324.96'
+    - run: chrome --version
     - name: set up chrome driver
       uses: nanasess/setup-chromedriver@v1.0.1
       with:
