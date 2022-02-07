@@ -41,6 +41,7 @@ jobs:
       with:
         python-version: 3.8
     - run: pip install --upgrade robotframework-selenium2library
+    - run: pip list
     - name: Robot Framework
       uses: joonvena/robotframework-docker-action@v1.0
       env:
