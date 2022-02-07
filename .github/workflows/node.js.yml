@@ -32,6 +32,7 @@ jobs:
     - run: npm test
 
   test:
+    runs-on: ubuntu-latest
     permissions:
       actions: read
     steps:
