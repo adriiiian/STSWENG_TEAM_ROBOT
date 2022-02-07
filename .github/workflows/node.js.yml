@@ -33,7 +33,7 @@ jobs:
 
   test:
     permissions:
-      actions: read | write
+      actions: read
     steps:
     - uses: actions/checkout@v2
     - name: Execute tests
