@@ -33,7 +33,8 @@ jobs:
 
   test:
   permissions:
-    actions: read|write|none
+    actions: read
+    actions: write
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -52,7 +53,8 @@ jobs:
 
   generate_report:
   permissions:
-    actions: read|write|none
+    actions: read
+    actions: write
     if: always()
     needs: [test] 
     runs-on: ubuntu-latest
