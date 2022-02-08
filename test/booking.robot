@@ -14,6 +14,7 @@ Booking is successful
     Login
     Sleep                         2s
     Click Element                 css:.btn_booknow
+    Sleep                         2s
     ${1st_Date} =      Get Current Date    result_format=%m-%d-%Y    increment=6 day
     ${2nd_Date} =      Get Current Date    result_format=%m-%d-%Y    increment=7 day
     Input Text                    id:fname                                      Steven Castro
@@ -22,11 +23,11 @@ Booking is successful
     Execute Javascript          document.querySelector("#checkin").removeAttribute("readonly");
     Execute Javascript          document.querySelector("#checkin").removeAttribute("onchange");
     Input Text                    id:checkin                                    ${1st_Date}
-    Execute Javascript          document.querySelector("#checkin").setAttribute("readonly", "readonly");
+    #Execute Javascript          document.querySelector("#checkin").setAttribute("readonly", "readonly");
     Execute Javascript          document.querySelector("#checkout").removeAttribute("readonly");
     Execute Javascript          document.querySelector("#checkout").removeAttribute("onchange");
     Input Text                    id:checkout                                   ${2nd_Date}
-    Execute Javascript          document.querySelector("#checkout").setAttribute("readonly", "readonly");
+    #Execute Javascript          document.querySelector("#checkout").setAttribute("readonly", "readonly");
 
 
     Click Button                  id:submit_btn
@@ -44,17 +45,17 @@ Booking with empty FULL NAME field
     ${2nd_Date} =      Get Current Date    result_format=%m-%d-%Y    increment=7 day
     Open Login Page
     Click Element                 css:.btn_booknow
-
+    Sleep                         2s
     Input Text                    id:num                                        09477903358
     Input Text                    id:address                                    2401 Taft Ave, Malate, Manila, 1004 Metro Manila
     Execute Javascript          document.querySelector("#checkin").removeAttribute("readonly");
     Execute Javascript          document.querySelector("#checkin").removeAttribute("onchange");
     Input Text                    id:checkin                                    ${1st_Date}
-    Execute Javascript          document.querySelector("#checkin").setAttribute("readonly", "readonly");
+    #Execute Javascript          document.querySelector("#checkin").setAttribute("readonly", "readonly");
     Execute Javascript          document.querySelector("#checkout").removeAttribute("readonly");
     Execute Javascript          document.querySelector("#checkout").removeAttribute("onchange");
     Input Text                    id:checkout                                   ${2nd_Date}
-    Execute Javascript          document.querySelector("#checkout").setAttribute("readonly", "readonly");
+    #Execute Javascript          document.querySelector("#checkout").setAttribute("readonly", "readonly");
 
 
     Click Button                  id:submit_btn
@@ -72,17 +73,17 @@ Booking with empty CONTACT NUMBER field
     ${2nd_Date} =      Get Current Date    result_format=%m-%d-%Y    increment=7 day
     Open Login Page
     Click Element                 css:.btn_booknow
-
+    Sleep                         2s
     Input Text                    id:fname                                      Steven Castro
     Input Text                    id:address                                    2401 Taft Ave, Malate, Manila, 1004 Metro Manila
     Execute Javascript          document.querySelector("#checkin").removeAttribute("readonly");
     Execute Javascript          document.querySelector("#checkin").removeAttribute("onchange");
     Input Text                    id:checkin                                    ${1st_Date}
-    Execute Javascript          document.querySelector("#checkin").setAttribute("readonly", "readonly");
+    #Execute Javascript          document.querySelector("#checkin").setAttribute("readonly", "readonly");
     Execute Javascript          document.querySelector("#checkout").removeAttribute("readonly");
     Execute Javascript          document.querySelector("#checkout").removeAttribute("onchange");
     Input Text                    id:checkout                                   ${2nd_Date}
-    Execute Javascript          document.querySelector("#checkout").setAttribute("readonly", "readonly");
+    #Execute Javascript          document.querySelector("#checkout").setAttribute("readonly", "readonly");
 
 
     Click Button                  id:submit_btn
@@ -100,17 +101,17 @@ Booking with empty ADDRESS field
     ${2nd_Date} =      Get Current Date    result_format=%m-%d-%Y    increment=7 day
     Open Login Page
     Click Element                 css:.btn_booknow
-
+    Sleep                         2s
     Input Text                    id:fname                                      Steven Castro
     Input Text                    id:num                                        09477903358
     Execute Javascript          document.querySelector("#checkin").removeAttribute("readonly");
     Execute Javascript          document.querySelector("#checkin").removeAttribute("onchange");
     Input Text                    id:checkin                                    ${1st_Date}
-    Execute Javascript          document.querySelector("#checkin").setAttribute("readonly", "readonly");
+    #Execute Javascript          document.querySelector("#checkin").setAttribute("readonly", "readonly");
     Execute Javascript          document.querySelector("#checkout").removeAttribute("readonly");
     Execute Javascript          document.querySelector("#checkout").removeAttribute("onchange");
     Input Text                    id:checkout                                   ${2nd_Date}
-    Execute Javascript          document.querySelector("#checkout").setAttribute("readonly", "readonly");
+    #Execute Javascript          document.querySelector("#checkout").setAttribute("readonly", "readonly");
 
 
     Click Button                  id:submit_btn
@@ -127,14 +128,14 @@ Booking with empty CHECK IN field
     ${2nd_Date} =      Get Current Date    result_format=%m-%d-%Y    increment=7 day
     Open Login Page
     Click Element                 css:.btn_booknow
-
+    Sleep                         2s
     Input Text                    id:fname                                      Steven Castro
     Input Text                    id:num                                        09477903358
     Input Text                    id:address                                    2401 Taft Ave, Malate, Manila, 1004 Metro Manila
     Execute Javascript          document.querySelector("#checkout").removeAttribute("readonly");
     Execute Javascript          document.querySelector("#checkout").removeAttribute("onchange");
     Input Text                    id:checkout                                   ${2nd_Date}
-    Execute Javascript          document.querySelector("#checkout").setAttribute("readonly", "readonly");
+    # Execute Javascript          document.querySelector("#checkout").setAttribute("readonly", "readonly");
 
 
     Click Button                  id:submit_btn
@@ -151,14 +152,14 @@ Booking with empty CHECK OUT field
     ${1st_Date} =      Get Current Date    result_format=%m-%d-%Y    increment=6 day
     Open Login Page
     Click Element                 css:.btn_booknow
-
+    Sleep                         2s
     Input Text                    id:fname                                      Steven Castro
     Input Text                    id:num                                        09477903358
     Input Text                    id:address                                    2401 Taft Ave, Malate, Manila, 1004 Metro Manila
     Execute Javascript          document.querySelector("#checkin").removeAttribute("readonly");
     Execute Javascript          document.querySelector("#checkin").removeAttribute("onchange");
     Input Text                    id:checkin                                    ${1st_Date}
-    Execute Javascript          document.querySelector("#checkin").setAttribute("readonly", "readonly");
+    #Execute Javascript          document.querySelector("#checkin").setAttribute("readonly", "readonly");
 
 
     Click Button                  id:submit_btn
@@ -190,20 +191,20 @@ Booking Single Room with more than 2 guests
     ${2nd_Date} =      Get Current Date    result_format=%m-%d-%Y    increment=9 day
     Open Login Page
     Click Element                 css:.btn_booknow
-
+    Sleep                         2s
     Input Text                    id:fname                                      Steven Castro
     Input Text                    id:num                                        09477903358
     Input Text                    id:address                                    2401 Taft Ave, Malate, Manila, 1004 Metro Manila
+    Select From List By Label     id:room                                       Single Room
+    Input Text                    id:guests                                     3
     Execute Javascript          document.querySelector("#checkin").removeAttribute("readonly");
     Execute Javascript          document.querySelector("#checkin").removeAttribute("onchange");
     Input Text                    id:checkin                                    ${1st_Date}
-    Execute Javascript          document.querySelector("#checkin").setAttribute("readonly", "readonly");
+    #Execute Javascript          document.querySelector("#checkin").setAttribute("readonly", "readonly");
     Execute Javascript          document.querySelector("#checkout").removeAttribute("readonly");
     Execute Javascript          document.querySelector("#checkout").removeAttribute("onchange");
     Input Text                    id:checkout                                   ${2nd_Date}
-    Execute Javascript          document.querySelector("#checkout").setAttribute("readonly", "readonly");
-    Select From List By Label     id:room                                       Single Room
-    Input Text                    id:guests                                     3
+    #Execute Javascript          document.querySelector("#checkout").setAttribute("readonly", "readonly");
 
     Click Button                  id:submit_btn
     Log                           Booking Submitted
@@ -220,10 +221,12 @@ Booking Double Room with more than 3 guests
     ${2nd_Date} =      Get Current Date    result_format=%m-%d-%Y    increment=9 day
     Open Login Page
     Click Element                 css:.btn_booknow
-
+    Sleep                         2s
     Input Text                    id:fname                                      Steven Castro
     Input Text                    id:num                                        09477903358
     Input Text                    id:address                                    2401 Taft Ave, Malate, Manila, 1004 Metro Manila
+    Select From List By Label     id:room                                       Double Room
+    Input Text                    id:guests                                     4
     Execute Javascript          document.querySelector("#checkin").removeAttribute("readonly");
     Execute Javascript          document.querySelector("#checkin").removeAttribute("onchange");
     Input Text                    id:checkin                                    ${1st_Date}
@@ -232,8 +235,7 @@ Booking Double Room with more than 3 guests
     Execute Javascript          document.querySelector("#checkout").removeAttribute("onchange");
     Input Text                    id:checkout                                   ${2nd_Date}
     Execute Javascript          document.querySelector("#checkout").setAttribute("readonly", "readonly");
-    Select From List By Label     id:room                                       Double Room
-    Input Text                    id:guests                                     4
+
 
     Click Button                  id:submit_btn
     Log                           Booking Submitted
@@ -250,10 +252,12 @@ Booking Triple Room with more than 4 guests
     ${2nd_Date} =      Get Current Date    result_format=%m-%d-%Y    increment=9 day
     Open Login Page
     Click Element                 css:.btn_booknow
-
+    Sleep                         2s
     Input Text                    id:fname                                      Steven Castro
     Input Text                    id:num                                        09477903358
     Input Text                    id:address                                    2401 Taft Ave, Malate, Manila, 1004 Metro Manila
+    Select From List By Label     id:room                                       Triple Room
+    Input Text                    id:guests                                     5
     Execute Javascript          document.querySelector("#checkin").removeAttribute("readonly");
     Execute Javascript          document.querySelector("#checkin").removeAttribute("onchange");
     Input Text                    id:checkin                                    ${1st_Date}
@@ -262,8 +266,7 @@ Booking Triple Room with more than 4 guests
     Execute Javascript          document.querySelector("#checkout").removeAttribute("onchange");
     Input Text                    id:checkout                                   ${2nd_Date}
     Execute Javascript          document.querySelector("#checkout").setAttribute("readonly", "readonly");
-    Select From List By Label     id:room                                       Triple Room
-    Input Text                    id:guests                                     5
+
 
     Click Button                  id:submit_btn
     Log                           Booking Submitted
@@ -280,10 +283,12 @@ Booking Quad Room with more than 5 guests
     ${2nd_Date} =      Get Current Date    result_format=%m-%d-%Y    increment=9 day
     Open Login Page
     Click Element                 css:.btn_booknow
-
+    Sleep                         2s
     Input Text                    id:fname                                      Steven Castro
     Input Text                    id:num                                        09477903358
     Input Text                    id:address                                    2401 Taft Ave, Malate, Manila, 1004 Metro Manila
+    Select From List By Label     id:room                                       Quad Room
+    Input Text                    id:guests                                     6
     Execute Javascript          document.querySelector("#checkin").removeAttribute("readonly");
     Execute Javascript          document.querySelector("#checkin").removeAttribute("onchange");
     Input Text                    id:checkin                                    ${1st_Date}
@@ -292,8 +297,7 @@ Booking Quad Room with more than 5 guests
     Execute Javascript          document.querySelector("#checkout").removeAttribute("onchange");
     Input Text                    id:checkout                                   ${2nd_Date}
     Execute Javascript          document.querySelector("#checkout").setAttribute("readonly", "readonly");
-    Select From List By Label     id:room                                       Quad Room
-    Input Text                    id:guests                                     6
+
 
     Click Button                  id:submit_btn
     Log                           Booking Submitted
@@ -310,10 +314,12 @@ Booking King Room with more than 5 guests
     ${2nd_Date} =      Get Current Date    result_format=%m-%d-%Y    increment=9 day
     Open Login Page
     Click Element                 css:.btn_booknow
-
+    Sleep                         2s
     Input Text                    id:fname                                      Steven Castro
     Input Text                    id:num                                        09477903358
     Input Text                    id:address                                    2401 Taft Ave, Malate, Manila, 1004 Metro Manila
+    Select From List By Label     id:room                                       King Room
+    Input Text                    id:guests                                     5
     Execute Javascript          document.querySelector("#checkin").removeAttribute("readonly");
     Execute Javascript          document.querySelector("#checkin").removeAttribute("onchange");
     Input Text                    id:checkin                                    ${1st_Date}
@@ -322,8 +328,6 @@ Booking King Room with more than 5 guests
     Execute Javascript          document.querySelector("#checkout").removeAttribute("onchange");
     Input Text                    id:checkout                                   ${2nd_Date}
     Execute Javascript          document.querySelector("#checkout").setAttribute("readonly", "readonly");
-    Select From List By Label     id:room                                       King Room
-    Input Text                    id:guests                                     5
 
     Click Button                  id:submit_btn
     Log                           Booking Submitted
@@ -340,10 +344,12 @@ Booking Queen Room with more than 5 guests
     ${2nd_Date} =      Get Current Date    result_format=%m-%d-%Y    increment=9 day
     Open Login Page
     Click Element                 css:.btn_booknow
-
+    Sleep                         2s
     Input Text                    id:fname                                      Steven Castro
     Input Text                    id:num                                        09477903358
     Input Text                    id:address                                    2401 Taft Ave, Malate, Manila, 1004 Metro Manila
+    Select From List By Label     id:room                                       Queen Room
+    Input Text                    id:guests                                     5
     Execute Javascript          document.querySelector("#checkin").removeAttribute("readonly");
     Execute Javascript          document.querySelector("#checkin").removeAttribute("onchange");
     Input Text                    id:checkin                                    ${1st_Date}
@@ -352,8 +358,7 @@ Booking Queen Room with more than 5 guests
     Execute Javascript          document.querySelector("#checkout").removeAttribute("onchange");
     Input Text                    id:checkout                                   ${2nd_Date}
     Execute Javascript          document.querySelector("#checkout").setAttribute("readonly", "readonly");
-    Select From List By Label     id:room                                       Queen Room
-    Input Text                    id:guests                                     5
+
 
     Click Button                  id:submit_btn
     Log                           Booking Submitted
