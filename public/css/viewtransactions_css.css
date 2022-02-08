@@ -119,7 +119,22 @@
 #btn-back {
     color: white;
     background-color: #DCA73A;
-    float: right;
+    text-align: center;
+    height: max-content;
+    color: white;
+    text-transform: uppercase;
+    border-radius: 20px;
+    max-width: 150px;
+    min-width: 50px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#btn-back:hover{
+    color: white;
+    transform: scale(1.05);
+    transition: 0.3s;
 }
 
 .viewrooms_details{
