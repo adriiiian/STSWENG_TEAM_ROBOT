@@ -188,27 +188,30 @@ const adminController = {
     filterReservations: async (req, res) => {
         var checkin = new Date(req.query.checkin);
         var checkout = new Date(req.query.checkout);
+        var status = req.query.status;
+        console.log(status)
         var pendingTransactions = [];
-        var tempci, tempco;
+        var tempci, tempco, roomMultiplier;
         var booking = {
             _id: "",
             Fullname: "",
             Checkin: "",
             Checkout: "",
-            RoomType: ""
+            RoomType: "",
+            RoomNumber: ""
         }
-        await db.Bookings.find({Status: "Pending"}, {Fullname: 1, Checkin: 1, Checkout: 1, RoomType: 1}).then((bookings) => {
+        await db.Bookings.find({Status: status}, {Fullname: 1, Checkin: 1, Checkout: 1, RoomType: 1, RoomNumber: 1}).then((bookings) => {
             bookings.sort((a,b) => a.Checkin - b.Checkin);
             pendingTransactions.splice(0, pendingTransactions.length)
-                
-            for(let i = 0; i < bookings.length; i++){
-                tempci = new Date(bookings[i].Checkin);
-                tempco = new Date(bookings[i].Checkout);
-                if(tempci >= checkin && tempco <= checkout){
+
+            if(checkin == "Invalid Date" && checkout == "Invalid Date"){
+                for(let i = 0; i < bookings.length; i++){
+                    tempci = new Date(bookings[i].Checkin);
+                    tempco = new Date(bookings[i].Checkout);
                     booking._id = bookings[i]._id
                     booking.Fullname = bookings[i].Fullname
                     booking.RoomType = bookings[i].RoomType
-
+                    booking.RoomNumber = bookings[i].RoomNumber
                     if(tempci.getMonth() < 9 && tempci.getDate() < 10)
                         booking.Checkin = ("0" + (tempci.getMonth() + 1) + "-" + "0" + tempci.getDate() + "-" + tempci.getFullYear());
                     else if(tempci.getMonth() < 9)
@@ -251,8 +254,66 @@ const adminController = {
                         Checkin: booking.Checkin,
                         Checkout: booking.Checkout,
                         RoomType: booking.RoomType,
-                        RoomMultiplier: roomMultiplier
+                        RoomMultiplier: roomMultiplier,
+                        RoomNumber: booking.RoomNumber
                     })
+                }
+            }
+            else{
+                for(let i = 0; i < bookings.length; i++){
+                    tempci = new Date(bookings[i].Checkin);
+                    tempco = new Date(bookings[i].Checkout);
+                    if(tempci >= checkin && tempco <= checkout){
+                        booking._id = bookings[i]._id
+                        booking.Fullname = bookings[i].Fullname
+                        booking.RoomType = bookings[i].RoomType
+                        booking.RoomNumber = bookings[i].RoomNumber
+                        if(tempci.getMonth() < 9 && tempci.getDate() < 10)
+                            booking.Checkin = ("0" + (tempci.getMonth() + 1) + "-" + "0" + tempci.getDate() + "-" + tempci.getFullYear());
+                        else if(tempci.getMonth() < 9)
+                            booking.Checkin = ("0" + (tempci.getMonth() + 1) + "-" + tempci.getDate() + "-" + tempci.getFullYear());
+                        else if(tempci.getDate() < 10)
+                            booking.Checkin = ((tempci.getMonth() + 1) + "-" + "0" + tempci.getDate() + "-" + tempci.getFullYear());
+                        else
+                            booking.Checkin = ((tempci.getMonth() + 1) + "-" + tempci.getDate() + "-" + tempci.getFullYear());
+    
+                        if(tempco.getMonth() < 9 && tempco.getDate() < 10)
+                            booking.Checkout = "0" + (tempco.getMonth() + 1) + "-" + "0" + tempco.getDate() + "-" + tempco.getFullYear();
+                        else if(tempco.getMonth() < 9)
+                            booking.Checkout = "0" + (tempco.getMonth() + 1) + "-" + tempco.getDate() + "-" + tempco.getFullYear();
+                        else if(tempco.getDate() < 10)
+                            booking.Checkout = (tempco.getMonth() + 1) + "-" + "0" + tempco.getDate() + "-" + tempco.getFullYear();
+                        else
+                            booking.Checkout = (tempco.getMonth() + 1) + "-" + tempco.getDate() + "-" + tempco.getFullYear();
+    
+                        if(bookings[i].RoomType == "Single Room"){
+                            roomMultiplier = "Single Room"
+                        }
+                        else if(bookings[i].RoomType == "Double Room"){
+                            roomMultiplier = "Double Room"
+                        }
+                        else if(bookings[i].RoomType == "Triple Room"){
+                            roomMultiplier = "Triple Room"
+                        }
+                        else if(bookings[i].RoomType == "Quad Room"){
+                            roomMultiplier = "Quad Room"
+                        }
+                        else if(bookings[i].RoomType == "Queen Room"){
+                            roomMultiplier = "Queen Room"
+                        }
+                        else if(bookings[i].RoomType == "King Room"){
+                            roomMultiplier = "King Room"
+                        }
+                        pendingTransactions.push({
+                            _id: booking._id,
+                            Fullname: booking.Fullname,
+                            Checkin: booking.Checkin,
+                            Checkout: booking.Checkout,
+                            RoomType: booking.RoomType,
+                            RoomMultiplier: roomMultiplier,
+                            RoomNumber: booking.RoomNumber
+                        })
+                    }
                 }
             }
         });

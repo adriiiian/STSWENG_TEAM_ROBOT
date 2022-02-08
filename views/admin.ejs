@@ -123,14 +123,22 @@
                       </table>
                 </div>
                 <div class="tab-pane fade" id="nav-reservations" role="tabpanel" aria-labelledby="nav-resevations-tab">
-                  <p class="date_filter">Date Filter</p>
+                  <p class="date_filter">Date and Status Filter</p>
                   <div class="col-sm-3 mx-auto book_form_label">
                     CHECK IN
                     <input id="checkin" readonly/>
                 </div>
-                <div class="col-sm-3 mx-auto mt-4 book_form_label">
+                <div class="col-sm-3 mx-auto mt-2 book_form_label">
                     CHECK OUT
                     <input id="checkout" readonly/>
+                </div>
+                <div class="col-sm-3 mx-auto book_form_label">
+                  <label class="mt-4" for="status" id="label_status">STATUS</label>
+                  <select class="form-control" id="status" required>
+                    <option>Pending</option>
+                    <option>Confirmed</option>
+                    <option>Cancelled</option>
+                  </select>
                 </div>
                 <br>
                 <div class="apply_filter">
@@ -331,6 +339,31 @@
               format: 'mm-dd-yyyy',
               todayHighlight: true,
             });
+
+            $('#status').on("change", function(){
+              checkindatepicker.datepicker('destroy');
+              checkoutdatepicker.datepicker('destroy');
+              checkindatepicker.datepicker({
+                uiLibrary: 'bootstrap4',
+                format: 'mm-dd-yyyy',
+                todayHighlight: true
+              }).on("change", function(){
+                checkoutdatepicker.datepicker('destroy');
+                let tempDate = new Date($(this).val());
+                tempDate.setDate(tempDate.getDate() + 1);
+                checkoutdatepicker.datepicker({
+                    uiLibrary: 'bootstrap4',
+                    format: 'mm-dd-yyyy',
+                    minDate: tempDate,
+                    todayHighlight: true
+              });
+            });
+            checkoutdatepicker.datepicker({
+                uiLibrary: 'bootstrap4',
+                format: 'mm-dd-yyyy',
+                todayHighlight: true
+              });
+            });
         </script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -409,11 +442,13 @@
             function filterReservations(){
               var checkin = $('#checkin').val();
               var checkout = $('#checkout').val();
+              var status = $('#status').val();
               var html;
-              $.get('filter-reservations', {checkin, checkout}, function(result){
+              $.get('filter-reservations', {checkin, checkout, status}, function(result){
                 $('#tbody').empty();
                 for(let i = 0; i < result.length; i++){
-                  html = "<tr id=\"" + result[i]._id + "\"> <td id=\"pt_name\">" + result[i].Fullname + "</td> <td id=\"pt_checkin\">" + result[i].Checkin +
+                  if(status == "Pending"){
+                    html = "<tr id=\"" + result[i]._id + "\"> <td id=\"pt_name\">" + result[i].Fullname + "</td> <td id=\"pt_checkin\">" + result[i].Checkin +
                     "</td> <td id=\"pt_checkout\">" + result[i].Checkout + "</td> <td id=\"pt_roomtype\">" + result[i].RoomType + "</td> <td> <select class=\"pt_roomnumber form-control\">"
                       + getRoomNumber(result[i].RoomMultiplier) + "</select> </td> <td> <button type=\"button\" class=\"confirm_btn btn btn-secondary btn-sm mx-2\"> Confirm </button>"
                       + "<button type=\"button\" class=\"reject_btn btn btn-secondary btn-sm mx-2\"> Reject </button> </td> </tr>"
@@ -453,6 +488,17 @@
                             }
                         })
                       })
+                  }
+                  else if(status == "Confirmed"){
+                    html = "<tr id=\"" + result[i]._id + "\"> <td id=\"pt_name\">" + result[i].Fullname + "</td> <td id=\"pt_checkin\">" + result[i].Checkin +
+                    "</td> <td id=\"pt_checkout\">" + result[i].Checkout + "</td> <td id=\"pt_roomtype\">" + result[i].RoomType + "</td> <td> "+ result[i].RoomNumber + "</td> </tr>"
+                      $('#tbody').append(html);
+                  }
+                  else if(status == "Cancelled"){
+                    html = "<tr id=\"" + result[i]._id + "\"> <td id=\"pt_name\">" + result[i].Fullname + "</td> <td id=\"pt_checkin\">" + result[i].Checkin +
+                    "</td> <td id=\"pt_checkout\">" + result[i].Checkout + "</td> <td id=\"pt_roomtype\">" + result[i].RoomType + "</td> <td> Not assigned</td> </tr>"
+                      $('#tbody').append(html);
+                  }
                 }
               });
               $('#filter_modal').modal('show')
