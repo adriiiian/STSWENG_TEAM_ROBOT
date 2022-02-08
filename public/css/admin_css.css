@@ -578,3 +578,8 @@ body{
 tr{
     text-align: center;
 }
+
+#label_status{
+    margin: 0px;
+    margin-bottom: 0px;
+}
