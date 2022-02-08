@@ -425,6 +425,16 @@ const adminController = {
     }
 }
 
+async function initSchemaD(body){
+    
+    let newBookingDate = {
+        BDate: body.BDate,
+        RoomType: body.RoomType,
+        Counter: body.Counter
+    }
+    return newBookingDate;
+}
+
 async function findDate(){
     for(let i = 0; i < datesArray.length; i++){
         let dateid = await db.Dates.findOne({"BDate": datesArray[i], "RoomType": roomType},);
