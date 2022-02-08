@@ -453,7 +453,7 @@ async function findDate(){
                 Counter: 1
             }
             initSchemaD(newBooking).then((schema) => {
-                let newDateBooking = new Dates(schema);
+                let newDateBooking = new db.Dates(schema);
                 newDateBooking.save((err, newDateBooking) => {
                     if(err) console.log(err);
                     else if(newDateBooking){
