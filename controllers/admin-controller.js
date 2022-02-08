@@ -348,7 +348,7 @@ const adminController = {
 
                     let counter = 0;
                     while(counter < difference_in_days && checker){
-                        if(checkin.getTime() < tempco.getTime() && checkin.getTime() >= tempci.getTime()){
+                        if(checkin.getTime() <= tempco.getTime() && checkin.getTime() > tempci.getTime()){
                             checker = false
                         }
                         else{
