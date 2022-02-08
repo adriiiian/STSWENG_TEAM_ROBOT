@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="book_con">
+        <div class="container">
+            <form id="book_header" onsubmit="return false;" class="row mx-auto book_form" autocomplete="off">
+                <div class="col-sm-3 mx-auto book_form_label">
+                    CHECK IN
+                    <input id="checkin" readonly="readonly"/>
+                </div>
+                <div class="col-sm-3 mx-auto book_form_label">
+                    CHECK OUT
+                    <input id="checkout" readonly="readonly"/>
+                </div>
+                <div class="col-sm-3 mx-auto form-group">
+                    <div class="book_form_label">
+                        ROOM
+                        <select class="form-control" id="room" required>
+                            <option>Single Room</option>
+                            <option>Double Room</option>
+                            <option>Triple Room</option>
+                            <option>Quad Room</option>
+                            <option>Queen Room</option>
+                            <option>King Room</option>
+                        </select>
+                    </div>
+                </div>
+                    
+                <div class="col-sm-2.5 mx-auto">
+                    <% if (!_email) {%>
+                        <!-- IF LOGGED OUT -->
+                        <div class="col-sm-2.5 mx-auto btn_booknow_con">
+                            <a class="btn px-3 py-2 btn_booknow" style="border-radius: 20px;" type="submit" value="Submit" href="#" onclick="toggle()">Book now</a>
+                        </div>
+                    <% } else {%>
+                        <!-- IF LOGGED IN -->
+                        <div class="col-sm-2.5 mx-auto">
+                            <button type="submit" style="border-radius: 20px;" class="btn px-3 py-2 btn_booknow" onclick="prebook()" href="/views/booking.ejs"> Book now</button>
+                        </div>
+                    
+                    <% }%>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

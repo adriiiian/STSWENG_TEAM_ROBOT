@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <%- include('./partials/title.ejs') %>
+        <link rel="stylesheet" href="./css/index_css.css">
+        <link rel="stylesheet" href="./css/transactions_css.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+        <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+        <script src="./js/login.js"></script>
+        <script src="./js/transactions.js"></script>
+    </head>
+    <body>
+        <div class="container_whole" id="blur">
+        <a class="top_btn" href="#top">
+            <i class="fa fa-arrow-up" style="color:#fff; font-size:28px;"></i>
+        </a>
+        <img src="images/hotel_bg.jpg" id="bg" alt="">
+
+        <div class="container nav_main">
+            <nav class="navbar navbar-expand-lg nav_options">
+                <div class="navbar-brand hotel_name_nav">robotel</div>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+                    <i class="fa fa-bars" style="color:#fff; font-size:28px;"></i>
+                  </span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-start" id="navbarNavAltMarkup">
+                  <div class="navbar-nav ml-auto text-right float-right">
+                    <a class="nav-item nav-link" href="index">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-item nav-link" href="rooms">Rooms</a>
+                    <a class="nav-item nav-link" href="services">Services</a>
+                    <a class="nav-item nav-link" href="#contactus_section">Contact Us</a>
+                    
+                    <%- include('./partials/account_button.ejs') %>
+
+                  </div>
+                </div>
+              </nav>
+        </div>
+        <div class="container-fluid px-0 content_con" style="margin-top: 50px;">
+            
+            <div class="container-fluid py-5">
+                <div class="container">
+                    <div class="transactionslist_header">
+                        Transactions
+                    </div>
+                    
+                    <div class="transactionslist_grid mx-5 mt-3 d-flex justify-content-center flex-column">
+
+                        <form class="mx-0 d-flex" action="">
+                            <span class="p-0 d-flex justify-content-start form-group">
+                                <div class="row">
+                                    <span class="col filter_label">FILTER
+                                        <select class="form-control" id="filter_select" required>
+                                            <option value="" hidden></option>
+                                            <option value="All" <%= filter == 'All' ? 'Selected' : '' %>>All</option>
+                                            <option value="Confirmed" <%= filter == 'Confirmed' ? 'Selected' : '' %>>Confirmed</option>
+                                            <option value="Pending" <%= filter == 'Pending' ? 'Selected' : '' %>>Pending</option>
+                                            <option value="Cancelled" <%= filter == 'Cancelled' ? 'Selected' : '' %>>Cancelled</option>
+                                        </select>
+                                    </span>
+                                    <span class="col sort_label">SORT BY
+                                        <select class="form-control" id="sort_select" required>
+                                            <option value="" hidden></option>
+                                            <option value="Latest" <%= sort == 'Latest' ? 'Selected' : '' %>>Latest</option>
+                                            <option value="Oldest" <%= sort == 'Oldest' ? 'Selected' : '' %>>Oldest</option>
+                                        </select>
+                                    </span>
+                                </div>
+                            </span>
+                            <span class="pl-4 d-flex justify-content-start align-items-center ">
+                                <a class="pl-3" id="apply_button" href="transactions" onclick="return filterTransaction();">Apply</a>
+                                <a class="pl-3" id="clear_button" href="#" onclick="return false;">Clear</a>
+                            </span>
+                        </form>
+                        
+                        <div class="row d-flex justify-content-around" id="transactions_container">
+                            <div class="col-sm-12 my-4 d-flex justify-content-center flex-column" href="view_transactions" id="list_container">
+                                <%for (var i = 0; i < bookings.length; i++) {%>
+
+                                    <div class="card mb-4 border-0">
+                                        <div class="card-body d-flex flex-row justify-content-between">
+                                            <h5 class="card-title my-auto ">
+                                                <a href="view_transactions?id=<%-bookings[i]._id%>">
+                                                    <%-bookings[i].RoomType%>
+                                                </a>
+                                            </h5>
+                                            <span class="">
+                                                <span class="date1">
+                                                    <%-(bookings[i].Checkin.getMonth() + 1)+ '/' + bookings[i].Checkin.getDate() + '/' + bookings[i].Checkin.getFullYear()%>
+                                                </span>
+                                                <span style="color: rgb(185, 185, 185);">to</span>
+                                                <span class="date2">
+                                                    <%-(bookings[i].Checkout.getMonth() + 1) + '/' + bookings[i].Checkout.getDate() + '/' + bookings[i].Checkout.getFullYear()%>
+                                                </span>
+                                                <span >
+                                                    <%if (bookings[i].Status == "Confirmed") {%>
+                                        
+                                                        <% var currDate = new Date()%>
+                                                        <% if(currDate > bookings[i].Checkout) {%>
+                                                            <a href="<%-bookings[i]._id%>" type="button" class="review_button btn_review_transaction" data-toggle="modal" data-target="#data_modal_review">
+                                                                Review
+                                                            </a>
+                                                        <%} else {%>
+                                                            <a href="#" class="btn_review_transaction cancelled" style="color: rgb(185, 185, 185);">Confirmed</a>
+                                                        <%}%>
+
+                                                    <%} else if (bookings[i].Status == "Pending") {%>
+                                                        <a href="<%-bookings[i]._id%>" class="cancel_button btn_cancel_transaction" data-toggle="modal" data-target="#data_modal_cancel">Cancel</a>
+                                                    <%} else {%>
+                                                        <a href="#" class="btn_cancel_transaction cancelled" style="color: rgb(185, 185, 185);">Cancelled</a>
+                                                    <%}%>
+                                                </span>
+                                            </span>
+                                        </div>
+                                        <%if (bookings[i].Status == "Confirmed") {%>
+                                            <div class="border_bottom_done"></div>
+                                        <%} else if (bookings[i].Status == "Pending") {%>
+                                            <div class="border_bottom_active"></div>
+                                        <%} else {%>
+                                            <div class="border_bottom_cancelled"></div>
+                                        <%}%>
+                                    </div>
+
+                                <%}%>
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+       
+        <%- include('./partials/footer.ejs') %>
+    </div>
+
+    <%- include('./partials/account_popup.ejs') %>
+
+        <!-- Modal Review-->
+        <div class="modal fade modal_review" id="data_modal_review" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" data-backdrop="false">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content border-0 radius-5 px-3 pb-2" >
+                    <div class="modal-header">
+                    <h5 class="modal-title my-auto mr-5" id="data_modal_review">Review</h5>
+                    <div class="rating"> 
+                        <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label> 
+                        <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label> 
+                        <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label> 
+                        <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label> 
+                        <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
+                    </div>
+                    </div>
+                    <div class="modal-body">
+                        <form id="form_review" action="">
+                            <input type="message" class="form-control" id="review_string" placeholder="">
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                    <span class="btn_close_review px-2" >
+                        <a id="close_review" href="#" data-dismiss="modal">Close</a>
+                    </span>
+                    <span class="btn_save_review">
+                        <a id="save_review_btn" href="#" onclick="return false;">Save changes</a>
+                    </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Cancel-->
+        <div class="modal fade modal_cancel" id="data_modal_cancel" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" data-backdrop="false">
+            <div class="modal-dialog modal-dialog-centered" style="width: 300px;" role="document">
+                <div class="modal-content border-0 px-3 pb-2">
+                    <div class="modal-header">
+                    <h5 class="modal-title my-auto mr-5" id="data_modal_cancel">Cancel reservation?</h5>
+                    </div>
+                    <div class="modal-footer">
+                    <span class="btn_close_review px-2" >
+                        <a href="#" data-dismiss="modal">No</a>
+                    </span>
+                    <span class="btn_save_review">
+                        <a id="confirm_cancel" href="cancel-reservation">Yes</a>
+                    </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            $('#checkin').datepicker({
+                uiLibrary: 'bootstrap4'
+            });
+            $('#checkout').datepicker({
+                uiLibrary: 'bootstrap4'
+            });
+        </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script type="text/javascript">
+            function toggle(){
+                var blur = document.getElementById('blur');
+                blur.classList.toggle('active');
+                var popup = document.getElementById('popup');
+                popup.classList.toggle('active');
+
+                $("#form_login").show();
+                $("#form_createaccount").hide();
+                $("#login_error").hide();
+                $("#register_error").hide();
+            }
+            function create_acc() {
+                $("#form_login").hide();
+                $("#form_createaccount").show();
+                $("#register_error").hide();
+            }
+            function login() {
+                $("#form_login").show();
+                $("#form_createaccount").hide();
+                $("#login_error").hide();
+            }
+        </script>
+    </body>
+</html>

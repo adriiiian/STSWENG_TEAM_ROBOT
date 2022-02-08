@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <%- include('./partials/title.ejs') %>
+        <link rel="stylesheet" href="./css/admin_css.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+        <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+        <script src="./js/register.js"></script>
+        <script src="./js/login.js"></script>
+        <script src="./js/admin.js"></script>
+    </head>
+    <body>
+        <div class="container_whole" id="blur">
+        <a class="top_btn" href="#top">
+            <i class="fa fa-arrow-up" style="color:#fff; font-size:28px;"></i>
+        </a>
+        <img src="images/hotel_bg.jpg" id="bg" alt="">
+
+        <div class="container py-0 nav_main">
+            <nav class="navbar navbar-expand-lg nav_options">
+                <div class="navbar-brand hotel_name_nav">ROBOTEL</div>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+                    <i class="fa fa-bars" style="color:#fff; font-size:28px;"></i>
+                  </span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-start" id="navbarNavAltMarkup">
+                  <div class="navbar-nav ml-auto text-right float-right">
+                    <a id="logged-out-nav" class="nav-item nav-link btn_nav_login" href="logout">LOG OUT</a>       
+                  </div>
+                  </div>
+                </div>
+              </nav>
+        <div class="hotel_header">
+            <div class="hotel_line">
+                The Best Place To Stay
+            </div>
+            <div class="hotel_type">
+                hotel & resort
+            </div>
+        </div>
+        <div class="container-fluid px-0 content_con">
+            <div class="container pt-5 pb-4">
+              <p class="welcome_admin pb-3">Welcome back, Administrator!</p>
+            <nav>
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                  <a class="nav-item nav-link active" id="nav-rooms-tab" data-toggle="tab" href="#nav-rooms" role="tab" aria-controls="nav-rooms" aria-selected="true">Rooms</a>
+                  <a class="nav-item nav-link" id="nav-reservations-tab" data-toggle="tab" href="#nav-reservations" role="tab" aria-controls="nav-reservations" aria-selected="false">Reservations</a>
+                  <a class="nav-item nav-link" id="nav-discounts-tab" data-toggle="tab" href="#nav-discounts" role="tab" aria-controls="nav-discounts" aria-selected="false">Discounts</a>
+                </div>
+              </nav>
+              <div class="tab-content py-4" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="nav-rooms" role="tabpanel" aria-labelledby="nav-rooms-tab">
+                  <p class="date_filter">Date and Room Type Filter</p>
+                  <div class="col-sm-3 mx-auto book_form_label">
+                    DATE
+                    <input id="roomfilter"  class="form-control" readonly="readonly" value=<%-currDate%> />
+                    <div class="form-group">
+                      <label class="mt-3" for="room" id="label_room">ROOM TYPE</label>
+                      <select class="form-control" id="room" required>
+                        <option>Single Room</option>
+                        <option>Double Room</option>
+                        <option>Triple Room</option>
+                        <option>Quad Room</option>
+                        <option>Queen Room</option>
+                        <option>King Room</option>
+                      </select>
+                      <div class="valid-feedback">
+                        <i class="fa fa-check" style="color: darkgreen; font-size:14;"></i>
+                      </div>
+                      <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                  </div>
+                  <div class="apply_filter">
+                    <button type="button" id="btn_filter" style="border-radius: 20px;" class="btn btn-secondary btn-sm mt-3 mb-4 px-3" onclick="filterRooms()">Apply Filter</button>
+                  </div>
+                  <br>
+                    <table class="table">
+                        <thead class="thead-light">
+                          <tr>
+                            <th scope="col">Room No.</th>
+                            <th scope="col">Type</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Occupant</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td id="rn1">101</td>
+                            <td id="rt1">Single Room</td>
+                            <td id="stat1"><%-rooms.room1%></td>
+                            <td id="name1"><%-names.name1%></td>
+                          </tr>
+                          <tr>
+                            <td id="rn2">102</td>
+                            <td id="rt2">Single Room</td>
+                            <td id="stat2"><%-rooms.room2%></td>
+                            <td id="name2"><%-names.name2%></td>
+                          </tr>
+                          <tr>
+                            <td id="rn3">103</td>
+                            <td id="rt3">Single Room</td>
+                            <td id="stat3"><%-rooms.room3%></td>
+                            <td id="name3"><%-names.name3%></td>
+                          </tr>
+                          <tr>
+                            <td id="rn4">104</td>
+                            <td id="rt4">Single Room</td>
+                            <td id="stat4"><%-rooms.room4%></td>
+                            <td id="name4"><%-names.name4%></td>
+                          </tr>
+                          <tr>
+                            <td id="rn5">105</td>
+                            <td id="rt5">Single Room</td>
+                            <td id="stat5"><%-rooms.room5%></td>
+                            <td id="name5"><%-names.name5%></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                </div>
+                <div class="tab-pane fade" id="nav-reservations" role="tabpanel" aria-labelledby="nav-resevations-tab">
+                  <p class="date_filter">Date and Status Filter</p>
+                  <div class="col-sm-3 mx-auto book_form_label">
+                    CHECK IN
+                    <input id="checkin" readonly/>
+                </div>
+                <div class="col-sm-3 mx-auto mt-3 book_form_label">
+                    CHECK OUT
+                    <input id="checkout" readonly/>
+                </div>
+                <div class="col-sm-3 mx-auto book_form_label">
+                  <label class="mt-3" for="status" id="label_status">STATUS</label>
+                  <select class="form-control" id="status" required>
+                    <option>Pending</option>
+                    <option>Confirmed</option>
+                    <option>Cancelled</option>
+                  </select>
+                </div>
+                <br>
+                <div class="apply_filter">
+                  <button type="button" style="border-radius: 20px;" class="btn btn-secondary btn-sm mb-4 mt-2 px-3" onclick="filterReservations();">Apply Filter</button>
+                </div>
+                <br>
+                    <table class="table">
+                        <thead class="thead-light">
+                          <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Date Start</th>
+                            <th scope="col">Date End</th>
+                            <th scope="col">Type</th>
+                            <th scope="col">Room</th>
+                            <th scope="col"></th>
+                          </tr>
+                        </thead>
+                        <tbody id="tbody">
+                          <% for(var i = 0; i < pendingTransactions.length; i++){ %>
+                            <tr id="<%-pendingTransactions[i]._id%>">
+                              <td id="pt_name"><%-pendingTransactions[i].Fullname%></td>
+                              <td id="pt_checkin"><%-pendingTransactions[i].Checkin%></td>
+                              <td id="pt_checkout"><%-pendingTransactions[i].Checkout%></td>
+                              <td id="pt_roomtype"><%-pendingTransactions[i].RoomType%></td>
+                              <td>
+                                <select class="pt_roomnumber form-control">
+                                  <% if (pendingTransactions[i].RoomMultiplier == "Single Room") { %>
+                                    <option>101</option>
+                                    <option>102</option>
+                                    <option>103</option>
+                                    <option>104</option>
+                                    <option>105</option>
+                                  <% } else if(pendingTransactions[i].RoomMultiplier == "Double Room") { %>
+                                    <option>201</option>
+                                    <option>202</option>
+                                    <option>203</option>
+                                    <option>204</option>
+                                    <option>205</option>
+                                  <% } else if(pendingTransactions[i].RoomMultiplier == "Triple Room") { %>
+                                    <option>301</option>
+                                    <option>302</option>
+                                    <option>303</option>
+                                    <option>304</option>
+                                    <option>305</option>
+                                  <% } else if(pendingTransactions[i].RoomMultiplier == "Quad Room") { %>
+                                    <option>401</option>
+                                    <option>402</option>
+                                    <option>403</option>
+                                    <option>404</option>
+                                    <option>405</option>
+                                  <% } else if(pendingTransactions[i].RoomMultiplier == "Queen Room") { %>
+                                    <option>501</option>
+                                    <option>502</option>
+                                    <option>503</option>
+                                    <option>504</option>
+                                    <option>505</option>
+                                  <% } else if(pendingTransactions[i].RoomMultiplier == "King Room") { %>
+                                    <option>601</option>
+                                    <option>602</option>
+                                    <option>603</option>
+                                    <option>604</option>
+                                    <option>605</option>
+                                  <%}%>
+                                </select>
+                              </td>
+                              <td class="d-flex justify-content-center px-0">
+                                <button type="button" class="confirm_btn btn btn-secondary btn-sm mx-2">Confirm</button>
+                                <button type="button" class="reject_btn btn btn-secondary btn-sm mx-2">Reject</button>
+                              </td>
+                            </tr>
+                          <%}%>
+                        </tbody>
+                      </table>
+                </div>
+                <form onsubmit="return false;" class="tab-pane fade" id="nav-discounts" role="tabpanel" aria-labelledby="nav-discounts-tab">
+                  <p class="date_filter mb-4">Add Discount Rates</p>
+                  <div class="col-sm-3 mx-auto book_form_label">
+                    <div class="form-group">
+                      <label for="discount_room" id="label_room">ROOM TYPE</label>
+                      <select class="form-control" style="margin-bottom: 5px;" id="discount_room" required>
+                        <option value="" hidden></option>
+                        <option value="Single">Single Room</option>
+                        <option value="Double">Double Room</option>
+                        <option value="Triple">Triple Room</option>
+                        <option value="Quad">Quad Room</option>
+                        <option value="Queen">Queen Room</option>
+                        <option value="King">King Room</option>
+                      </select>
+                      <label for="discount" class="discount mt-3">DISCOUNT (in %)</label>
+                      <input type="number" class="form-control" id="discount" name="discount" min="0" max="100" required disabled>
+                    </div>
+                  </div>
+                  <div class="apply_filter">
+                    <button type="submit"  style="border-radius: 20px;" id="btn_discount" class="btn btn-secondary btn-sm mt-3 px-3">Apply Discount</button>
+                  </div>
+                  <br>
+                </form>
+              </div>
+        </div>
+            </div>
+        
+        <%- include('./partials/footer.ejs') %>
+
+        
+    </div>
+
+    <!-- ROOMS APPLY FILTER-> MODAL/POPUP HERE -->
+    <div class="modal fade modal_success" id="filter_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" data-backdrop="false">
+      <div class="modal-dialog modal-dialog-centered" style="width: 300px;" role="document">
+          <div class="modal-content border-0 px-3 pb-2">
+              <div class="modal-header">
+                <h5 class="modal-title my-auto mr-5" id="data_modal_text">Filter applied!</h5>
+                </div>
+                <div class="modal-footer py-3">
+                <span class="btn_close_success my-0">
+                    <button id="ok_btn" class="btn btn_booknow my-0" style="border-radius: 20px;" data-dismiss="modal">OK</button>
+                </span>
+              </div>
+          </div>
+      </div>
+    </div>
+
+    <!-- RESERVATION CONFIRM/REJECT SUCCESS -> MODAL/POPUP HERE -->
+    <div class="modal fade modal_success" id="reservation_update_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" data-backdrop="false">
+      <div class="modal-dialog modal-dialog-centered" style="width: 300px;" role="document">
+          <div class="modal-content border-0 px-3 pb-2">
+              <div class="modal-header">
+                <h5 class="modal-title my-auto mr-5" id="data_modal_text">Booking updated!</h5>
+                </div>
+                <div class="modal-footer">
+                <span class="btn_close_success my-0">
+                    <button id="ok_btn" class="btn btn_booknow my-0" style="border-radius: 20px;"  data-dismiss="modal">OK</button>
+                </span>
+              </div>
+          </div>
+      </div>
+    </div>
+    
+    <!-- RESERVATION CONFIRM/REJECT FAIL -> MODAL/POPUP HERE -->
+    <div class="modal fade modal_success" id="reservation_update_modal_fail" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" data-backdrop="false">
+      <div class="modal-dialog modal-dialog-centered" style="width: 300px;" role="document">
+          <div class="modal-content border-0 px-3 pb-2">
+              <div class="modal-header">
+                <h5 class="modal-title my-auto mr-5" id="data_modal_text">Booking update failed! Room is occupied!</h5>
+                </div>
+                <div class="modal-footer">
+                <span class="btn_close_success my-0">
+                    <button id="ok_btn" class="btn btn_booknow my-0" style="border-radius: 20px;" data-dismiss="modal">OK</button>
+                </span>
+              </div>
+          </div>
+      </div>
+    </div>
+    
+     <!-- APPLY DISCOUNT -> MODAL/POPUP HERE -->
+     <div class="modal fade modal_success" id="discount_update_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" data-backdrop="false">
+      <div class="modal-dialog modal-dialog-centered" style="width: 300px;" role="document">
+          <div class="modal-content border-0 px-3 pb-2">
+              <div class="modal-header">
+                <h5 class="modal-title my-auto mr-5" id="data_modal_text">Price updated!</h5>
+                </div>
+                <div class="modal-footer">
+                <span class="btn_close_success my-0">
+                    <button id="ok_btn" class="btn btn_booknow my-0" style="border-radius: 20px;" data-dismiss="modal">OK</button>
+                </span>
+              </div>
+          </div>
+      </div>
+    </div>
+    <%- include('./partials/account_popup.ejs') %>
+
+        <script>
+            var dates = [];
+            let checkindatepicker, checkoutdatepicker;
+            checkoutdatepicker = $('#checkout').datepicker({
+                uiLibrary: 'bootstrap4',
+                format: 'mm-dd-yyyy',
+                todayHighlight: true
+            });
+
+            checkindatepicker = $('#checkin').datepicker({
+                uiLibrary: 'bootstrap4',
+                format: 'mm-dd-yyyy',
+                todayHighlight: true
+            }).on("change", function(){
+                checkoutdatepicker.datepicker('destroy');
+                let tempDate = new Date($(this).val());
+                tempDate.setDate(tempDate.getDate() + 1);
+                checkoutdatepicker.datepicker({
+                    uiLibrary: 'bootstrap4',
+                    format: 'mm-dd-yyyy',
+                    minDate: tempDate,
+                    todayHighlight: true
+              });
+            });
+            $('#roomfilter').datepicker({
+              uiLibrary: 'bootstrap4',
+              format: 'mm-dd-yyyy',
+              todayHighlight: true,
+            });
+
+            $('#status').on("change", function(){
+              checkindatepicker.datepicker('destroy');
+              checkoutdatepicker.datepicker('destroy');
+              checkindatepicker.datepicker({
+                uiLibrary: 'bootstrap4',
+                format: 'mm-dd-yyyy',
+                todayHighlight: true
+              }).on("change", function(){
+                checkoutdatepicker.datepicker('destroy');
+                let tempDate = new Date($(this).val());
+                tempDate.setDate(tempDate.getDate() + 1);
+                checkoutdatepicker.datepicker({
+                    uiLibrary: 'bootstrap4',
+                    format: 'mm-dd-yyyy',
+                    minDate: tempDate,
+                    todayHighlight: true
+              });
+            });
+            checkoutdatepicker.datepicker({
+                uiLibrary: 'bootstrap4',
+                format: 'mm-dd-yyyy',
+                todayHighlight: true
+              });
+            });
+        </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script type="text/javascript">
+            function toggle(){
+                var blur = document.getElementById('blur');
+                blur.classList.toggle('active');
+                var popup = document.getElementById('popup');
+                popup.classList.toggle('active');
+
+                $("#form_login").show();
+                $("#form_createaccount").hide();
+                $("#login_error").hide();
+                $("#register_error").hide();
+            }
+            function create_acc() {
+                $("#form_login").hide();
+                $("#form_createaccount").show();
+                $("#register_error").hide();
+            }
+            function login() {
+                $("#form_login").show();
+                $("#form_createaccount").hide();
+                $("#login_error").hide();
+            }
+            function filterRooms(){
+              var selectedDate = $('#roomfilter').val();
+              var roomType = $('#room').val();
+              var multiplier;
+              if(roomType == "Single Room"){
+                updateRoomNum(100);
+                updateRoomType("Single Room");
+                multiplier = 100;
+              }
+              else if(roomType == "Double Room"){
+                updateRoomNum(200);
+                updateRoomType("Double Room");
+                multiplier = 200;
+              }
+              else if(roomType == "Triple Room"){
+                updateRoomNum(300);
+                updateRoomType("Triple Room");
+                multiplier = 300;
+              }
+              else if(roomType == "Quad Room"){
+                updateRoomNum(400);
+                updateRoomType("Quad Room");
+                multiplier = 400;
+              }
+              else if(roomType == "Queen Room"){
+                updateRoomNum(500);
+                updateRoomType("Queen Room");
+                multiplier = 500;
+              }
+              else if(roomType == "King Room"){
+                updateRoomNum(600);
+                updateRoomType("King Room");
+                multiplier = 600;
+              }
+              $.get('filter-occupied-rooms', {selectedDate, roomType, multiplier}, function(result){
+                $('#stat1').text(result.rooms.room1);
+                $('#stat2').text(result.rooms.room2);
+                $('#stat3').text(result.rooms.room3);
+                $('#stat4').text(result.rooms.room4);
+                $('#stat5').text(result.rooms.room5);
+                $('#name1').text(result.names.name1);
+                $('#name2').text(result.names.name2);
+                $('#name3').text(result.names.name3);
+                $('#name4').text(result.names.name4);
+                $('#name5').text(result.names.name5);
+                $('#filter_modal').modal('show')
+              });
+            }
+
+            function filterReservations(){
+              var checkin = $('#checkin').val();
+              var checkout = $('#checkout').val();
+              var status = $('#status').val();
+              var html;
+              $.get('filter-reservations', {checkin, checkout, status}, function(result){
+                $('#tbody').empty();
+                for(let i = 0; i < result.length; i++){
+                  if(status == "Pending"){
+                    html = "<tr id=\"" + result[i]._id + "\"> <td id=\"pt_name\">" + result[i].Fullname + "</td> <td id=\"pt_checkin\">" + result[i].Checkin +
+                    "</td> <td id=\"pt_checkout\">" + result[i].Checkout + "</td> <td id=\"pt_roomtype\">" + result[i].RoomType + "</td> <td> <select class=\"pt_roomnumber form-control\">"
+                      + getRoomNumber(result[i].RoomMultiplier) + "</select> </td> <td> <button type=\"button\" class=\"confirm_btn btn btn-secondary btn-sm mx-2\"> Confirm </button>"
+                      + "<button type=\"button\" class=\"reject_btn btn btn-secondary btn-sm mx-2\"> Reject </button> </td> </tr>"
+                      $('#tbody').append(html);
+
+                      $('.confirm_btn').click(function() {
+
+                        let _id = $(this).closest('tr').attr('id')
+                        let row = $(this).closest('tr')
+                        let roomnumber = row.find("td:eq(4) select").val()
+                        let roomtype = row.find("td:eq(3)").text()
+                        let checkin = row.find("td:eq(1)").text()
+                        let checkout = row.find("td:eq(2)").text()
+
+                        $.post('confirm-booking-room', {id: _id, roomNumber: roomnumber, roomType: roomtype, checkin: checkin, checkout: checkout}, function(result) {
+                            if (result == 'success') {
+                                console.log('update success')
+                                row.remove()
+                                $('#reservation_update_modal').modal('show')
+                            }
+                        })
+                      })
+
+                      $('.reject_btn').click(function() {
+
+                        let _id = $(this).closest('tr').attr('id')
+                        let row = $(this).closest('tr')
+                        let roomtype = row.find("td:eq(3)").text()
+                        let checkin = row.find("td:eq(1)").text()
+                        let checkout = row.find("td:eq(2)").text()
+
+                        $.post('reject-booking-room', {id: _id, roomType: roomtype, checkin: checkin, checkout: checkout}, function(result) {
+                            if (result == 'success') {
+                                console.log('update success')
+                                row.remove()
+                                $('#reservation_update_modal').modal('show')
+                            }
+                        })
+                      })
+                  }
+                  else if(status == "Confirmed"){
+                    html = "<tr id=\"" + result[i]._id + "\"> <td id=\"pt_name\">" + result[i].Fullname + "</td> <td id=\"pt_checkin\">" + result[i].Checkin +
+                    "</td> <td id=\"pt_checkout\">" + result[i].Checkout + "</td> <td id=\"pt_roomtype\">" + result[i].RoomType + "</td> <td> "+ result[i].RoomNumber + "</td> </tr>"
+                      $('#tbody').append(html);
+                  }
+                  else if(status == "Cancelled"){
+                    html = "<tr id=\"" + result[i]._id + "\"> <td id=\"pt_name\">" + result[i].Fullname + "</td> <td id=\"pt_checkin\">" + result[i].Checkin +
+                    "</td> <td id=\"pt_checkout\">" + result[i].Checkout + "</td> <td id=\"pt_roomtype\">" + result[i].RoomType + "</td> <td> Not assigned</td> </tr>"
+                      $('#tbody').append(html);
+                  }
+                }
+              });
+              $('#filter_modal').modal('show')
+            }
+
+            function updateRoomNum(multiplier){
+              $('#rn1').text(multiplier + 1);
+              $('#rn2').text(multiplier + 2);
+              $('#rn3').text(multiplier + 3);
+              $('#rn4').text(multiplier + 4);
+              $('#rn5').text(multiplier + 5);
+            }
+
+            function updateRoomType(roomType){
+              $('#rt1').text(roomType);
+              $('#rt2').text(roomType);
+              $('#rt3').text(roomType);
+              $('#rt4').text(roomType);
+              $('#rt5').text(roomType);
+            }
+
+            function getRoomNumber(roomType){
+              if(roomType == "Single Room"){
+                return "<option>101</option> <option>102</option> <option>103</option> <option>104</option> <option>105</option>"
+              }
+              else if(roomType == "Double Room"){
+                return "<option>201</option> <option>202</option> <option>203</option> <option>204</option> <option>205</option>"
+              }
+              else if(roomType == "Triple Room"){
+                return "<option>301</option> <option>302</option> <option>303</option> <option>304</option> <option>305</option>"
+              }
+              else if(roomType == "Quad Room"){
+                return "<option>401</option> <option>402</option> <option>403</option> <option>404</option> <option>405</option>"
+              }
+              else if(roomType == "Queen Room"){
+                return "<option>501</option> <option>502</option> <option>503</option> <option>504</option> <option>505</option>"
+              }
+              else if(roomType == "King Room"){
+                return "<option>601</option> <option>602</option> <option>603</option> <option>604</option> <option>605</option>"
+              }
+            }
+        </script>
+    </body>
+</html>

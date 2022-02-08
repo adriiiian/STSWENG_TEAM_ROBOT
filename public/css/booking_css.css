@@ -1,0 +1,96 @@
+label{
+    font-size: 14px;
+    font-weight: 500;
+    color:#4e4e4e;
+}
+
+
+
+.btn_book a{
+    text-align: center;
+    height: max-content;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #DCA73A;
+    color: white;
+    border-radius: 20px;
+    width: max-content;
+}
+
+.btn_book a:hover {
+    color: white;
+    transform: scale(1.05);
+    transition: 0.2s;
+}
+
+input[name=num]::-webkit-outer-spin-button,
+input[name=num]::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {  
+
+   opacity: 1;
+
+}
+.book_price {
+    margin-left: 80px;
+    margin-bottom: 50px;
+}
+
+.d-flex {
+    color:#4e4e4e;
+}
+  
+.datepicker table tr td.disabled, 
+.datepicker table tr td.disabled:hover {
+    background: #c2c2c2;
+    color: rgb(0, 0, 0);
+  }
+  
+.breakdown_con{
+    background-color: white;
+    font-size: 14px;
+    color: #4e4e4e;
+}
+
+.total_price_room, .total_price_guests{
+    border-top: 2px solid lightgrey;
+}
+
+.total_price{
+    font-size: 17px;
+}
+
+.modal-open .container_whole{
+    filter: blur(20px);
+    background-color: none;
+}
+
+.modal-content{
+    border-radius: 20px !important;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, .30);
+}
+
+.btn_close_success a{
+    text-align: center;
+    height: max-content;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #DCA73A;
+    color: white;
+    border-radius: 20px;
+    max-width: max-content;
+    min-width: 50px;
+}
+
+
+.btn_close_success a:hover{
+    color: white;
+    transform: scale(1.2);
+    transition: 0.2s;
+}
