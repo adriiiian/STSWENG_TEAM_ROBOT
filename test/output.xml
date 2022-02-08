@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.3 (Python 3.10.0 on win32)" generated="20220208 22:25:27.143" rpa="false" schemaversion="2">
+<suite id="s1" name="Test" source="C:\Users\Giancarlo Tee\Documents\GitHub\STSWENG_TEAM_ROBOT\test">
+<suite id="s1-s1" name="1-Register" source="C:\Users\Giancarlo Tee\Documents\GitHub\STSWENG_TEAM_ROBOT\test\1-register.robot">
+<test id="s1-s1-t1" name="Valid Account Registration but with inputs of an already existing account">
+<kw name="Open Login Page">
+<kw name="Open Browser" library="Selenium2Library">
+<arg>http://localhost:3000</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220208 22:25:27.355" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000'.</msg>
+<status status="PASS" starttime="20220208 22:25:27.354" endtime="20220208 22:25:32.809"/>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220208 22:25:32.810" endtime="20220208 22:25:32.936"/>
+</kw>
+<kw name="Set Browser Implicit Wait" library="Selenium2Library">
+<arg>5</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220208 22:25:32.936" endtime="20220208 22:25:32.937"/>
+</kw>
+<status status="PASS" starttime="20220208 22:25:27.354" endtime="20220208 22:25:32.938"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>id:logged-out-nav</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220208 22:25:32.938" level="INFO">Clicking element 'id:logged-out-nav'.</msg>
+<msg timestamp="20220208 22:25:38.530" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220208 22:25:38.535" level="FAIL">Element with locator 'id:logged-out-nav' not found.</msg>
+<status status="FAIL" starttime="20220208 22:25:32.938" endtime="20220208 22:25:38.535"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>id:create_acc</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220208 22:25:38.536" endtime="20220208 22:25:38.536"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>id:InputUsername</arg>
+<arg>Teban</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220208 22:25:38.537" endtime="20220208 22:25:38.537"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>id:InputEmail_createacc</arg>
+<arg>teban@gmail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220208 22:25:38.537" endtime="20220208 22:25:38.537"/>
+</kw>
+<kw name="Input Password" library="Selenium2Library">
+<arg>id:InputPassword_createacc</arg>
+<arg>password</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220208 22:25:38.537" endtime="20220208 22:25:38.538"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>css:.btn_register</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220208 22:25:38.538" endtime="20220208 22:25:38.538"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Credentials Entered</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20220208 22:25:38.539" endtime="20220208 22:25:38.539"/>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<arg>Email is already registered</arg>
+<arg>INFO</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="NOT RUN" starttime="20220208 22:25:38.540" endtime="20220208 22:25:38.540"/>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<arg>LOG IN</arg>
+<arg>INFO</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="NOT RUN" starttime="20220208 22:25:38.540" endtime="20220208 22:25:38.541"/>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<arg>CREATE AN ACCOUNT</arg>
+<arg>INFO</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="NOT RUN" starttime="20220208 22:25:38.541" endtime="20220208 22:25:38.541"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Webpage Checked</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20220208 22:25:38.541" endtime="20220208 22:25:38.541"/>
+</kw>
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" starttime="20220208 22:25:38.541" endtime="20220208 22:25:38.541"/>
+</kw>
+<doc>US#1 Test Case #2</doc>
+<status status="FAIL" starttime="20220208 22:25:27.353" endtime="20220208 22:25:38.542">Element with locator 'id:logged-out-nav' not found.</status>
+</test>
+<test id="s1-s1-t2" name="Invalid Account Registration due to invalid email address 1">
+<kw name="Open Login Page">
+<kw name="Open Browser" library="Selenium2Library">
+<arg>http://localhost:3000</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220208 22:25:38.545" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000'.</msg>
+<status status="PASS" starttime="20220208 22:25:38.545" endtime="20220208 22:25:42.850"/>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220208 22:25:42.850" endtime="20220208 22:25:42.981"/>
+</kw>
+<kw name="Set Browser Implicit Wait" library="Selenium2Library">
+<arg>5</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220208 22:25:42.981" endtime="20220208 22:25:42.984"/>
+</kw>
+<status status="PASS" starttime="20220208 22:25:38.544" endtime="20220208 22:25:42.984"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>id:logged-out-nav</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220208 22:25:42.984" level="INFO">Clicking element 'id:logged-out-nav'.</msg>
+<msg timestamp="20220208 22:25:48.551" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220208 22:25:48.551" level="FAIL">Element with locator 'id:logged-out-nav' not found.</msg>
+<status status="FAIL" starttime="20220208 22:25:42.984" endtime="20220208 22:25:48.552"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>id:create_acc</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220208 22:25:48.552" endtime="20220208 22:25:48.552"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>id:InputUsername</arg>
+<arg>Teban</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220208 22:25:48.553" endtime="20220208 22:25:48.553"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>id:InputEmail_createacc</arg>
+<arg>invalidemail</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220208 22:25:48.553" endtime="20220208 22:25:48.553"/>
+</kw>
+<kw name="Input Password" library="Selenium2Library">
+<arg>id:InputPassword_createacc</arg>
+<arg>password</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220208 22:25:48.553" endtime="20220208 22:25:48.553"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>css:.btn_register</arg>
+<doc>Click the element identified by ``locator``.</doc>
