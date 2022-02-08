@@ -4,7 +4,7 @@ const functions = {
         let isPasswordValid = true
         let isUsernameValid = true
         var result = 'register information is not valid'
-        if(!Email.includes('@') || Email.startsWith('@') || Email.endsWith('@') || Email == "" || !Email.includes('robotel@email.com') || !Email.includes('@robotel.com')) {
+        if(!Email.includes('@') || Email.startsWith('@') || Email.endsWith('@') || Email == "" || Email.includes('robotel@email.com') || Email.includes('@robotel.com')) {
             isEmailValid = false
         }
     
