@@ -119,4 +119,10 @@
 #btn-back {
     color: white;
     background-color: #DCA73A;
+    float: right;
+    margin-right: 90px;
+}
+
+.viewrooms_details{
+    color: #4e4e4e;
 }

@@ -46,12 +46,22 @@
             
             <div class="container-fluid py-5">
                 <div class="container">
-                    <a href="transactions" type="button" class="btn btn-outline-warning btn-sm" id="btn-back">Back to Transactions</a>
                     <div class="row p-5" >
                         <div class="col-sm-6">
                             <div class="viewtransactions_header">
                                 <%-booking.RoomType%>
                             </div>
+                                <div class="viewrooms_details">
+                                    <div style="font-weight: 500;">DETAILS:</div>
+                                    <ul>
+                                            <li>Separate toilet</li>
+                                            <li>Flatscreen</li>
+                                            <li>Wifi</li>
+                                            <li>1x Single-size bed</li>
+                                            <li>No. of guests allowed: 1</li>
+                                            <li>No. of additional guests allowed: 1</li>
+                                    </ul>
+                                </div>
                         </div>
                         <div class="col-sm-3">
                             <div class="my-2">
@@ -113,6 +123,7 @@
                         </div>
                     </div>
                 </div>
+                <a href="transactions" type="button" class="btn btn-outline-warning btn-sm" id="btn-back">Back to Transactions</a>
             </div>
             
         </div>
