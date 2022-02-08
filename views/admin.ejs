@@ -60,7 +60,7 @@
                     DATE
                     <input id="roomfilter"  class="form-control" readonly="readonly" value=<%-currDate%> />
                     <div class="form-group">
-                      <label class="mt-4" for="room" id="label_room">ROOM TYPE</label>
+                      <label class="mt-3" for="room" id="label_room">ROOM TYPE</label>
                       <select class="form-control" id="room" required>
                         <option>Single Room</option>
                         <option>Double Room</option>
@@ -76,7 +76,7 @@
                     </div>
                   </div>
                   <div class="apply_filter">
-                    <button type="button" id="btn_filter" class="btn btn-secondary btn-sm mt-1 mb-3" onclick="filterRooms()">Apply Filter</button>
+                    <button type="button" id="btn_filter" style="border-radius: 20px;" class="btn btn-secondary btn-sm mt-3 mb-4 px-3" onclick="filterRooms()">Apply Filter</button>
                   </div>
                   <br>
                     <table class="table">
@@ -128,12 +128,12 @@
                     CHECK IN
                     <input id="checkin" readonly/>
                 </div>
-                <div class="col-sm-3 mx-auto mt-2 book_form_label">
+                <div class="col-sm-3 mx-auto mt-3 book_form_label">
                     CHECK OUT
                     <input id="checkout" readonly/>
                 </div>
                 <div class="col-sm-3 mx-auto book_form_label">
-                  <label class="mt-4" for="status" id="label_status">STATUS</label>
+                  <label class="mt-3" for="status" id="label_status">STATUS</label>
                   <select class="form-control" id="status" required>
                     <option>Pending</option>
                     <option>Confirmed</option>
@@ -142,7 +142,7 @@
                 </div>
                 <br>
                 <div class="apply_filter">
-                  <button type="button" class="btn btn-secondary btn-sm mb-3" onclick="filterReservations();">Apply Filter</button>
+                  <button type="button" style="border-radius: 20px;" class="btn btn-secondary btn-sm mb-4 mt-2 px-3" onclick="filterReservations();">Apply Filter</button>
                 </div>
                 <br>
                     <table class="table">
@@ -232,7 +232,7 @@
                     </div>
                   </div>
                   <div class="apply_filter">
-                    <button type="submit" id="btn_discount" class="btn btn-secondary btn-sm mt-2">Apply Discount</button>
+                    <button type="submit"  style="border-radius: 20px;" id="btn_discount" class="btn btn-secondary btn-sm mt-3 px-3">Apply Discount</button>
                   </div>
                   <br>
                 </form>
@@ -254,7 +254,7 @@
                 </div>
                 <div class="modal-footer py-3">
                 <span class="btn_close_success my-0">
-                    <button id="ok_btn" class="btn btn_booknow my-0" data-dismiss="modal">OK</button>
+                    <button id="ok_btn" class="btn btn_booknow my-0" style="border-radius: 20px;" data-dismiss="modal">OK</button>
                 </span>
               </div>
           </div>
@@ -269,8 +269,8 @@
                 <h5 class="modal-title my-auto mr-5" id="data_modal_text">Booking updated!</h5>
                 </div>
                 <div class="modal-footer">
-                <span class="btn_close_success">
-                    <button id="ok_btn" class="btn btn_booknow" data-dismiss="modal">OK</button>
+                <span class="btn_close_success my-0">
+                    <button id="ok_btn" class="btn btn_booknow my-0" style="border-radius: 20px;"  data-dismiss="modal">OK</button>
                 </span>
               </div>
           </div>
@@ -285,8 +285,8 @@
                 <h5 class="modal-title my-auto mr-5" id="data_modal_text">Booking update failed! Room is occupied!</h5>
                 </div>
                 <div class="modal-footer">
-                <span class="btn_close_success">
-                    <button id="ok_btn" class="btn btn_booknow" data-dismiss="modal">OK</button>
+                <span class="btn_close_success my-0">
+                    <button id="ok_btn" class="btn btn_booknow my-0" style="border-radius: 20px;" data-dismiss="modal">OK</button>
                 </span>
               </div>
           </div>
@@ -301,8 +301,8 @@
                 <h5 class="modal-title my-auto mr-5" id="data_modal_text">Price updated!</h5>
                 </div>
                 <div class="modal-footer">
-                <span class="btn_close_success">
-                    <button id="ok_btn" class="btn btn_booknow" data-dismiss="modal">OK</button>
+                <span class="btn_close_success my-0">
+                    <button id="ok_btn" class="btn btn_booknow my-0" style="border-radius: 20px;" data-dismiss="modal">OK</button>
                 </span>
               </div>
           </div>
