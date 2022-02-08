@@ -175,7 +175,7 @@ Booking with empty fields
     [Documentation]               US#3 Test Case #7
     Open Login Page
     Click Element                 css:.btn_booknow
-
+    sleep                         2s
     Click Button                  id:submit_btn
     Log                           Booking Submitted
 
@@ -230,11 +230,11 @@ Booking Double Room with more than 3 guests
     Execute Javascript          document.querySelector("#checkin").removeAttribute("readonly");
     Execute Javascript          document.querySelector("#checkin").removeAttribute("onchange");
     Input Text                    id:checkin                                    ${1st_Date}
-    Execute Javascript          document.querySelector("#checkin").setAttribute("readonly", "readonly");
+    #Execute Javascript          document.querySelector("#checkin").setAttribute("readonly", "readonly");
     Execute Javascript          document.querySelector("#checkout").removeAttribute("readonly");
     Execute Javascript          document.querySelector("#checkout").removeAttribute("onchange");
     Input Text                    id:checkout                                   ${2nd_Date}
-    Execute Javascript          document.querySelector("#checkout").setAttribute("readonly", "readonly");
+    #Execute Javascript          document.querySelector("#checkout").setAttribute("readonly", "readonly");
 
 
     Click Button                  id:submit_btn
@@ -261,11 +261,11 @@ Booking Triple Room with more than 4 guests
     Execute Javascript          document.querySelector("#checkin").removeAttribute("readonly");
     Execute Javascript          document.querySelector("#checkin").removeAttribute("onchange");
     Input Text                    id:checkin                                    ${1st_Date}
-    Execute Javascript          document.querySelector("#checkin").setAttribute("readonly", "readonly");
+    #Execute Javascript          document.querySelector("#checkin").setAttribute("readonly", "readonly");
     Execute Javascript          document.querySelector("#checkout").removeAttribute("readonly");
     Execute Javascript          document.querySelector("#checkout").removeAttribute("onchange");
     Input Text                    id:checkout                                   ${2nd_Date}
-    Execute Javascript          document.querySelector("#checkout").setAttribute("readonly", "readonly");
+    #Execute Javascript          document.querySelector("#checkout").setAttribute("readonly", "readonly");
 
 
     Click Button                  id:submit_btn
@@ -292,11 +292,11 @@ Booking Quad Room with more than 5 guests
     Execute Javascript          document.querySelector("#checkin").removeAttribute("readonly");
     Execute Javascript          document.querySelector("#checkin").removeAttribute("onchange");
     Input Text                    id:checkin                                    ${1st_Date}
-    Execute Javascript          document.querySelector("#checkin").setAttribute("readonly", "readonly");
+    #Execute Javascript          document.querySelector("#checkin").setAttribute("readonly", "readonly");
     Execute Javascript          document.querySelector("#checkout").removeAttribute("readonly");
     Execute Javascript          document.querySelector("#checkout").removeAttribute("onchange");
     Input Text                    id:checkout                                   ${2nd_Date}
-    Execute Javascript          document.querySelector("#checkout").setAttribute("readonly", "readonly");
+    #Execute Javascript          document.querySelector("#checkout").setAttribute("readonly", "readonly");
 
 
     Click Button                  id:submit_btn
@@ -323,11 +323,11 @@ Booking King Room with more than 5 guests
     Execute Javascript          document.querySelector("#checkin").removeAttribute("readonly");
     Execute Javascript          document.querySelector("#checkin").removeAttribute("onchange");
     Input Text                    id:checkin                                    ${1st_Date}
-    Execute Javascript          document.querySelector("#checkin").setAttribute("readonly", "readonly");
+    #Execute Javascript          document.querySelector("#checkin").setAttribute("readonly", "readonly");
     Execute Javascript          document.querySelector("#checkout").removeAttribute("readonly");
     Execute Javascript          document.querySelector("#checkout").removeAttribute("onchange");
     Input Text                    id:checkout                                   ${2nd_Date}
-    Execute Javascript          document.querySelector("#checkout").setAttribute("readonly", "readonly");
+    #Execute Javascript          document.querySelector("#checkout").setAttribute("readonly", "readonly");
 
     Click Button                  id:submit_btn
     Log                           Booking Submitted
@@ -353,11 +353,11 @@ Booking Queen Room with more than 5 guests
     Execute Javascript          document.querySelector("#checkin").removeAttribute("readonly");
     Execute Javascript          document.querySelector("#checkin").removeAttribute("onchange");
     Input Text                    id:checkin                                    ${1st_Date}
-    Execute Javascript          document.querySelector("#checkin").setAttribute("readonly", "readonly");
+    #Execute Javascript          document.querySelector("#checkin").setAttribute("readonly", "readonly");
     Execute Javascript          document.querySelector("#checkout").removeAttribute("readonly");
     Execute Javascript          document.querySelector("#checkout").removeAttribute("onchange");
     Input Text                    id:checkout                                   ${2nd_Date}
-    Execute Javascript          document.querySelector("#checkout").setAttribute("readonly", "readonly");
+   # Execute Javascript          document.querySelector("#checkout").setAttribute("readonly", "readonly");
 
 
     Click Button                  id:submit_btn

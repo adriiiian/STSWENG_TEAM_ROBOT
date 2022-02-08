@@ -1,536 +1,2536 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1.2 (Python 3.9.0 on win32)" generated="20220130 16:46:35.931" rpa="false" schemaversion="2">
-<suite id="s1" name="Login" source="E:\User\Documents\Github\STSWENG_TEAM_ROBOT\test\login.robot">
-<test id="s1-t1" name="Valid Account Login">
+<robot generator="Robot 4.1.3 (Python 3.10.0 on win32)" generated="20220208 17:51:41.796" rpa="false" schemaversion="2">
+<suite id="s1" name="Booking" source="C:\Users\Giancarlo Tee\Documents\GitHub\STSWENG_TEAM_ROBOT\test\booking.robot">
+<test id="s1-t1" name="Booking is successful">
 <kw name="Open Login Page">
-<kw name="Open Browser" library="Selenium2Library">
+<kw name="Open Browser" library="SeleniumLibrary">
 <arg>http://localhost:3000</arg>
 <arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20220130 16:46:36.166" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000'.</msg>
-<status status="PASS" starttime="20220130 16:46:36.165" endtime="20220130 16:46:39.035"/>
+<msg timestamp="20220208 17:51:42.035" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000'.</msg>
+<status status="PASS" starttime="20220208 17:51:42.035" endtime="20220208 17:51:44.994"/>
 </kw>
-<kw name="Maximize Browser Window" library="Selenium2Library">
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20220130 16:46:39.035" endtime="20220130 16:46:39.157"/>
+<status status="PASS" starttime="20220208 17:51:44.994" endtime="20220208 17:51:45.114"/>
 </kw>
-<kw name="Set Browser Implicit Wait" library="Selenium2Library">
+<kw name="Set Browser Implicit Wait" library="SeleniumLibrary">
 <arg>5</arg>
 <doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20220130 16:46:39.157" endtime="20220130 16:46:39.160"/>
+<status status="PASS" starttime="20220208 17:51:45.114" endtime="20220208 17:51:45.115"/>
 </kw>
-<status status="PASS" starttime="20220130 16:46:36.165" endtime="20220130 16:46:39.160"/>
+<status status="PASS" starttime="20220208 17:51:42.034" endtime="20220208 17:51:45.115"/>
 </kw>
-<kw name="Click Element" library="Selenium2Library">
+<kw name="Login">
+<kw name="Click Element" library="SeleniumLibrary">
 <arg>css:.btn_booknow</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220130 16:46:39.161" level="INFO">Clicking element 'css:.btn_booknow'.</msg>
-<status status="PASS" starttime="20220130 16:46:39.161" endtime="20220130 16:46:39.260"/>
+<msg timestamp="20220208 17:51:45.117" level="INFO">Clicking element 'css:.btn_booknow'.</msg>
+<status status="PASS" starttime="20220208 17:51:45.116" endtime="20220208 17:51:45.168"/>
 </kw>
-<kw name="Input Text" library="Selenium2Library">
+<kw name="Input Text" library="SeleniumLibrary">
 <arg>id:InputEmail_login</arg>
 <arg>steven_castro@dlsu.edu.ph</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220130 16:46:39.261" level="INFO">Typing text 'steven_castro@dlsu.edu.ph' into text field 'id:InputEmail_login'.</msg>
-<status status="PASS" starttime="20220130 16:46:39.261" endtime="20220130 16:46:39.849"/>
+<msg timestamp="20220208 17:51:45.168" level="INFO">Typing text 'steven_castro@dlsu.edu.ph' into text field 'id:InputEmail_login'.</msg>
+<status status="PASS" starttime="20220208 17:51:45.168" endtime="20220208 17:51:45.277"/>
 </kw>
-<kw name="Input Password" library="Selenium2Library">
+<kw name="Input Password" library="SeleniumLibrary">
 <arg>id:InputPassword_login</arg>
 <arg>password</arg>
 <doc>Types the given password into the text field identified by ``locator``.</doc>
-<msg timestamp="20220130 16:46:39.850" level="INFO">Typing password into text field 'id:InputPassword_login'.</msg>
-<msg timestamp="20220130 16:46:39.887" level="INFO">Temporally setting log level to: NONE</msg>
-<msg timestamp="20220130 16:46:39.932" level="INFO">Log level changed from NONE to INFO.</msg>
-<status status="PASS" starttime="20220130 16:46:39.850" endtime="20220130 16:46:39.932"/>
+<msg timestamp="20220208 17:51:45.278" level="INFO">Typing password into text field 'id:InputPassword_login'.</msg>
+<msg timestamp="20220208 17:51:45.320" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20220208 17:51:45.371" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20220208 17:51:45.278" endtime="20220208 17:51:45.371"/>
 </kw>
-<kw name="Click Button" library="Selenium2Library">
+<kw name="Click Button" library="SeleniumLibrary">
 <arg>id:login_btn</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20220130 16:46:39.932" level="INFO">Clicking button 'id:login_btn'.</msg>
-<status status="PASS" starttime="20220130 16:46:39.932" endtime="20220130 16:46:39.989"/>
+<msg timestamp="20220208 17:51:45.372" level="INFO">Clicking button 'id:login_btn'.</msg>
+<status status="PASS" starttime="20220208 17:51:45.371" endtime="20220208 17:51:45.441"/>
 </kw>
-<kw name="Log" library="BuiltIn">
-<arg>Credentials Entered</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20220130 16:46:39.989" level="INFO">Credentials Entered</msg>
-<status status="PASS" starttime="20220130 16:46:39.989" endtime="20220130 16:46:39.990"/>
+<status status="PASS" starttime="20220208 17:51:45.116" endtime="20220208 17:51:45.441"/>
 </kw>
-<kw name="Page Should Contain" library="Selenium2Library">
-<arg>ACCOUNT</arg>
-<arg>INFO</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<msg timestamp="20220130 16:46:40.010" level="INFO">Current page contains text 'ACCOUNT'.</msg>
-<status status="PASS" starttime="20220130 16:46:39.990" endtime="20220130 16:46:40.010"/>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220208 17:51:47.446" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220208 17:51:45.442" endtime="20220208 17:51:47.446"/>
 </kw>
-<kw name="Page Should Contain" library="Selenium2Library">
-<arg>Experience the difference</arg>
-<arg>INFO</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<msg timestamp="20220130 16:46:40.027" level="INFO">Current page contains text 'Experience the difference'.</msg>
-<status status="PASS" starttime="20220130 16:46:40.011" endtime="20220130 16:46:40.027"/>
-</kw>
-<kw name="Page Should Contain" library="Selenium2Library">
-<arg>Contact us</arg>
-<arg>INFO</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<msg timestamp="20220130 16:46:40.042" level="INFO">Current page contains text 'Contact us'.</msg>
-<status status="PASS" starttime="20220130 16:46:40.027" endtime="20220130 16:46:40.043"/>
-</kw>
-<kw name="Page Should Contain" library="Selenium2Library">
-<arg>The Best Place To Stay</arg>
-<arg>INFO</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<msg timestamp="20220130 16:46:40.058" level="INFO">Current page contains text 'The Best Place To Stay'.</msg>
-<status status="PASS" starttime="20220130 16:46:40.043" endtime="20220130 16:46:40.058"/>
-</kw>
-<kw name="Log" library="BuiltIn">
-<arg>Webpage Checked</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20220130 16:46:40.059" level="INFO">Webpage Checked</msg>
-<status status="PASS" starttime="20220130 16:46:40.058" endtime="20220130 16:46:40.059"/>
-</kw>
-<kw name="Close Browser" library="Selenium2Library">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20220130 16:46:40.059" endtime="20220130 16:46:42.304"/>
-</kw>
-<doc>US#2 Test Case #1</doc>
-<status status="PASS" starttime="20220130 16:46:36.164" endtime="20220130 16:46:42.305"/>
-</test>
-<test id="s1-t2" name="Invalid Account Login of a Non-registered Account">
-<kw name="Open Login Page">
-<kw name="Open Browser" library="Selenium2Library">
-<arg>http://localhost:3000</arg>
-<arg>chrome</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20220130 16:46:42.309" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000'.</msg>
-<status status="PASS" starttime="20220130 16:46:42.309" endtime="20220130 16:46:53.665"/>
-</kw>
-<kw name="Maximize Browser Window" library="Selenium2Library">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20220130 16:46:53.665" endtime="20220130 16:46:53.800"/>
-</kw>
-<kw name="Set Browser Implicit Wait" library="Selenium2Library">
-<arg>5</arg>
-<doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20220130 16:46:53.800" endtime="20220130 16:46:53.801"/>
-</kw>
-<status status="PASS" starttime="20220130 16:46:42.308" endtime="20220130 16:46:53.801"/>
-</kw>
-<kw name="Click Element" library="Selenium2Library">
+<kw name="Click Element" library="SeleniumLibrary">
 <arg>css:.btn_booknow</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220130 16:46:53.802" level="INFO">Clicking element 'css:.btn_booknow'.</msg>
-<status status="PASS" starttime="20220130 16:46:53.802" endtime="20220130 16:46:53.930"/>
+<msg timestamp="20220208 17:51:47.447" level="INFO">Clicking element 'css:.btn_booknow'.</msg>
+<status status="PASS" starttime="20220208 17:51:47.447" endtime="20220208 17:51:48.171"/>
 </kw>
-<kw name="Input Text" library="Selenium2Library">
-<arg>id:InputEmail_login</arg>
-<arg>notanemail@gmail.com</arg>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220208 17:51:50.181" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220208 17:51:48.172" endtime="20220208 17:51:50.181"/>
+</kw>
+<kw name="Get Current Date" library="DateTime">
+<var>${1st_Date}</var>
+<arg>result_format=%m-%d-%Y</arg>
+<arg>increment=6 day</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20220208 17:51:50.182" level="INFO">${1st_Date} = 02-14-2022</msg>
+<status status="PASS" starttime="20220208 17:51:50.181" endtime="20220208 17:51:50.182"/>
+</kw>
+<kw name="Get Current Date" library="DateTime">
+<var>${2nd_Date}</var>
+<arg>result_format=%m-%d-%Y</arg>
+<arg>increment=7 day</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20220208 17:51:50.183" level="INFO">${2nd_Date} = 02-15-2022</msg>
+<status status="PASS" starttime="20220208 17:51:50.182" endtime="20220208 17:51:50.183"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:fname</arg>
+<arg>Steven Castro</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220130 16:46:53.932" level="INFO">Typing text 'notanemail@gmail.com' into text field 'id:InputEmail_login'.</msg>
-<status status="PASS" starttime="20220130 16:46:53.931" endtime="20220130 16:46:54.134"/>
+<msg timestamp="20220208 17:51:50.183" level="INFO">Typing text 'Steven Castro' into text field 'id:fname'.</msg>
+<status status="PASS" starttime="20220208 17:51:50.183" endtime="20220208 17:51:50.273"/>
 </kw>
-<kw name="Input Password" library="Selenium2Library">
-<arg>id:InputPassword_login</arg>
-<arg>123123</arg>
-<doc>Types the given password into the text field identified by ``locator``.</doc>
-<msg timestamp="20220130 16:46:54.155" level="INFO">Typing password into text field 'id:InputPassword_login'.</msg>
-<msg timestamp="20220130 16:46:54.559" level="INFO">Temporally setting log level to: NONE</msg>
-<msg timestamp="20220130 16:46:54.605" level="INFO">Log level changed from NONE to INFO.</msg>
-<status status="PASS" starttime="20220130 16:46:54.155" endtime="20220130 16:46:54.605"/>
-</kw>
-<kw name="Click Button" library="Selenium2Library">
-<arg>id:login_btn</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20220130 16:46:54.606" level="INFO">Clicking button 'id:login_btn'.</msg>
-<status status="PASS" starttime="20220130 16:46:54.606" endtime="20220130 16:46:54.666"/>
-</kw>
-<kw name="Log" library="BuiltIn">
-<arg>Credentials Entered</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20220130 16:46:54.667" level="INFO">Credentials Entered</msg>
-<status status="PASS" starttime="20220130 16:46:54.667" endtime="20220130 16:46:54.667"/>
-</kw>
-<kw name="Page Should Contain" library="Selenium2Library">
-<arg>Incorrect email/password</arg>
-<arg>INFO</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<msg timestamp="20220130 16:46:54.690" level="INFO">Current page contains text 'Incorrect email/password'.</msg>
-<status status="PASS" starttime="20220130 16:46:54.668" endtime="20220130 16:46:54.690"/>
-</kw>
-<kw name="Page Should Contain" library="Selenium2Library">
-<arg>LOG IN</arg>
-<arg>INFO</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<msg timestamp="20220130 16:46:54.708" level="INFO">Current page contains text 'LOG IN'.</msg>
-<status status="PASS" starttime="20220130 16:46:54.691" endtime="20220130 16:46:54.708"/>
-</kw>
-<kw name="Page Should Contain" library="Selenium2Library">
-<arg>CREATE AN ACCOUNT</arg>
-<arg>INFO</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<msg timestamp="20220130 16:46:54.725" level="INFO">Current page contains text 'CREATE AN ACCOUNT'.</msg>
-<status status="PASS" starttime="20220130 16:46:54.708" endtime="20220130 16:46:54.725"/>
-</kw>
-<kw name="Log" library="BuiltIn">
-<arg>Webpage Checked</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20220130 16:46:54.726" level="INFO">Webpage Checked</msg>
-<status status="PASS" starttime="20220130 16:46:54.726" endtime="20220130 16:46:54.726"/>
-</kw>
-<kw name="Close Browser" library="Selenium2Library">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20220130 16:46:54.726" endtime="20220130 16:46:58.444"/>
-</kw>
-<doc>US#2 Test Case #2</doc>
-<status status="PASS" starttime="20220130 16:46:42.307" endtime="20220130 16:46:58.445"/>
-</test>
-<test id="s1-t3" name="Invalid Account Login due ot invalid password 1">
-<kw name="Open Login Page">
-<kw name="Open Browser" library="Selenium2Library">
-<arg>http://localhost:3000</arg>
-<arg>chrome</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20220130 16:46:58.448" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000'.</msg>
-<status status="PASS" starttime="20220130 16:46:58.448" endtime="20220130 16:47:00.656"/>
-</kw>
-<kw name="Maximize Browser Window" library="Selenium2Library">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20220130 16:47:00.656" endtime="20220130 16:47:00.787"/>
-</kw>
-<kw name="Set Browser Implicit Wait" library="Selenium2Library">
-<arg>5</arg>
-<doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20220130 16:47:00.787" endtime="20220130 16:47:00.789"/>
-</kw>
-<status status="PASS" starttime="20220130 16:46:58.448" endtime="20220130 16:47:00.789"/>
-</kw>
-<kw name="Click Element" library="Selenium2Library">
-<arg>css:.btn_booknow</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220130 16:47:00.790" level="INFO">Clicking element 'css:.btn_booknow'.</msg>
-<status status="PASS" starttime="20220130 16:47:00.789" endtime="20220130 16:47:00.902"/>
-</kw>
-<kw name="Input Text" library="Selenium2Library">
-<arg>id:InputEmail_login</arg>
-<arg>steven_castro@dlsu.edu.ph</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:num</arg>
+<arg>09477903358</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220130 16:47:00.903" level="INFO">Typing text 'steven_castro@dlsu.edu.ph' into text field 'id:InputEmail_login'.</msg>
-<status status="PASS" starttime="20220130 16:47:00.903" endtime="20220130 16:47:01.474"/>
+<msg timestamp="20220208 17:51:50.274" level="INFO">Typing text '09477903358' into text field 'id:num'.</msg>
+<status status="PASS" starttime="20220208 17:51:50.274" endtime="20220208 17:51:50.354"/>
 </kw>
-<kw name="Input Password" library="Selenium2Library">
-<arg>id:InputPassword_login</arg>
-<arg>wrongpassword</arg>
-<doc>Types the given password into the text field identified by ``locator``.</doc>
-<msg timestamp="20220130 16:47:01.475" level="INFO">Typing password into text field 'id:InputPassword_login'.</msg>
-<msg timestamp="20220130 16:47:01.512" level="INFO">Temporally setting log level to: NONE</msg>
-<msg timestamp="20220130 16:47:01.565" level="INFO">Log level changed from NONE to INFO.</msg>
-<status status="PASS" starttime="20220130 16:47:01.475" endtime="20220130 16:47:01.565"/>
-</kw>
-<kw name="Click Button" library="Selenium2Library">
-<arg>id:login_btn</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20220130 16:47:01.566" level="INFO">Clicking button 'id:login_btn'.</msg>
-<status status="PASS" starttime="20220130 16:47:01.566" endtime="20220130 16:47:01.628"/>
-</kw>
-<kw name="Log" library="BuiltIn">
-<arg>Credentials Entered</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20220130 16:47:01.629" level="INFO">Credentials Entered</msg>
-<status status="PASS" starttime="20220130 16:47:01.628" endtime="20220130 16:47:01.629"/>
-</kw>
-<kw name="Page Should Contain" library="Selenium2Library">
-<arg>Incorrect email/password</arg>
-<arg>INFO</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<msg timestamp="20220130 16:47:01.646" level="INFO">Current page contains text 'Incorrect email/password'.</msg>
-<status status="PASS" starttime="20220130 16:47:01.629" endtime="20220130 16:47:01.647"/>
-</kw>
-<kw name="Page Should Contain" library="Selenium2Library">
-<arg>LOG IN</arg>
-<arg>INFO</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<msg timestamp="20220130 16:47:01.663" level="INFO">Current page contains text 'LOG IN'.</msg>
-<status status="PASS" starttime="20220130 16:47:01.647" endtime="20220130 16:47:01.663"/>
-</kw>
-<kw name="Page Should Contain" library="Selenium2Library">
-<arg>CREATE AN ACCOUNT</arg>
-<arg>INFO</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<msg timestamp="20220130 16:47:01.679" level="INFO">Current page contains text 'CREATE AN ACCOUNT'.</msg>
-<status status="PASS" starttime="20220130 16:47:01.664" endtime="20220130 16:47:01.679"/>
-</kw>
-<kw name="Log" library="BuiltIn">
-<arg>Webpage Checked</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20220130 16:47:01.680" level="INFO">Webpage Checked</msg>
-<status status="PASS" starttime="20220130 16:47:01.680" endtime="20220130 16:47:01.680"/>
-</kw>
-<kw name="Close Browser" library="Selenium2Library">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20220130 16:47:01.681" endtime="20220130 16:47:03.867"/>
-</kw>
-<doc>US#2 Test Case #3</doc>
-<status status="PASS" starttime="20220130 16:46:58.447" endtime="20220130 16:47:03.868"/>
-</test>
-<test id="s1-t4" name="Valid Account Login with Remember Me option">
-<kw name="Open Login Page">
-<kw name="Open Browser" library="Selenium2Library">
-<arg>http://localhost:3000</arg>
-<arg>chrome</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20220130 16:47:03.872" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000'.</msg>
-<status status="PASS" starttime="20220130 16:47:03.872" endtime="20220130 16:47:06.267"/>
-</kw>
-<kw name="Maximize Browser Window" library="Selenium2Library">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20220130 16:47:06.267" endtime="20220130 16:47:06.593"/>
-</kw>
-<kw name="Set Browser Implicit Wait" library="Selenium2Library">
-<arg>5</arg>
-<doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20220130 16:47:06.593" endtime="20220130 16:47:06.594"/>
-</kw>
-<status status="PASS" starttime="20220130 16:47:03.871" endtime="20220130 16:47:06.595"/>
-</kw>
-<kw name="Click Element" library="Selenium2Library">
-<arg>css:.btn_booknow</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220130 16:47:06.595" level="INFO">Clicking element 'css:.btn_booknow'.</msg>
-<status status="PASS" starttime="20220130 16:47:06.595" endtime="20220130 16:47:06.714"/>
-</kw>
-<kw name="Input Text" library="Selenium2Library">
-<arg>id:InputEmail_login</arg>
-<arg>steven_castro@dlsu.edu.ph</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:address</arg>
+<arg>2401 Taft Ave, Malate, Manila, 1004 Metro Manila</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220130 16:47:06.715" level="INFO">Typing text 'steven_castro@dlsu.edu.ph' into text field 'id:InputEmail_login'.</msg>
-<status status="PASS" starttime="20220130 16:47:06.715" endtime="20220130 16:47:06.945"/>
+<msg timestamp="20220208 17:51:50.355" level="INFO">Typing text '2401 Taft Ave, Malate, Manila, 1004 Metro Manila' into text field 'id:address'.</msg>
+<status status="PASS" starttime="20220208 17:51:50.355" endtime="20220208 17:51:50.482"/>
 </kw>
-<kw name="Input Password" library="Selenium2Library">
-<arg>id:InputPassword_login</arg>
-<arg>wrongpassword</arg>
-<doc>Types the given password into the text field identified by ``locator``.</doc>
-<msg timestamp="20220130 16:47:06.948" level="INFO">Typing password into text field 'id:InputPassword_login'.</msg>
-<msg timestamp="20220130 16:47:07.000" level="INFO">Temporally setting log level to: NONE</msg>
-<msg timestamp="20220130 16:47:07.063" level="INFO">Log level changed from NONE to INFO.</msg>
-<status status="PASS" starttime="20220130 16:47:06.947" endtime="20220130 16:47:07.063"/>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.querySelector("#checkin").removeAttribute("readonly");</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220208 17:51:50.483" level="INFO">Executing JavaScript:
+document.querySelector("#checkin").removeAttribute("readonly");
+Without any arguments.</msg>
+<status status="PASS" starttime="20220208 17:51:50.482" endtime="20220208 17:51:50.487"/>
 </kw>
-<kw name="Click Button" library="Selenium2Library">
-<arg>id:login_btn</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20220130 16:47:07.064" level="INFO">Clicking button 'id:login_btn'.</msg>
-<status status="PASS" starttime="20220130 16:47:07.064" endtime="20220130 16:47:07.134"/>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.querySelector("#checkin").removeAttribute("onchange");</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220208 17:51:50.488" level="INFO">Executing JavaScript:
+document.querySelector("#checkin").removeAttribute("onchange");
+Without any arguments.</msg>
+<status status="PASS" starttime="20220208 17:51:50.487" endtime="20220208 17:51:50.491"/>
 </kw>
-<kw name="Log" library="BuiltIn">
-<arg>Credentials Entered</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20220130 16:47:07.135" level="INFO">Credentials Entered</msg>
-<status status="PASS" starttime="20220130 16:47:07.135" endtime="20220130 16:47:07.135"/>
-</kw>
-<kw name="Page Should Contain" library="Selenium2Library">
-<arg>Incorrect email/password</arg>
-<arg>INFO</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<msg timestamp="20220130 16:47:07.152" level="INFO">Current page contains text 'Incorrect email/password'.</msg>
-<status status="PASS" starttime="20220130 16:47:07.135" endtime="20220130 16:47:07.152"/>
-</kw>
-<kw name="Page Should Contain" library="Selenium2Library">
-<arg>LOG IN</arg>
-<arg>INFO</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<msg timestamp="20220130 16:47:07.170" level="INFO">Current page contains text 'LOG IN'.</msg>
-<status status="PASS" starttime="20220130 16:47:07.153" endtime="20220130 16:47:07.170"/>
-</kw>
-<kw name="Page Should Contain" library="Selenium2Library">
-<arg>CREATE AN ACCOUNT</arg>
-<arg>INFO</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<msg timestamp="20220130 16:47:07.186" level="INFO">Current page contains text 'CREATE AN ACCOUNT'.</msg>
-<status status="PASS" starttime="20220130 16:47:07.170" endtime="20220130 16:47:07.186"/>
-</kw>
-<kw name="Log" library="BuiltIn">
-<arg>Webpage Checked</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20220130 16:47:07.187" level="INFO">Webpage Checked</msg>
-<status status="PASS" starttime="20220130 16:47:07.187" endtime="20220130 16:47:07.187"/>
-</kw>
-<kw name="Close Browser" library="Selenium2Library">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20220130 16:47:07.188" endtime="20220130 16:47:09.375"/>
-</kw>
-<doc>US#2 Test Case #4</doc>
-<status status="PASS" starttime="20220130 16:47:03.870" endtime="20220130 16:47:09.376"/>
-</test>
-<test id="s1-t5" name="Invalid Account Login due ot invalid password 2">
-<kw name="Open Login Page">
-<kw name="Open Browser" library="Selenium2Library">
-<arg>http://localhost:3000</arg>
-<arg>chrome</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20220130 16:47:09.382" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000'.</msg>
-<status status="PASS" starttime="20220130 16:47:09.381" endtime="20220130 16:47:11.638"/>
-</kw>
-<kw name="Maximize Browser Window" library="Selenium2Library">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20220130 16:47:11.638" endtime="20220130 16:47:11.844"/>
-</kw>
-<kw name="Set Browser Implicit Wait" library="Selenium2Library">
-<arg>5</arg>
-<doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20220130 16:47:11.844" endtime="20220130 16:47:11.846"/>
-</kw>
-<status status="PASS" starttime="20220130 16:47:09.381" endtime="20220130 16:47:11.847"/>
-</kw>
-<kw name="Click Element" library="Selenium2Library">
-<arg>css:.btn_booknow</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220130 16:47:11.847" level="INFO">Clicking element 'css:.btn_booknow'.</msg>
-<status status="PASS" starttime="20220130 16:47:11.847" endtime="20220130 16:47:12.145"/>
-</kw>
-<kw name="Input Text" library="Selenium2Library">
-<arg>id:InputEmail_login</arg>
-<arg>steven_castro@dlsu.edu.ph</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:checkin</arg>
+<arg>${1st_Date}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220130 16:47:12.147" level="INFO">Typing text 'steven_castro@dlsu.edu.ph' into text field 'id:InputEmail_login'.</msg>
-<status status="PASS" starttime="20220130 16:47:12.146" endtime="20220130 16:47:12.403"/>
+<msg timestamp="20220208 17:51:50.492" level="INFO">Typing text '02-14-2022' into text field 'id:checkin'.</msg>
+<status status="PASS" starttime="20220208 17:51:50.492" endtime="20220208 17:51:50.599"/>
 </kw>
-<kw name="Input Password" library="Selenium2Library">
-<arg>id:InputPassword_login</arg>
-<arg>123</arg>
-<doc>Types the given password into the text field identified by ``locator``.</doc>
-<msg timestamp="20220130 16:47:12.404" level="INFO">Typing password into text field 'id:InputPassword_login'.</msg>
-<msg timestamp="20220130 16:47:12.455" level="INFO">Temporally setting log level to: NONE</msg>
-<msg timestamp="20220130 16:47:12.501" level="INFO">Log level changed from NONE to INFO.</msg>
-<status status="PASS" starttime="20220130 16:47:12.404" endtime="20220130 16:47:12.501"/>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.querySelector("#checkout").removeAttribute("readonly");</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220208 17:51:50.600" level="INFO">Executing JavaScript:
+document.querySelector("#checkout").removeAttribute("readonly");
+Without any arguments.</msg>
+<status status="PASS" starttime="20220208 17:51:50.600" endtime="20220208 17:51:50.604"/>
 </kw>
-<kw name="Click Button" library="Selenium2Library">
-<arg>id:login_btn</arg>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.querySelector("#checkout").removeAttribute("onchange");</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220208 17:51:50.605" level="INFO">Executing JavaScript:
+document.querySelector("#checkout").removeAttribute("onchange");
+Without any arguments.</msg>
+<status status="PASS" starttime="20220208 17:51:50.604" endtime="20220208 17:51:50.608"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:checkout</arg>
+<arg>${2nd_Date}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220208 17:51:50.609" level="INFO">Typing text '02-15-2022' into text field 'id:checkout'.</msg>
+<status status="PASS" starttime="20220208 17:51:50.609" endtime="20220208 17:51:50.714"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id:submit_btn</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20220130 16:47:12.501" level="INFO">Clicking button 'id:login_btn'.</msg>
-<status status="PASS" starttime="20220130 16:47:12.501" endtime="20220130 16:47:12.568"/>
+<msg timestamp="20220208 17:51:50.715" level="INFO">Clicking button 'id:submit_btn'.</msg>
+<status status="PASS" starttime="20220208 17:51:50.715" endtime="20220208 17:51:50.774"/>
 </kw>
 <kw name="Log" library="BuiltIn">
-<arg>Credentials Entered</arg>
+<arg>Booking Submitted</arg>
 <doc>Logs the given message with the given level.</doc>
-<msg timestamp="20220130 16:47:12.568" level="INFO">Credentials Entered</msg>
-<status status="PASS" starttime="20220130 16:47:12.568" endtime="20220130 16:47:12.568"/>
+<msg timestamp="20220208 17:51:50.775" level="INFO">Booking Submitted</msg>
+<status status="PASS" starttime="20220208 17:51:50.775" endtime="20220208 17:51:50.775"/>
 </kw>
-<kw name="Page Should Contain" library="Selenium2Library">
-<arg>Password must be atleast 5 characters</arg>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Booked successfully!</arg>
 <arg>INFO</arg>
 <doc>Verifies that current page contains ``text``.</doc>
-<msg timestamp="20220130 16:47:12.587" level="INFO">Current page contains text 'Password must be atleast 5 characters'.</msg>
-<status status="PASS" starttime="20220130 16:47:12.569" endtime="20220130 16:47:12.587"/>
-</kw>
-<kw name="Page Should Contain" library="Selenium2Library">
-<arg>LOG IN</arg>
-<arg>INFO</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<msg timestamp="20220130 16:47:12.609" level="INFO">Current page contains text 'LOG IN'.</msg>
-<status status="PASS" starttime="20220130 16:47:12.587" endtime="20220130 16:47:12.609"/>
-</kw>
-<kw name="Page Should Contain" library="Selenium2Library">
-<arg>CREATE AN ACCOUNT</arg>
-<arg>INFO</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<msg timestamp="20220130 16:47:12.628" level="INFO">Current page contains text 'CREATE AN ACCOUNT'.</msg>
-<status status="PASS" starttime="20220130 16:47:12.609" endtime="20220130 16:47:12.628"/>
+<msg timestamp="20220208 17:52:00.823" level="INFO">&lt;html&gt;&lt;head&gt;
+        &lt;title&gt;Booking&lt;/title&gt;
+        &lt;link rel="stylesheet" href="./css/index_css.css"&gt;
+        &lt;link rel="stylesheet" href="./css/booking_css.css"&gt;
+        &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"&gt;&lt;/script&gt;
+        &lt;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"&gt;
+        &lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"&gt;
+        &lt;script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"&gt;&lt;/script&gt;
+        &lt;link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css"&gt;
+        &lt;script src="./js/booking.js"&gt;&lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div class="container_whole" id="blur"&gt;
+        &lt;a class="top_btn" href="#top"&gt;
+            &lt;i class="fa fa-arrow-up" style="color:#fff; font-size:28px;"&gt;&lt;/i&gt;
+        &lt;/a&gt;
+        &lt;img src="images/hotel_bg.jpg" id="bg" alt=""&gt;
+        &lt;div class="container nav_main"&gt;
+            &lt;nav class="navbar navbar-expand-lg nav_options"&gt;
+                &lt;div class="navbar-brand hotel_name_nav"&gt;robotel&lt;/div&gt;
+                &lt;button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation"&gt;
+                  &lt;span class="navbar-toggler-icon"&gt;
+                    &lt;i class="fa fa-bars" style="color:#fff; font-size:28px;"&gt;&lt;/i&gt;
+                  &lt;/span&gt;
+                &lt;/button&gt;
+                &lt;div class="collapse navbar-collapse justify-content-start" id="navbarNavAltMarkup"&gt;
+                  &lt;div class="navbar-nav ml-auto text-right float-right"&gt;
+                    &lt;a class="nav-item nav-link" href="index"&gt;Home &lt;span class="sr-only"&gt;(current)&lt;/span&gt;&lt;/a&gt;
+                    &lt;a class="nav-item nav-link" href="rooms"&gt;Rooms&lt;/a&gt;
+                    &lt;a class="nav-item nav-link" href="services"&gt;Services&lt;/a&gt;
+                    &lt;a class="nav-item nav-link" href="#contactus_section"&gt;Contact Us&lt;/a&gt;
+                    
+                    
+                    
+  &lt;!--IF LOGGED IN--&gt;
+  &lt;div id="logged-in-nav" class="dropdown account_dropdown"&gt;
+      &lt;button class="btn ml-4 btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"&gt;
+      ACCOUNT
+      &lt;/button&gt;
+      &lt;div class="dropdown-menu" aria-labelledby="dropdownMenuButton"&gt;
+        &lt;a class="dropdown-item" href="transactions"&gt;TRANSACTIONS&lt;/a&gt;
+        &lt;a class="dropdown-item" href="logout" style="font-weight: 500;"&gt;LOG OUT&lt;/a&gt;
+      &lt;/div&gt;
+  &lt;/div&gt;
+  
+
+                &lt;/div&gt;
+                &lt;/div&gt;
+              &lt;/nav&gt;
+        &lt;/div&gt;
+        &lt;div class="container-fluid px-0 content_con" style="margin-top: 50px;"&gt;
+            &lt;div class="container-fluid py-5"&gt;
+                &lt;div class="container booking_form_con"&gt;
+                  &lt;form id="form_booking" onsubmit="return false;" class="was-validated" autocomplete="off"&gt;
+                    &lt;div class="row"&gt; 
+                        &lt;div class="col-sm-6 px-4"&gt;
+                            &lt;div class="form-group"&gt;
+                              &lt;label for="fname"&gt;FULL NAME&lt;/label&gt;
+                              &lt;input type="text" class="form-control" id="fname" name="fname" required=""&gt;
+                              &lt;div class="valid-feedback"&gt;
+                                &lt;i class="fa fa-check" style="color: darkgreen; font-size:14;"&gt;&lt;/i&gt;
+                              &lt;/div&gt;
+                              &lt;div class="invalid-feedback"&gt;Please fill out this field.&lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class="form-group"&gt;
+                                &lt;label for="email"&gt;EMAIL&lt;/label&gt;
+                                &lt;input type="email" class="form-control" id="email" name="email" value="steven_castro@dlsu.edu.ph" required="" readonly=""&gt;
+                                &lt;div class="valid-feedback"&gt;
+                                  &lt;i class="fa fa-check" style="color: darkgreen; font-size:14;"&gt;&lt;/i&gt;
+                                &lt;/div&gt;
+                                &lt;div class="invalid-feedback"&gt;Please fill out this field.&lt;/div&gt;
+                              &lt;/div&gt;
+                              &lt;div class="form-group"&gt;
+                                &lt;label for="num"&gt;CONTACT NUMBER&lt;/label&gt;
+                                &lt;input type="number" class="form-control" id="num" name="num" required=""&gt;
+                                &lt;div class="valid-feedback"&gt;
+                                  &lt;i class="fa fa-check" style="color: darkgreen; font-size:14;"&gt;&lt;/i&gt;
+                                &lt;/div&gt;
+                                &lt;div class="invalid-feedback"&gt;Please fill out this field.&lt;/div&gt;
+                              &lt;/div&gt;
+                            &lt;div class="form-group"&gt;
+                              &lt;label for="address"&gt;ADDRESS&lt;/label&gt;
+                              &lt;input type="text" class="form-control" id="address" name="address" required=""&gt;
+                              &lt;div class="valid-feedback"&gt;
+                                &lt;i class="fa fa-check" style="color: darkgreen; font-size:14;"&gt;&lt;/i&gt;
+                              &lt;/div&gt;
+                              &lt;div class="invalid-feedback"&gt;Please fill out this field.&lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class="col-sm-6 px-4 d-flex flex-column justify-content-start"&gt;
+                          &lt;div&gt;
+                            &lt;div class="row"&gt;
+                              &lt;div class="col"&gt;
+                                &lt;div class="form-group"&gt;
+                                  &lt;label for="checkin"&gt;CHECK IN&lt;/label&gt;
+                                  &lt;div role="wrapper" class="gj-datepicker gj-datepicker-bootstrap gj-unselectable input-group"&gt;&lt;input id="checkin" class="form-control" required="" role="input" data-type="datepicker" data-guid="02673ae3-ed97-e16c-ed84-de5437a189b6" data-datepicker="true"&gt;&lt;span class="input-group-append" role="right-icon"&gt;&lt;button class="btn btn-outline-secondary border-left-0" type="button"&gt;&lt;i class="gj-icon"&gt;event&lt;/i&gt;&lt;/button&gt;&lt;/span&gt;&lt;/div&gt;
+                                  &lt;div class="valid-feedback"&gt;
+                                    &lt;i class="fa fa-check" style="color: darkgreen; font-size:14;"&gt;&lt;/i&gt;
+                                  &lt;/div&gt;
+                                  &lt;div class="invalid-feedback"&gt;Please fill out this field.&lt;/div&gt;
+                                &lt;/div&gt;
+                              &lt;/div&gt;
+                              &lt;div class="col"&gt;
+                                &lt;div class="form-group"&gt;
+                                  &lt;label for="checkout"&gt;CHECK OUT&lt;/label&gt;
+                                  &lt;div role="wrapper" class="gj-datepicker gj-datepicker-bootstrap gj-unselectable input-group"&gt;&lt;input id="checkout" class="form-control" required="" role="input" data-type="datepicker" data-guid="26a19ac8-df29-727a-b2de-ae8d28dc8728" data-datepicker="true"&gt;&lt;span class="input-group-append" role="right-icon"&gt;&lt;button class="btn btn-outline-secondary border-left-0" type="button"&gt;&lt;i class="gj-icon"&gt;event&lt;/i&gt;&lt;/button&gt;&lt;/span&gt;&lt;/div&gt;
+                                  &lt;div class="valid-feedback"&gt;
+                                    &lt;i class="fa fa-check" style="color: darkgreen; font-size:14;"&gt;&lt;/i&gt;
+                                  &lt;/div&gt;
+                                  &lt;div class="invalid-feedback"&gt;Please fill out this field.&lt;/div&gt;
+                                &lt;/div&gt;
+                              &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class="row"&gt;
+                              &lt;div class="col"&gt;
+                                &lt;div class="form-group"&gt;
+                                  &lt;label for="room"&gt;ROOM&lt;/label&gt;
+                                  &lt;select class="form-control" id="room" required=""&gt;
+                                    &lt;option&gt;Single Room&lt;/option&gt;
+                                    &lt;option&gt;Double Room&lt;/option&gt;
+                                    &lt;option&gt;Triple Room&lt;/option&gt;
+                                    &lt;option&gt;Quad Room&lt;/option&gt;
+                                    &lt;option&gt;Queen Room&lt;/option&gt;
+                                    &lt;option&gt;King Room&lt;/option&gt;
+                                  &lt;/select&gt;
+                                  &lt;div class="valid-feedback"&gt;
+                                    &lt;i class="fa fa-check" style="color: darkgreen; font-size:14;"&gt;&lt;/i&gt;
+                                  &lt;/div&gt;
+                                  &lt;div class="invalid-feedback"&gt;Please fill out this field.&lt;/div&gt;
+                                &lt;/div&gt;
+                              &lt;/div&gt;
+                              &lt;div class="col"&gt;
+                                &lt;div class="form-group"&gt;
+                                  &lt;label for="guests"&gt;GUESTS&lt;/label&gt;
+                                  &lt;input type="number" class="form-control" id="guests" name="guests" value="1" min="1" max="2" required=""&gt;
+                                  &lt;div class="valid-feedback"&gt;
+                                    &lt;i class="fa fa-check" style="color: darkgreen; font-size:14;"&gt;&lt;/i&gt;
+                                  &lt;/div&gt;
+                                  &lt;div class="invalid-feedback"&gt;Please fill out this field.&lt;/div&gt;
+                                &lt;/div&gt;
+                              &lt;/div&gt;
+                            &lt;/div&gt;
+                          &lt;/div&gt;                        
+                          &lt;div class="row breakdown_con px-5 py-3"&gt;
+                            &lt;div class="col-sm-12"&gt;
+                              &lt;div class="row description"&gt;
+                                &lt;span id="room_type_span" class="col-7 desc_room_type pr-5 d-flex justify-content-end text-right"&gt;Single Room Per Night&lt;/span&gt;
+                                &lt;span id="room_price_span" class="col-5 price_room_type d-flex justify-content-start"&gt;₱15,000.00&lt;/span&gt;
+                              &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class="col-sm-12"&gt;
+                              &lt;div class="row description"&gt;
+                                &lt;span class="col-7 desc_room_type pr-5 d-flex justify-content-end text-right"&gt;Discount Per Night&lt;/span&gt;
+                                &lt;span id="discount_price_span" class="col-5 price_room_type d-flex justify-content-start"&gt;₱ 0.00&lt;/span&gt;
+                              &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class="col-sm-12"&gt;
+                              &lt;div class="row description"&gt;
+                                &lt;span class="col-7 desc_nights pr-5 d-flex justify-content-end text-right"&gt;Number of nights&lt;/span&gt;
+                                &lt;span id="num_nights_span_1" class="col-5 num_nights d-flex justify-content-start"&gt;1&lt;/span&gt;
+                              &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class="col-sm-12"&gt;
+                              &lt;div class="row description"&gt;
+                                &lt;span class="col-7 pr-5 d-flex justify-content-end"&gt;&lt;/span&gt;
+                                &lt;span id="total_price_room_span" class="col-5 total_price_room d-flex justify-content-start"&gt;₱15,000.00&lt;/span&gt;
+                              &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class="col-sm-12 pt-3"&gt;
+                              &lt;div class="row description"&gt;
+                                &lt;span class="col-7 desc_guests pr-5 d-flex justify-content-end text-right"&gt;Additional guest&lt;/span&gt;
+                                &lt;span id="add_guest_price_span" class="col-5 price_room_type d-flex justify-content-start"&gt;₱3,000.00&lt;/span&gt;
+                              &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class="col-sm-12"&gt;
+                              &lt;div class="row description"&gt;
+                                &lt;span class="col-7 desc_num_guests pr-5 d-flex justify-content-end text-right"&gt;Number of additional guests&lt;/span&gt;
+                                &lt;span id="num_add_guest_span" class="col-5 num_guests d-flex justify-content-start"&gt;0&lt;/span&gt;
+                              &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class="col-sm-12"&gt;
+                              &lt;div class="row description"&gt;
+                                &lt;span class="col-7 desc_nights pr-5 d-flex justify-content-end text-right"&gt;Number of nights&lt;/span&gt;
+                                &lt;span id="num_nights_span_2" class="col-5 num_nights d-flex justify-content-start"&gt;1&lt;/span&gt;
+                              &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class="col-sm-12"&gt;
+                              &lt;div class="row description"&gt;
+                                &lt;span class="col-7 pr-5 d-flex justify-content-end"&gt;&lt;/span&gt;
+                                &lt;span id="total_price_guest_span" class="col-5 total_price_guests d-flex justify-content-start"&gt;₱0.00&lt;/span&gt;
+                              &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class="col-sm-12 pt-3 px-0"&gt;
+                              &lt;div class="row description"&gt;
+                                &lt;span class="col-7 px-0 d-flex justify-content-end"&gt;&lt;/span&gt;
+                                &lt;span class="col-5 px-0 d-flex justify-content-center align-items-center"&gt;
+                                  &lt;span style="font-size: 17px; font-weight: 500;"&gt;₱
+                                    &lt;span id="subtotal_span" class="total_price"&gt;15,000.00&lt;/span&gt;
+                                  &lt;/span&gt;
+                                  &lt;div class="col btn_book pl-2 d-flex justify-content-end align-items-center"&gt;
+                                    &lt;button id="submit_btn" type="submit" style="border-radius: 20px;" class="btn px-3 py2 btn_register"&gt;BOOK&lt;/button&gt;
+                                  &lt;/div&gt;
+                                &lt;/span&gt;
+                              &lt;/div&gt;
+                          &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;p id="booking_error" class="text-danger h6 text-center" style=""&gt;The chosen reservation date is not available&lt;/p&gt;
+                    &lt;/div&gt;
+                  
+                &lt;/div&gt;&lt;/form&gt;
+            &lt;/div&gt;
+            
+        &lt;/div&gt;
+      &lt;/div&gt;
+        &lt;div class="container footer" id="contactus_section"&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="col"&gt;
+            &lt;div class="contactus_heading"&gt;
+                Contact us
+            &lt;/div&gt;
+            &lt;div class="my-3"&gt;
+                &lt;span&gt;
+                    &lt;i class="fa fa-envelope mr-3" style="color:#fff; font-size:28px;"&gt;&lt;/i&gt;
+                &lt;/span&gt;
+                &lt;span class="email"&gt;
+                    robotel@email.com
+                &lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div class="my-3"&gt;
+                &lt;span&gt;
+                    &lt;i class="fa fa-phone mr-3" style="color:#fff; font-size:28px;"&gt;&lt;/i&gt;
+                &lt;/span&gt;
+                &lt;span class="email"&gt;
+                    +631233455678
+                &lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="col d-flex justify-content-end location" style="color: white;"&gt;
+            Nasugbu, Batangas
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+    &lt;/div&gt;
+
+        
+&lt;div class="modal fade modal_success" id="data_modal_success" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" data-backdrop="false"&gt;
+    &lt;div class="modal-dialog modal-dialog-centered" style="width: 300px;" role="document"&gt;
+        &lt;div class="modal-content border-0 px-3 pb-2"&gt;
+            &lt;div class="modal-header"&gt;
+              &lt;h5 class="modal-title my-auto mr-5" id="data_modal_text"&gt;&lt;/h5&gt;
+              &lt;/div&gt;
+              &lt;div class="modal-footer my-0 py-3"&gt;
+              &lt;span class="btn_close_success my-0"&gt;
+                  &lt;button id="ok_btn" class="btn btn_booknow my-0" href="/index" data-dismiss="modal"&gt;OK&lt;/button&gt;
+              &lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  
+&lt;div id="popup"&gt;
+    &lt;form id="form_login" onsubmit="return false;" autocomplete="off"&gt;
+        &lt;div class="form-group"&gt;
+            &lt;input type="email" class="form-control" id="InputEmail_login" placeholder="EMAIL"&gt;
+        &lt;/div&gt;
+        &lt;div class="form-group"&gt;
+            &lt;input type="password" class="form-control" id="InputPassword_login" placeholder="PASSWORD"&gt;
+        &lt;/div&gt;
+        &lt;p id="login_error" class="text-danger h6 text-center"&gt;Incorrect email/password&lt;/p&gt;
+        &lt;button type="submit" class="btn px-3 btn_login" id="login_btn" style="border-radius: 20px;"&gt;LOG IN&lt;/button&gt;
+        &lt;a href="#" small="" id="create_acc" class="form-text text-muted pt-2" style="font-size: 14px; color: rgb(165, 165, 165);" onclick="create_acc()"&gt;CREATE AN ACCOUNT&lt;/a&gt;
+        &lt;a href="#" small="" id="admin_login" class="form-text text-muted" style="font-size: 14px; color: rgb(165, 165, 165);" onclick="admin_login()"&gt;ADMIN LOGIN&lt;/a&gt;&lt;br&gt;
+        &lt;a href="#" id="close_popup" class="close_popup" onclick="toggle()"&gt;Close&lt;/a&gt;
+    &lt;/form&gt;
+    &lt;form id="form_createaccount" onsubmit="return false;" autocomplete="off"&gt;
+        &lt;div class="form-group"&gt;
+           &lt;input type="text" class="form-control" id="InputUsername" placeholder="USERNAME"&gt;
+        &lt;/div&gt;
+        &lt;div class="form-group"&gt;
+            &lt;input type="email" class="form-control" id="InputEmail_createacc" placeholder="EMAIL"&gt;
+        &lt;/div&gt;
+        &lt;div class="form-group"&gt;
+            &lt;input type="password" class="form-control" id="InputPassword_createacc" placeholder="PASSWORD"&gt;
+        &lt;/div&gt;
+        &lt;p id="register_error" class="text-danger h6 text-center"&gt;Invalid input&lt;/p&gt;
+        &lt;button type="submit" class="btn px-3 btn_register" style="border-radius: 20px;"&gt;REGISTER&lt;/button&gt;
+        &lt;a href="#" small="" id="back_login" class="form-text py-2 back_login" style="font-size: 14px; color: rgb(165, 165, 165);" onclick="login()"&gt;BACK TO LOG IN&lt;/a&gt;&lt;br&gt;
+        &lt;a href="#" id="close_popup" class="close_popup" onclick="toggle()"&gt;Close&lt;/a&gt;
+    &lt;/form&gt;
+    &lt;form id="form_admin" onsubmit="return false;" autocomplete="off"&gt;
+        &lt;div class="p-2" style="font-weight: 500; color: #4e4e4e;"&gt;ADMIN LOG IN&lt;/div&gt;
+        &lt;div class="form-group"&gt;    
+            &lt;input type="email" class="form-control" id="admin_email" placeholder="EMAIL"&gt;
+        &lt;/div&gt;
+        &lt;div class="form-group"&gt;
+            &lt;input type="password" class="form-control" id="admin_password" placeholder="PASSWORD"&gt;
+        &lt;/div&gt;
+        &lt;p id="admin_error" class="text-danger h6 text-center"&gt;Incorrect email/password&lt;/p&gt;
+        &lt;button type="submit" class="btn px-3 btn_login" id="admin_login_btn" style="border-radius: 20px;"&gt;LOG IN&lt;/button&gt;
+        &lt;a href="#" small="" id="back_login" class="form-text py-2 back_login" style="font-size: 14px; color: rgb(165, 165, 165);" onclick="login()"&gt;BACK TO USER LOG IN&lt;/a&gt;&lt;br&gt;
+        &lt;a href="#" id="close_popup" class="close_popup" onclick="toggle()"&gt;Close&lt;/a&gt;
+    &lt;/form&gt;
+&lt;/div&gt;
+
+        &lt;script type="text/javascript"&gt;
+          var dates = [];
+          $('#booking_error').hide();
+          // set default dates
+          var start = new Date();
+          var defaultDate = new Date(start.getFullYear(), start.getMonth(), start.getDate());
+          var checkinDate, checkoutDate, dateDifference, timeDifference;
+          // set end date to max one year period:
+          var end = new Date(new Date().setYear(start.getFullYear()+1));
+
+          let checkoutdatepicker, checkindatepicker;
+          let guests = $('#guests');
+          let roomvalue = $('#room');
+          let roomNumber = 0;
+          let additionalGuest = 3000;
+          let numAdditionalGuest;
+          let totalPrice, subtotalPrice, discountVal;
+          const maxGuests = [1, 2, 3, 4, 2, 2];
+          const roomprice = [15000, 20000, 25000, 35000, 40000, 44550];
+          const origroomprice = [15000, 20000, 25000, 35000, 40000, 45000];
+          let roomTypeSpan = $('#room_type_span');;
+          let roomPriceSpan = $('#room_price_span');
+          let discountPriceSpan = $('#discount_price_span');
+          let numNightsSpan1 = $('#num_nights_span_1');
+          let numNightsSpan2 = $('#num_nights_span_2');
+          let totalPriceRoomSpan = $('#total_price_room_span');
+          let addGuestPriceSpan = $('#add_guest_price_span');
+          let numAddGuestSpan = $('#num_add_guest_span');
+          let totalPriceGuestSpan = $('#total_price_guest_span');
+          let subtotalSpan = $('#subtotal_span');
+
+          checkoutdatepicker = $('#checkout').datepicker({
+                uiLibrary: 'bootstrap4',
+                format: 'mm-dd-yyyy',
+                todayHighlight: true,
+                minDate: defaultDate,
+                disableDates: function(date){
+                  if(date &amp;&amp; dates.indexOf(((date.getMonth() + 1) + "-" + date.getDate() + "-" + date.getFullYear())) &gt; -1){
+                    return false;
+                  }
+                  else{
+                    return true;
+                  }
+                }
+              }).on("change", function(){
+                updateprice()
+              });
+
+          checkindatepicker = $('#checkin').datepicker({
+                uiLibrary: 'bootstrap4',
+                format: 'mm-dd-yyyy',
+                todayHighlight: true,
+                minDate: defaultDate,
+                disableDates: function(date){
+                  if(date &amp;&amp; dates.indexOf(((date.getMonth() + 1) + "-" + date.getDate() + "-" + date.getFullYear())) &gt; -1){
+                    return false;
+                  }
+                  else{
+                    return true;
+                  }
+                }
+            }).on("change", function(){
+              updateprice();
+              checkoutdatepicker.datepicker('destroy');
+              let tempDate = new Date($(this).val());
+              tempDate.setDate(tempDate.getDate() + 1);
+              checkoutdatepicker.datepicker({
+                uiLibrary: 'bootstrap4',
+                format: 'mm-dd-yyyy',
+                todayHighlight: true,
+                minDate: tempDate,
+                disableDates: function(date){
+                  if(date &amp;&amp; dates.indexOf(((date.getMonth() + 1) + "-" + date.getDate() + "-" + date.getFullYear())) &gt; -1){
+                    return false;
+                  }
+                  else{
+                    return true;
+                  }
+                }
+              }).on("change", function(){
+                updateprice()
+              });
+            });
+
+            roomvalue.val(localStorage.getItem("RoomType"));
+            initialLoad();
+
+            // guests field
+            guests.keypress(function (e){
+              e.preventDefault();
+            });
+
+            guests.on("change", function(){
+              updateprice()
+            });
+            roomvalue.on("change", function(){
+              updateRoomValue();
+              guests.val(1);
+              updateprice();
+              check_available_rooms();
+            });
+
+            function check_available_rooms(){
+              
+              var Room = {
+                Type: $('#room').val()
+              }
+              $.get('check_available_rooms', {Room}, function(result){
+                let i;
+                dates = [];
+                for(i = 0; i &lt; result.length; i++){
+                    dates[i] = new Date(result[i]);
+                    dates[i] = ((dates[i].getMonth() + 1) + '-' + dates[i].getDate() + '-' + dates[i].getFullYear())
+                }
+                resetdate();
+              });
+            }
+
+            function resetdate(){
+              checkindatepicker.datepicker('destroy');
+              checkindatepicker.datepicker({
+                uiLibrary: 'bootstrap4',
+                format: 'mm-dd-yyyy',
+                todayHighlight: true,
+                minDate: defaultDate,
+                disableDates: function(date){
+                  if(date &amp;&amp; dates.indexOf(((date.getMonth() + 1) + "-" + date.getDate() + "-" + date.getFullYear())) &gt; -1){
+                    return false;
+                  }
+                  else{
+                    return true;
+                  }
+                }
+              }).on("change", function(){
+                updateprice();
+                checkoutdatepicker.datepicker('destroy');
+                let tempDate = new Date($(this).val());
+                tempDate.setDate(tempDate.getDate() + 1);
+                checkoutdatepicker.datepicker({
+                  uiLibrary: 'bootstrap4',
+                  format: 'mm-dd-yyyy',
+                  todayHighlight: true,
+                  minDate: tempDate,
+                  disableDates: function(date){
+                  if(date &amp;&amp; dates.indexOf(((date.getMonth() + 1) + "-" + date.getDate() + "-" + date.getFullYear())) &gt; -1){
+                    return false;
+                  }
+                  else{
+                    return true;
+                  }
+                }
+                }).on("change", function(date){
+                  updateprice()
+                });
+              });
+
+              checkoutdatepicker.datepicker('destroy');
+              checkoutdatepicker.datepicker({
+                  uiLibrary: 'bootstrap4',
+                  format: 'mm-dd-yyyy',
+                  todayHighlight: true,
+                  minDate: defaultDate,
+                  disableDates: function(date){
+                  if(date &amp;&amp; dates.indexOf(((date.getMonth() + 1) + "-" + date.getDate() + "-" + date.getFullYear())) &gt; -1){
+                    return false;
+                  }
+                  else{
+                    return true;
+                  }
+                }
+                }).on("change", function(){
+                  updateprice()
+                });
+            }
+
+            function updateprice(){
+              checkinDate = new Date(checkindatepicker.val());
+              checkoutDate = new Date(checkoutdatepicker.val());
+              timeDifference = Math.abs(checkoutDate - checkinDate);
+              dateDifference = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
+              numAdditionalGuest = guests.val() - maxGuests[roomNumber];
+              totalPrice =  Math.imul(roomprice[roomNumber], dateDifference);
+              subtotalPrice = 0;
+              let internationalNumberFormat = new Intl.NumberFormat('en-US');
+              if(numAdditionalGuest &gt; 0){
+                subtotalPrice = additionalGuest;
+                addGuestPriceSpan.text("₱" + (subtotalPrice.toFixed(2)).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+                numAddGuestSpan.text(numAdditionalGuest);
+              }
+              else{
+                numAddGuestSpan.text("0");
+              }
+              
+              if(checkinDate != "Invalid Date" &amp;&amp; checkoutDate != "Invalid Date"){
+                numNightsSpan1.text(dateDifference);
+                numNightsSpan2.text(dateDifference);
+                totalPriceRoomSpan.text("₱" + (totalPrice.toFixed(2)).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+                totalPriceRoomSpan.val(totalPrice);
+                subtotalPrice = subtotalPrice * dateDifference;
+                totalPriceGuestSpan.text("₱" + (subtotalPrice.toFixed(2)).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+                subtotalSpan.text(((totalPrice + subtotalPrice).toFixed(2)).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+                subtotalSpan.val(totalPrice + subtotalPrice);
+              }
+              else{
+                numNightsSpan1.text("0");
+                numNightsSpan2.text("0");
+                totalPriceRoomSpan.text("₱0.00");
+                totalPriceRoomSpan.val(0);
+                totalPriceGuestSpan.text("₱0.00");
+                totalPriceGuestSpan.val(0);
+                subtotalSpan.text("0.00");
+                subtotalSpan.val(0);
+              }
+              discountPriceSpan.text("₱ " + (discountVal.toFixed(2)).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
+            }
+
+            function initialLoad(){
+              var Room = {
+                Type: $('#room').val()
+              }
+              $.get('check_available_rooms', {Room}, function(result){
+                let i;
+                dates = [];
+                for(i = 0; i &lt; result.length; i++){
+                    dates[i] = new Date(result[i]);
+                    dates[i] = ((dates[i].getMonth() + 1) + '-' + dates[i].getDate() + '-' + dates[i].getFullYear())
+                }
+                resetdate();
+                updateRoomValue()
+                checkindatepicker.val(localStorage.getItem("Checkin"))
+                checkoutdatepicker.val(localStorage.getItem("Checkout"))
+                updateprice()
+                
+                
+              });
+              
+              
+            }
+
+            function updateRoomValue(){
+              resetdate();
+              if(roomvalue.val() == "Single Room"){
+                roomNumber = 0;
+                additionalGuest = 3000;
+                roomTypeSpan.text("Single Room Per Night");
+                roomPriceSpan.text("₱15,000.00");
+                addGuestPriceSpan.text("₱3,000.00");
+                guests.attr({
+                  min: 1,
+                  max: 2
+                });
+              }
+              else if(roomvalue.val() == "Double Room"){
+                roomNumber = 1;
+                additionalGuest = 3000;
+                roomTypeSpan.text("Double Room Per Night");
+                roomPriceSpan.text("₱20,000.00");
+                addGuestPriceSpan.text("₱3,000.00");
+                guests.attr({
+                  min: 1,
+                  max: 3
+                });
+              }
+              else if(roomvalue.val() == "Triple Room"){
+                roomNumber = 2;
+                additionalGuest = 3000;
+                roomTypeSpan.text("Triple Room Per Night");
+                roomPriceSpan.text("₱25,000.00");
+                addGuestPriceSpan.text("₱3,000.00");
+                guests.attr({
+                  min: 1,
+                  max: 4
+                });
+              }
+              else if(roomvalue.val() == "Quad Room"){
+                roomNumber = 3;
+                additionalGuest = 3000;
+                roomTypeSpan.text("Quad Room Per Night");
+                roomPriceSpan.text("₱35,000.00");
+                addGuestPriceSpan.text("₱3,000.00");
+                guests.attr({
+                  min: 1,
+                  max: 5
+                });
+              }
+              else if(roomvalue.val() == "Queen Room"){
+                roomNumber = 4;
+                additionalGuest = 5000;
+                roomTypeSpan.text("Queen Room Per Night");
+                roomPriceSpan.text("₱40,000.00");
+                addGuestPriceSpan.text("₱5,000.00");
+                guests.attr({
+                  min: 1,
+                  max: 4
+                });
+              }
+              else if(roomvalue.val() == "King Room"){
+                roomNumber = 5;
+                additionalGuest = 5000;
+                roomTypeSpan.text("King Room Per Night");
+                roomPriceSpan.text("₱45,000.00");
+                addGuestPriceSpan.text("₱5,000.00");
+                guests.attr({
+                  min: 1,
+                  max: 4
+                });
+              }
+              
+              discountVal = origroomprice[roomNumber] - roomprice[roomNumber]
+              console.log(origroomprice[roomNumber]+' - ' + roomprice[roomNumber] + ' = ' + discountVal)
+              discountPriceSpan.text("₱ " + (discountVal.toFixed(2)).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
+
+
+            }
+
+        &lt;/script&gt;
+        &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"&gt;&lt;/script&gt;
+        &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"&gt;&lt;/script&gt;
+        &lt;script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"&gt;&lt;/script&gt;
+        &lt;script type="text/javascript"&gt;
+            function toggle(){
+                var blur = document.getElementById('blur');
+                blur.classList.toggle('active');
+                var popup = document.getElementById('popup');
+                popup.classList.toggle('active');
+
+                $("#form_login").show();
+                $("#form_createaccount").hide();
+                $("#login_error").hide();
+                $("#register_error").hide();
+            }
+            function create_acc() {
+                $("#form_login").hide();
+                $("#form_createaccount").show();
+                $("#register_error").hide();
+            }
+            function login() {
+                $("#form_login").show();
+                $("#form_createaccount").hide();
+                $("#login_error").hide();
+            }
+
+            function success_book(){
+              window.location.href = '/';
+            }
+            
+        &lt;/script&gt;
+    
+&lt;div role="calendar" type="month" class="gj-picker gj-picker-bootstrap datepicker gj-unselectable" guid="02673ae3-ed97-e16c-ed84-de5437a189b6" month="1" year="2022" style="top: 277px; left: 784px; display: none;"&gt;&lt;div role="body"&gt;&lt;div role="navigator"&gt;&lt;div&gt;&lt;i class="gj-icon chevron-left"&gt;&lt;/i&gt;&lt;/div&gt;&lt;div role="period"&gt;February 2022&lt;/div&gt;&lt;div&gt;&lt;i class="gj-icon chevron-right"&gt;&lt;/i&gt;&lt;/div&gt;&lt;/div&gt;&lt;table&gt;&lt;thead&gt;&lt;tr role="week-days"&gt;&lt;th&gt;&lt;div&gt;S&lt;/div&gt;&lt;/th&gt;&lt;th&gt;&lt;div&gt;M&lt;/div&gt;&lt;/th&gt;&lt;th&gt;&lt;div&gt;T&lt;/div&gt;&lt;/th&gt;&lt;th&gt;&lt;div&gt;W&lt;/div&gt;&lt;/th&gt;&lt;th&gt;&lt;div&gt;T&lt;/div&gt;&lt;/th&gt;&lt;th&gt;&lt;div&gt;F&lt;/div&gt;&lt;/th&gt;&lt;th&gt;&lt;div&gt;S&lt;/div&gt;&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="other-month disabled"&gt;&lt;div&gt;30&lt;/div&gt;&lt;/td&gt;&lt;td class="other-month disabled"&gt;&lt;div&gt;31&lt;/div&gt;&lt;/td&gt;&lt;td day="1" month="1" year="2022" class="current-month disabled"&gt;&lt;div&gt;1&lt;/div&gt;&lt;/td&gt;&lt;td day="2" month="1" year="2022" class="current-month disabled"&gt;&lt;div&gt;2&lt;/div&gt;&lt;/td&gt;&lt;td day="3" month="1" year="2022" class="current-month disabled"&gt;&lt;div&gt;3&lt;/div&gt;&lt;/td&gt;&lt;td day="4" month="1" year="2022" class="current-month disabled"&gt;&lt;div&gt;4&lt;/div&gt;&lt;/td&gt;&lt;td day="5" month="1" year="2022" class="current-month disabled"&gt;&lt;div&gt;5&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td day="6" month="1" year="2022" class="current-month disabled"&gt;&lt;div&gt;6&lt;/div&gt;&lt;/td&gt;&lt;td day="7" month="1" year="2022" class="current-month disabled"&gt;&lt;div&gt;7&lt;/div&gt;&lt;/td&gt;&lt;td day="8" month="1" year="2022" class="today gj-cursor-pointer"&gt;&lt;div&gt;8&lt;/div&gt;&lt;/td&gt;&lt;td day="9" month="1" year="2022" class="current-month gj-cursor-pointer"&gt;&lt;div&gt;9&lt;/div&gt;&lt;/td&gt;&lt;td day="10" month="1" year="2022" class="current-month gj-cursor-pointer"&gt;&lt;div&gt;10&lt;/div&gt;&lt;/td&gt;&lt;td day="11" month="1" year="2022" class="current-month gj-cursor-pointer"&gt;&lt;div&gt;11&lt;/div&gt;&lt;/td&gt;&lt;td day="12" month="1" year="2022" class="current-month gj-cursor-pointer"&gt;&lt;div&gt;12&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td day="13" month="1" year="2022" class="current-month gj-cursor-pointer"&gt;&lt;div&gt;13&lt;/div&gt;&lt;/td&gt;&lt;td day="14" month="1" year="2022" class="current-month disabled"&gt;&lt;div&gt;14&lt;/div&gt;&lt;/td&gt;&lt;td day="15" month="1" year="2022" class="current-month gj-cursor-pointer"&gt;&lt;div&gt;15&lt;/div&gt;&lt;/td&gt;&lt;td day="16" month="1" year="2022" class="current-month gj-cursor-pointer"&gt;&lt;div&gt;16&lt;/div&gt;&lt;/td&gt;&lt;td day="17" month="1" year="2022" class="current-month gj-cursor-pointer"&gt;&lt;div&gt;17&lt;/div&gt;&lt;/td&gt;&lt;td day="18" month="1" year="2022" class="current-month gj-cursor-pointer"&gt;&lt;div&gt;18&lt;/div&gt;&lt;/td&gt;&lt;td day="19" month="1" year="2022" class="current-month gj-cursor-pointer"&gt;&lt;div&gt;19&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td day="20" month="1" year="2022" class="current-month gj-cursor-pointer"&gt;&lt;div&gt;20&lt;/div&gt;&lt;/td&gt;&lt;td day="21" month="1" year="2022" class="current-month gj-cursor-pointer"&gt;&lt;div&gt;21&lt;/div&gt;&lt;/td&gt;&lt;td day="22" month="1" year="2022" class="current-month gj-cursor-pointer"&gt;&lt;div&gt;22&lt;/div&gt;&lt;/td&gt;&lt;td day="23" month="1" year="2022" class="current-month gj-cursor-pointer"&gt;&lt;div&gt;23&lt;/div&gt;&lt;/td&gt;&lt;td day="24" month="1" year="2022" class="current-month gj-cursor-pointer"&gt;&lt;div&gt;24&lt;/div&gt;&lt;/td&gt;&lt;td day="25" month="1" year="2022" class="current-month gj-cursor-pointer"&gt;&lt;div&gt;25&lt;/div&gt;&lt;/td&gt;&lt;td day="26" month="1" year="2022" class="current-month gj-cursor-pointer"&gt;&lt;div&gt;26&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td day="27" month="1" year="2022" class="current-month gj-cursor-pointer"&gt;&lt;div&gt;27&lt;/div&gt;&lt;/td&gt;&lt;td day="28" month="1" year="2022" class="current-month gj-cursor-pointer"&gt;&lt;div&gt;28&lt;/div&gt;&lt;/td&gt;&lt;td class="other-month gj-cursor-pointer" day="1" month="2" year="2022"&gt;&lt;div&gt;1&lt;/div&gt;&lt;/td&gt;&lt;td class="other-month gj-cursor-pointer" day="2" month="2" year="2022"&gt;&lt;div&gt;2&lt;/div&gt;&lt;/td&gt;&lt;td class="other-month gj-cursor-pointer" day="3" month="2" year="2022"&gt;&lt;div&gt;3&lt;/div&gt;&lt;/td&gt;&lt;td class="other-month gj-cursor-pointer" day="4" month="2" year="2022"&gt;&lt;div&gt;4&lt;/div&gt;&lt;/td&gt;&lt;td class="other-month gj-cursor-pointer" day="5" month="2" year="2022"&gt;&lt;div&gt;5&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&lt;/div&gt;&lt;div role="calendar" type="month" class="gj-picker gj-picker-bootstrap datepicker gj-unselectable" guid="26a19ac8-df29-727a-b2de-ae8d28dc8728" month="1" year="2022" style="top: 277px; left: 1060px; display: none;"&gt;&lt;div role="body"&gt;&lt;div role="navigator"&gt;&lt;div&gt;&lt;i class="gj-icon chevron-left"&gt;&lt;/i&gt;&lt;/div&gt;&lt;div role="period"&gt;February 2022&lt;/div&gt;&lt;div&gt;&lt;i class="gj-icon chevron-right"&gt;&lt;/i&gt;&lt;/div&gt;&lt;/div&gt;&lt;table&gt;&lt;thead&gt;&lt;tr role="week-days"&gt;&lt;th&gt;&lt;div&gt;S&lt;/div&gt;&lt;/th&gt;&lt;th&gt;&lt;div&gt;M&lt;/div&gt;&lt;/th&gt;&lt;th&gt;&lt;div&gt;T&lt;/div&gt;&lt;/th&gt;&lt;th&gt;&lt;div&gt;W&lt;/div&gt;&lt;/th&gt;&lt;th&gt;&lt;div&gt;T&lt;/div&gt;&lt;/th&gt;&lt;th&gt;&lt;div&gt;F&lt;/div&gt;&lt;/th&gt;&lt;th&gt;&lt;div&gt;S&lt;/div&gt;&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="other-month disabled"&gt;&lt;div&gt;30&lt;/div&gt;&lt;/td&gt;&lt;td class="other-month disabled"&gt;&lt;div&gt;31&lt;/div&gt;&lt;/td&gt;&lt;td day="1" month="1" year="2022" class="current-month disabled"&gt;&lt;div&gt;1&lt;/div&gt;&lt;/td&gt;&lt;td day="2" month="1" year="2022" class="current-month disabled"&gt;&lt;div&gt;2&lt;/div&gt;&lt;/td&gt;&lt;td day="3" month="1" year="2022" class="current-month disabled"&gt;&lt;div&gt;3&lt;/div&gt;&lt;/td&gt;&lt;td day="4" month="1" year="2022" class="current-month disabled"&gt;&lt;div&gt;4&lt;/div&gt;&lt;/td&gt;&lt;td day="5" month="1" year="2022" class="current-month disabled"&gt;&lt;div&gt;5&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td day="6" month="1" year="2022" class="current-month disabled"&gt;&lt;div&gt;6&lt;/div&gt;&lt;/td&gt;&lt;td day="7" month="1" year="2022" class="current-month disabled"&gt;&lt;div&gt;7&lt;/div&gt;&lt;/td&gt;&lt;td day="8" month="1" year="2022" class="today disabled"&gt;&lt;div&gt;8&lt;/div&gt;&lt;/td&gt;&lt;td day="9" month="1" year="2022" class="current-month disabled"&gt;&lt;div&gt;9&lt;/div&gt;&lt;/td&gt;&lt;td day="10" month="1" year="2022" class="current-month disabled"&gt;&lt;div&gt;10&lt;/div&gt;&lt;/td&gt;&lt;td day="11" month="1" year="2022" class="current-month disabled"&gt;&lt;div&gt;11&lt;/div&gt;&lt;/td&gt;&lt;td day="12" month="1" year="2022" class="current-month disabled"&gt;&lt;div&gt;12&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td day="13" month="1" year="2022" class="current-month disabled"&gt;&lt;div&gt;13&lt;/div&gt;&lt;/td&gt;&lt;td day="14" month="1" year="2022" class="current-month disabled"&gt;&lt;div&gt;14&lt;/div&gt;&lt;/td&gt;&lt;td day="15" month="1" year="2022" class="current-month gj-cursor-pointer"&gt;&lt;div&gt;15&lt;/div&gt;&lt;/td&gt;&lt;td day="16" month="1" year="2022" class="current-month gj-cursor-pointer"&gt;&lt;div&gt;16&lt;/div&gt;&lt;/td&gt;&lt;td day="17" month="1" year="2022" class="current-month gj-cursor-pointer"&gt;&lt;div&gt;17&lt;/div&gt;&lt;/td&gt;&lt;td day="18" month="1" year="2022" class="current-month gj-cursor-pointer"&gt;&lt;div&gt;18&lt;/div&gt;&lt;/td&gt;&lt;td day="19" month="1" year="2022" class="current-month gj-cursor-pointer"&gt;&lt;div&gt;19&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td day="20" month="1" year="2022" class="current-month gj-cursor-pointer"&gt;&lt;div&gt;20&lt;/div&gt;&lt;/td&gt;&lt;td day="21" month="1" year="2022" class="current-month gj-cursor-pointer"&gt;&lt;div&gt;21&lt;/div&gt;&lt;/td&gt;&lt;td day="22" month="1" year="2022" class="current-month gj-cursor-pointer"&gt;&lt;div&gt;22&lt;/div&gt;&lt;/td&gt;&lt;td day="23" month="1" year="2022" class="current-month gj-cursor-pointer"&gt;&lt;div&gt;23&lt;/div&gt;&lt;/td&gt;&lt;td day="24" month="1" year="2022" class="current-month gj-cursor-pointer"&gt;&lt;div&gt;24&lt;/div&gt;&lt;/td&gt;&lt;td day="25" month="1" year="2022" class="current-month gj-cursor-pointer"&gt;&lt;div&gt;25&lt;/div&gt;&lt;/td&gt;&lt;td day="26" month="1" year="2022" class="current-month gj-cursor-pointer"&gt;&lt;div&gt;26&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td day="27" month="1" year="2022" class="current-month gj-cursor-pointer"&gt;&lt;div&gt;27&lt;/div&gt;&lt;/td&gt;&lt;td day="28" month="1" year="2022" class="current-month gj-cursor-pointer"&gt;&lt;div&gt;28&lt;/div&gt;&lt;/td&gt;&lt;td class="other-month gj-cursor-pointer" day="1" month="2" year="2022"&gt;&lt;div&gt;1&lt;/div&gt;&lt;/td&gt;&lt;td class="other-month gj-cursor-pointer" day="2" month="2" year="2022"&gt;&lt;div&gt;2&lt;/div&gt;&lt;/td&gt;&lt;td class="other-month gj-cursor-pointer" day="3" month="2" year="2022"&gt;&lt;div&gt;3&lt;/div&gt;&lt;/td&gt;&lt;td class="other-month gj-cursor-pointer" day="4" month="2" year="2022"&gt;&lt;div&gt;4&lt;/div&gt;&lt;/td&gt;&lt;td class="other-month gj-cursor-pointer" day="5" month="2" year="2022"&gt;&lt;div&gt;5&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</msg>
+<msg timestamp="20220208 17:52:01.067" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220208 17:52:01.070" level="FAIL">Page should have contained text 'Booked successfully!' but did not.</msg>
+<status status="FAIL" starttime="20220208 17:51:50.776" endtime="20220208 17:52:01.070"/>
 </kw>
 <kw name="Log" library="BuiltIn">
 <arg>Webpage Checked</arg>
 <doc>Logs the given message with the given level.</doc>
-<msg timestamp="20220130 16:47:12.628" level="INFO">Webpage Checked</msg>
-<status status="PASS" starttime="20220130 16:47:12.628" endtime="20220130 16:47:12.628"/>
+<status status="NOT RUN" starttime="20220208 17:52:01.071" endtime="20220208 17:52:01.071"/>
 </kw>
-<kw name="Close Browser" library="Selenium2Library">
+<kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20220130 16:47:12.629" endtime="20220130 16:47:14.799"/>
+<status status="NOT RUN" starttime="20220208 17:52:01.072" endtime="20220208 17:52:01.072"/>
 </kw>
-<doc>US#2 Test Case #5</doc>
-<status status="PASS" starttime="20220130 16:47:09.379" endtime="20220130 16:47:14.800"/>
+<doc>US#3 Test Case #1</doc>
+<status status="FAIL" starttime="20220208 17:51:42.032" endtime="20220208 17:52:01.072">Page should have contained text 'Booked successfully!' but did not.</status>
 </test>
-<test id="s1-t6" name="Empty Credentials">
+<test id="s1-t2" name="Booking with empty FULL NAME field">
+<kw name="Get Current Date" library="DateTime">
+<var>${1st_Date}</var>
+<arg>result_format=%m-%d-%Y</arg>
+<arg>increment=6 day</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20220208 17:52:01.074" level="INFO">${1st_Date} = 02-14-2022</msg>
+<status status="PASS" starttime="20220208 17:52:01.074" endtime="20220208 17:52:01.074"/>
+</kw>
+<kw name="Get Current Date" library="DateTime">
+<var>${2nd_Date}</var>
+<arg>result_format=%m-%d-%Y</arg>
+<arg>increment=7 day</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20220208 17:52:01.075" level="INFO">${2nd_Date} = 02-15-2022</msg>
+<status status="PASS" starttime="20220208 17:52:01.074" endtime="20220208 17:52:01.075"/>
+</kw>
 <kw name="Open Login Page">
-<kw name="Open Browser" library="Selenium2Library">
+<kw name="Open Browser" library="SeleniumLibrary">
 <arg>http://localhost:3000</arg>
 <arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20220130 16:47:14.805" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000'.</msg>
-<status status="PASS" starttime="20220130 16:47:14.805" endtime="20220130 16:47:17.055"/>
+<msg timestamp="20220208 17:52:01.076" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000'.</msg>
+<status status="PASS" starttime="20220208 17:52:01.076" endtime="20220208 17:52:03.818"/>
 </kw>
-<kw name="Maximize Browser Window" library="Selenium2Library">
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20220130 16:47:17.055" endtime="20220130 16:47:17.257"/>
+<status status="PASS" starttime="20220208 17:52:03.818" endtime="20220208 17:52:03.942"/>
 </kw>
-<kw name="Set Browser Implicit Wait" library="Selenium2Library">
+<kw name="Set Browser Implicit Wait" library="SeleniumLibrary">
 <arg>5</arg>
 <doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20220130 16:47:17.258" endtime="20220130 16:47:17.259"/>
+<status status="PASS" starttime="20220208 17:52:03.942" endtime="20220208 17:52:03.943"/>
 </kw>
-<status status="PASS" starttime="20220130 16:47:14.804" endtime="20220130 16:47:17.259"/>
+<status status="PASS" starttime="20220208 17:52:01.075" endtime="20220208 17:52:03.944"/>
 </kw>
-<kw name="Click Element" library="Selenium2Library">
+<kw name="Click Element" library="SeleniumLibrary">
 <arg>css:.btn_booknow</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220130 16:47:17.260" level="INFO">Clicking element 'css:.btn_booknow'.</msg>
-<status status="PASS" starttime="20220130 16:47:17.260" endtime="20220130 16:47:17.607"/>
+<msg timestamp="20220208 17:52:03.944" level="INFO">Clicking element 'css:.btn_booknow'.</msg>
+<status status="PASS" starttime="20220208 17:52:03.944" endtime="20220208 17:52:04.562"/>
 </kw>
-<kw name="Click Button" library="Selenium2Library">
-<arg>id:login_btn</arg>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220208 17:52:06.569" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220208 17:52:04.564" endtime="20220208 17:52:06.569"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:num</arg>
+<arg>09477903358</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220208 17:52:06.571" level="INFO">Typing text '09477903358' into text field 'id:num'.</msg>
+<status status="PASS" starttime="20220208 17:52:06.570" endtime="20220208 17:52:06.670"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:address</arg>
+<arg>2401 Taft Ave, Malate, Manila, 1004 Metro Manila</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220208 17:52:06.671" level="INFO">Typing text '2401 Taft Ave, Malate, Manila, 1004 Metro Manila' into text field 'id:address'.</msg>
+<status status="PASS" starttime="20220208 17:52:06.671" endtime="20220208 17:52:06.817"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.querySelector("#checkin").removeAttribute("readonly");</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220208 17:52:06.818" level="INFO">Executing JavaScript:
+document.querySelector("#checkin").removeAttribute("readonly");
+Without any arguments.</msg>
+<status status="PASS" starttime="20220208 17:52:06.817" endtime="20220208 17:52:06.824"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.querySelector("#checkin").removeAttribute("onchange");</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220208 17:52:06.825" level="INFO">Executing JavaScript:
+document.querySelector("#checkin").removeAttribute("onchange");
+Without any arguments.</msg>
+<status status="PASS" starttime="20220208 17:52:06.824" endtime="20220208 17:52:06.829"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:checkin</arg>
+<arg>${1st_Date}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220208 17:52:06.830" level="INFO">Typing text '02-14-2022' into text field 'id:checkin'.</msg>
+<status status="PASS" starttime="20220208 17:52:06.830" endtime="20220208 17:52:06.942"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.querySelector("#checkout").removeAttribute("readonly");</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220208 17:52:06.944" level="INFO">Executing JavaScript:
+document.querySelector("#checkout").removeAttribute("readonly");
+Without any arguments.</msg>
+<status status="PASS" starttime="20220208 17:52:06.943" endtime="20220208 17:52:06.948"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.querySelector("#checkout").removeAttribute("onchange");</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220208 17:52:06.949" level="INFO">Executing JavaScript:
+document.querySelector("#checkout").removeAttribute("onchange");
+Without any arguments.</msg>
+<status status="PASS" starttime="20220208 17:52:06.949" endtime="20220208 17:52:06.953"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:checkout</arg>
+<arg>${2nd_Date}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220208 17:52:06.954" level="INFO">Typing text '02-15-2022' into text field 'id:checkout'.</msg>
+<status status="PASS" starttime="20220208 17:52:06.954" endtime="20220208 17:52:07.066"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id:submit_btn</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20220130 16:47:17.608" level="INFO">Clicking button 'id:login_btn'.</msg>
-<status status="PASS" starttime="20220130 16:47:17.608" endtime="20220130 16:47:17.665"/>
+<msg timestamp="20220208 17:52:07.067" level="INFO">Clicking button 'id:submit_btn'.</msg>
+<status status="PASS" starttime="20220208 17:52:07.067" endtime="20220208 17:52:07.129"/>
 </kw>
 <kw name="Log" library="BuiltIn">
-<arg>Credentials Entered</arg>
+<arg>Booking Submitted</arg>
 <doc>Logs the given message with the given level.</doc>
-<msg timestamp="20220130 16:47:17.666" level="INFO">Credentials Entered</msg>
-<status status="PASS" starttime="20220130 16:47:17.666" endtime="20220130 16:47:17.666"/>
+<msg timestamp="20220208 17:52:07.130" level="INFO">Booking Submitted</msg>
+<status status="PASS" starttime="20220208 17:52:07.129" endtime="20220208 17:52:07.130"/>
 </kw>
-<kw name="Page Should Contain" library="Selenium2Library">
-<arg>Please input correctly</arg>
+<kw name="Page Should Not Contain" library="SeleniumLibrary">
+<arg>Booked successfully!</arg>
 <arg>INFO</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<msg timestamp="20220130 16:47:17.685" level="INFO">Current page contains text 'Please input correctly'.</msg>
-<status status="PASS" starttime="20220130 16:47:17.667" endtime="20220130 16:47:17.685"/>
-</kw>
-<kw name="Page Should Contain" library="Selenium2Library">
-<arg>LOG IN</arg>
-<arg>INFO</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<msg timestamp="20220130 16:47:17.708" level="INFO">Current page contains text 'LOG IN'.</msg>
-<status status="PASS" starttime="20220130 16:47:17.686" endtime="20220130 16:47:17.708"/>
-</kw>
-<kw name="Page Should Contain" library="Selenium2Library">
-<arg>CREATE AN ACCOUNT</arg>
-<arg>INFO</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<msg timestamp="20220130 16:47:17.724" level="INFO">Current page contains text 'CREATE AN ACCOUNT'.</msg>
-<status status="PASS" starttime="20220130 16:47:17.709" endtime="20220130 16:47:17.724"/>
+<doc>Verifies the current page does not contain ``text``.</doc>
+<msg timestamp="20220208 17:52:17.175" level="INFO">Current page does not contain text 'Booked successfully!'.</msg>
+<status status="PASS" starttime="20220208 17:52:07.130" endtime="20220208 17:52:17.175"/>
 </kw>
 <kw name="Log" library="BuiltIn">
 <arg>Webpage Checked</arg>
 <doc>Logs the given message with the given level.</doc>
-<msg timestamp="20220130 16:47:17.724" level="INFO">Webpage Checked</msg>
-<status status="PASS" starttime="20220130 16:47:17.724" endtime="20220130 16:47:17.724"/>
+<msg timestamp="20220208 17:52:17.176" level="INFO">Webpage Checked</msg>
+<status status="PASS" starttime="20220208 17:52:17.175" endtime="20220208 17:52:17.176"/>
 </kw>
-<kw name="Close Browser" library="Selenium2Library">
+<kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20220130 16:47:17.725" endtime="20220130 16:47:19.925"/>
+<status status="PASS" starttime="20220208 17:52:17.176" endtime="20220208 17:52:19.340"/>
 </kw>
-<doc>US#2 Test Case #6</doc>
-<status status="PASS" starttime="20220130 16:47:14.803" endtime="20220130 16:47:19.926"/>
+<doc>US#3 Test Case #2</doc>
+<status status="PASS" starttime="20220208 17:52:01.073" endtime="20220208 17:52:19.340"/>
 </test>
-<doc>Login Tests</doc>
-<status status="PASS" starttime="20220130 16:46:35.932" endtime="20220130 16:47:19.930"/>
+<test id="s1-t3" name="Booking with empty CONTACT NUMBER field">
+<kw name="Get Current Date" library="DateTime">
+<var>${1st_Date}</var>
+<arg>result_format=%m-%d-%Y</arg>
+<arg>increment=6 day</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20220208 17:52:19.343" level="INFO">${1st_Date} = 02-14-2022</msg>
+<status status="PASS" starttime="20220208 17:52:19.342" endtime="20220208 17:52:19.343"/>
+</kw>
+<kw name="Get Current Date" library="DateTime">
+<var>${2nd_Date}</var>
+<arg>result_format=%m-%d-%Y</arg>
+<arg>increment=7 day</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20220208 17:52:19.343" level="INFO">${2nd_Date} = 02-15-2022</msg>
+<status status="PASS" starttime="20220208 17:52:19.343" endtime="20220208 17:52:19.343"/>
+</kw>
+<kw name="Open Login Page">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>http://localhost:3000</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220208 17:52:19.344" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000'.</msg>
+<status status="PASS" starttime="20220208 17:52:19.344" endtime="20220208 17:52:22.083"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220208 17:52:22.083" endtime="20220208 17:52:22.204"/>
+</kw>
+<kw name="Set Browser Implicit Wait" library="SeleniumLibrary">
+<arg>5</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220208 17:52:22.204" endtime="20220208 17:52:22.205"/>
+</kw>
+<status status="PASS" starttime="20220208 17:52:19.343" endtime="20220208 17:52:22.205"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css:.btn_booknow</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220208 17:52:22.206" level="INFO">Clicking element 'css:.btn_booknow'.</msg>
+<status status="PASS" starttime="20220208 17:52:22.205" endtime="20220208 17:52:22.583"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220208 17:52:24.588" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220208 17:52:22.584" endtime="20220208 17:52:24.588"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:fname</arg>
+<arg>Steven Castro</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220208 17:52:24.589" level="INFO">Typing text 'Steven Castro' into text field 'id:fname'.</msg>
+<status status="PASS" starttime="20220208 17:52:24.588" endtime="20220208 17:52:24.704"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:address</arg>
+<arg>2401 Taft Ave, Malate, Manila, 1004 Metro Manila</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220208 17:52:24.705" level="INFO">Typing text '2401 Taft Ave, Malate, Manila, 1004 Metro Manila' into text field 'id:address'.</msg>
+<status status="PASS" starttime="20220208 17:52:24.704" endtime="20220208 17:52:24.833"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.querySelector("#checkin").removeAttribute("readonly");</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220208 17:52:24.834" level="INFO">Executing JavaScript:
+document.querySelector("#checkin").removeAttribute("readonly");
+Without any arguments.</msg>
+<status status="PASS" starttime="20220208 17:52:24.834" endtime="20220208 17:52:24.838"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.querySelector("#checkin").removeAttribute("onchange");</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220208 17:52:24.839" level="INFO">Executing JavaScript:
+document.querySelector("#checkin").removeAttribute("onchange");
+Without any arguments.</msg>
+<status status="PASS" starttime="20220208 17:52:24.839" endtime="20220208 17:52:24.843"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:checkin</arg>
+<arg>${1st_Date}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220208 17:52:24.844" level="INFO">Typing text '02-14-2022' into text field 'id:checkin'.</msg>
+<status status="PASS" starttime="20220208 17:52:24.843" endtime="20220208 17:52:24.955"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.querySelector("#checkout").removeAttribute("readonly");</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220208 17:52:24.956" level="INFO">Executing JavaScript:
+document.querySelector("#checkout").removeAttribute("readonly");
+Without any arguments.</msg>
+<status status="PASS" starttime="20220208 17:52:24.955" endtime="20220208 17:52:24.961"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.querySelector("#checkout").removeAttribute("onchange");</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220208 17:52:24.962" level="INFO">Executing JavaScript:
+document.querySelector("#checkout").removeAttribute("onchange");
+Without any arguments.</msg>
+<status status="PASS" starttime="20220208 17:52:24.961" endtime="20220208 17:52:24.970"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:checkout</arg>
+<arg>${2nd_Date}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220208 17:52:24.971" level="INFO">Typing text '02-15-2022' into text field 'id:checkout'.</msg>
+<status status="PASS" starttime="20220208 17:52:24.970" endtime="20220208 17:52:25.077"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id:submit_btn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220208 17:52:25.078" level="INFO">Clicking button 'id:submit_btn'.</msg>
+<status status="PASS" starttime="20220208 17:52:25.077" endtime="20220208 17:52:25.140"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Booking Submitted</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220208 17:52:25.141" level="INFO">Booking Submitted</msg>
+<status status="PASS" starttime="20220208 17:52:25.140" endtime="20220208 17:52:25.141"/>
+</kw>
+<kw name="Page Should Not Contain" library="SeleniumLibrary">
+<arg>Booked successfully!</arg>
+<arg>INFO</arg>
+<doc>Verifies the current page does not contain ``text``.</doc>
+<msg timestamp="20220208 17:52:35.204" level="INFO">Current page does not contain text 'Booked successfully!'.</msg>
+<status status="PASS" starttime="20220208 17:52:25.141" endtime="20220208 17:52:35.204"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Webpage Checked</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220208 17:52:35.205" level="INFO">Webpage Checked</msg>
+<status status="PASS" starttime="20220208 17:52:35.205" endtime="20220208 17:52:35.205"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220208 17:52:35.206" endtime="20220208 17:52:37.357"/>
+</kw>
+<doc>US#3 Test Case #3</doc>
+<status status="PASS" starttime="20220208 17:52:19.342" endtime="20220208 17:52:37.357"/>
+</test>
+<test id="s1-t4" name="Booking with empty ADDRESS field">
+<kw name="Get Current Date" library="DateTime">
+<var>${1st_Date}</var>
+<arg>result_format=%m-%d-%Y</arg>
+<arg>increment=6 day</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20220208 17:52:37.360" level="INFO">${1st_Date} = 02-14-2022</msg>
+<status status="PASS" starttime="20220208 17:52:37.359" endtime="20220208 17:52:37.360"/>
+</kw>
+<kw name="Get Current Date" library="DateTime">
+<var>${2nd_Date}</var>
+<arg>result_format=%m-%d-%Y</arg>
+<arg>increment=7 day</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20220208 17:52:37.360" level="INFO">${2nd_Date} = 02-15-2022</msg>
+<status status="PASS" starttime="20220208 17:52:37.360" endtime="20220208 17:52:37.360"/>
+</kw>
+<kw name="Open Login Page">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>http://localhost:3000</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220208 17:52:37.361" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000'.</msg>
+<status status="PASS" starttime="20220208 17:52:37.361" endtime="20220208 17:52:40.166"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220208 17:52:40.166" endtime="20220208 17:52:40.285"/>
+</kw>
+<kw name="Set Browser Implicit Wait" library="SeleniumLibrary">
+<arg>5</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220208 17:52:40.285" endtime="20220208 17:52:40.286"/>
+</kw>
+<status status="PASS" starttime="20220208 17:52:37.361" endtime="20220208 17:52:40.286"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css:.btn_booknow</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220208 17:52:40.287" level="INFO">Clicking element 'css:.btn_booknow'.</msg>
+<status status="PASS" starttime="20220208 17:52:40.287" endtime="20220208 17:52:40.642"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220208 17:52:42.652" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220208 17:52:40.643" endtime="20220208 17:52:42.652"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:fname</arg>
+<arg>Steven Castro</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220208 17:52:42.653" level="INFO">Typing text 'Steven Castro' into text field 'id:fname'.</msg>
+<status status="PASS" starttime="20220208 17:52:42.652" endtime="20220208 17:52:42.763"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:num</arg>
+<arg>09477903358</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220208 17:52:42.764" level="INFO">Typing text '09477903358' into text field 'id:num'.</msg>
+<status status="PASS" starttime="20220208 17:52:42.763" endtime="20220208 17:52:42.847"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.querySelector("#checkin").removeAttribute("readonly");</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220208 17:52:42.848" level="INFO">Executing JavaScript:
+document.querySelector("#checkin").removeAttribute("readonly");
+Without any arguments.</msg>
+<status status="PASS" starttime="20220208 17:52:42.847" endtime="20220208 17:52:42.851"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.querySelector("#checkin").removeAttribute("onchange");</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220208 17:52:42.852" level="INFO">Executing JavaScript:
+document.querySelector("#checkin").removeAttribute("onchange");
+Without any arguments.</msg>
+<status status="PASS" starttime="20220208 17:52:42.852" endtime="20220208 17:52:42.857"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:checkin</arg>
+<arg>${1st_Date}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220208 17:52:42.858" level="INFO">Typing text '02-14-2022' into text field 'id:checkin'.</msg>
+<status status="PASS" starttime="20220208 17:52:42.858" endtime="20220208 17:52:42.962"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.querySelector("#checkout").removeAttribute("readonly");</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220208 17:52:42.963" level="INFO">Executing JavaScript:
+document.querySelector("#checkout").removeAttribute("readonly");
+Without any arguments.</msg>
+<status status="PASS" starttime="20220208 17:52:42.963" endtime="20220208 17:52:42.967"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.querySelector("#checkout").removeAttribute("onchange");</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220208 17:52:42.968" level="INFO">Executing JavaScript:
+document.querySelector("#checkout").removeAttribute("onchange");
+Without any arguments.</msg>
+<status status="PASS" starttime="20220208 17:52:42.967" endtime="20220208 17:52:42.971"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:checkout</arg>
+<arg>${2nd_Date}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220208 17:52:42.972" level="INFO">Typing text '02-15-2022' into text field 'id:checkout'.</msg>
+<status status="PASS" starttime="20220208 17:52:42.971" endtime="20220208 17:52:43.079"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id:submit_btn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220208 17:52:43.081" level="INFO">Clicking button 'id:submit_btn'.</msg>
+<status status="PASS" starttime="20220208 17:52:43.080" endtime="20220208 17:52:43.144"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Booking Submitted</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220208 17:52:43.145" level="INFO">Booking Submitted</msg>
+<status status="PASS" starttime="20220208 17:52:43.144" endtime="20220208 17:52:43.145"/>
+</kw>
+<kw name="Page Should Not Contain" library="SeleniumLibrary">
+<arg>Booked successfully!</arg>
+<arg>INFO</arg>
+<doc>Verifies the current page does not contain ``text``.</doc>
+<msg timestamp="20220208 17:52:53.179" level="INFO">Current page does not contain text 'Booked successfully!'.</msg>
+<status status="PASS" starttime="20220208 17:52:43.145" endtime="20220208 17:52:53.179"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Webpage Checked</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220208 17:52:53.180" level="INFO">Webpage Checked</msg>
+<status status="PASS" starttime="20220208 17:52:53.180" endtime="20220208 17:52:53.180"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220208 17:52:53.180" endtime="20220208 17:52:55.315"/>
+</kw>
+<doc>US#3 Test Case #4</doc>
+<status status="PASS" starttime="20220208 17:52:37.359" endtime="20220208 17:52:55.315"/>
+</test>
+<test id="s1-t5" name="Booking with empty CHECK IN field">
+<kw name="Get Current Date" library="DateTime">
+<var>${2nd_Date}</var>
+<arg>result_format=%m-%d-%Y</arg>
+<arg>increment=7 day</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20220208 17:52:55.318" level="INFO">${2nd_Date} = 02-15-2022</msg>
+<status status="PASS" starttime="20220208 17:52:55.317" endtime="20220208 17:52:55.318"/>
+</kw>
+<kw name="Open Login Page">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>http://localhost:3000</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220208 17:52:55.318" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000'.</msg>
+<status status="PASS" starttime="20220208 17:52:55.318" endtime="20220208 17:52:58.973"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220208 17:52:58.974" endtime="20220208 17:52:59.094"/>
+</kw>
+<kw name="Set Browser Implicit Wait" library="SeleniumLibrary">
+<arg>5</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220208 17:52:59.094" endtime="20220208 17:52:59.095"/>
+</kw>
+<status status="PASS" starttime="20220208 17:52:55.318" endtime="20220208 17:52:59.095"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css:.btn_booknow</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220208 17:52:59.096" level="INFO">Clicking element 'css:.btn_booknow'.</msg>
+<status status="PASS" starttime="20220208 17:52:59.096" endtime="20220208 17:52:59.471"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220208 17:53:01.479" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220208 17:52:59.472" endtime="20220208 17:53:01.479"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:fname</arg>
+<arg>Steven Castro</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220208 17:53:01.480" level="INFO">Typing text 'Steven Castro' into text field 'id:fname'.</msg>
+<status status="PASS" starttime="20220208 17:53:01.479" endtime="20220208 17:53:01.587"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:num</arg>
+<arg>09477903358</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220208 17:53:01.588" level="INFO">Typing text '09477903358' into text field 'id:num'.</msg>
+<status status="PASS" starttime="20220208 17:53:01.587" endtime="20220208 17:53:01.667"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:address</arg>
+<arg>2401 Taft Ave, Malate, Manila, 1004 Metro Manila</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220208 17:53:01.668" level="INFO">Typing text '2401 Taft Ave, Malate, Manila, 1004 Metro Manila' into text field 'id:address'.</msg>
+<status status="PASS" starttime="20220208 17:53:01.667" endtime="20220208 17:53:01.792"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.querySelector("#checkout").removeAttribute("readonly");</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220208 17:53:01.793" level="INFO">Executing JavaScript:
+document.querySelector("#checkout").removeAttribute("readonly");
+Without any arguments.</msg>
+<status status="PASS" starttime="20220208 17:53:01.792" endtime="20220208 17:53:01.797"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.querySelector("#checkout").removeAttribute("onchange");</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220208 17:53:01.798" level="INFO">Executing JavaScript:
+document.querySelector("#checkout").removeAttribute("onchange");
+Without any arguments.</msg>
+<status status="PASS" starttime="20220208 17:53:01.798" endtime="20220208 17:53:01.801"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:checkout</arg>
+<arg>${2nd_Date}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220208 17:53:01.802" level="INFO">Typing text '02-15-2022' into text field 'id:checkout'.</msg>
+<status status="PASS" starttime="20220208 17:53:01.802" endtime="20220208 17:53:01.914"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id:submit_btn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220208 17:53:01.915" level="INFO">Clicking button 'id:submit_btn'.</msg>
+<status status="PASS" starttime="20220208 17:53:01.914" endtime="20220208 17:53:01.975"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Booking Submitted</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220208 17:53:01.975" level="INFO">Booking Submitted</msg>
+<status status="PASS" starttime="20220208 17:53:01.975" endtime="20220208 17:53:01.976"/>
+</kw>
+<kw name="Page Should Not Contain" library="SeleniumLibrary">
+<arg>Booked successfully!</arg>
+<arg>INFO</arg>
+<doc>Verifies the current page does not contain ``text``.</doc>
+<msg timestamp="20220208 17:53:12.026" level="INFO">Current page does not contain text 'Booked successfully!'.</msg>
+<status status="PASS" starttime="20220208 17:53:01.976" endtime="20220208 17:53:12.026"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Webpage Checked</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220208 17:53:12.027" level="INFO">Webpage Checked</msg>
+<status status="PASS" starttime="20220208 17:53:12.027" endtime="20220208 17:53:12.027"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220208 17:53:12.027" endtime="20220208 17:53:14.185"/>
+</kw>
+<doc>US#3 Test Case #5</doc>
+<status status="PASS" starttime="20220208 17:52:55.317" endtime="20220208 17:53:14.185"/>
+</test>
+<test id="s1-t6" name="Booking with empty CHECK OUT field">
+<kw name="Get Current Date" library="DateTime">
+<var>${1st_Date}</var>
+<arg>result_format=%m-%d-%Y</arg>
+<arg>increment=6 day</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20220208 17:53:14.187" level="INFO">${1st_Date} = 02-14-2022</msg>
+<status status="PASS" starttime="20220208 17:53:14.187" endtime="20220208 17:53:14.188"/>
+</kw>
+<kw name="Open Login Page">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>http://localhost:3000</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220208 17:53:14.188" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000'.</msg>
+<status status="PASS" starttime="20220208 17:53:14.188" endtime="20220208 17:53:16.933"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220208 17:53:16.933" endtime="20220208 17:53:17.052"/>
+</kw>
+<kw name="Set Browser Implicit Wait" library="SeleniumLibrary">
+<arg>5</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220208 17:53:17.052" endtime="20220208 17:53:17.053"/>
+</kw>
+<status status="PASS" starttime="20220208 17:53:14.188" endtime="20220208 17:53:17.053"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css:.btn_booknow</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220208 17:53:17.054" level="INFO">Clicking element 'css:.btn_booknow'.</msg>
+<status status="PASS" starttime="20220208 17:53:17.053" endtime="20220208 17:53:17.422"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220208 17:53:19.426" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220208 17:53:17.424" endtime="20220208 17:53:19.427"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:fname</arg>
+<arg>Steven Castro</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220208 17:53:19.427" level="INFO">Typing text 'Steven Castro' into text field 'id:fname'.</msg>
+<status status="PASS" starttime="20220208 17:53:19.427" endtime="20220208 17:53:19.531"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:num</arg>
+<arg>09477903358</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220208 17:53:19.532" level="INFO">Typing text '09477903358' into text field 'id:num'.</msg>
+<status status="PASS" starttime="20220208 17:53:19.532" endtime="20220208 17:53:19.616"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:address</arg>
+<arg>2401 Taft Ave, Malate, Manila, 1004 Metro Manila</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220208 17:53:19.617" level="INFO">Typing text '2401 Taft Ave, Malate, Manila, 1004 Metro Manila' into text field 'id:address'.</msg>
+<status status="PASS" starttime="20220208 17:53:19.617" endtime="20220208 17:53:19.744"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.querySelector("#checkin").removeAttribute("readonly");</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220208 17:53:19.745" level="INFO">Executing JavaScript:
+document.querySelector("#checkin").removeAttribute("readonly");
+Without any arguments.</msg>
+<status status="PASS" starttime="20220208 17:53:19.744" endtime="20220208 17:53:19.748"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.querySelector("#checkin").removeAttribute("onchange");</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220208 17:53:19.749" level="INFO">Executing JavaScript:
+document.querySelector("#checkin").removeAttribute("onchange");
+Without any arguments.</msg>
+<status status="PASS" starttime="20220208 17:53:19.748" endtime="20220208 17:53:19.752"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:checkin</arg>
+<arg>${1st_Date}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220208 17:53:19.754" level="INFO">Typing text '02-14-2022' into text field 'id:checkin'.</msg>
+<status status="PASS" starttime="20220208 17:53:19.753" endtime="20220208 17:53:19.868"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id:submit_btn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220208 17:53:19.869" level="INFO">Clicking button 'id:submit_btn'.</msg>
+<status status="PASS" starttime="20220208 17:53:19.869" endtime="20220208 17:53:19.937"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Booking Submitted</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220208 17:53:19.937" level="INFO">Booking Submitted</msg>
+<status status="PASS" starttime="20220208 17:53:19.937" endtime="20220208 17:53:19.938"/>
+</kw>
+<kw name="Page Should Not Contain" library="SeleniumLibrary">
+<arg>Booked successfully!</arg>
+<arg>INFO</arg>
+<doc>Verifies the current page does not contain ``text``.</doc>
+<msg timestamp="20220208 17:53:29.975" level="INFO">Current page does not contain text 'Booked successfully!'.</msg>
+<status status="PASS" starttime="20220208 17:53:19.938" endtime="20220208 17:53:29.975"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Webpage Checked</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220208 17:53:29.975" level="INFO">Webpage Checked</msg>
+<status status="PASS" starttime="20220208 17:53:29.975" endtime="20220208 17:53:29.976"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220208 17:53:29.976" endtime="20220208 17:53:32.172"/>
+</kw>
+<doc>US#3 Test Case #6</doc>
+<status status="PASS" starttime="20220208 17:53:14.187" endtime="20220208 17:53:32.172"/>
+</test>
+<test id="s1-t7" name="Booking with empty fields">
+<kw name="Open Login Page">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>http://localhost:3000</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220208 17:53:32.175" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000'.</msg>
+<status status="PASS" starttime="20220208 17:53:32.174" endtime="20220208 17:53:35.135"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220208 17:53:35.136" endtime="20220208 17:53:35.264"/>
+</kw>
+<kw name="Set Browser Implicit Wait" library="SeleniumLibrary">
+<arg>5</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220208 17:53:35.264" endtime="20220208 17:53:35.265"/>
+</kw>
+<status status="PASS" starttime="20220208 17:53:32.174" endtime="20220208 17:53:35.265"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css:.btn_booknow</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220208 17:53:35.266" level="INFO">Clicking element 'css:.btn_booknow'.</msg>
+<status status="PASS" starttime="20220208 17:53:35.266" endtime="20220208 17:53:35.658"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220208 17:53:37.664" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220208 17:53:35.658" endtime="20220208 17:53:37.664"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id:submit_btn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220208 17:53:37.665" level="INFO">Clicking button 'id:submit_btn'.</msg>
+<status status="PASS" starttime="20220208 17:53:37.665" endtime="20220208 17:53:37.740"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Booking Submitted</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220208 17:53:37.741" level="INFO">Booking Submitted</msg>
+<status status="PASS" starttime="20220208 17:53:37.740" endtime="20220208 17:53:37.741"/>
+</kw>
+<kw name="Page Should Not Contain" library="SeleniumLibrary">
+<arg>Booked successfully!</arg>
+<arg>INFO</arg>
+<doc>Verifies the current page does not contain ``text``.</doc>
+<msg timestamp="20220208 17:53:47.820" level="INFO">Current page does not contain text 'Booked successfully!'.</msg>
+<status status="PASS" starttime="20220208 17:53:37.741" endtime="20220208 17:53:47.820"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Webpage Checked</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220208 17:53:47.820" level="INFO">Webpage Checked</msg>
+<status status="PASS" starttime="20220208 17:53:47.820" endtime="20220208 17:53:47.820"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220208 17:53:47.820" endtime="20220208 17:53:49.997"/>
+</kw>
+<doc>US#3 Test Case #7</doc>
+<status status="PASS" starttime="20220208 17:53:32.174" endtime="20220208 17:53:49.997"/>
+</test>
+<test id="s1-t8" name="Booking Single Room with more than 2 guests">
+<kw name="Get Current Date" library="DateTime">
+<var>${1st_Date}</var>
+<arg>result_format=%m-%d-%Y</arg>
+<arg>increment=8 day</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20220208 17:53:50.000" level="INFO">${1st_Date} = 02-16-2022</msg>
+<status status="PASS" starttime="20220208 17:53:49.999" endtime="20220208 17:53:50.000"/>
+</kw>
+<kw name="Get Current Date" library="DateTime">
+<var>${2nd_Date}</var>
+<arg>result_format=%m-%d-%Y</arg>
+<arg>increment=9 day</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20220208 17:53:50.000" level="INFO">${2nd_Date} = 02-17-2022</msg>
+<status status="PASS" starttime="20220208 17:53:50.000" endtime="20220208 17:53:50.000"/>
+</kw>
+<kw name="Open Login Page">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>http://localhost:3000</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220208 17:53:50.001" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000'.</msg>
+<status status="PASS" starttime="20220208 17:53:50.001" endtime="20220208 17:53:52.824"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220208 17:53:52.825" endtime="20220208 17:53:52.954"/>
+</kw>
+<kw name="Set Browser Implicit Wait" library="SeleniumLibrary">
+<arg>5</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220208 17:53:52.954" endtime="20220208 17:53:52.955"/>
+</kw>
+<status status="PASS" starttime="20220208 17:53:50.000" endtime="20220208 17:53:52.956"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css:.btn_booknow</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220208 17:53:52.957" level="INFO">Clicking element 'css:.btn_booknow'.</msg>
+<status status="PASS" starttime="20220208 17:53:52.956" endtime="20220208 17:53:53.315"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220208 17:53:55.318" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220208 17:53:53.316" endtime="20220208 17:53:55.318"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:fname</arg>
+<arg>Steven Castro</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220208 17:53:55.319" level="INFO">Typing text 'Steven Castro' into text field 'id:fname'.</msg>
+<status status="PASS" starttime="20220208 17:53:55.318" endtime="20220208 17:53:55.414"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:num</arg>
+<arg>09477903358</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220208 17:53:55.414" level="INFO">Typing text '09477903358' into text field 'id:num'.</msg>
+<status status="PASS" starttime="20220208 17:53:55.414" endtime="20220208 17:53:55.492"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:address</arg>
+<arg>2401 Taft Ave, Malate, Manila, 1004 Metro Manila</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220208 17:53:55.494" level="INFO">Typing text '2401 Taft Ave, Malate, Manila, 1004 Metro Manila' into text field 'id:address'.</msg>
+<status status="PASS" starttime="20220208 17:53:55.493" endtime="20220208 17:53:55.615"/>
+</kw>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>id:room</arg>
+<arg>Single Room</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20220208 17:53:55.616" level="INFO">Selecting options from selection list 'id:room' by label Single Room.</msg>
+<status status="PASS" starttime="20220208 17:53:55.616" endtime="20220208 17:53:55.657"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:guests</arg>
+<arg>3</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220208 17:53:55.658" level="INFO">Typing text '3' into text field 'id:guests'.</msg>
+<status status="PASS" starttime="20220208 17:53:55.658" endtime="20220208 17:53:55.731"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.querySelector("#checkin").removeAttribute("readonly");</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220208 17:53:55.732" level="INFO">Executing JavaScript:
+document.querySelector("#checkin").removeAttribute("readonly");
+Without any arguments.</msg>
+<status status="PASS" starttime="20220208 17:53:55.731" endtime="20220208 17:53:55.736"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.querySelector("#checkin").removeAttribute("onchange");</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220208 17:53:55.737" level="INFO">Executing JavaScript:
+document.querySelector("#checkin").removeAttribute("onchange");
+Without any arguments.</msg>
+<status status="PASS" starttime="20220208 17:53:55.737" endtime="20220208 17:53:55.742"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:checkin</arg>
+<arg>${1st_Date}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220208 17:53:55.743" level="INFO">Typing text '02-16-2022' into text field 'id:checkin'.</msg>
+<status status="PASS" starttime="20220208 17:53:55.743" endtime="20220208 17:53:55.849"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.querySelector("#checkout").removeAttribute("readonly");</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220208 17:53:55.850" level="INFO">Executing JavaScript:
+document.querySelector("#checkout").removeAttribute("readonly");
+Without any arguments.</msg>
+<status status="PASS" starttime="20220208 17:53:55.849" endtime="20220208 17:53:55.855"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.querySelector("#checkout").removeAttribute("onchange");</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220208 17:53:55.857" level="INFO">Executing JavaScript:
+document.querySelector("#checkout").removeAttribute("onchange");
+Without any arguments.</msg>
+<status status="PASS" starttime="20220208 17:53:55.856" endtime="20220208 17:53:55.862"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:checkout</arg>
+<arg>${2nd_Date}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220208 17:53:55.862" level="INFO">Typing text '02-17-2022' into text field 'id:checkout'.</msg>
+<status status="PASS" starttime="20220208 17:53:55.862" endtime="20220208 17:53:55.974"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id:submit_btn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220208 17:53:55.976" level="INFO">Clicking button 'id:submit_btn'.</msg>
+<status status="PASS" starttime="20220208 17:53:55.975" endtime="20220208 17:53:56.041"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Booking Submitted</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220208 17:53:56.042" level="INFO">Booking Submitted</msg>
+<status status="PASS" starttime="20220208 17:53:56.042" endtime="20220208 17:53:56.042"/>
+</kw>
+<kw name="Page Should Not Contain" library="SeleniumLibrary">
+<arg>Booked successfully!</arg>
+<arg>INFO</arg>
+<doc>Verifies the current page does not contain ``text``.</doc>
+<msg timestamp="20220208 17:54:06.079" level="INFO">Current page does not contain text 'Booked successfully!'.</msg>
+<status status="PASS" starttime="20220208 17:53:56.043" endtime="20220208 17:54:06.079"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Webpage Checked</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220208 17:54:06.080" level="INFO">Webpage Checked</msg>
+<status status="PASS" starttime="20220208 17:54:06.080" endtime="20220208 17:54:06.080"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220208 17:54:06.080" endtime="20220208 17:54:08.232"/>
+</kw>
+<doc>US#3 Test Case #9</doc>
+<status status="PASS" starttime="20220208 17:53:49.999" endtime="20220208 17:54:08.232"/>
+</test>
+<test id="s1-t9" name="Booking Double Room with more than 3 guests">
+<kw name="Get Current Date" library="DateTime">
+<var>${1st_Date}</var>
+<arg>result_format=%m-%d-%Y</arg>
+<arg>increment=8 day</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20220208 17:54:08.235" level="INFO">${1st_Date} = 02-16-2022</msg>
+<status status="PASS" starttime="20220208 17:54:08.234" endtime="20220208 17:54:08.235"/>
+</kw>
+<kw name="Get Current Date" library="DateTime">
+<var>${2nd_Date}</var>
+<arg>result_format=%m-%d-%Y</arg>
+<arg>increment=9 day</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20220208 17:54:08.235" level="INFO">${2nd_Date} = 02-17-2022</msg>
+<status status="PASS" starttime="20220208 17:54:08.235" endtime="20220208 17:54:08.235"/>
+</kw>
+<kw name="Open Login Page">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>http://localhost:3000</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220208 17:54:08.236" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000'.</msg>
+<status status="PASS" starttime="20220208 17:54:08.236" endtime="20220208 17:54:10.884"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220208 17:54:10.884" endtime="20220208 17:54:11.006"/>
+</kw>
+<kw name="Set Browser Implicit Wait" library="SeleniumLibrary">
+<arg>5</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220208 17:54:11.006" endtime="20220208 17:54:11.007"/>
+</kw>
+<status status="PASS" starttime="20220208 17:54:08.236" endtime="20220208 17:54:11.007"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css:.btn_booknow</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220208 17:54:11.008" level="INFO">Clicking element 'css:.btn_booknow'.</msg>
+<status status="PASS" starttime="20220208 17:54:11.008" endtime="20220208 17:54:11.376"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220208 17:54:13.387" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220208 17:54:11.377" endtime="20220208 17:54:13.387"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:fname</arg>
+<arg>Steven Castro</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220208 17:54:13.388" level="INFO">Typing text 'Steven Castro' into text field 'id:fname'.</msg>
+<status status="PASS" starttime="20220208 17:54:13.388" endtime="20220208 17:54:13.495"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:num</arg>
+<arg>09477903358</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220208 17:54:13.496" level="INFO">Typing text '09477903358' into text field 'id:num'.</msg>
+<status status="PASS" starttime="20220208 17:54:13.495" endtime="20220208 17:54:13.578"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:address</arg>
+<arg>2401 Taft Ave, Malate, Manila, 1004 Metro Manila</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220208 17:54:13.579" level="INFO">Typing text '2401 Taft Ave, Malate, Manila, 1004 Metro Manila' into text field 'id:address'.</msg>
+<status status="PASS" starttime="20220208 17:54:13.578" endtime="20220208 17:54:13.706"/>
+</kw>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>id:room</arg>
+<arg>Double Room</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20220208 17:54:13.707" level="INFO">Selecting options from selection list 'id:room' by label Double Room.</msg>
+<status status="PASS" starttime="20220208 17:54:13.707" endtime="20220208 17:54:13.781"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:guests</arg>
+<arg>4</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220208 17:54:13.782" level="INFO">Typing text '4' into text field 'id:guests'.</msg>
+<status status="PASS" starttime="20220208 17:54:13.781" endtime="20220208 17:54:13.852"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.querySelector("#checkin").removeAttribute("readonly");</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220208 17:54:13.853" level="INFO">Executing JavaScript:
+document.querySelector("#checkin").removeAttribute("readonly");
+Without any arguments.</msg>
+<status status="PASS" starttime="20220208 17:54:13.853" endtime="20220208 17:54:13.857"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.querySelector("#checkin").removeAttribute("onchange");</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220208 17:54:13.858" level="INFO">Executing JavaScript:
+document.querySelector("#checkin").removeAttribute("onchange");
+Without any arguments.</msg>
+<status status="PASS" starttime="20220208 17:54:13.858" endtime="20220208 17:54:13.862"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:checkin</arg>
+<arg>${1st_Date}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220208 17:54:13.863" level="INFO">Typing text '02-16-2022' into text field 'id:checkin'.</msg>
+<status status="PASS" starttime="20220208 17:54:13.862" endtime="20220208 17:54:13.969"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.querySelector("#checkout").removeAttribute("readonly");</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220208 17:54:13.971" level="INFO">Executing JavaScript:
+document.querySelector("#checkout").removeAttribute("readonly");
+Without any arguments.</msg>
+<status status="PASS" starttime="20220208 17:54:13.970" endtime="20220208 17:54:13.976"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.querySelector("#checkout").removeAttribute("onchange");</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220208 17:54:13.977" level="INFO">Executing JavaScript:
+document.querySelector("#checkout").removeAttribute("onchange");
+Without any arguments.</msg>
+<status status="PASS" starttime="20220208 17:54:13.976" endtime="20220208 17:54:13.983"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:checkout</arg>
+<arg>${2nd_Date}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220208 17:54:13.984" level="INFO">Typing text '02-17-2022' into text field 'id:checkout'.</msg>
+<status status="PASS" starttime="20220208 17:54:13.983" endtime="20220208 17:54:14.087"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id:submit_btn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220208 17:54:14.088" level="INFO">Clicking button 'id:submit_btn'.</msg>
+<status status="PASS" starttime="20220208 17:54:14.087" endtime="20220208 17:54:14.157"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Booking Submitted</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220208 17:54:14.158" level="INFO">Booking Submitted</msg>
+<status status="PASS" starttime="20220208 17:54:14.158" endtime="20220208 17:54:14.158"/>
+</kw>
+<kw name="Page Should Not Contain" library="SeleniumLibrary">
+<arg>Booked successfully!</arg>
+<arg>INFO</arg>
+<doc>Verifies the current page does not contain ``text``.</doc>
+<msg timestamp="20220208 17:54:24.281" level="INFO">Current page does not contain text 'Booked successfully!'.</msg>
+<status status="PASS" starttime="20220208 17:54:14.159" endtime="20220208 17:54:24.281"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Webpage Checked</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220208 17:54:24.282" level="INFO">Webpage Checked</msg>
+<status status="PASS" starttime="20220208 17:54:24.282" endtime="20220208 17:54:24.282"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220208 17:54:24.282" endtime="20220208 17:54:26.427"/>
+</kw>
+<doc>US#3 Test Case #10</doc>
+<status status="PASS" starttime="20220208 17:54:08.234" endtime="20220208 17:54:26.427"/>
+</test>
+<test id="s1-t10" name="Booking Triple Room with more than 4 guests">
+<kw name="Get Current Date" library="DateTime">
+<var>${1st_Date}</var>
+<arg>result_format=%m-%d-%Y</arg>
+<arg>increment=8 day</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20220208 17:54:26.430" level="INFO">${1st_Date} = 02-16-2022</msg>
+<status status="PASS" starttime="20220208 17:54:26.429" endtime="20220208 17:54:26.430"/>
+</kw>
+<kw name="Get Current Date" library="DateTime">
+<var>${2nd_Date}</var>
+<arg>result_format=%m-%d-%Y</arg>
+<arg>increment=9 day</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20220208 17:54:26.430" level="INFO">${2nd_Date} = 02-17-2022</msg>
+<status status="PASS" starttime="20220208 17:54:26.430" endtime="20220208 17:54:26.430"/>
+</kw>
+<kw name="Open Login Page">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>http://localhost:3000</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220208 17:54:26.431" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000'.</msg>
+<status status="PASS" starttime="20220208 17:54:26.431" endtime="20220208 17:54:29.282"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220208 17:54:29.283" endtime="20220208 17:54:29.401"/>
+</kw>
+<kw name="Set Browser Implicit Wait" library="SeleniumLibrary">
+<arg>5</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220208 17:54:29.401" endtime="20220208 17:54:29.402"/>
+</kw>
+<status status="PASS" starttime="20220208 17:54:26.430" endtime="20220208 17:54:29.402"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css:.btn_booknow</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220208 17:54:29.403" level="INFO">Clicking element 'css:.btn_booknow'.</msg>
+<status status="PASS" starttime="20220208 17:54:29.403" endtime="20220208 17:54:29.783"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220208 17:54:31.789" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220208 17:54:29.784" endtime="20220208 17:54:31.789"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:fname</arg>
+<arg>Steven Castro</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220208 17:54:31.790" level="INFO">Typing text 'Steven Castro' into text field 'id:fname'.</msg>
+<status status="PASS" starttime="20220208 17:54:31.789" endtime="20220208 17:54:31.891"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:num</arg>
+<arg>09477903358</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220208 17:54:31.891" level="INFO">Typing text '09477903358' into text field 'id:num'.</msg>
+<status status="PASS" starttime="20220208 17:54:31.891" endtime="20220208 17:54:31.971"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:address</arg>
+<arg>2401 Taft Ave, Malate, Manila, 1004 Metro Manila</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220208 17:54:31.972" level="INFO">Typing text '2401 Taft Ave, Malate, Manila, 1004 Metro Manila' into text field 'id:address'.</msg>
+<status status="PASS" starttime="20220208 17:54:31.971" endtime="20220208 17:54:32.097"/>
+</kw>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>id:room</arg>
+<arg>Triple Room</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20220208 17:54:32.098" level="INFO">Selecting options from selection list 'id:room' by label Triple Room.</msg>
+<status status="PASS" starttime="20220208 17:54:32.098" endtime="20220208 17:54:32.170"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:guests</arg>
+<arg>5</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220208 17:54:32.171" level="INFO">Typing text '5' into text field 'id:guests'.</msg>
+<status status="PASS" starttime="20220208 17:54:32.171" endtime="20220208 17:54:32.242"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.querySelector("#checkin").removeAttribute("readonly");</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220208 17:54:32.243" level="INFO">Executing JavaScript:
+document.querySelector("#checkin").removeAttribute("readonly");
+Without any arguments.</msg>
+<status status="PASS" starttime="20220208 17:54:32.242" endtime="20220208 17:54:32.247"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.querySelector("#checkin").removeAttribute("onchange");</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220208 17:54:32.248" level="INFO">Executing JavaScript:
+document.querySelector("#checkin").removeAttribute("onchange");
+Without any arguments.</msg>
+<status status="PASS" starttime="20220208 17:54:32.247" endtime="20220208 17:54:32.251"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:checkin</arg>
+<arg>${1st_Date}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220208 17:54:32.252" level="INFO">Typing text '02-16-2022' into text field 'id:checkin'.</msg>
+<status status="PASS" starttime="20220208 17:54:32.252" endtime="20220208 17:54:32.364"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.querySelector("#checkout").removeAttribute("readonly");</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220208 17:54:32.365" level="INFO">Executing JavaScript:
+document.querySelector("#checkout").removeAttribute("readonly");
+Without any arguments.</msg>
+<status status="PASS" starttime="20220208 17:54:32.364" endtime="20220208 17:54:32.374"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.querySelector("#checkout").removeAttribute("onchange");</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220208 17:54:32.375" level="INFO">Executing JavaScript:
+document.querySelector("#checkout").removeAttribute("onchange");
+Without any arguments.</msg>
+<status status="PASS" starttime="20220208 17:54:32.374" endtime="20220208 17:54:32.379"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:checkout</arg>
+<arg>${2nd_Date}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220208 17:54:32.380" level="INFO">Typing text '02-17-2022' into text field 'id:checkout'.</msg>
+<status status="PASS" starttime="20220208 17:54:32.379" endtime="20220208 17:54:32.483"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id:submit_btn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220208 17:54:32.484" level="INFO">Clicking button 'id:submit_btn'.</msg>
+<status status="PASS" starttime="20220208 17:54:32.484" endtime="20220208 17:54:32.557"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Booking Submitted</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220208 17:54:32.558" level="INFO">Booking Submitted</msg>
+<status status="PASS" starttime="20220208 17:54:32.558" endtime="20220208 17:54:32.558"/>
+</kw>
+<kw name="Page Should Not Contain" library="SeleniumLibrary">
+<arg>Booked successfully!</arg>
+<arg>INFO</arg>
+<doc>Verifies the current page does not contain ``text``.</doc>
+<msg timestamp="20220208 17:54:42.627" level="INFO">Current page does not contain text 'Booked successfully!'.</msg>
+<status status="PASS" starttime="20220208 17:54:32.558" endtime="20220208 17:54:42.628"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Webpage Checked</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220208 17:54:42.628" level="INFO">Webpage Checked</msg>
+<status status="PASS" starttime="20220208 17:54:42.628" endtime="20220208 17:54:42.628"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220208 17:54:42.629" endtime="20220208 17:54:44.785"/>
+</kw>
+<doc>US#3 Test Case #11</doc>
+<status status="PASS" starttime="20220208 17:54:26.429" endtime="20220208 17:54:44.785"/>
+</test>
+<test id="s1-t11" name="Booking Quad Room with more than 5 guests">
+<kw name="Get Current Date" library="DateTime">
+<var>${1st_Date}</var>
+<arg>result_format=%m-%d-%Y</arg>
+<arg>increment=8 day</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20220208 17:54:44.787" level="INFO">${1st_Date} = 02-16-2022</msg>
+<status status="PASS" starttime="20220208 17:54:44.787" endtime="20220208 17:54:44.788"/>
+</kw>
+<kw name="Get Current Date" library="DateTime">
+<var>${2nd_Date}</var>
+<arg>result_format=%m-%d-%Y</arg>
+<arg>increment=9 day</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20220208 17:54:44.788" level="INFO">${2nd_Date} = 02-17-2022</msg>
+<status status="PASS" starttime="20220208 17:54:44.788" endtime="20220208 17:54:44.788"/>
+</kw>
+<kw name="Open Login Page">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>http://localhost:3000</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220208 17:54:44.789" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000'.</msg>
+<status status="PASS" starttime="20220208 17:54:44.789" endtime="20220208 17:54:47.789"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220208 17:54:47.789" endtime="20220208 17:54:47.918"/>
+</kw>
+<kw name="Set Browser Implicit Wait" library="SeleniumLibrary">
+<arg>5</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220208 17:54:47.919" endtime="20220208 17:54:47.920"/>
+</kw>
+<status status="PASS" starttime="20220208 17:54:44.788" endtime="20220208 17:54:47.920"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css:.btn_booknow</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220208 17:54:47.921" level="INFO">Clicking element 'css:.btn_booknow'.</msg>
+<status status="PASS" starttime="20220208 17:54:47.921" endtime="20220208 17:54:48.290"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220208 17:54:50.304" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220208 17:54:48.290" endtime="20220208 17:54:50.304"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:fname</arg>
+<arg>Steven Castro</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220208 17:54:50.304" level="INFO">Typing text 'Steven Castro' into text field 'id:fname'.</msg>
+<status status="PASS" starttime="20220208 17:54:50.304" endtime="20220208 17:54:50.401"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:num</arg>
+<arg>09477903358</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220208 17:54:50.401" level="INFO">Typing text '09477903358' into text field 'id:num'.</msg>
+<status status="PASS" starttime="20220208 17:54:50.401" endtime="20220208 17:54:50.485"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:address</arg>
+<arg>2401 Taft Ave, Malate, Manila, 1004 Metro Manila</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220208 17:54:50.486" level="INFO">Typing text '2401 Taft Ave, Malate, Manila, 1004 Metro Manila' into text field 'id:address'.</msg>
+<status status="PASS" starttime="20220208 17:54:50.486" endtime="20220208 17:54:50.635"/>
+</kw>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>id:room</arg>
+<arg>Quad Room</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20220208 17:54:50.636" level="INFO">Selecting options from selection list 'id:room' by label Quad Room.</msg>
+<status status="PASS" starttime="20220208 17:54:50.636" endtime="20220208 17:54:50.726"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:guests</arg>
+<arg>6</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220208 17:54:50.727" level="INFO">Typing text '6' into text field 'id:guests'.</msg>
+<status status="PASS" starttime="20220208 17:54:50.727" endtime="20220208 17:54:50.800"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.querySelector("#checkin").removeAttribute("readonly");</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220208 17:54:50.801" level="INFO">Executing JavaScript:
+document.querySelector("#checkin").removeAttribute("readonly");
+Without any arguments.</msg>
+<status status="PASS" starttime="20220208 17:54:50.801" endtime="20220208 17:54:50.806"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.querySelector("#checkin").removeAttribute("onchange");</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220208 17:54:50.806" level="INFO">Executing JavaScript:
+document.querySelector("#checkin").removeAttribute("onchange");
+Without any arguments.</msg>
+<status status="PASS" starttime="20220208 17:54:50.806" endtime="20220208 17:54:50.810"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:checkin</arg>
+<arg>${1st_Date}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220208 17:54:50.810" level="INFO">Typing text '02-16-2022' into text field 'id:checkin'.</msg>
+<status status="PASS" starttime="20220208 17:54:50.810" endtime="20220208 17:54:50.914"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.querySelector("#checkout").removeAttribute("readonly");</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220208 17:54:50.915" level="INFO">Executing JavaScript:
+document.querySelector("#checkout").removeAttribute("readonly");
+Without any arguments.</msg>
+<status status="PASS" starttime="20220208 17:54:50.914" endtime="20220208 17:54:50.921"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.querySelector("#checkout").removeAttribute("onchange");</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220208 17:54:50.922" level="INFO">Executing JavaScript:
+document.querySelector("#checkout").removeAttribute("onchange");
+Without any arguments.</msg>
+<status status="PASS" starttime="20220208 17:54:50.922" endtime="20220208 17:54:50.926"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:checkout</arg>
+<arg>${2nd_Date}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220208 17:54:50.927" level="INFO">Typing text '02-17-2022' into text field 'id:checkout'.</msg>
+<status status="PASS" starttime="20220208 17:54:50.927" endtime="20220208 17:54:51.027"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id:submit_btn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220208 17:54:51.028" level="INFO">Clicking button 'id:submit_btn'.</msg>
+<status status="PASS" starttime="20220208 17:54:51.027" endtime="20220208 17:54:51.100"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Booking Submitted</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220208 17:54:51.101" level="INFO">Booking Submitted</msg>
+<status status="PASS" starttime="20220208 17:54:51.101" endtime="20220208 17:54:51.102"/>
+</kw>
+<kw name="Page Should Not Contain" library="SeleniumLibrary">
+<arg>Booked successfully!</arg>
+<arg>INFO</arg>
+<doc>Verifies the current page does not contain ``text``.</doc>
+<msg timestamp="20220208 17:55:01.163" level="INFO">Current page does not contain text 'Booked successfully!'.</msg>
+<status status="PASS" starttime="20220208 17:54:51.102" endtime="20220208 17:55:01.164"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Webpage Checked</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220208 17:55:01.164" level="INFO">Webpage Checked</msg>
+<status status="PASS" starttime="20220208 17:55:01.164" endtime="20220208 17:55:01.164"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220208 17:55:01.164" endtime="20220208 17:55:03.309"/>
+</kw>
+<doc>US#3 Test Case #12</doc>
+<status status="PASS" starttime="20220208 17:54:44.787" endtime="20220208 17:55:03.309"/>
+</test>
+<test id="s1-t12" name="Booking King Room with more than 5 guests">
+<kw name="Get Current Date" library="DateTime">
+<var>${1st_Date}</var>
+<arg>result_format=%m-%d-%Y</arg>
+<arg>increment=8 day</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20220208 17:55:03.312" level="INFO">${1st_Date} = 02-16-2022</msg>
+<status status="PASS" starttime="20220208 17:55:03.311" endtime="20220208 17:55:03.312"/>
+</kw>
+<kw name="Get Current Date" library="DateTime">
+<var>${2nd_Date}</var>
+<arg>result_format=%m-%d-%Y</arg>
+<arg>increment=9 day</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20220208 17:55:03.312" level="INFO">${2nd_Date} = 02-17-2022</msg>
+<status status="PASS" starttime="20220208 17:55:03.312" endtime="20220208 17:55:03.312"/>
+</kw>
+<kw name="Open Login Page">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>http://localhost:3000</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220208 17:55:03.313" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000'.</msg>
+<status status="PASS" starttime="20220208 17:55:03.313" endtime="20220208 17:55:05.919"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220208 17:55:05.919" endtime="20220208 17:55:06.035"/>
+</kw>
+<kw name="Set Browser Implicit Wait" library="SeleniumLibrary">
+<arg>5</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220208 17:55:06.035" endtime="20220208 17:55:06.036"/>
+</kw>
+<status status="PASS" starttime="20220208 17:55:03.313" endtime="20220208 17:55:06.036"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css:.btn_booknow</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220208 17:55:06.037" level="INFO">Clicking element 'css:.btn_booknow'.</msg>
+<status status="PASS" starttime="20220208 17:55:06.037" endtime="20220208 17:55:06.405"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220208 17:55:08.409" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220208 17:55:06.406" endtime="20220208 17:55:08.409"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:fname</arg>
+<arg>Steven Castro</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220208 17:55:08.410" level="INFO">Typing text 'Steven Castro' into text field 'id:fname'.</msg>
+<status status="PASS" starttime="20220208 17:55:08.409" endtime="20220208 17:55:08.512"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:num</arg>
+<arg>09477903358</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220208 17:55:08.512" level="INFO">Typing text '09477903358' into text field 'id:num'.</msg>
+<status status="PASS" starttime="20220208 17:55:08.512" endtime="20220208 17:55:08.596"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:address</arg>
+<arg>2401 Taft Ave, Malate, Manila, 1004 Metro Manila</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220208 17:55:08.597" level="INFO">Typing text '2401 Taft Ave, Malate, Manila, 1004 Metro Manila' into text field 'id:address'.</msg>
+<status status="PASS" starttime="20220208 17:55:08.596" endtime="20220208 17:55:08.738"/>
+</kw>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>id:room</arg>
+<arg>King Room</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20220208 17:55:08.741" level="INFO">Selecting options from selection list 'id:room' by label King Room.</msg>
+<status status="PASS" starttime="20220208 17:55:08.740" endtime="20220208 17:55:08.811"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:guests</arg>
+<arg>5</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220208 17:55:08.812" level="INFO">Typing text '5' into text field 'id:guests'.</msg>
+<status status="PASS" starttime="20220208 17:55:08.812" endtime="20220208 17:55:08.887"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.querySelector("#checkin").removeAttribute("readonly");</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220208 17:55:08.888" level="INFO">Executing JavaScript:
+document.querySelector("#checkin").removeAttribute("readonly");
+Without any arguments.</msg>
+<status status="PASS" starttime="20220208 17:55:08.887" endtime="20220208 17:55:08.893"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.querySelector("#checkin").removeAttribute("onchange");</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220208 17:55:08.894" level="INFO">Executing JavaScript:
+document.querySelector("#checkin").removeAttribute("onchange");
+Without any arguments.</msg>
+<status status="PASS" starttime="20220208 17:55:08.894" endtime="20220208 17:55:08.898"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:checkin</arg>
+<arg>${1st_Date}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220208 17:55:08.898" level="INFO">Typing text '02-16-2022' into text field 'id:checkin'.</msg>
+<status status="PASS" starttime="20220208 17:55:08.898" endtime="20220208 17:55:09.010"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.querySelector("#checkout").removeAttribute("readonly");</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220208 17:55:09.011" level="INFO">Executing JavaScript:
+document.querySelector("#checkout").removeAttribute("readonly");
+Without any arguments.</msg>
+<status status="PASS" starttime="20220208 17:55:09.010" endtime="20220208 17:55:09.015"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.querySelector("#checkout").removeAttribute("onchange");</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220208 17:55:09.018" level="INFO">Executing JavaScript:
+document.querySelector("#checkout").removeAttribute("onchange");
+Without any arguments.</msg>
+<status status="PASS" starttime="20220208 17:55:09.016" endtime="20220208 17:55:09.024"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:checkout</arg>
+<arg>${2nd_Date}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220208 17:55:09.025" level="INFO">Typing text '02-17-2022' into text field 'id:checkout'.</msg>
+<status status="PASS" starttime="20220208 17:55:09.025" endtime="20220208 17:55:09.132"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id:submit_btn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220208 17:55:09.133" level="INFO">Clicking button 'id:submit_btn'.</msg>
+<status status="PASS" starttime="20220208 17:55:09.133" endtime="20220208 17:55:09.205"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Booking Submitted</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220208 17:55:09.206" level="INFO">Booking Submitted</msg>
+<status status="PASS" starttime="20220208 17:55:09.206" endtime="20220208 17:55:09.206"/>
+</kw>
+<kw name="Page Should Not Contain" library="SeleniumLibrary">
+<arg>Booked successfully!</arg>
+<arg>INFO</arg>
+<doc>Verifies the current page does not contain ``text``.</doc>
+<msg timestamp="20220208 17:55:19.265" level="INFO">Current page does not contain text 'Booked successfully!'.</msg>
+<status status="PASS" starttime="20220208 17:55:09.207" endtime="20220208 17:55:19.265"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Webpage Checked</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220208 17:55:19.266" level="INFO">Webpage Checked</msg>
+<status status="PASS" starttime="20220208 17:55:19.266" endtime="20220208 17:55:19.266"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220208 17:55:19.266" endtime="20220208 17:55:21.427"/>
+</kw>
+<doc>US#3 Test Case #13</doc>
+<status status="PASS" starttime="20220208 17:55:03.311" endtime="20220208 17:55:21.427"/>
+</test>
+<test id="s1-t13" name="Booking Queen Room with more than 5 guests">
+<kw name="Get Current Date" library="DateTime">
+<var>${1st_Date}</var>
+<arg>result_format=%m-%d-%Y</arg>
+<arg>increment=8 day</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20220208 17:55:21.429" level="INFO">${1st_Date} = 02-16-2022</msg>
+<status status="PASS" starttime="20220208 17:55:21.429" endtime="20220208 17:55:21.430"/>
+</kw>
+<kw name="Get Current Date" library="DateTime">
+<var>${2nd_Date}</var>
+<arg>result_format=%m-%d-%Y</arg>
+<arg>increment=9 day</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20220208 17:55:21.430" level="INFO">${2nd_Date} = 02-17-2022</msg>
+<status status="PASS" starttime="20220208 17:55:21.430" endtime="20220208 17:55:21.430"/>
+</kw>
+<kw name="Open Login Page">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>http://localhost:3000</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220208 17:55:21.431" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000'.</msg>
+<status status="PASS" starttime="20220208 17:55:21.431" endtime="20220208 17:55:24.068"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220208 17:55:24.068" endtime="20220208 17:55:24.187"/>
+</kw>
+<kw name="Set Browser Implicit Wait" library="SeleniumLibrary">
+<arg>5</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220208 17:55:24.187" endtime="20220208 17:55:24.188"/>
+</kw>
+<status status="PASS" starttime="20220208 17:55:21.430" endtime="20220208 17:55:24.188"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css:.btn_booknow</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220208 17:55:24.189" level="INFO">Clicking element 'css:.btn_booknow'.</msg>
+<status status="PASS" starttime="20220208 17:55:24.189" endtime="20220208 17:55:24.568"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220208 17:55:26.576" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220208 17:55:24.569" endtime="20220208 17:55:26.576"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:fname</arg>
+<arg>Steven Castro</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220208 17:55:26.577" level="INFO">Typing text 'Steven Castro' into text field 'id:fname'.</msg>
+<status status="PASS" starttime="20220208 17:55:26.577" endtime="20220208 17:55:26.685"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:num</arg>
+<arg>09477903358</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220208 17:55:26.685" level="INFO">Typing text '09477903358' into text field 'id:num'.</msg>
+<status status="PASS" starttime="20220208 17:55:26.685" endtime="20220208 17:55:26.770"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:address</arg>
+<arg>2401 Taft Ave, Malate, Manila, 1004 Metro Manila</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220208 17:55:26.771" level="INFO">Typing text '2401 Taft Ave, Malate, Manila, 1004 Metro Manila' into text field 'id:address'.</msg>
+<status status="PASS" starttime="20220208 17:55:26.770" endtime="20220208 17:55:26.894"/>
+</kw>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>id:room</arg>
+<arg>Queen Room</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20220208 17:55:26.896" level="INFO">Selecting options from selection list 'id:room' by label Queen Room.</msg>
+<status status="PASS" starttime="20220208 17:55:26.895" endtime="20220208 17:55:26.971"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:guests</arg>
+<arg>5</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220208 17:55:26.972" level="INFO">Typing text '5' into text field 'id:guests'.</msg>
+<status status="PASS" starttime="20220208 17:55:26.971" endtime="20220208 17:55:27.045"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.querySelector("#checkin").removeAttribute("readonly");</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220208 17:55:27.047" level="INFO">Executing JavaScript:
+document.querySelector("#checkin").removeAttribute("readonly");
+Without any arguments.</msg>
+<status status="PASS" starttime="20220208 17:55:27.046" endtime="20220208 17:55:27.052"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.querySelector("#checkin").removeAttribute("onchange");</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220208 17:55:27.053" level="INFO">Executing JavaScript:
+document.querySelector("#checkin").removeAttribute("onchange");
+Without any arguments.</msg>
+<status status="PASS" starttime="20220208 17:55:27.052" endtime="20220208 17:55:27.056"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:checkin</arg>
+<arg>${1st_Date}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220208 17:55:27.057" level="INFO">Typing text '02-16-2022' into text field 'id:checkin'.</msg>
+<status status="PASS" starttime="20220208 17:55:27.056" endtime="20220208 17:55:27.165"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.querySelector("#checkout").removeAttribute("readonly");</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220208 17:55:27.166" level="INFO">Executing JavaScript:
+document.querySelector("#checkout").removeAttribute("readonly");
+Without any arguments.</msg>
+<status status="PASS" starttime="20220208 17:55:27.166" endtime="20220208 17:55:27.173"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.querySelector("#checkout").removeAttribute("onchange");</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220208 17:55:27.175" level="INFO">Executing JavaScript:
+document.querySelector("#checkout").removeAttribute("onchange");
+Without any arguments.</msg>
+<status status="PASS" starttime="20220208 17:55:27.174" endtime="20220208 17:55:27.179"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:checkout</arg>
+<arg>${2nd_Date}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220208 17:55:27.180" level="INFO">Typing text '02-17-2022' into text field 'id:checkout'.</msg>
+<status status="PASS" starttime="20220208 17:55:27.179" endtime="20220208 17:55:27.283"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id:submit_btn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220208 17:55:27.284" level="INFO">Clicking button 'id:submit_btn'.</msg>
+<status status="PASS" starttime="20220208 17:55:27.283" endtime="20220208 17:55:27.351"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Booking Submitted</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220208 17:55:27.352" level="INFO">Booking Submitted</msg>
+<status status="PASS" starttime="20220208 17:55:27.352" endtime="20220208 17:55:27.352"/>
+</kw>
+<kw name="Page Should Not Contain" library="SeleniumLibrary">
+<arg>Booked successfully!</arg>
+<arg>INFO</arg>
+<doc>Verifies the current page does not contain ``text``.</doc>
+<msg timestamp="20220208 17:55:37.383" level="INFO">Current page does not contain text 'Booked successfully!'.</msg>
+<status status="PASS" starttime="20220208 17:55:27.352" endtime="20220208 17:55:37.383"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Webpage Checked</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220208 17:55:37.384" level="INFO">Webpage Checked</msg>
+<status status="PASS" starttime="20220208 17:55:37.384" endtime="20220208 17:55:37.384"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220208 17:55:37.384" endtime="20220208 17:55:39.545"/>
+</kw>
+<doc>US#3 Test Case #14</doc>
+<status status="PASS" starttime="20220208 17:55:21.429" endtime="20220208 17:55:39.545"/>
+</test>
+<doc>Booking Tests</doc>
+<status status="FAIL" starttime="20220208 17:51:41.798" endtime="20220208 17:55:39.547"/>
 </suite>
 <statistics>
 <total>
-<stat pass="6" fail="0" skip="0">All Tests</stat>
+<stat pass="12" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="6" fail="0" skip="0" id="s1" name="Login">Login</stat>
+<stat pass="12" fail="1" skip="0" id="s1" name="Booking">Booking</stat>
 </suite>
 </statistics>
 <errors>
