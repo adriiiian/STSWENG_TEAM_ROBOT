@@ -192,11 +192,12 @@ Booking Single Room with more than 2 guests
     Open Login Page
     Click Element                 css:.btn_booknow
     Sleep                         2s
+
+    Select From List By Label     id:room                                       Single Room
+    Input Text                    id:guests                                     3
     Input Text                    id:fname                                      Steven Castro
     Input Text                    id:num                                        09477903358
     Input Text                    id:address                                    2401 Taft Ave, Malate, Manila, 1004 Metro Manila
-    Select From List By Label     id:room                                       Single Room
-    Input Text                    id:guests                                     3
     Execute Javascript          document.querySelector("#checkin").removeAttribute("readonly");
     Execute Javascript          document.querySelector("#checkin").removeAttribute("onchange");
     Input Text                    id:checkin                                    ${1st_Date}
@@ -222,11 +223,11 @@ Booking Double Room with more than 3 guests
     Open Login Page
     Click Element                 css:.btn_booknow
     Sleep                         2s
+    Select From List By Label     id:room                                       Double Room
+    Input Text                    id:guests                                     4
     Input Text                    id:fname                                      Steven Castro
     Input Text                    id:num                                        09477903358
     Input Text                    id:address                                    2401 Taft Ave, Malate, Manila, 1004 Metro Manila
-    Select From List By Label     id:room                                       Double Room
-    Input Text                    id:guests                                     4
     Execute Javascript          document.querySelector("#checkin").removeAttribute("readonly");
     Execute Javascript          document.querySelector("#checkin").removeAttribute("onchange");
     Input Text                    id:checkin                                    ${1st_Date}
@@ -253,11 +254,12 @@ Booking Triple Room with more than 4 guests
     Open Login Page
     Click Element                 css:.btn_booknow
     Sleep                         2s
+
+    Select From List By Label     id:room                                       Triple Room
+    Input Text                    id:guests                                     5
     Input Text                    id:fname                                      Steven Castro
     Input Text                    id:num                                        09477903358
     Input Text                    id:address                                    2401 Taft Ave, Malate, Manila, 1004 Metro Manila
-    Select From List By Label     id:room                                       Triple Room
-    Input Text                    id:guests                                     5
     Execute Javascript          document.querySelector("#checkin").removeAttribute("readonly");
     Execute Javascript          document.querySelector("#checkin").removeAttribute("onchange");
     Input Text                    id:checkin                                    ${1st_Date}
@@ -284,11 +286,11 @@ Booking Quad Room with more than 5 guests
     Open Login Page
     Click Element                 css:.btn_booknow
     Sleep                         2s
+    Select From List By Label     id:room                                       Quad Room
+    Input Text                    id:guests                                     6
     Input Text                    id:fname                                      Steven Castro
     Input Text                    id:num                                        09477903358
     Input Text                    id:address                                    2401 Taft Ave, Malate, Manila, 1004 Metro Manila
-    Select From List By Label     id:room                                       Quad Room
-    Input Text                    id:guests                                     6
     Execute Javascript          document.querySelector("#checkin").removeAttribute("readonly");
     Execute Javascript          document.querySelector("#checkin").removeAttribute("onchange");
     Input Text                    id:checkin                                    ${1st_Date}
@@ -315,11 +317,12 @@ Booking King Room with more than 5 guests
     Open Login Page
     Click Element                 css:.btn_booknow
     Sleep                         2s
+
+    Select From List By Label     id:room                                       King Room
+    Input Text                    id:guests                                     5
     Input Text                    id:fname                                      Steven Castro
     Input Text                    id:num                                        09477903358
     Input Text                    id:address                                    2401 Taft Ave, Malate, Manila, 1004 Metro Manila
-    Select From List By Label     id:room                                       King Room
-    Input Text                    id:guests                                     5
     Execute Javascript          document.querySelector("#checkin").removeAttribute("readonly");
     Execute Javascript          document.querySelector("#checkin").removeAttribute("onchange");
     Input Text                    id:checkin                                    ${1st_Date}
@@ -345,11 +348,12 @@ Booking Queen Room with more than 5 guests
     Open Login Page
     Click Element                 css:.btn_booknow
     Sleep                         2s
+
+    Select From List By Label     id:room                                       Queen Room
+    Input Text                    id:guests                                     5
     Input Text                    id:fname                                      Steven Castro
     Input Text                    id:num                                        09477903358
     Input Text                    id:address                                    2401 Taft Ave, Malate, Manila, 1004 Metro Manila
-    Select From List By Label     id:room                                       Queen Room
-    Input Text                    id:guests                                     5
     Execute Javascript          document.querySelector("#checkin").removeAttribute("readonly");
     Execute Javascript          document.querySelector("#checkin").removeAttribute("onchange");
     Input Text                    id:checkin                                    ${1st_Date}
