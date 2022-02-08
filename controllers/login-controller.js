@@ -186,9 +186,15 @@ const loginController = {
 
             var id = req.query.id
 
-            await db.Bookings.findOne({_id: id}).then(function(booking) {
+            await db.Bookings.findOne({_id: id}).then(async function(booking) {
                 if(booking) {
-                    res.render('view_transactions', {_email, booking, title: 'Transactions'})
+                    let roomType = booking.RoomType.split(' ')
+                    await db.Rooms.findOne({Type: roomType}).then(function(room) {
+                        if(room) {
+                            
+                            res.render('view_transactions', {_email, booking, room, title: 'Transactions'})
+                        }
+                    })
                 }
             })
         }
