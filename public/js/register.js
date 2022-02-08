@@ -53,7 +53,8 @@ $(document).ready(function(){
         
                         console.log('hello ' + RegInfo.Username)
                         $.post('register', {Username: RegInfo.Username, Email: RegInfo.Email, Password: RegInfo.Password}, function(result){
-                            alert('Registered Successfully')
+                            $('#data_modal_text').text('Registered Successfully!')
+                            $('#registration_modal').modal('show');
                         })
         
                     }
