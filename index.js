@@ -10,6 +10,7 @@ dotenv.config()
 // const _Port = process.env.PORT
 const _Port = process.env.PORT || 3000;
 const _Host = process.env.HOSTNAME;
+const _Secret = process.env.SECRET;
 const DB_URL = process.env.DB_URL;
 
 // express app
@@ -34,7 +35,7 @@ app.use(express.static('public'))
 database.connect()
 
 app.use(session({
-    secret: 'stsweng_team_robot',
+    secret: _Secret,
     resave: false,
     saveUninitialized: false,
     store: MongoStore.create({
